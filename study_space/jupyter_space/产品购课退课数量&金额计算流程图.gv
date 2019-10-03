@@ -1,0 +1,37 @@
+// comment
+digraph "产品购课退课数量&金额计算流程图" {
+	graph [rankdir=TB]
+	node [color=black fontcolor=black fontname=SimSun fontsize=12 shape=box style=rounded]
+	edge [color="#999999" fontcolor="#888888" fontname=SimSun fontsize=10]
+	a [label=course color=blue fontcolor=blue]
+	b [label=Courseedu_subject color=blue fontcolor=blue]
+	c [label=course_subject color=blue fontcolor=blue]
+	d [label=product_info_vip_db]
+	e [label=product_info_vip_ry20190614 color=green fontcolor=green]
+	f [label=product_info_relation]
+	g [label=pcenter_payment color=blue fontcolor=blue]
+	h [label=pcenter_payment_buy]
+	i [label=pcenter_payment_buy_main]
+	j [label=product_vip_buy_ymd]
+	k [label=pcenter_payment_ref]
+	l [label=pcenter_payment_ref_main]
+	m [label=product_vip_ref_ymd]
+	n [label=product_vip color=red fontcolor=red]
+	b -> d
+	e -> f
+	a -> d
+	c -> d
+	d -> g [label="根据产品ProductID关联"]
+	g -> h [label="合并两种支付方式，计算购课金额"]
+	d -> h [label="添加班级ID"]
+	f -> h [label="添加主课程代码"]
+	h -> i [label="计算每个用户每个订单主课程数量和金额"]
+	i -> j [label="分别计算每日主课程和其他交费购课数量和金额"]
+	g -> k [label="合并两种支付方式，计算退课金额"]
+	d -> k [label="添加班级ID"]
+	f -> k [label="添加主课程代码"]
+	k -> l [label="计算每个用户每个订单主课程数量和金额"]
+	l -> m [label="分别计算每日主课程和其他交费退课数量和金额"]
+	j -> n [label="合并"]
+	m -> n [label="合并"]
+}

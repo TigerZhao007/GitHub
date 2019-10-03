@@ -1,0 +1,48 @@
+// comment
+digraph "产品退课原因数量&金额计算流程图" {
+	graph [rankdir=TB]
+	node [color=black fontcolor=black fontname=SimSun fontsize=12 shape=box style=rounded]
+	edge [color="#999999" fontcolor="#888888" fontname=SimSun fontsize=10]
+	a [label=course color=blue fontcolor=blue]
+	b [label=Courseedu_subject color=blue fontcolor=blue]
+	c [label=course_subject color=blue fontcolor=blue]
+	d [label=product_info_vip_db]
+	e [label=product_info_vip_ry20190614 color=green fontcolor=green]
+	f [label=product_info_relation]
+	g [label=Pay_CourseFavourableCause color=blue fontcolor=blue]
+	h [label=refund_reason_list]
+	i [label=pcenter_payment color=blue fontcolor=blue]
+	j [label=product_refund]
+	k [label=Pay_Payment color=blue fontcolor=blue]
+	l [label=Pay_PaymentRefundment color=blue fontcolor=blue]
+	m [label=Pay_CourseFavourableCause color=blue fontcolor=blue]
+	n [label=product_refund_caiwu]
+	o [label=product_refund_yewu]
+	p [label=Sale_OrderRefund color=blue fontcolor=blue]
+	q [label=Sale_OrderRefundDetail color=blue fontcolor=blue]
+	r [label=product_refund_list]
+	s [label=product_refund_total]
+	t [label=product_refund_t color=red fontcolor=red]
+	b -> d
+	i -> j
+	a -> d
+	c -> d
+	e -> f
+	l -> k
+	m -> l
+	j -> s
+	g -> h
+	r -> o
+	k -> n
+	s -> t
+	q -> p
+	p -> r
+	n -> j [label="合并"]
+	o -> j [label="合并"]
+	h -> s [label="添加原因名称"]
+	d -> s [label="添加班级ID"]
+	f -> s [label="添加主课程代码"]
+	d -> k [label="提供产品ID"]
+	d -> i [label="提供产品ID"]
+	n -> p [label="提供财务表没有找到原因的产品ID"]
+}

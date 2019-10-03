@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title: {
+            text: '销售转化情况'
+        },
+        tooltip: {
+            trigger: 'item',
+            triggerOn: 'mousemove'
+        },
+    
+    series: {
+        type: 'sankey',
+        layout:'none',
+        focusNodeAdjacency: 'allEdges',
+        data: [{
+            name: '销售量'
+        }, {
+            name: '退课量'
+        }, {
+            name: '转班升级量'
+        }, {
+            name: '转班升级量-自动'
+        }, {
+            name: '转班升级量-客服'
+        }, {
+            name: '未退课量'
+        }, {
+            name: '费用留存量'
+        }, {
+            name: '更换课程量'
+        }, {
+            name: '其他数量'
+        }, {
+            name: '未知原因'
+        }
+        ],
+        links: [{
+            source: '销售量',
+            target: '未退课量',
+            value: 495120-38816
+        }, {
+            source: '销售量',
+            target: '退课量',
+            value: 38816
+        }, {
+            source: '退课量',
+            target: '转班升级量',
+            value: 16164
+        }, {
+            source: '转班升级量',
+            target: '转班升级量-自动',
+            value: 10381
+        }, {
+            source: '转班升级量',
+            target: '转班升级量-客服',
+            value: 5783
+        }, {
+            source: '退课量',
+            target: '费用留存量',
+            value: 3088
+        }, {
+            source: '退课量',
+            target: '更换课程量',
+            value: 4084
+        }, {
+            source: '退课量',
+            target: '其他数量',
+            value: 231
+        }, {
+            source: '退课量',
+            target: '未知原因',
+            value: 38816-16164-231-3088-4084
+        }]
+    }
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

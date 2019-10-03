@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--  引入echarts文件-->
+    <script src="js/echarts.js"></script>
+    <!--  如果有$符号，需要引入jquery文件  -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <!--  定义图标的区域  -->
+    <div id="main" style="height:400px;width:1200px;"></div>
+    <script type="text/javascript">
+         <!--  初始化echart对象      -->
+        var myChart = echarts.init(document.getElementById("main"));
+        //制定图标的配置和数据
+        var option = {
+            title: {
+                    text: '售课情况转化图'
+            },
+            tooltip: {
+                    trigger: 'item',
+                    triggerOn: 'mousemove'
+            },
+
+
+            series: {
+                type: 'sankey',
+                layout:'none',
+                focusNodeAdjacency: 'allEdges',
+                data: [{
+                    name: '销售量'
+                }, {
+                    name: '退课量'
+                }, {
+                    name: '未退课量'
+                }, {
+                    name: '转班升级量'
+                }, {
+                    name: '费用留存量'
+                }, {
+                    name: '更换课程量'
+                }, {
+                    name: '其他量'
+                }],
+                links: [{
+                    source: '销售量',
+                    target: '退课量',
+                    value: 10
+                }, {
+                    source: '销售量',
+                    target: '未退课量',
+                    value: 50
+                }, {
+                    source: '退课量',
+                    target: '转班升级量',
+                    value: 7
+                }, {
+                    source: '退课量',
+                    target: '费用留存量',
+                    value: 1
+                }, {
+                    source: '退课量',
+                    target: '更换课程量',
+                    value: 1
+                }, {
+                    source: '退课量',
+                    target: '其他量',
+                    value: 1
+                }]
+            }
+        };
+        // 渲染图标
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
