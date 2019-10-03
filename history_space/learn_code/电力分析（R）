@@ -1,0 +1,243 @@
+# 调入函数包
+#----------------------------------------------------
+dat_lib = function(){
+  if(!require(data.table)){install.packages("data.table")}
+  #if(!require(randomForest)){install.packages("randomForest")}
+  if(!require(stringr)){install.packages("stringr")}
+  if(!require(plyr)){install.packages("plyr")}
+  if(!require(dplyr)){install.packages("dplyr")}
+  library(ggplot2)
+  library(devtools)  
+  library(recharts)
+  library(TTR)
+  library(zoo)
+  library(xts)
+  library(forecast)
+  library(reshape2)
+  options(scipen = 200)
+}
+
+dat_buquan = function(dat){
+  name = names(table(dat$pms_id));xw = names(table(dat$xw))
+  length.out = as.Date("2018/05/31")-as.Date("2017/01/01")+1
+  temp = dat %>% mutate(day = substring(day, 1, 10)) %>% mutate(by = paste(pms_id,day,xw,sep = '-')) %>% select(-c(pms_id,day,xw))
+  date = seq.Date(from = as.Date("2017/01/01"), by = "day", length.out = length.out)
+  temp_dat = data.frame(id = rep(name,each=(length.out*length(xw))),day = rep(date,each=length(xw)), xw=1:length(xw))
+  result = temp_dat %>% mutate(by=paste(temp_dat$id,temp_dat$day,temp_dat$xw,sep = '-')) %>% left_join(.,temp,c('by'='by')) %>% select(-c(by))
+}
+dat_buquan2 = function(dat){
+  name = names(table(dat$pms_id));xw = names(table(dat$xw))
+  length.out = as.Date("2018/05/31")-as.Date("2017/01/01")+1
+  temp = dat %>% mutate(day = substring(day, 1, 10)) %>% mutate(by = paste(pms_id,day,xw,sep = '-')) %>% select(-c(pms_id,day,xw))
+  date = seq.Date(from = as.Date("2017/01/01"), by = "day", length.out = length.out)
+  temp_dat = data.frame(id = rep(name,each=(length.out*length(xw))),day = rep(date,each=length(xw)), xw=xw)
+  result = temp_dat %>% mutate(by=paste(temp_dat$id,temp_dat$day,temp_dat$xw,sep = '-')) %>% left_join(.,temp,c('by'='by')) %>% select(-c(by))
+}
+
+dat_to_dat =function(dat,queshi=0){
+  # 剔除缺失值，空值，queshi=0利用同一时刻均值代替缺失值,queshi=1缺失值不替换
+  func0 = function(x){x[which(is.na(x))] = NA;  x[which(x=='NULL')] = NA; x = as.numeric(x);  x[which(x==0)] = NA; x[which(is.na(x))] = mean(na.omit(x));return(x)}   #  queshi=0利用同一时刻均值代替缺失值,
+  func1 = function(x){x[which(is.na(x))] = NA;  x[which(x=='NULL')] = NA; x = as.numeric(x);  x[which(x==0)] = NA; return(x) }   #  queshi=1缺失值不替换
+  if(queshi==0){
+    dat = data.frame(dat[,1:3],as.data.frame(apply(dat[,4:99],2,func0)))
+  }
+  else{
+    dat = data.frame(dat[,1:3],as.data.frame(apply(dat[,4:99],2,func1)))
+  }
+  names(dat)[1:3] = c('pms_id','day','xw')
+  return(dat)
+}
+
+dat_to_hour = function(dat){
+  # 将每天96个观测点规约到24小时
+  mean_func = function(x){x = na.omit(x);y = mean(x);return(y)}
+  temp = data.frame(pms_id=dat$pms_id,day= substring(dat$day, 1, 10),xw =dat$xw,
+                    day_xw = paste(substring(dat$day, 1, 10),dat$xw,sep = '_'),
+                    h1=apply(dat[,4:7],1,mean_func),h2=apply(dat[,8:11],1,mean_func),
+                    h3=apply(dat[,12:15],1,mean_func),h4=apply(dat[,16:19],1,mean_func),
+                    h5=apply(dat[,20:23],1,mean_func),h6=apply(dat[,24:27],1,mean_func),
+                    h7=apply(dat[,28:31],1,mean_func),h8=apply(dat[,32:35],1,mean_func),
+                    h9=apply(dat[,36:39],1,mean_func),h10=apply(dat[,40:43],1,mean_func),
+                    h11=apply(dat[,44:47],1,mean_func),h12=apply(dat[,48:51],1,mean_func),
+                    h13=apply(dat[,52:55],1,mean_func),h14=apply(dat[,56:59],1,mean_func),
+                    h15=apply(dat[,60:63],1,mean_func),h16=apply(dat[,64:67],1,mean_func),
+                    h17=apply(dat[,68:71],1,mean_func),h18=apply(dat[,72:75],1,mean_func),
+                    h19=apply(dat[,76:79],1,mean_func),h20=apply(dat[,80:83],1,mean_func),
+                    h21=apply(dat[,84:87],1,mean_func),h22=apply(dat[,88:91],1,mean_func),
+                    h23=apply(dat[,92:95],1,mean_func),h24=apply(dat[,96:99],1,mean_func))
+  return(temp)
+}
+
+
+dat_to_quarter = function(dat){
+  mean_func = function(x){x = na.omit(x);y = mean(x);return(y)}
+  temp = data.frame(pms_id = dat$pms_id,day = substring(dat$day, 1, 10),xw = dat$xw,
+                    day_xw = paste(substring(dat$day, 1, 10),dat$xw,sep = '_'),
+                    dat[,4:99])
+  return(temp)
+}
+
+
+dat_to_df = function(dat){
+  df = melt(dat,id=c('pms_id','day','xw','day_xw'))
+  df$day_hour = paste(df$day,df$variable,sep = '_')
+  #df$value[which(df$value)==0] ==NA
+  df$value_bz = (df$value-220)/220
+  df$day_day = as.numeric(substring(df$day_hour, 9, 10))
+  df = df[order(df$pms_id,df$xw,df$day,df$variable),]
+  df$islow = if_else(is.na(df$value),-1,if_else(df$value<=196,1,0))
+  df$isup = if_else(is.na(df$value),-1,if_else(df$value>=230,1,0))
+  df$isok = if_else(is.na(df$value),-1,if_else(df$value>196&df$value<230,1,0))
+  df = df %>% select(pms_id,xw,day_xw,day,day_day,day_hour,variable,value,value_bz,islow,isup,isok)
+  #  df = df %>%group_by(xw) %>% mutate(timemean_1 = SMA(df$value,1),timemean_24 =  SMA(df$value,24))
+  return(df)
+}
+
+dat_to_end_dec = function(dat,queshi=0){
+  df = dat_to_df(dat_to_hour(dat_to_dat(dat = dat_buquan(dat),queshi = queshi)))
+  return(df)
+}
+
+dat_to_end_yc = function(dat,queshi=1){
+  df = dat_to_df(dat_to_quarter(dat_to_dat(dat = dat_buquan(dat),queshi = queshi)))
+  return(df)
+}
+dat_to_end_yc2 = function(dat,queshi=1){
+  df = dat_to_df(dat_to_quarter(dat_to_dat(dat = dat_buquan2(dat),queshi = queshi)))
+  return(df)
+}
+
+df_decompose = function(df,pms_id,xw=1,frequency = 24,start = c(2016,5)){
+  temp = ts(df$value[df$pms_id == pms_id & df$xw==xw],frequency=frequency,start=start)
+  temp_dec = decompose(temp)
+  date = seq.Date(from = as.Date("2016/05/01",format = "%Y/%m/%d"), by = "day", length.out = length(temp_dec$x)/24)
+  result = data.frame(date = paste(rep(date,each=24),1:24,sep = '-'),series = temp_dec$x,trend = temp_dec$trend,season = temp_dec$seasonal,random = temp_dec$random)
+  return(result)
+}
+
+dat_to_dec = function(df){
+  name=names(table(df$pms_id));xw = names(table(df$xw));
+  lis = list();num = 1;
+  for(i in 1:length(name)){
+    for(j in 1:length(xw)){
+      lis[[num]] = df_decompose(df,pms_id = name[i],xw = xw[j])
+      num = num+1
+    }
+  }
+  names(lis) = paste(rep(name,each=length(xw)),1:length(xw),sep = '-')
+  return(lis)
+}
+
+find_yichang <- function(x, k){
+  n <- length(x); runs <- NULL
+  for(i in 1:(n-k+1)){
+    if(all( x[i:(i+k-1)] == 1 ))
+      runs <- c(runs, i:(i+k-1))
+  }
+  yichang = unique(runs)
+  return(yichang)
+}
+
+#----------------------------------------
+dat_lib()
+setwd('E:/QQ下载/MobileFile')
+
+# 电压数据分析
+#--------------------------------------------------------------------------
+#file_name = c('voltage14000220683278.Rdata','voltage14000220675450.Rdata','voltage14000220685705.Rdata',
+#              'voltage14000220681956.Rdata','muxian115404742229753933.Rdata','muxian115404742229754635.Rdata')
+#for(i in 1:length(file_name)){load(file_name[i])}
+load('muxian115404742229754635.Rdata')
+load('power14000220681956.Rdata')
+load('voltage14000220681956.Rdata')
+
+dat1 = voltage14000220681956[voltage14000220681956$data_whole_flag!='NULL',-c(2,3,6,7,104:109)]
+names(dat1)[1:3] = c('pms_id','day','xw')
+
+df1 = dat_to_end_yc2(dat1)
+
+df1_a = dcast(df1[df1$xw==1,c("pms_id","day_hour","value")],day_hour~pms_id)
+df1_a$day = substring(df1_a$day_hour, 1, 10)
+df1_a$time = as.numeric(substring(df1_a$day_hour, 13, 14))
+df1_a = arrange(df1_a,day,time)
+
+plot(df1_a[,2],type='l',col=1)
+lines(df1_a[,3],col=2)
+lines(df1_a[,4],col=4)
+lines(df1_a[,5],col=5)
+
+#head(df1[df1$xw==1,c("pms_id","day_hour","value")])
+#echart(df1[df1$xw==1,c("pms_id","day_hour","value")],day_hour,value,pms_id)
+
+
+# 母线数据分析
+#---------------------------------------------------------------------------
+load('muxian115404742229754635.Rdata')
+table(muxian115404742229754635$substation_id)
+table(muxian115404742229754635$busbar_id)
+
+head(muxian115404742229754635)
+muxian_df = muxian115404742229754635[,c("v","v_a","v_b","v_c","data_timestamp","data_date")]
+
+
+length.out = as.Date("2018/05/31")-as.Date("2017/01/01")+1
+date = seq.Date(from = as.Date("2017/01/01"), by = "day", length.out = length.out)
+
+time = paste(c("00:00", "00:15", "00:30", "00:45", "01:00", "01:15", "01:30", "01:45",
+               "02:00", "02:15", "02:30", "02:45", "03:00", "03:15", "03:30", "03:45",
+               "04:00", "04:15", "04:30", "04:45", "05:00", "05:15", "05:30", "05:45",
+               "06:00", "06:15", "06:30", "06:45", "07:00", "07:15", "07:30", "07:45",
+               "08:00", "08:15", "08:30", "08:45", "09:00", "09:15", "09:30", "09:45",
+               "10:00", "10:15", "10:30", "10:45", "11:00", "11:15", "11:30", "11:45",
+               "12:00", "12:15", "12:30", "12:45", "13:00", "13:15", "13:30", "13:45",
+               "14:00", "14:15", "14:30", "14:45", "15:00", "15:15", "15:30", "15:45",
+               "16:00", "16:15", "16:30", "16:45", "17:00", "17:15", "17:30", "17:45",
+               "18:00", "18:15", "18:30", "18:45", "19:00", "19:15", "19:30", "19:45",
+               "20:00", "20:15", "20:30", "20:45", "21:00", "21:15", "21:30", "21:45",
+               "22:00", "22:15", "22:30", "22:45", "23:00", "23:15", "23:30", "23:45"
+),':00',sep = '')
+
+date1 = paste(rep(date,each=96),time,sep = ' ')
+muxian_df$data_timestamp[1]==  date1[1]
+temp = data.frame(data_timestamp = date1)
+temp1 = temp %>% left_join(.,muxian_df,by= 'data_timestamp') %>% unique
+# name = which(table(temp1$data_timestamp)!=1) %>% names
+# temp1[temp1$data_timestamp %in% name,]
+
+#-----------------------------------------------------
+df1_a$muxian_va = temp1$v_a
+par(mfrow=c(2,1))
+plot(df1_a$`01bd12ef588a06deed60f7552c016101bcca317b4c`[1:10000],type = 'l')
+plot(df1_a$muxian_va[1:10000],type='l')
+par(mfrow=c(1,1))
+
+#--------------------------------------------------------------------------
+load('power14000220681956.Rdata')
+
+dat2 = power14000220681956[power14000220681956$data_whole_flag!='NULL',-c(2,3,6,7,104:109)]
+names(dat2)[1:3] = c('pms_id','day','xw')
+
+df2 = dat_to_end_yc2(dat2)
+
+df2_a = dcast(df2[df2$xw==5,c("pms_id","day_hour","value")],day_hour~pms_id)
+df2_a$day = substring(df2_a$day_hour, 1, 10)
+df2_a$time = as.numeric(substring(df2_a$day_hour, 13, 14))
+df2_a = arrange(df2_a,day,time)
+
+plot(df2_a[,2],type='l',col=1)
+lines(df2_a[,3],col=2)
+lines(df2_a[,4],col=4)
+lines(df2_a[,5],col=5)
+plot(df2[df2$pms_id=='01bd12ef588a06deed60f7552c016101bcca317b4c',]$value[1:1000],type = 'l',col=2)
+
+#-------------------------------------------------------------------------
+model_data = data.frame(muxian = df1_a$muxian_va, bianyaqi = df1_a$`01bd12ef588a06deed60f7552c016101bcca317b4c`,
+                        gonglv = df2_a$`01bd12ef588a06deed60f7552c016101bcca317b4c`)
+model_data = na.omit(model_data)
+func1 = lm(muxian~bianyaqi,data=model_data)
+summary(func1)
+model_data$resd1 = func1$residuals
+func2 = lm(gonglv~resd1,data = model_data)
+summary(func2)
+pacf(func2$residuals);
+acf(func2$residuals)

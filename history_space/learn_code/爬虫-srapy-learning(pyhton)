@@ -1,0 +1,52 @@
+#--------------------------------
+
+
+#--------------------------------
+# Item 详解
+Item是保存结构数据的地方，Scrapy可以将解析结果以字典形式返回，但是Python中字典缺少结构，在大型爬虫系统中很不方便。
+Item提供了类字典的API，并且可以很方便的声明字段，很多Scrapy组件可以利用Item的其他信息。
+1.定义Item
+定义Item非常简单，只需要继承scrapy.Item类，并将所有字段都定义为scrapy.Field类型即可
+...
+import scrapy    
+class Product(scrapy.Item):  
+    name = scrapy.Field()  
+    price = scrapy.Field()  
+    stock = scrapy.Field()  
+    last_updated = scrapy.Field(serializer=str) 
+...
+2.scrapy.Field类型
+Field对象可用来对每个字段指定元数据。例如上面last_updated的序列化函数指定为str，可任意指定元数据，不过每种元数据对于不同的组件意义不一样。
+您可以为每个字段指定任何种类的元数据。对Field对象接受的值没有限制。出于同样的原因，没有所有可用元数据键的参考列表。Field对象中定义的每个键可以由不同的组件使用，并且只有那些组件知道它。您也可以定义和使用Field项目中的任何其他 键，为您自己的需要。Field对象的主要目标 是提供一种在一个地方定义所有字段元数据的方法。通常，那些行为取决于每个字段的组件使用某些字段键来配置该行为。您必须参考他们的文档，以查看每个组件使用哪些元数据键。
+重要的是要注意，Field用于声明项目的对象不会被分配为类属性。相反，可以通过Item.fields属性访问它们。
+
+3.Item使用示例
+你会看到Item的使用跟Python中的字典API非常类似
+...
+product = Product(name='Desktop PC', price=1000)  
+print (product)
+product['name']
+product.get('name')  
+product.get('last_updated', 'not set')  
+'name' in product
+'last_updated' in product
+...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

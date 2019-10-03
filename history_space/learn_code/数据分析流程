@@ -1,0 +1,20 @@
+import numpy as np
+import pandas as pd
+
+# 数据的读取
+df = pd.read_csv('C:\\Users\\Administrator\\Desktop\\user.csv')
+# print(df.head(5))
+# 更改变量名称
+df.columns = ['x1','x2','x3','x4','x5','x6','x7','x8','x9','x10','x11','x12']
+# print(df.head(5))
+# 选取分析的变量
+df1 = df.ix[:,3:11]
+# print(df1.head(5))
+# 计算分析样本数和变量数
+ncol = df.columns.size
+nrow = df.iloc[:, 0].size
+print(ncol,nrow)
+# 缺失值处理
+
+
+

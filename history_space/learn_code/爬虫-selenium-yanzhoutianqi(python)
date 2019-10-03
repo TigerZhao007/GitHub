@@ -1,0 +1,44 @@
+from bs4 import BeautifulSoup
+import pandas as pd
+from selenium import webdriver  
+import re
+import urllib
+
+item = {
+    'date':'日期',
+    'up_temperature':'最高气温',
+    'low_temperature':'最底气温',
+    'day_weather':'白天天气',
+    'night_weather':'夜间天气',
+    'wind_direction':'风向',
+    'wind_power':'风力'
+}
+item = pd.DataFrame.from_dict(item,orient='index').T
+
+url_list = ['https://15tianqi.cn/2017yangzhou%syuetianqi/'%(str(num))
+        for num in range(1,13)]+['https://15tianqi.cn/yangzhou%syuetianqi/'%(str(num))
+        for num in range(1,5) ]
+
+browser = webdriver.PhantomJS(executable_path="D:/Python/selenium/webdriver/phantomjs/bin/phantomjs.exe")  
+
+item_list = pd.DataFrame()
+for url in url_list:
+    print('--------------------------------------------------------')
+    print('正在加载%s信息'%(url))
+    browser.get(url)
+    data = browser.page_source
+    soup =  BeautifulSoup(data,'lxml')
+    lis = soup.find('div',attrs={'class':'graybox mt10'}).find_all('tr')
+    lis_total = lis[2:12]+lis[14:24]+lis[26:len(lis)]
+    for li in lis_total: 
+        item['date'] = li.find_all('td')[0].getText()
+        item['up_temperature'] = li.find_all('td')[1].getText()
+        item['low_temperature'] = li.find_all('td')[2].getText()
+        item['day_weather'] = li.find_all('td')[3].getText()
+        item['night_weather'] = li.find_all('td')[4].getText()
+        item['wind_direction'] = li.find_all('td')[5].getText()
+        item['wind_power'] = li.find_all('td')[6].getText()
+        item_list = item_list.append(item)
+
+item_list.to_csv('C:/Users/Administrator.USER-20161208UW/Desktop/扬州天气.csv')
+

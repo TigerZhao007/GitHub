@@ -1,0 +1,112 @@
+# Python 模块
+Python 模块(Module)，是一个Python文件，以.py结尾，包含了Python对象定义和Python语句。
+模块让你能够有逻辑地组织你的 Python 代码段。
+把相关的代码分配到一个模块里能让你的代码更好用，更易懂。
+模块能定义函数，类和变量，模块里也能包含可执行的代码。
+...
+support.py 模块：
+def print_func( par ):
+   print "Hello : ", par
+   return
+...
+
+# import 语句
+模块定义好后，我们可以使用 import 语句来引入模块.
+...
+import module1[, module2[,... moduleN]
+import pandas as pd
+...
+当解释器遇到 import 语句，如果模块在当前的搜索路径就会被导入。
+搜索路径是一个解释器会先进行搜索的所有目录的列表。如想要导入模块 support.py，需要把命令放在脚本的顶端.
+
+# From … import 语句
+Python 的 from 语句让你从模块中导入一个指定的部分到当前命名空间中。
+...
+from modname import name1[, name2[, ... nameN]]
+from fib import fibonacci                     # 导入模块 fib 的 fibonacci 函数    
+...
+这个声明不会把整个fib 模块导入到当前的命名空间中，它只会将 fib 里的 fibonacci 单个引入到执行这个声明的模块的全局符号表。
+
+# From … import * 语句
+把一个模块的所有内容全都导入到当前的命名空间也是可行的.
+from modname import *
+这提供了一个简单的方法来导入一个模块中的所有项目。然而这种声明不该被过多地使用。
+
+# 搜索路径
+当你导入一个模块，Python 解析器对模块位置的搜索顺序是：
+1、当前目录
+2、如果不在当前目录，Python 则搜索在 shell 变量 PYTHONPATH 下的每个目录。
+3、如果都找不到，Python会察看默认路径。UNIX下，默认路径一般为/usr/local/lib/python/。
+模块搜索路径存储在 system 模块的 sys.path 变量中。变量里包含当前目录，PYTHONPATH和由安装过程决定的默认目录。
+
+# 命名空间和作用域
+变量是拥有匹配对象的名字（标识符）。命名空间是一个包含了变量名称们（键）和它们各自相应的对象们（值）的字典。
+一个 Python 表达式可以访问局部命名空间和全局命名空间里的变量。如果一个局部变量和一个全局变量重名，则局部变量会覆盖全局变量。
+每个函数都有自己的命名空间。类的方法的作用域规则和通常函数的一样。
+Python 会智能地猜测一个变量是局部的还是全局的，它假设任何在函数内赋值的变量都是局部的。
+因此，如果要给函数内的全局变量赋值，必须使用 global 语句。
+global VarName 的表达式会告诉 Python， VarName 是一个全局变量，这样 Python 就不会在局部命名空间里寻找这个变量了。
+
+# Python中的包
+包是一个分层次的文件目录结构，它定义了一个由模块及子包，和子包下的子包等组成的 Python 的应用环境。
+简单来说，包就是文件夹，但该文件夹下必须存在 __init__.py 文件, 该文件的内容可以为空。__int__.py用于标识当前文件夹是一个包。
+
+
+
+# 补充
+1、系统相关的信息模块: import sys
+sys.argv 是一个 list,包含所有的命令行参数.    
+sys.stdout sys.stdin sys.stderr 分别表示标准输入输出,错误输出的文件对象.    
+sys.stdin.readline() 从标准输入读一行 sys.stdout.write("a") 屏幕输出a    
+sys.exit(exit_code) 退出程序    
+sys.modules 是一个dictionary，表示系统中所有可用的module    
+sys.platform 得到运行的操作系统环境    
+sys.path 是一个list,指明所有查找module，package的路径.  
+2、操作系统相关的调用和操作: import os
+os.environ 一个dictionary 包含环境变量的映射关系   
+os.environ["HOME"] 可以得到环境变量HOME的值     
+os.chdir(dir) 改变当前目录 os.chdir('d:\\outlook')   
+注意windows下用到转义     
+os.getcwd() 得到当前目录     
+os.getegid() 得到有效组id os.getgid() 得到组id     
+os.getuid() 得到用户id os.geteuid() 得到有效用户id     
+os.setegid os.setegid() os.seteuid() os.setuid()     
+os.getgruops() 得到用户组名称列表     
+os.getlogin() 得到用户登录名称     
+os.getenv 得到环境变量     
+os.putenv 设置环境变量     
+os.umask 设置umask     
+os.system(cmd) 利用系统调用，运行cmd命令   
+3、内置模块(不用import就可以直接使用)常用内置函数：
+help(obj) 在线帮助, obj可是任何类型    
+callable(obj) 查看一个obj是不是可以像函数一样调用    
+repr(obj) 得到obj的表示字符串，可以利用这个字符串eval重建该对象的一个拷贝    
+eval_r(str) 表示合法的python表达式，返回这个表达式    
+dir(obj) 查看obj的name space中可见的name    
+hasattr(obj,name) 查看一个obj的name space中是否有name    
+getattr(obj,name) 得到一个obj的name space中的一个name    
+setattr(obj,name,value) 为一个obj的name   
+space中的一个name指向vale这个object    
+delattr(obj,name) 从obj的name space中删除一个name    
+vars(obj) 返回一个object的name space。用dictionary表示    
+locals() 返回一个局部name space,用dictionary表示    
+globals() 返回一个全局name space,用dictionary表示    
+type(obj) 查看一个obj的类型    
+isinstance(obj,cls) 查看obj是不是cls的instance    
+issubclass(subcls,supcls) 查看subcls是不是supcls的子类  
+4、类型转换
+chr(i) 把一个ASCII数值,变成字符    
+ord(i) 把一个字符或者unicode字符,变成ASCII数值    
+oct(x) 把整数x变成八进制表示的字符串    
+hex(x) 把整数x变成十六进制表示的字符串    
+str(obj) 得到obj的字符串描述    
+list(seq) 把一个sequence转换成一个list    
+tuple(seq) 把一个sequence转换成一个tuple    
+dict(),dict(list) 转换成一个dictionary    
+int(x) 转换成一个integer    
+long(x) 转换成一个long interger    
+float(x) 转换成一个浮点数    
+complex(x) 转换成复数    
+max(...) 求最大值    
+min(...) 求最小值 
+

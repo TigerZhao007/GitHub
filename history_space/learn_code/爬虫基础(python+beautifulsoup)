@@ -1,0 +1,13 @@
+# 爬虫基础 python
+之前用python爬取网页的时候，一直用的是regex或者自带的库sgmllib里的SGMLParser。但是遇到复杂一点的情况时，SGMLParser往往就不那么给力了！
+BeautifulSoup提供了很人性化的parser tree，有了它，我们可以简单的抽取出tagname, attrs, text等等等等.
+Beautiful Soup 是用Python写的一个HTML/XML的解析器，它可以很好的处理不规范标记并生成剖析树(parse tree)。 
+它提供简单又常用的导航（navigating），搜索以及修改剖析树的操作。它可以大大节省你的编程时间。 对于Ruby，使用Rubyful Soup。
+
+# beautifulsoup模块
+from BeautifulSoup import BeautifulSoup          # For processing HTML
+from BeautifulSoup import BeautifulStoneSoup     # For processing XML
+import BeautifulSoup                             # To get everything
+import re
+
+

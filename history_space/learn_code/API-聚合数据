@@ -1,0 +1,27 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+import json, urllib
+import requests
+import xlrd
+
+# 申请的APPKey
+appkey = "6367c0238c3c3c0a99876d8645ed5a9f"
+# 接口地址
+url = "http://touchstone.api.juhe.cn/ajax/data/realtime"
+# 参数
+pageIndex = 1;  idnum = 430032
+
+def getdata(appkey=appkey,pageIndex=pageIndex,idnum=idnum):
+    params = {
+           "pageIndex":1, # 待查页数
+           "id": idnum,  # 待查股票ID
+           "key": appkey,  # 应用APPKEY(
+            "dtype": ""  # 返回数据的格式,xml或json，默认json
+            }
+    params = urllib.parse.urlencode(params)
+    dat1 = requests.get("%s?%s" % (url, params)).content.decode('utf-8')
+    dat2 = eval(dat1)
+    return dat2
+    
+ dat = getdata()   
+ dat['result']['result'][0]   

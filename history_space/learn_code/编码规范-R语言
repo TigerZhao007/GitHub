@@ -1,0 +1,408 @@
+#R语言代码规范
+***
+**Author:**Muscle
+**Date:**2017-01-05
+**Version:**V1.0
+
+鉴于实际工作的需要，整理出如下的代码规范。其中大部分内容来自于google社区关于R代码规范的讨论帖，同时结合了目前在实际项目中总结出来的经验。
+
+
+
+##一、一般性规则
+
+1. 避免使用attach，在较大的代码段中会造成变量名混乱。
+
+2. 写函数时尽量少的使用stop()。
+
+3. 定义S3和S4的对象不要混在一起使用。
+
+##二、文件命名
+
+R代码统一以R脚本文件的形式存储，尽可能的增加信息在文件名里面，比如：
+
+```
+
+Good:
+
+predict_ad_revenue.R
+
+Bad:
+
+foo.R
+
+```
+
+##三、变量名和函数命名规则
+ 注意，在R环境下，大小写是敏感的。变量名应该都用小写字母，单词间用.分隔；函数名中每个单词用大写字母开头，不用.连接。常数项跟函数一样命名但以小k开头。
+
+变量：
+
+```
+
+Good:
+
+avg.clicks
+
+Bad:
+
+avg_Clicks, avgClicks
+
+```
+
+函数名:
+
+```
+
+Good:
+
+CalculateAvgClicks
+
+Bad:
+
+#（1）
+
+calculate_avg_clicks, calculateAvgClicks
+
+#（2）用动词命名函数
+
+```
+
+常数项：
+
+```
+
+kConstantName
+
+```
+
+##四、R语句
+
+1. 每行最长80个字符。
+
+2. 代码缩进时，空两格。
+
+3. 二次运算符（=，+，-，<-，等）两端用空格。
+
+4. 逗号前不用空格，但逗号后一定得用。
+
+
+
+```
+
+GOOD:
+
+tabPrior <- table(df[df$daysFromOpt < 0, "campaignid"])
+
+total <- sum(x[, 1])
+
+total <- sum(x[1, ])
+
+BAD:
+
+tabPrior <- table(df[df$daysFromOpt<0, "campaignid"]) # Needs spaces around '<'
+
+tabPrior <- table(df[df$daysFromOpt < 0,"campaignid"]) # Needs a space after the comma
+
+tabPrior<- table(df[df$daysFromOpt < 0, "campaignid"]) # Needs a space before <-
+
+tabPrior<-table(df[df$daysFromOpt < 0, "campaignid"]) # Needs spaces around <-
+
+total <- sum(x[,1]) # Needs a space after the comma
+
+total <- sum(x[ ,1]) # Needs a space after the comma, not before
+
+```
+
+这里包含了赋值、逻辑符号以及逗点分隔。
+
+```
+
+# 在R中尽量少用 “=”，大多数情况下用“<-”来代替。
+
+a <- runif(10)
+
+```
+
+括号左边用空格，调用函数时除外。
+
+```
+
+Good:
+
+if (debug)
+
+Bad:
+
+if(debug)
+
+```
+
+可以有多余的空格（一行中有多个空格），如果这能够改善符号间的对齐。
+
+```
+
+plot(x = xCoord,
+
+y = dataMat[, makeColName(metric, ptiles[1], "roiOpt")],
+
+ylim = ylim,
+
+xlab = "dates",
+
+ylab = metric,
+
+main = (paste(metric, " for 3 samples ", sep="")))
+
+```
+
+括号或方括号内不用空格，逗号后面除外。
+
+```
+
+GOOD:
+
+if (debug)
+
+x[1, ]
+
+BAD:
+
+if ( debug ) # No spaces around debug
+
+x[1,] # Needs a space after the comma
+
+```
+
+大括号{ 开始的{不能单独成行，结束的}必须单独成行。单独的一个语句应从新的一行开始。
+
+```
+
+BAD:
+
+if (is.null(ylim)) ylim <- c(0, 0.06)
+
+if (is.null(ylim)) {ylim <- c(0, 0.06)}
+
+```
+
+##五、项目代码组织
+
+（一）做项目时，需包含以下部分
+
+1. 版权声明
+
+2. 作者注释
+
+3. 文件说明，项目目的，输入和输出的说明
+
+4. source() 和 library() 说明
+
+5. 函数定义说明
+
+（二）项目组织
+
+（1）在RStudio的平台下通过File->New Project->Empty Project来新建一个R项目环境。项目名称按照文件命名规范制定。
+
+
+
+（2）至少包含三个基本项目脚本：“main.R”、“algorithms.R”以及“global.R”, 其中“Main.R”存放完整的数据操作流程，“algorithms.R”存放算法实现函数, “Global.R”存放main脚本执行时所需要载入的初始化信息如：包的调用、系统参数设置等。示例如下：
+
+**main:**
+
+
+
+ 
+**algorithms:**
+
+
+
+ 
+**global:**
+
+
+
+ 
+（3）在脚本的开头需添加脚本说明。每一个代码块用如下格式标识。具体如下:
+
+```
+
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~####
+
+# Autohor: Muscle，CJJ,JOY
+
+# Date: 2016-05-15
+
+# stage: one
+
+# Version: V0.0.2
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~####
+
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##----------------------------------------------------------####
+
+###(1) packages in need ####
+
+library(RCurl)
+
+library(plyr)
+
+library(dplyr)
+
+library(data.table)
+
+library(RJSONIO)
+
+library(ggplot2)
+
+library(car)
+
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##----------------------------------------------------------####
+
+###(2) configuration features for GaoDe API ####
+
+
+
+myheader <- c(
+
+  "User-Agent"="Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.1.6) ",
+
+  "Accept"="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+
+  "Accept-Language"="en-us",
+
+  "Connection"="keep-alive",
+
+  "Accept-Charset"="GB2312,utf-8;q=0.7,*;q=0.7"
+
+)
+
+
+
+key <- c("55a33f0144a6340f7c3df45fb1d7b9b0")
+
+```
+
+
+
+##六、注释
+
+养成良好的注释习惯，单行注释以 # 开头，加一个空格，短注释需要在代码后面空两格，然后 # ，再加一个空格。
+
+```
+
+# Create histogram of frequency of campaigns by pct budget spent.
+
+hist(df$pctSpent,
+
+breaks = "scott", # method for choosing number of buckets
+
+main = "Histogram: fraction budget spent by campaignid",
+
+xlab = "Fraction of budget spent",
+
+ylab = "Frequency (count of campaignids)")
+
+```
+
+##七、函数定义与调用
+
+函数定义应该先列出语句中没有默认值，然后是默认值。在函数定义和调用时，允许每行多个语句，一般只是在赋值时才换行。
+
+```
+
+GOOD:
+
+PredictCTR <- function(query, property, numDays,
+
+showPlot = TRUE)
+
+BAD:
+
+PredictCTR <- function(query, property, numDays, showPlot =
+
+TRUE)
+
+```
+
+##八、函数归档
+
+应该在函数定义的下一行进行注释，包括描述函数的作用；描述语句中的参数用"Args："描述数据类型；描述返回值用"Returns:"。注释部分应尽可能详细，以便读者在不看代码时就能应用该函数。比如：
+
+```
+
+Example Function
+
+CalculateSampleCovariance <- function(x, y, verbose = TRUE) {
+
+# Computes the sample covariance between two vectors.
+
+#
+
+# Args:
+
+# x: One of two vectors whose sample covariance is to be calculated.
+
+# y: The other vector. x and y must have the same length, greater than one,
+
+# with no missing values.
+
+# verbose: If TRUE, prints sample covariance; if not, not. Default is TRUE.
+
+#
+
+# Returns:
+
+# The sample covariance between x and y.
+
+n <- length(x)
+
+# Error handling
+
+if (n <= 1 || n != length(y)) {
+
+stop("Arguments x and y have invalid lengths: ",
+
+length(x), " and ", length(y), ".")
+
+}
+
+if (TRUE %in% is.na(x) || TRUE %in% is.na(y)) {
+
+stop(" Arguments x and y must not have missing values.")
+
+}
+
+covariance <- var(x, y)
+
+if (verbose)
+
+cat("Covariance = ", round(covariance, 4), ".\n", sep = "")
+
+return(covariance)
+
+}
+
+```
+
+##九、一致性
+
+在同一个分析项目文件的代码中，对于同一种编程语言，应当尽量保持编写风格的一致性。完整的数据分析项目往往会涉及到多种编程语言并且由多人合作完成，同时计算架构以及模型构成在整个项目存续期间会不断的修改变更，因此统一的编码风格能够尽量减少后续维护的难度。
+
+
+
+##十、总结
+
+代码书写的规范遵循常识和一致性原则。书写规范的代码有利于让读者集中精力到你所写的而不是辨别你是怎样写的（让代码清淅易懂）。对于分析项目而言，处于核心地位的数据分析算法模型具有天生的复杂性，无论在最初的建模过程还是在后续的改进以及维护过程中，都涉及到对模型本身的理解以及对编码实现的思考。因此在代码编写的过程中要尽可能的降低理解代码的难度，做到删繁就简以不变通万变。
+
+
+
+
+
+
+

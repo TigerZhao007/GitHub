@@ -1,0 +1,206 @@
+---
+title: "特教指标体系研究"
+author: "邵登科"
+date: "2017年12月25日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 所需软件包
+```{r warning=FALSE}
+library(xlsx);
+source('G:\\rspace\\自编程序\\list_sdk.R');
+```
+
+# 读取原始数据
+```{r warning=FALSE}
+dat_load <- "C:\\Users\\Administrator\\Desktop\\毕业论文\\特校数据\\特教原始数据34603.csv"
+dat <- read.csv(dat_load)
+dat <- dat[,c(2,3,4,5)]
+head(dat)
+```
+
+# 第一部分 数据整理
+```{r warning=FALSE}
+# 根据文件名分别命名每部分文件名，以备后续刷选。
+name_z <- list(part1 = c(paste('a',1:10,sep = '')), part2 = c(paste('b',1:11,sep = '')),
+               part3 = c(paste('c',1:4,sep = '')),
+               part4 = c(paste('b',1:8,sep = ''),"s_province","s_city","s_country"),
+               part5 = c(paste('c',1:13,sep = '')), part6 = c(paste('d',1:20,sep = '')),
+               part7 = c(paste('e',1:14,sep = '')), part8 = c(paste('f',1:7,sep = '')),
+               part9 = c(paste('g',1:9,sep = '')), part10 = c(paste('h',1:4,sep = '')),
+               part11 = c(paste('i',1:12,sep = '')),
+               part12 = c('j1',paste('j2_',c('a','b','c','d','e','f','g','h','i','j'),sep = ''),
+            'j3','j4',paste('j5_',c('a','b','c','d','e','f','g','h','i','j'),sep = ''))
+            )
+colname_z <- list(
+  part1 = c("bh", "name","sex","age","degree","phone.num","qq","youxiang","zhicheng","nianzi","nianxian"),
+  part2 = c("bh", "b01", "b02", "b03", "b04", "b05", "b06", "b07","b08","b09","b010","b011"),
+  part3 = c("bh", "c01", "c02", "c03", "c04"),
+  part4 = c("bh", paste('b',1:8,sep = ''),"s_province","s_city","s_country"),
+  part5 = c("bh", paste('c',1:13,sep = '')), part6 = c("bh", paste('d',1:20,sep = '')),
+  part7 = c("bh", paste('e',1:14,sep = '')), part8 = c("bh", paste('f',1:7,sep = '')),
+  part9 = c("bh", paste('g',1:9,sep = '')),  part10 = c("bh", paste('h',1:4,sep = '')),
+  part11 = c("bh", paste('i',1:12,sep = '')),
+  part12 = c("bh", 'j1',paste('j2_',c('a','b','c','d','e','f','g','h','i','j'),sep = ''),
+    'j3','j4',paste('j5_',c('a','b','c','d','e','f','g','h','i','j'),sep = ''))
+)
+colnum_z <- list(
+  part1 = c(1,3,6,9,12,15,18,21,24,27,30),  part2 = c(1,3,6,9,12,15,18,21,24,27,30,33),
+  part3 = c(1,3,6,9,12),  part4 = c(1,3,6,9,12,15,18,21,24,27,30,33),
+  part5 = c(1,3,6,9,12,15,18,21,24,27,30,33,36,39),  
+  part6 = c(1,3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60),
+  part7 = c(1,3,6,9,12,15,18,21,24,27,30,33,36,39,42),  part8 = c(1,3,6,9,12,15,18,21),
+  part9 = c(1,3,6,9,12,15,18,21,24,27),  part10 = c(1,3,6,9,12),
+  part11 = c(1,3,6,9,12,15,18,21,24,27,30,33,36),  
+  part12 = c(1,3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60,63,66,69)
+)
+
+# 将所有数据整理成单个数据框
+df <- list_end(dat,name_z,colnum_z,colname_z)
+
+# 查看整理后的数据
+# head(df,1)
+```
+
+# 第二部分 数据清洗&数据预处理
+```{r warning=FALSE}
+# 将数据写入Excel中对数据进行数据清洗
+# write.xlsx(df,'df.xlsx')
+# 将变量中填写不规范的数据进行规整，
+# 数字中不得有文字，职称学历按标准划分。
+
+# 查看清洗后的数据
+df_load <- "C:\\Users\\Administrator\\Desktop\\毕业论文\\特校数据\\2特校数据清洗00286.csv"
+df <- read.csv(df_load)
+# 转变数据类型为数值型
+for (i in c(42,77,79,81,84,87,88,89)) {
+  df[,i] <- as.numeric(df[,i])
+}
+# head(df)
+
+# 查看各类特校用房标准
+bz_load <- "C:\\Users\\Administrator\\Desktop\\毕业论文\\特校数据\\指标标准.xlsx"
+bz <- read.xlsx(bz_load,sheetIndex = 'Sheet1',encoding = 'UTF-8')
+# head(bz)
+```
+
+# 第三部分 指标数据计算
+```{r warning=FALSE}
+
+#----------------------------------------------------
+# 一、办学条件A1
+## 1、义务教育阶段生均经费达标率C1
+c1 <- (df$c6*df$g2+df$c7*df$g3)/(df$c6+df$c7)/6000
+# （第260、219学生数均为0；）
+
+## 2、无障碍设施达标率C2
+c2 <- df$e14
+
+## 3、教学及辅助用房达标率C3
+c3 <- df$e4
+
+## 4、公共教学及康复用房达标率C4
+c4 <- df$e10
+
+## 5、办学用房达标率C5
+c5 <- df$e12
+
+## 6、生活用房达标率C6
+c6 <- df$e13
+
+#----------------------------------------------------
+# 二、师资队伍
+## 7、师生比C7
+c7 <- df$d2/(df$c1+df$c2)
+
+## 8、本科及以上学历教师占比C8
+c8 <- (df$d10+df$d11)/df$d2
+
+## 9、中级及以上职称教师占比C9
+c9 <- (df$d14+df$d15+df$d16)/df$d2
+
+## 10、优秀教师占比C10
+c10 <- (df$d18+df$d19+df$d20)/df$d2
+
+## 11、巡回指导教师占比C11
+c11 <- (df$b8)/df$d2
+
+## 12、教师培训率C12
+c12 <- df$d9/df$d2
+
+## 13、师均科研课题成单率C13
+c13 <- (df$h1*20+df$h2*15+df$h3*10+df$h4*5)/(df$d2)
+
+#----------------------------------------------------
+# 三、课程教学A3
+## 14、一般性课程占比C14
+c14 <- df$f2/df$f1
+# （第9、286样本课程均为0；）
+
+## 15、选择性课程占比C15
+c15<- df$f3/df$f1
+# （第286样本课程均为0；）
+
+## 16、校本课程开设率C16
+c16 <- df$f5
+
+## 17、教材开发率C17
+c17 <- df$f6
+
+## 18、个别化教学使用率C18
+c18 <- df$f7
+
+#----------------------------------------------------
+#四、学生发展A4
+## 19、生活能力提升度C19
+c19 <- df$g6
+
+## 20、残障缺陷补偿度C20
+c20 <- df$g7
+
+## 21、特长培养重视度C21
+c21 <- df$g8
+
+## 22、转衔服务提供度C22
+c22 <- df$g9
+
+#----------------------------------------------------
+#五、学校发展A5
+## 23、学校美誉度C23
+c23 <- (df$i1*20+df$i2*15+df$i3*10+df$i4*5)/(df$d2+df$c1+df$c2)
+
+## 24、师均教师荣誉度C24
+c24 <- (df$i5*20+df$i6*15+df$i7*10+df$i8*5)/(df$d2)
+
+## 25、生均学生荣誉度C25
+c25 <- (df$i9*20+df$i10*15+df$i11*10+df$i12*5)/(df$c1+df$c2)
+
+```
+
+# 第四部分 指标数据的处理
+```{r warning=FALSE}
+# 将所有指标汇总到单个数据框汇总
+df_zb <- data.frame(xh=df$X,bh=df$bh,c1=c1,c2=c2,c3=c3,c4=c4,c5=c5,c6=c6,
+                    c7=c7,c8=c8,c9=c9,c10=c10,c11=c11,c12=c12,c13=c13,c14=c14,
+                    c15=c15,c16=c16,c17=c17,c18=c18,
+                    c19=c19,c20=c20,c21=c21,c22=c22,
+                    c23=c23,c24=c24,c25=c25
+                    )
+
+# 查看指标数据
+head(df_zb)
+
+```
+
+
+
+
+
+
+
+  
+

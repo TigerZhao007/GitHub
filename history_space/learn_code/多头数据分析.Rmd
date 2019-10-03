@@ -1,0 +1,108 @@
+---
+title: "多头借贷分析"
+author: "sdk"
+date: "2017年12月1日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 数据读取
+
+```{r warning=FALSE}
+dat  <- read.csv('C:\\Users\\Administrator\\Desktop\\a.csv',header = T)
+dat = dat[which(dat$result==1),]  
+for (i in 7:17) {
+  dat[,i] <- as.numeric(dat[,i])
+}
+# 注：1.读取数据，2.剔除其中没有反馈结果的四个电话号码，3.修改数据类型
+```
+
+## 数据透析函数定义
+
+```{r warning=FALSE}
+# 两分类数据透析函数
+ks_pc <- function(pre,class,low=0,high=1,by=0.05){
+  pred0 <- pre[which(class==0)]
+  pred1 <- pre[which(class==1)]
+  cut_0 <- cut(pred0, breaks = seq(low,high,by))
+  cut_1 <- cut(pred1, breaks = seq(low,high,by))
+  ks <- data.frame()
+  ks[1:length(levels(cut_0)),1] <- levels(cut_0)
+  for(i in 1:length(levels(cut_0))){  ks[i,2] <- table(cut_0)[[i]]  }
+  for(i in 1:length(levels(cut_0))){  ks[i,3] <- table(cut_1)[[i]]  }
+  ks[,4] <- cumsum(table(cut_0))/sum(ks$V2)
+  ks[,5] <- cumsum(table(cut_1))/sum(ks$V3)
+  ks[,6] <- ks[,4] - ks[,5]
+  colnames(ks) <- c('section','bad_0','good_1','add_bad_0','add_good_1','ks_value')
+  return(ks)
+}
+```
+
+## 好坏用户注册平台分析
+
+```{r warning=FALSE}
+# 分别计算逾期用户和未逾期用户占注册平台分布情况。
+ks_pc(pre = dat$zc,class = dat$class, low = 0, high = 50, by=1)
+# 注：0是逾期，1是未逾期
+```
+
+## 好坏用户申请平台分析
+
+```{r warning=FALSE}
+# 分别计算逾期用户和未逾期用户占申请平台分布情况。
+ks_pc(pre = dat$sq,class = dat$class, low = 0, high = 60, by=1)
+# 注：0是逾期，1是未逾期
+```
+
+## 好坏用户拒绝平台分析
+
+```{r warning=FALSE}
+# 分别计算逾期用户和未逾期用户占拒绝平台分布情况。
+ks_pc(pre = dat$jj,class = dat$class, low = 0, high = 20, by=1)
+# 注：0是逾期，1是未逾期
+```
+
+## 好坏用户发放平台分析
+
+```{r warning=FALSE}
+# 分别计算逾期用户和未逾期用户占发放平台分布情况。
+ks_pc(pre = dat$ff,class = dat$class, low = 0, high = 26, by=1)
+# 注：0是逾期，1是未逾期
+```
+
+## 好坏用户扣款失败平台分析
+
+```{r warning=FALSE}
+# 分别计算逾期用户和未逾期用户占扣款失败平台分布情况。
+ks_pc(pre = dat$kk,class = dat$class, low = 0, high = 10, by=1)
+# 注：0是逾期，1是未逾期
+```
+
+## 好坏用户逾期提醒平台分析
+
+```{r warning=FALSE}
+# 分别计算逾期用户和未逾期用户占逾期提醒平台分布情况。
+ks_pc(pre = dat$yq,class = dat$class, low = 0, high = 10, by=1)
+# 注：0是逾期，1是未逾期
+```
+
+## 好坏用户还款提醒平台分析
+
+```{r warning=FALSE}
+# 分别计算逾期用户和未逾期用户占还款提醒平台分布情况。
+ks_pc(pre = dat$tx,class = dat$class, low = 0, high = 36, by=1)
+# 注：0是逾期，1是未逾期
+```
+
+## 好坏用户拒贷比平台分析
+
+```{r warning=FALSE}
+# 分别计算逾期用户和未逾期用户占还款提醒平台分布情况。
+dat1 = dat[which(dat$sq!=0),]
+head(dat1)
+ks_pc(pre = dat1$jj/dat1$sq,class = dat1$class, low = -0.05, high = 1, by=0.05)
+# 注：0是逾期，1是未逾期
+```

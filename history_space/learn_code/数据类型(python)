@@ -1,0 +1,60 @@
+#  python数据类型介绍
+type(x)                        查看数据类型
+
+## 数据类型形式 
+Number（数字）                  包括int,long,float,complex   
+String（字符串）                例如：hello,"hello",hello   
+List（列表）                    例如：[1,2,3],[1,2,3,[1,2,3],4]   
+Dictionary（字典）              例如：{1:"nihao",2:"hello"}   
+Tuple（元组）                   例如：(1,2,3,abc)  
+Bool（布尔）                    包括True、False   
+
+## 数据类型转换
+int(x [,base ])                 将x转换为一个整数
+long(x [,base ])                将x转换为一个长整数
+float(x )                       将x转换到一个浮点数
+complex(real [,imag ])          创建一个复数
+str(x )                         将对象 x 转换为字符串
+repr(x )                        将对象 x 转换为表达式字符串
+eval(str )                      用来计算在字符串中的有效Python表达式,并返回一个对象
+tuple(s )                       将序列 s 转换为一个元组
+list(s )                        将序列 s 转换为一个列表
+chr(x )                         将一个整数转换为一个字符
+unichr(x )                      将一个整数转换为Unicode字符
+ord(x )                         将一个字符转换为它的整数值
+hex(x )                         将一个整数转换为一个十六进制字符串
+oct(x )                         将一个整数转换为一个八进制字符串
+
+## 数据类型互相转换
+1.字典》》》字符串、元祖、列表
+str(dict)                       字典转换为字符串
+tuple(dict)                     字典转换为元祖
+list(dict)                      字典转换为列表
+2.元组》》》字符串、列表          //不能转换为字典
+tuple._str_()                   元祖转换为字符串
+list(tuple)                     元祖转换为列表
+3.列表》》》字符串、元祖          //不能转换为字典
+str(list)                       列表转为字符串
+tuple(list)                     列表转为元组
+4.字符串》》》元祖、列表、字典
+tuple(str)                      字符串转为元组
+list(str)                       字符串转为列表
+eval(str)                       字符串转为字典
+
+## 数据类型转为数据框
+1.字典转为数据框
+import pandas as pd                                加载pd包
+pd.Series(my_dict)                                 单个字典转换数据列表
+pd.DataFrame.from_dict(my_dict,orient='index').T   多个字典转为数据框
+2.列表转为数据框
+from pandas.core.frame import DataFrame
+DataFrame(list,columa={'a','b'})
+3.元组转为数据框
+from pandas.core.frame import DataFrame
+DataFrame(list(tuple),columa={'a','b'})
+4.字符串转为数据框
+from pandas.core.frame import DataFrame
+DataFrame(list(str),columa={'a','b'})
+
+
+

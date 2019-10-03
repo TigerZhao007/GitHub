@@ -1,0 +1,196 @@
+##################################
+# Author  : sdk 
+# Date    : 2017-01-05 
+# Version : V1.0
+##################################
+
+#---程序简介（Introduction）---   ----------------------------------
+# Introduction : 本部分函数读取原始电压、功率、母线数据、及配变匹配表。
+
+
+#---加载包及路径设置---   ----------------------------------
+if(!require(stringr)){install.packages("stringr")}
+if(!require(plyr)){install.packages("plyr")}
+if(!require(dplyr)){install.packages("dplyr")}
+library(reshape2)
+library(data.table)
+setwd('C:/Users/Administrator.USER-20161208UW/Desktop/扬州项目/处理后数据2')
+
+#---索引路径设置---   ----------------------------------
+dat_pipei             <-  fread('扬州线路配变匹配表.csv',integer64='character')
+dat_pipei$dianya_path <-  paste0('新电压数据/','voltage.mx',dat_pipei$muxianid,'/','voltage',dat_pipei$kuixianid,'.Rdata')
+dat_pipei$muxian_path <-  paste0('新母线数据/','muxian',dat_pipei$muxianid,'.Rdata')
+dat_pipei$gonglv_path <-  paste0('新有功功率/','power.mx',dat_pipei$muxianid,'/','power',dat_pipei$kuixianid,'.Rdata')
+dat_pipei$dianya_name <-  paste0('voltage',dat_pipei$kuixianid)
+dat_pipei$muxian_name <-  paste0('muxian',dat_pipei$muxianid)
+dat_pipei$gonglv_name <-  paste0('power',dat_pipei$kuixianid)
+# write.csv(dat_pipei,'扬州线路配变匹配表_处理.csv')
+
+# 读取文件中已有文件名（用于load验证）
+list_file <- list.files('异常数据/')
+
+#---遍历读取并保存文件---   ----------------------------------
+# 生成一个空数据框，用来存放变量，返回一个低压、高压变压器越界信息，包括：
+# 母线-馈线-变压器id，越界类型，越界次数，开始位置，结束位置，开始时间，结束时间，
+# 越界点数，越界时长（小时），越界时平均电压，正常时平均电压。
+data_end  <- data.frame()
+
+for(n in c(1:nrow(dat_pipei))){
+  
+  ########################### 进度条显示 ###########################
+  
+  print(paste0('-------------',n,'---',round(n/nrow(dat_pipei),2),'-------------'))
+  print(paste0('正在处理',dat_pipei$muxian_name[n],'-',dat_pipei$dianya_name[n]))
+  
+  ########################### 生成文件路径 ###########################
+  # path 为母线-馈线.Rdata，用于load验证。
+  path    <- paste0(dat_pipei$muxian_name[n],'-',dat_pipei$dianya_name[n],'.Rdata')
+  
+  # 如果存在 path 文件进行， 如果不存在说明这个变压器没有越界数据。
+  if(path %in% list_file){
+    
+    ########################### load文件数据 ###########################
+    # path 为数据/母线-馈线.Rdata，用于load文件，load结果文件名均为df_list.
+    path  <- paste0('异常数据/',dat_pipei$muxian_name[n],'-',dat_pipei$dianya_name[n],'.Rdata')
+    load(path)  
+    
+    ########################### 低压数据处理 ###########################
+    
+    if (!is.na(df_list[[4]])[1]){
+      # 生成一个空数据框temp1， 用于存放该馈线所有变压器低压数据。
+      temp1    <- data.frame()
+      
+      # 遍历该馈线所有变压器，数据框temp 存放一个变压器的越界信息。
+      # 并将单个变压器越界信息，归入该馈线越界变压器信息文件temp1.
+      for(j in 1:length(names(df_list[[4]]))){
+        temp   <- find_freq(df_list=df_list,dat_pipei=dat_pipei,dat = df_list[[4]][[j]],j,type = 'low')
+        temp1  <- rbind(temp1,temp)
+      }
+      
+      # 将该馈线所有越界变压器信息，归入总的数据整理文件data_end。
+      data_end <- rbind(data_end,temp1)
+      
+      # 绘制低压数据图片，一个馈线一个PDF文件。
+      # PDF文件名为：母线-馈线-low.PDF
+      pdf(file = paste0('异常数据图片2/',
+                        as.character(temp1$muxian[1]),'-',
+                        as.character(temp1$kuixian[1]),'-low','.pdf'))
+      
+      # 遍历越界变压器信息，每个变压器，每次越界情况绘图。
+      # 时间节点选择：越界前后各三天，不足三天按起止位置计算。
+      
+      for(k in 1:nrow(temp1)){
+        # 选取开始时间和结束时间。
+        # 越界前后各三天，不足三天按起止位置计算。
+        if(temp1$start.num[k] < 96*3){
+          start.temp <- 1
+        }
+        else{
+          start.temp <- temp1$start.num[k] - 96*3
+        }
+        if(temp1$end.num[k] > (nrow(df_list[[1]]) - 96*3)){
+          end.temp   <- nrow(df_list[[1]])
+        }
+        else{
+          end.temp   <- temp1$end.num[k] + 96*3
+        }
+        
+        # 绘制图片，
+        # 图片标题：变压器名称
+        par(mfrow=c(3,1))
+        plot(df_list[[2]][start.temp:end.temp,as.character(temp1$bianyaqi[k])],type = 'l',
+             main = paste0('bianyaqi' , '-' , as.character(temp1$bianyaqi[k])),
+             xlab = paste0('time', '-' , as.character(temp1$start.time[k]) , '-' ,as.character(temp1$end.time[k])),
+             ylab = 'bianyaqi_dianya')
+        axis(1,1:length(start.temp:end.temp),df_list[[1]]$data_timestamp[start.temp:end.temp])
+        
+        if(!all(is.na(df_list[[3]][start.temp:end.temp,as.character(temp1$bianyaqi[k])]))){
+          plot(df_list[[3]][start.temp:end.temp,as.character(temp1$bianyaqi[k])],type = 'l',
+               xlab = paste0('time', '-' , as.character(temp1$start.time[k]) , '-' ,as.character(temp1$end.time[k])),
+               ylab = 'bianyaqi_gonglv')
+          axis(1,1:length(start.temp:end.temp),df_list[[1]]$data_timestamp[start.temp:end.temp])
+        }
+        if(!all(is.na(df_list[[1]][start.temp:end.temp,'v']))){
+          plot(df_list[[1]][start.temp:end.temp,'v'],type = 'l',
+               xlab = paste0('time', '-' , as.character(temp1$start.time[k]) , '-' ,as.character(temp1$end.time[k])),
+               ylab = 'muxian_dianya')
+          axis(1,1:length(start.temp:end.temp),df_list[[1]]$data_timestamp[start.temp:end.temp])
+        }
+      }
+      dev.off()
+      
+      # 清理变量，
+      rm(temp,temp1)
+    }
+    
+    ########################### 低压数据处理 ###########################
+    
+    if (!is.na(df_list[[5]])[1]){
+      # 生成一个空数据框temp1， 用于存放该馈线所有变压器低压数据。
+      temp2 <- data.frame()
+      
+      # 遍历该馈线所有变压器，数据框temp 存放一个变压器的越界信息。
+      # 并将单个变压器越界信息，归入该馈线越界变压器信息文件temp2.
+      for(j in 1:length(names(df_list[[5]]))){
+        temp <- find_freq(df_list=df_list,dat_pipei=dat_pipei,dat = df_list[[5]][[j]],j,type = 'high')
+        temp2 <- rbind(temp2,temp)
+      }
+      
+      # 将该馈线所有越界变压器信息，归入总的数据整理文件data_end。
+      data_end <- rbind(data_end,temp2)
+      
+      # 绘制低压数据图片，一个馈线一个PDF文件。
+      # PDF文件名为：母线-馈线-high.PDF
+      pdf(file = paste0('异常数据图片2/',
+                        as.character(temp2$muxian[1]),'-',
+                        as.character(temp2$kuixian[1]),'-high','.pdf'))
+      for(k in 1:nrow(temp2)){
+        
+        # 遍历越界变压器信息，每个变压器，每次越界情况绘图。
+        # 时间节点选择：越界前后各三天，不足三天按起止位置计算。
+        
+        if(temp2$start.num[k] < 96*3){
+          start.temp <- 1
+        }
+        else{
+          start.temp <- temp2$start.num[k] - 96*3
+        }
+        if(temp2$end.num[k] > (nrow(df_list[[1]]) - 96*3)){
+          end.temp <- nrow(df_list[[1]])
+        }
+        else{
+          end.temp <- temp2$end.num[k] + 96*3
+        }
+        
+        # 绘制图片，
+        # 图片标题：变压器名称
+        par(mfrow=c(3,1))
+        plot(df_list[[2]][start.temp:end.temp,as.character(temp2$bianyaqi[k])],type = 'l',
+             main = paste0('bianyaqi' , '-' , as.character(temp2$bianyaqi[k])),
+             xlab = paste0('time', '-' , as.character(temp2$start.time[k]) , '-' ,as.character(temp2$end.time[k])), 
+             ylab = 'bianyaqi_dianya')
+        axis(1,1:length(start.temp:end.temp),df_list[[1]]$data_timestamp[start.temp:end.temp])
+        
+        if(!all(is.na(df_list[[3]][start.temp:end.temp,as.character(temp2$bianyaqi[k])]))){
+          plot(df_list[[3]][start.temp:end.temp,as.character(temp2$bianyaqi[k])],type = 'l',
+               xlab = paste0('time', '-' , as.character(temp2$start.time[k]) , '-' ,as.character(temp2$end.time[k])),
+               ylab = 'bianyaqi_gonglv')
+          axis(1,1:length(start.temp:end.temp),df_list[[1]]$data_timestamp[start.temp:end.temp])
+        }
+        if(!all(is.na(df_list[[1]][start.temp:end.temp,'v']))){
+          plot(df_list[[1]][start.temp:end.temp,'v'],type = 'l',
+               xlab = paste0('time', '-' , as.character(temp2$start.time[k]) , '-' ,as.character(temp2$end.time[k])),
+               ylab = 'muxian_dianya')
+          axis(1,1:length(start.temp:end.temp),df_list[[1]]$data_timestamp[start.temp:end.temp])
+        }
+      }
+      dev.off()
+      
+      rm(temp,temp2)
+    }
+  }
+}
+
+data_end <- unique(data_end)
+write.csv(data_end,'异常电压信息汇总表3.csv')
+

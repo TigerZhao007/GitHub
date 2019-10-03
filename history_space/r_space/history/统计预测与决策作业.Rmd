@@ -1,0 +1,292 @@
+---
+title: "统计预测与决策"
+author: "邵登科"
+date: "2017/04/24"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 作业5.2
+
+
+线性回归模型
+```{r}
+library(fpp)
+colnames(texasgas)<-c("pri","con")
+texasgas
+```
+
+## 题1
+
+```{r}
+with(texasgas,plot(pri,con))
+```
+
+## 题2
+
+```{r}
+## 解释模型中斜率的变化的原因：不同平均价格水平对客户消费的影响程度不同。平均价格水平较低时，影响程度较大，平均价格水平较高时，影响较小。
+```
+
+## 题3
+
+```{r}
+# 公式1
+fit1 <- with(texasgas,lm(log(con)~1+pri))
+fit1$coefficients
+# 公式2
+texasgas1 <- with(texasgas,texasgas[pri<=60,])
+texasgas2 <- with(texasgas,texasgas[pri>60,])
+fit2.1 <- with(texasgas1,lm(con~1+pri))
+fit2.1$coefficients
+fit2.2 <- with(texasgas2,lm(con~1+pri))
+fit2.2$coefficients
+# 公式3
+fit3 <- with(texasgas,lm(con~1+pri+I(pri^2)))
+fit3$coefficients
+# 三个函数的图形
+with(texasgas,plot(pri,con))
+with(texasgas,lines(pri,exp(predict(fit1)),col=2))
+with(texasgas1,lines(pri,fitted(fit2.1),col=3))
+with(texasgas2,lines(pri,fitted(fit2.2),col=3))
+with(texasgas,lines(pri,fitted(fit3),col=4))
+```
+
+## 题4
+
+```{r}
+# 三个函数的拟合优度
+summary(fit1)$r.squared
+summary(fit2.1)$r.squared
+summary(fit2.2)$r.squared
+summary(fit3)$r.squared
+# 三个函数的信息量
+AIC(fit1)
+AIC(fit2.1)
+AIC(fit2.2)
+AIC(fit3)
+# 三个函数的残差图
+opar <- par(no.readonly = TRUE)
+par(mfrow=c(3,1))
+plot(fit1$residuals,main = "residual of fit1")
+plot(c(fit2.1$residuals,fit2.2$residuals),main = "residual of fit2")
+plot(fit3$residuals,main = "residual of fit3")
+dev.off()
+
+# 从拟合优度来看，模型3拟合效果最好，第1、2模型比较，价格较低模型2较好，价格较高时模型1较好
+# 从信息量准则来看，模型1的AIC最小，其次是模型2，模型3最高。
+# 从残差图来看，模型3残差在0周围波动较小。
+```
+
+## 题5
+
+```{r}
+# 第一个函数预测值
+pri1 <- c(40,60,80,100,120)
+x1 <- data.frame(pri=pri1)
+fit1.p <- with(texasgas, exp(predict(fit1,newdata=x1,level=0.95,interval="prediction")))
+rownames(fit1.p) <- pri1
+fit1.p
+# 第二个函数预测值
+x2_1 <- data.frame(pri=c(40,60))
+x2_2 <- data.frame(pri=c(80,100,120))
+fit2.1.p <- with(texasgas1,predict(fit2.1,newdata = x2_1,level=0.95,interval="prediction"))
+rownames(fit2.1.p) <- x2_1$pri 
+fit2.1.p
+fit2.2.p <- with(texasgas2,predict(fit2.2,newdata = x2_2,level=0.95,interval="prediction"))
+rownames(fit2.2.p) <- x2_2$pri
+fit2.2.p
+# 第三个函数预测值
+fit3.p <- with(texasgas, predict(fit3, newdata = x1,level = 0.95,interval = "prediction"))
+rownames(fit3.p) <- pri1
+fit3.p
+```
+
+## 题6
+
+```{r}
+par(mfrow=c(3,1))
+# 第一个函数预测区间
+with(texasgas,plot(pri,con,ylim = c(0,200),main = "fit1"))
+with(texasgas,lines(pri,exp(predict(fit1,level=0.95,interval="prediction"))[,1],col=3))
+with(texasgas,lines(pri,exp(predict(fit1,level=0.95,interval="prediction"))[,2],col=2))
+with(texasgas,lines(pri,exp(predict(fit1,level=0.95,interval="prediction"))[,3],col=2))
+# 第二个函数预测区间
+with(texasgas,plot(pri,con,ylim = c(0,200),main = "fit2"))
+with(texasgas1,lines(pri,predict(fit2.1,level=0.95,interval="prediction")[,1],col=3))
+with(texasgas1,lines(pri,predict(fit2.1,level=0.95,interval="prediction")[,2],col=2))
+with(texasgas1,lines(pri,predict(fit2.1,level=0.95,interval="prediction")[,3],col=2))
+with(texasgas2,lines(pri,predict(fit2.2,level=0.95,interval="prediction")[,1],col=3))
+with(texasgas2,lines(pri,predict(fit2.2,level=0.95,interval="prediction")[,2],col=2))
+with(texasgas2,lines(pri,predict(fit2.2,level=0.95,interval="prediction")[,3],col=2))
+# 第三个函数预测区间
+with(texasgas,plot(pri,con,ylim = c(0,200),main = "fit3"))
+with(texasgas,lines(pri,predict(fit3,level=0.95,interval="prediction")[,1],col=3))
+with(texasgas,lines(pri,predict(fit3,level=0.95,interval="prediction")[,2],col=2))
+with(texasgas,lines(pri,predict(fit3,level=0.95,interval="prediction")[,3],col=2))
+dev.off()
+
+# 从预测区间和拟合效果来看，模型预测效果都不错，模型三效果更好，其次是模型二，模型一相对较差。
+```
+
+## 题7
+
+```{r}
+with(texasgas,cor(pri,pri^2))
+# 变量间具有较高的相关性，容易造成较强的多重共线性，违背线性模型基本假定，会降低参数估计的可靠性和一致性，故处理多项式回归时尤其要考虑高通量的一般问题。
+```
+
+
+
+## 作业6.2
+
+
+时间序列模型
+```{r}
+plastics
+pl <- ts(plastics,frequency = 12)
+pl
+```
+
+## 题1
+
+```{r}
+plot(pl)
+# 图形以一年为一个周期进行波动性的上升，即体现原始序列即具有长期趋势和季节波动。
+```
+
+## 题2
+
+```{r}
+fit2 <- decompose(pl, type ="multiplicative")   # 乘法模型
+plot(fit2)
+pl.s <- fit2$seasonal
+pl.t <- fit2$trend
+pl.s[1:12]
+```
+
+## 题3
+
+```{r}
+# 结果可以证明图形的结论是正确的。
+```
+
+## 题4
+
+```{r}
+pl1 <- pl/pl.s
+pl1
+plot(pl1)
+```
+
+## 题5
+
+```{r}
+pl2 <-pl
+pl2[30] <- 500
+pl2
+plot(pl2)
+fit3 <- decompose(pl2, type ="multiplicative")   # 乘法模型
+plot(fit3)
+pl.s2 <- fit3$seasonal
+pl.t2 <- fit3$trend
+pl.s2[1:12]
+# 离群点的作用，离群点会导致残差项出现大的波动，对趋势和周期波动项虽然影响不大，但是会有持续的影响。
+```
+
+## 题6
+
+```{r}
+pl3 <-pl
+pl3[60] <- 500
+pl3
+plot(pl3)
+fit4 <- decompose(pl3, type ="multiplicative")   # 乘法模型
+plot(fit4)
+pl.s3 <- fit3$seasonal
+pl.t2 <- fit3$trend
+pl.s2[1:12]
+
+# 离群点的作用，离群点不影响趋势和周期波动项，不会持续影响，但是会影响预测效果，会导致残差项出现大的波动。
+```
+
+## 题7
+
+```{r}
+library(forecast)
+fit <- stl(pl, t.window=15, s.window="periodic", robust=TRUE)
+eeadj <- seasadj(fit)
+plot(naive(eeadj), xlab="New ",
+     main="Naive forecasts of seasonally adjusted data")
+
+```
+
+## 题8
+
+```{r}
+fcast <- forecast ( fit,method = "naive" )
+plot ( fcast,ylab = "New con" )
+# 经过STL分解数据后，基于季节性调整数据的初步预测和季节性成分的季节性初始预测，
+```
+
+
+
+## 作业7.2
+
+
+指数平滑模型
+```{r}
+books
+plot(books)
+```
+
+## 题1
+
+```{r}
+# 简单移动平均
+fit7.1 <- ses (books[,1],alpha = 0.2,initial = "simple",h = 3)
+fit7.2 <- ses (books[,2],alpha = 0.2,initial = "simple",h = 3)
+# Holt方法的SSE度量
+fit7.3 <- holt(books[,1], alpha=0.2, beta=0.2, damped=TRUE, initial="simple", h=5) 
+fit7.4 <- holt(books[,2], alpha=0.2, beta=0.2, damped=TRUE, initial="simple", h=5) 
+list(y.p=fit7.1$model,y.h=fit7.2$model,h.p=fit7.3$model,h.h=fit7.4$model)
+par(mfrow=c(2,2))
+plot(fit7.1$residuals,type="p")
+plot(fit7.2$residuals,type="p")
+plot(fit7.3$residuals,type="p")
+plot(fit7.4$residuals,type="p")
+dev.off()
+#  移动平均法：移动平均法的主要优点是简单易行，容易掌握；其缺点是：只是在处理水平型历史数据时才有效。
+#  Holt方法：Holt方法扩展了简单的指数平滑，以允许以趋势预测数据。
+```
+
+## 题2
+
+```{r}
+list(y.p=fit7.1,y.h=fit7.2,h.p=fit7.3,h.h=fit7.4)
+par(mfrow=c(2,1))
+plot(fit7.1)
+plot(fit7.3)
+dev.off()
+par(mfrow=c(2,1))
+plot(fit7.2)
+plot(fit7.4)
+dev.off()
+#  Holt方法较好，Holt方法扩展了简单的指数平滑，以允许以趋势预测数据。
+```
+
+## 题3
+
+```{r}
+list(y.h=fit7.2,h.h=fit7.4)
+```
+
+
+
+
+
+
+

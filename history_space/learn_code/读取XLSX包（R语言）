@@ -1,0 +1,17 @@
+# 读取XLSX包（R语言）
+
+1、安装jre-9.0.1_windows-x86_bin软件
+（安装Java软件）
+2、搭载Java环境
+https://jingyan.baidu.com/article/4ae03de320d99f3eff9e6bfd.html
+（环境变量中添加Java路径PATH）
+（环境变量中添加Java路径JAVA_PATH）
+3、下载xlsx包
+install.packages("rJava")
+install.packages("xlsx")
+4、更改Java环境路径
+Sys.setenv(JAVA_HOME='C:\\Program Files\\Java\\jre-9.0.1') # for 64-bit version
+5、加载环境
+library(xlsx)
+
+

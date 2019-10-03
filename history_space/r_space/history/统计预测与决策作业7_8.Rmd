@@ -1,0 +1,216 @@
+---
+title: "统计预测与决策作业"
+author: "邵登科"
+date: "2017年5月23日"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## -----------------------------------------------------------------------------------------------------
+## 第7章第4题
+
+### 数据集 visitors
+
+```{r, comment=""}
+library(expsmooth)
+visitors
+plot(visitors, ylab = "Thousands of people")
+```
+
+数据呈上升趋势。
+*数据具有季节性模式，其大小与每年到达的平均人数大致成正比。 因此，可以声称数据具有倍增的季节性。
+
+### 使用Holt-Winters的乘法方法预测未来两年.
+```{r, comment=""}
+fcast = hw(visitors, h=24, seasonal="multiplicative")
+plot(fcast)
+```
+
+
+在这个例子中，乘法季节性很重要。 它反映出季节性格局的行为，其规模与趋势水平成正比。
+
+### 试验指数和/或阻尼趋势.
+```{r, comment=""}
+fcastDamp = hw(visitors, h=24, seasonal="multiplicative", damped=TRUE, exponential=FALSE)
+plot(fcastDamp, main = "Damped treand forecasts")
+```
+
+```{r, comment=""}
+fcastExp = hw(visitors, h=24, seasonal="multiplicative", damped=FALSE, exponential=TRUE)
+plot(fcastExp, main = "Exponential treand forecasts")
+```
+
+```{r, comment=""}
+fcastDampExp = hw(visitors, h=24, seasonal="multiplicative", damped=TRUE, exponential=TRUE)
+plot(fcastDampExp, main = "Damped exponential treand forecasts")
+```
+
+不同的方法将趋势投射到未来。 虽然短期预测并不是很大，但长期预测也会有很大变化。
+
+### 比较上述方法的一步预测的均方根值。.
+```{r, comment=""}
+c(RMSE = sqrt(fcast$model$mse), RMSEDamp = sqrt(fcastDamp$model$mse), RMSEExp = sqrt(fcastExp$model$mse), RMSEDampExp = sqrt(fcastDampExp$model$mse))
+```
+
+阻尼趋势方法比其他方法更好地适应数据（在整个数据集中一步前进预测的RMSE方面）。 如果我们假设这些方法大致相同，那么我们可以预期，阻尼趋势法将比训练数据之外的其他方法更好地预测。
+
+### 不同方法的未来两年的残留诊断和预测.
+```{r, comment=""}
+# 多元 Holt-Winters' 方法
+fcasHW = hw(visitors, h=24, seasonal="multiplicative")
+
+# ETS 模型
+fitETS = ets(visitors)
+fcastETS = forecast(fitETS, h = 24)
+
+# 添加ETS模型应用于Box-Cox转换系列
+fitETSlog = ets(visitors, lambda = 0, model = "AAA")
+fcastETSlog = forecast(fitETSlog, h = 24)
+
+# 季节性法适用于Box-Cox转换系列
+fcastSnaiveLog = snaive(visitors, h = 24, lambda = 0)
+
+# STL分解应用于Box-Cox转换数据
+# 后跟一个应用于经季节性调整（转换）数据的ETS模型
+fitStlm = stlm(visitors, method = "ets", lambda = 0)
+fcastStlm = forecast(fitStlm, h = 24)
+
+# 绘制所有预测
+plot(visitors, xlim = c(1985, 2008))
+lines(fcasHW$mean, col = 2)
+lines(fcastETS$mean, col = 3)
+lines(fcastETSlog$mean, col = 4)
+lines(fcastSnaiveLog$mean, col = 5)
+lines(fcastStlm$mean, col = 6)
+legend("topleft",
+       legend = c("Multiplicative Holt-Winters'", "ETS", "Log + additive ETS",
+                  "Log + seasonal naive", "Log + stlm method"),
+       col = 2:6, lwd = 2)
+```
+
+#预测看起来非常相似.
+
+###  Residual diagnostics
+```{r, comment=""}
+# 绘制残差图
+par(mfrow=c(1,2)) # This line positions two consequent plots side-by-side
+plot(fcasHW$residuals, ylab = "Residuals")
+abline(h = 0, col = "red")
+hist(fcasHW$residuals, main = "", xlab = "Residuals")
+```
+
+残余物正面倾斜。 它们可能是连续相关的.
+
+```{r, comment=""}
+par(mfrow=c(1,2))
+plot(fcastETS$residuals, ylab = "Residuals")
+abline(h = 0, col = "red")
+hist(fcastETS$residuals, main = "", xlab = "Residuals")
+```
+
+残差可能是连续相关的。 分布看起来很正常.
+
+```{r, comment=""}
+par(mfrow=c(1,2))
+plot(fcastETSlog$residuals, ylab = "Residuals")
+abline(h = 0, col = "red")
+hist(fcastETSlog$residuals, main = "", xlab = "Residuals")
+```
+
+残差可能是连续相关的。 分配看起来很正常.
+
+```{r, comment=""}
+par(mfrow=c(1,2))
+plot(fcastSnaiveLog$residuals, ylab = "Residuals")
+abline(h = 0, col = "red")
+hist(fcastSnaiveLog$residuals, main = "", xlab = "Residuals")
+```
+
+残差呈正偏差并且连续相关.
+
+```{r, comment=""}
+par(mfrow=c(1,2))
+plot(fcastStlm$residuals, ylab = "Residuals")
+abline(h = 0, col = "red")
+hist(fcastStlm$residuals, main = "", xlab = "Residuals")
+```
+
+残差可能是连续相关的。 分布看起来不正常。
+
+尽管对于最后一种方法，残差看起来有点连续相关，但它们在所考虑的模型中的尺寸最小。 假设所有方法大致相同，最后一种方法是最有希望的预测。
+
+
+## ------------------------------------------------------------------------------------------------------
+## 第8章第10题
+
+### 数据集condmilk
+
+```{r, comment=""}
+library(fma)
+condmilk
+plot(condmilk)
+```
+
+数据趋势非常平坦，因此转型不会大大调整季节性格局。 不需要转换。
+
+由于季节性模式，数据不稳定。 需要滞后12的差异：
+
+```{r, comment=""}
+tsdisplay(diff(condmilk, lag = 12))
+```
+
+数据中仍然存在很多自相关性。 ACF和PACF图表再次表明了差异.
+
+```{r, comment=""}
+tsdisplay(diff(diff(condmilk, lag = 12)))
+```
+
+两次差分后，数据不稳定。
+建议的型号是:
+
+ARIMA(0,1,0)(0,1,1)
+ARIMA(0,1,0)(2,1,0)
+ARIMA(5,1,0)(0,1,1)
+ARIMA(5,1,0)(2,1,0)
+ARIMA(0,1,5)(0,1,1)
+ARIMA(0,1,5)(2,1,0)
+```{r, comment=""}
+fit1 = Arima(condmilk, c(0,1,0), c(0,1,1))
+fit2 = Arima(condmilk, c(0,1,0), c(2,1,0))
+fit3 = Arima(condmilk, c(5,1,0), c(0,1,1))
+fit4 = Arima(condmilk, c(5,1,0), c(2,1,0))
+fit5 = Arima(condmilk, c(0,1,5), c(0,1,1))
+fit6 = Arima(condmilk, c(0,1,5), c(2,1,0))
+```
+
+```{r, comment=""}
+c(fit1$aicc, fit2$aicc, fit3$aicc,  fit4$aicc, fit5$aicc, fit6$aicc)
+```
+
+最好的模型是 ARIMA(0,1,0)(0,1,1).
+
+### 残差分析
+
+```{r, comment=""}
+hist(fit1$residuals)
+tsdisplay(fit1$residuals)
+Box.test(fit1$residuals, lag = 24, type = "Ljung-Box", fitdf = 1)
+```
+
+残余分布接近正常。 残余物是不相关的。 该模式令人满意.
+
+### 预测未来24个月，并与ets预测进行比较
+
+```{r, comment=""}
+fcast1 = forecast(fit1, h = 24)
+fit.ets = ets(condmilk)
+fcast.ets = forecast(fit.ets, h = 24)
+par(mfrow=c(1,2))
+plot(fcast1, ylim = c(-50,200))
+plot(fcast.ets, ylim = c(-50,200))
+```
+
+点预测是相似的，尽管ets的预测间隔较小.

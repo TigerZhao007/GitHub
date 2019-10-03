@@ -1,0 +1,15 @@
+# R 语言特殊函数介绍
+#---fread---   ---------------------
+# fread函数读取csv文件时，遇到“超长数字”，添加参数“integer64='character'”
+# fread('file.csv',integer64='character')
+
+#---assign & get---   ---------------------
+# assign函数  可以根据批量生成的变量名，对其进行赋值。
+# get函数     可以根据批量生成的变量名，读取工作空间中文件。
+rm(list = ls())  #慎重使用
+for(i in 1:3){
+     assign(paste("p", i, sep=""), i)
+     tmp <- get(paste("p", i, sep=""))
+     print(tmp)
+ }
+

@@ -1,0 +1,22 @@
+library(ggplot2)
+
+# 绘制等高线 ----------------------------
+# R2等高线
+ggplot(data = dat, aes(x = changshu,y = r2)) +
+  geom_point() +
+  stat_density2d()
+
+# 电压等高线
+ggplot(data = dat, aes(x = changshu,y = mean_dianya)) +
+  geom_point() +
+  stat_density2d()
+
+# 画圆程序 -------------------------------
+p <- ggplot( , aes(x0 = 0,y0 = 0, 
+                   r = (1-dat$r2), 
+                   start = 0*pi, 
+                   end = 2*pi,
+                  # linetype = factor((1-dat$r2)),
+                   colour = dat$bianyaqi)
+             )
+p + geom_arc(lwd = 1.2,show.legend = T)

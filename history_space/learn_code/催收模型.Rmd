@@ -1,0 +1,161 @@
+---
+title: "催收模型"
+author: "sdk"
+date: "2017年12月5日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 数据读取
+```{r warning=FALSE}
+dat <- read.csv('C:\\Users\\Administrator\\Desktop\\user.csv')
+# 查看数据类型
+str(dat)
+# 查看数据基本信息
+summary(dat)
+# 调用ks分类函数
+source('F:\\rspace\\ks.R')
+```
+
+# 数据清洗及预处理
+```{r warning=FALSE}
+# 选取分析维度
+dat1 <- dat[,4:11]
+# 删除缺失值
+dat2 <- na.omit(dat1)
+```
+
+# 剔除缺失值
+```{r warning=FALSE}
+# 找出异常值函数
+out_location <- function(x){
+  location <- which( x %in% boxplot.stats(x)$out)
+}
+# 按列找出异常值
+outlier <- sapply(dat2,out_location)
+# 求出异常值所在行
+todel <- (sort(unique(unlist(outlier))))
+# 剔除异常值数据
+dat3 <- dat2[-todel,]
+```
+
+## 选择分析样本
+
+```{r warning=FALSE }
+# 确定分析样本
+data <- dat3
+# 查看分析样本
+head(data)
+# 查看样本分布情况
+table(data$class)
+```
+
+## 样本等量化处理
+
+```{r warning=FALSE }
+# 利用ROSE包将样本进行等量化处理。
+library(ROSE)
+df <- ROSE(class~.,data = data,seed=1)$data
+# 查看等量化处理后数据
+head(df)
+# 查看样本分布情况
+table(df$class)
+```
+
+## 数据归一化处理
+
+```{r warning=FALSE }
+# 样本数据规约到0-1之间
+for(i in 1:ncol(df)){
+  df[,i] = (df[,i]-min(df[,i]))/(max(df[,i])-min(df[,i]))
+}
+# 查看归一化后分析数据
+head(df)
+```
+
+## 样本随机化打散
+
+```{r warning=FALSE }
+# 通过随机数，随机将样本打散。
+set.seed(1234)
+df_sample <- sample(1:nrow(df),size = nrow(df),replace = F)
+df <- df[df_sample,]
+# 查看打散后分析数据
+head(df)
+```
+
+## 确定训练样本和测试样本
+
+```{r warning=FALSE }
+# 通过随机数，随机将样本分区，其中70%为训练样本，30%为测试样本。
+set.seed(1234)
+train_sample <- sample(1:nrow(df),size = 0.7*nrow(df),replace = F)
+df_train <- df[train_sample, ]
+df_test  <- df[-train_sample, ]
+```
+
+## 逻辑回归
+
+```{r warning=FALSE }
+model_logic <- glm(class~., data = df_train, family = binomial (link = logit))
+pred_logic <- predict(model_logic, newdata = df_test,type = "response")
+ks_logic <- ks_pc(pred_logic,df_test$class)
+ks_logic
+```
+
+## BP神经网络
+
+```{r warning=FALSE }
+library(nnet)
+size = 5;   decay = 0.05;  maxit = 10000;
+model_nnet <- nnet(class~., data = df_train,size=size,decay=decay,maxit=maxit)
+pred_nnet <- predict(model_nnet, newdata = df_test)
+ks_nnet <- ks_pc(pred_nnet,df_test$class)
+ks_nnet
+```
+
+## 决策树
+
+```{r warning=FALSE }
+library(rpart)
+library(rpart.plot)
+ct <- rpart.control(xval=10, minsplit=20, cp=0.1)
+model_tree <-  rpart(class~.,  data = df_train, method="anova", control=ct,
+                     parms = list(prior = c(0.65,0.35), split = "information"))
+pred_tree <- predict(model_tree,newdata = df_test)
+ks_tree <- ks_pc(pred_tree,df_test$class)
+ks_tree
+```
+
+## 随机森林
+
+```{r warning=FALSE }
+library(randomForest)
+library(foreign)
+model_randomforest <- randomForest(class~., data=df_train, mtry=2,
+                                   ntree=10, importance = TRUE)
+pred_randomforest <- predict(model_randomforest, newdata = df_test)
+ks_randomforest <- ks_pc(pred_randomforest, df_test$class)
+ks_randomforest
+```
+
+## KNN算法
+
+```{r warning=FALSE }
+library(kknn) 
+model_kknn <- kknn(class~., train = df_train, test = df_test, k = 5) 
+pred_kknn <- fitted(model_kknn)
+ks_kknn <- ks_pc(pred_kknn, df_test$class)
+ks_kknn
+```
+
+## KS值汇总
+
+```{r warning=FALSE }
+ks_list <- list(ks_logic=ks_logic, ks_nnet=ks_nnet, ks_tree=ks_tree, 
+                ks_randomforest=ks_randomforest, ks_kknn=ks_kknn)
+ks_list
+```

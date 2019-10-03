@@ -1,0 +1,48 @@
+# -*- coding: utf-8 -*-
+
+"""
+Created on Fri Dec  8 09:22:37 2017
+
+@author: Administrator
+"""
+
+import re
+import requests
+import urllib.request
+import pandas as pd
+from bs4 import BeautifulSoup
+
+## 爬取列表连接
+def get_link(url,headers):
+    req = requests.get(url=url,headers=headers)
+    resp = req.text
+    soup = BeautifulSoup(resp, 'lxml')
+    dat1 = soup.find_all('div',attrs={'class':'list-info-comm'})
+    dat2 = re.findall(r'href="/community/(\d+)"',str(dat1))
+#    return dat1
+    return dat2
+
+## 爬取网页内部内容
+def get_dat(url,headers):
+    req = requests.get(url=url,headers=headers)
+    resp = req.text
+    soup = BeautifulSoup(resp, 'html5lib')
+
+    dat1 = soup.find_all('li',attrs={'class':'around-r'})
+#    dat2 = dat1.find_all('span',attrs={'id':'tab-traffic-num'})
+#    wyf  = re.findall(r'物业费：</dt><dd class="other-dd">(.+?)</dd>',str(dat1))[0]
+ 
+#    dat = [name,rate,lh,wyf,lat,lng]
+    return dat1
+
+
+
+url1     = 'http://nj.5i5j.com/community/gulou/n3'
+url2     = 'http://nj.5i5j.com/community/251960'
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'}
+a = get_link(url1,headers)
+print(a)
+b= get_dat(url2,headers)
+print(b)
+
+

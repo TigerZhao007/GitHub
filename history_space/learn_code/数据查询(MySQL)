@@ -1,0 +1,78 @@
+# 新增人员【0901-0907】【身份证，日期】【1000】
+SELECT a.i,a.y FROM (SELECT  t2.appr_id c,t1.identity_card i,min(t3.id) d,t3.month_pay m,DATE_FORMAT(t2.loan_date,'%Y-%m-%d') y FROM app_loan_appl t 
+JOIN app_loan_custom t1 ON t1.appr_id=t.id
+JOIN app_withdraw_appl t2 ON t2.appr_id=t.id
+JOIN app_repay_plan t3 ON t3.withdraw_id=t2.id
+GROUP BY t2.appr_id ) a
+WHERE a.y >='2017-09-01' AND a.y<='2017-09-07 23:59:59'
+LIMIT 1000
+
+# 复贷人员【0901-0907】【身份证，日期】【1000】
+SELECT t1.identity_card,DATE_FORMAT(t2.loan_date,'%Y-%m-%d') FROM app_loan_appl t
+JOIN app_loan_custom t1 ON t1.appr_id=t.id
+JOIN app_withdraw_appl t2 ON t2.appr_id=t.id
+JOIN app_repay_plan t3 ON t3.withdraw_id=t2.id
+WHERE t2.loan_date >='2017-09-01' AND t2.loan_date<='2017-09-07 23:59:59' AND
+t1.identity_card NOT IN ('350881199211141376')
+LIMIT 1000
+
+# 有盾分匹配【0901-0907】【身份证，有盾分】【1000】
+SELECT  distinct t1.id_card_num,t.youdun_score,DATE_FORMAT(t1.post_time,'%Y-%m-%d') FROM engine_relation t 
+JOIN engine_basic_info t1 on t1.id=t.info_id
+WHERE  FROM_UNIXTIME(t1.post_time) >= '2017-09-01' AND FROM_UNIXTIME(t1.post_time) <= '2017-09-07' AND
+t1.id_card_num IN('350881199211141376')
+
+# 多头借贷匹配
+SELECT min(t.id),t.id_number,t.item_name,t.platform_count FROM  tongdun_amt t
+WHERE t.item_id = 3405948
+AND
+t.id_number IN ('350881199211141376')
+GROUP BY t1.identity_card
+
+# 逾期状态匹配
+SELECT  t1.identity_card,t3.`status`,max(t3.days) FROM app_loan_appl t
+JOIN app_loan_custom t1 ON t1.appr_id = t.id
+JOIN app_withdraw_appl t2 ON t2.appr_id = t.id
+JOIN app_repay_plan t3 ON t3.withdraw_id = t2.id
+WHERE t2.loan_date <= '2017-09-07' AND
+t1.identity_card IN ('350881199211141376')
+GROUP BY t1.identity_card
+
+# 有盾分变动分析数据抽取
+分别取MAX(t1.id)和MIN(t1.id)
+SELECT MAX(t1.id),t1.`name`,t1.id_card_num,FROM_UNIXTIME(t1.post_time,'%Y-%m-%d'),t1.zhima_openid,t1.over_days,t1.over_status,t1.over_count,
+t.youdun_score_3       FROM engine_relation t
+JOIN engine_basic_info t1 ON t1.id = t.info_id
+WHERE FROM_UNIXTIME(t1.post_time) >='2017-11-03'  AND
+t1.id_card_num IN ('11010419820208041X')
+GROUP BY t1.id_card_num
+
+# 有盾分变动分析数据抓取
+SELECT t1.id,t1.id_card_num,FROM_UNIXTIME(t1.post_time,'%Y-%m-%d'),t.youdun_score_3       
+FROM engine_relation t
+JOIN engine_basic_info t1 ON t1.id = t.info_id
+WHERE FROM_UNIXTIME(t1.post_time) >='2017-11-01'  AND
+t1.id IN ('2537615',）
+
+# 提前还款人数
+SELECT  t.id,t1.identity_card,DATE_FORMAT(t3.repay_date,'%Y-%m-%d'), DATE_FORMAT(t3.pay_date,'%Y-%m-%d'),t3.days,datediff(DATE_FORMAT(t3.repay_date,'%Y-%m-%d'),DATE_FORMAT(t3.pay_date,'%Y-%m-%d')) FROM app_loan_appl t
+JOIN app_loan_custom t1 ON t1.appr_id = t.id
+JOIN app_withdraw_appl t2 ON t2.appr_id = t.id
+JOIN app_repay_plan t3 ON t3.withdraw_id = t2.id
+WHERE t3.repay_date <= '2017-11-12' AND t3.repay_date >= '2017-11-05' AND  datediff(DATE_FORMAT(t3.repay_date,'%Y-%m-%d'),DATE_FORMAT(t3.pay_date,'%Y-%m-%d'))>0
+-- GROUP BY t1.identity_card
+LIMIT 10
+
+
+SELECT  DATE_FORMAT(t3.repay_date,'%Y-%m-%d'),SUM(t2.month_pay),sum(CASE when DATEDIFF(t3.repay_date,t3.pay_date)>0 then t2.month_pay else 0 end),sum(CASE when DATEDIFF(t3.repay_date,t3.pay_date)>0 then t2.month_pay else 0 end)/SUM(t2.month_pay) FROM app_loan_appl t
+JOIN app_loan_custom t1 ON t1.appr_id = t.id
+JOIN app_withdraw_appl t2 ON t2.appr_id = t.id
+JOIN app_repay_plan t3 ON t3.withdraw_id = t2.id
+WHERE t3.repay_date BETWEEN '2017-11-01' and '2017-11-30' 
+GROUP BY DATE_FORMAT(t3.repay_date,'%Y-%m-%d')
+
+SELECT  t.id,t1.identity_card,DATE_FORMAT(t2.borrow_time,'%Y-%m-%d'),DATE_FORMAT(t3.repay_date,'%Y-%m-%d'), DATE_FORMAT(t3.pay_date,'%Y-%m-%d'),t3.days,datediff(DATE_FORMAT(t3.repay_date,'%Y-%m-%d'),DATE_FORMAT(t3.pay_date,'%Y-%m-%d')),t3.month_pay FROM app_loan_appl t
+JOIN app_loan_custom t1 ON t1.appr_id = t.id
+JOIN app_withdraw_appl t2 ON t2.appr_id = t.id
+JOIN app_repay_plan t3 ON t3.withdraw_id = t2.id
+WHERE t2.borrow_time <= '2017-11-15' AND t2.borrow_time >= '2017-10-15' AND t3.repay_date <= '2017-11-29 23:59:59' 

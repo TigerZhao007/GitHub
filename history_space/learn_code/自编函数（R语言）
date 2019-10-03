@@ -1,0 +1,72 @@
+# 多种分类问题，看分布
+class_distribute <- function(pre,class,low=0,high=1,by=0.05,digits=4){
+  name <- as.numeric(names(table(class)))
+  pred = list()
+  for (i in 1:length(name)) {
+    pred[[i]] = pre[which(class==name[i])]
+  }
+  count_class <- data.frame()
+  cut_0 <- cut(pred[[1]], breaks = seq(low,high,by))
+  count_class[1:length(levels(cut_0)),1] <- levels(cut_0)
+  for (j in 1:length(name)) {
+    for(i in 1:length(levels(cut_0))){
+      count_class[i,j+1] <- table(cut(pred[[j]], breaks = seq(low,high,by)))[[i]]  
+    }
+  }
+
+  count_prop <- data.frame()
+  count_prop[1:length(levels(cut_0)),1] <- levels(cut_0)  
+  for (j in 1:length(name)) {
+    for(i in 1:length(levels(cut_0))){
+      count_prop[i,j+1] <- round((table(cut(pred[[j]], breaks = seq(low,high,by)))[[i]])/(sum(count_class[,j+1])),digits)  
+    }
+  }
+  
+  count_prop_total <- data.frame()
+  count_prop_total[1:length(levels(cut_0)),1] <- levels(cut_0)  
+  for (j in 1:length(name)) {
+    for(i in 1:length(levels(cut_0))){
+      count_prop_total[,j+1] <- round((cumsum(table(cut(pred[[j]], breaks = seq(low,high,by)))))/(sum(count_class[,j+1])),digits)  
+    }
+  }  
+
+  colnames(count_class) <- names(table(df$sy_times))
+  colnames(count_prop) <- names(table(df$sy_times))
+  colnames(count_prop_total) <- names(table(df$sy_times))  
+  lis <- list(count_class= count_class, count_prop=count_prop,count_prop_total=count_prop_total)
+  return(lis)
+}
+
+# 两分类问题，看ks
+## 以数据框形式导入数据，第一列为pre,第二列为class.
+ks_dat_pc <- function(dat_p,low=0,high=1,by=0.05){
+  pred0 <- dat_p[which(dat_p[,2]==0),]
+  pred1 <- dat_p[which(dat_p[,2]==1),]
+  cut_0 <- cut(pred0[,1], breaks = seq(low,high,by))
+  cut_1 <- cut(pred1[,1], breaks = seq(low,high,by))
+  ks <- data.frame()
+  ks[1:length(levels(cut_0)),1] <- levels(cut_0)
+  for(i in 1:length(levels(cut_0))){  ks[i,2] <- table(cut_0)[[i]]  }
+  for(i in 1:length(levels(cut_0))){  ks[i,3] <- table(cut_1)[[i]]  }
+  ks[,4] <- cumsum(table(cut_0))/sum(ks$V2)
+  ks[,5] <- cumsum(table(cut_1))/sum(ks$V3)
+  ks[,6] <- ks[,4] - ks[,5]
+  colnames(ks) <- c('section','bad_0','good_1','add_bad_0','add_good_1','ks_value')
+  return(ks)
+}
+## 以数据分开赋值输入，参数pre和class必须填写。
+ks_pc <- function(pre,class,low=0,high=1,by=0.05){
+  pred0 <- pre[which(class==0)]
+  pred1 <- pre[which(class==1)]
+  cut_0 <- cut(pred0, breaks = seq(low,high,by))
+  cut_1 <- cut(pred1, breaks = seq(low,high,by))
+  ks <- data.frame()
+  ks[1:length(levels(cut_0)),1] <- levels(cut_0)
+  for(i in 1:length(levels(cut_0))){  ks[i,2] <- table(cut_0)[[i]]  }
+  for(i in 1:length(levels(cut_0))){  ks[i,3] <- table(cut_1)[[i]]  }
+  ks[,4] <- cumsum(table(cut_0))/sum(ks$V2)
+  ks[,5] <- cumsum(table(cut_1))/sum(ks$V3)
+  ks[,6] <- ks[,4] - ks[,5]
+  colnames(ks) <- c('section','bad_0','good_1','add_bad_0','add_good_1','ks_value')
+  return(ks)
+}

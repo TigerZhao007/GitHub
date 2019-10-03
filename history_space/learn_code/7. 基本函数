@@ -1,0 +1,1119 @@
+# python 基本函数
+
+一、所有对象通用的运算符和函数
+1、标准类型运算符
+1)、对象值得比较
+>,<,>=,<=,==,!=,<>(不等于的另外一个表示，逐渐退出历史舞台）
+2)、对象身份比较
+is 对象身份比较
+3）布尔类型 
+and,or,not运算符的优先级按从低到高，not运算拥有最优先级，只比素有运算符低一级
+
+2、标准内建函数
+type(obj) :接受一个对象做为参数，并返回它的类型。它的返回值是一个类型对象
+cmp(obj1,obj2) :用于比较两个对象obj1 和obj2， 如果obj1 小于obj2, 则返回一个负整
+数，如果obj1 大于obj2 则返回一个正整数， 如果obj1 等于obj2， 则返回0。
+比较是在对象之间进行的，不管是标准类型对象还是用户自定
+义对象。如果是用户自定义对象， cmp()会调用该类的特殊方法__cmp__()。
+str(obj)和repr(obj) 或反引号运算符(``) 可以方便的以字符串的方式获取对象的
+内容、类型、数值属性等信息。str()函数得到的字符串可读性好， 而repr()函数得到的字符
+串通常可以用来重新获得该对象, 通常情况下 obj == eval(repr(obj)) 这个等式是成立的
+isinstance(obj,type) 判断对象的类型
+>>> s='jin'
+>>> isinstance(s,str)
+True
+>>> isinstance(s,int) 
+False
+>>> isinstance(s,(int,str,float))
+
+3、类型工厂函数
+python2.2统一了类型和类，所有内建类型现在都是类。原来的所谓内建转换函数像int(),type(),list()现在都成了工厂函数。
+以前称为内建函数的工厂函数
+int(),long(),float(),complex() 将对象转换为整数,长整数,浮点,复数
+str(),unicode(),basestring() 将对象转换为字符串类型，unicode，str和unicode的父类basestring
+tuple(),list() 将对象转换为元组，列表
+type([obj]) 检查数据类型，返回对象类型
+其他工厂函数
+dict() 将对象转换为字典
+bool() 
+set(),frozenset()
+object()
+classmethod()
+super() ???
+property() 性能？
+file()
+
+4、基础内建函数
+dir([obj]) 显示对象属性，如果没有提供参数，则显示全局变量的名字 
+help([obj]) 显示文档字符5串，如果没有提供从参数，则会进入交互帮助
+len([obj]) 返回对象长度
+range([start],[stop],[step]) 返回一个整数列表，起始值为start,结束值为stop-1，start默认为0,step步进默认为1
+open(filenam,mode) 以mode[r,w,a读写追加]方式打开filename文件对象 
+raw_input(str) 等待用户输入一个字符串，可以提供一个可选的参数str用作提示信息，比如交互模式下打开文件
+id() 可以看到变量指向不同的对象的位置。
+>>> X=33
+>>> Y=33
+>>> X==Y
+True
+>>> X is Y
+True
+>>> id(X)
+674748936
+>>> id(Y)
+674748936
+
+
+二、数字函数总结
+1、标准类型运算符（也是工厂函数）
+cmp() 比较两个数字的大小
+str() 将数字转换为字符串
+type() 返回数字对象的类型
+
+2、转换工厂函数
+int(obj,base=10) 可接受进制参数,默认10进制。返回一个字符串或数值对象的整型表示
+long(obj,base=10) 可接受进制参数，返回一个字符串或数据对象的长整型表示
+float(obj) 返回一个字符串或数据对象的长整型表示
+complex(str) 返回一个字符串的复数表示，或者根据给定实数生产复数对象 
+bool(obj) 将整数型1和0转换为标注布尔值True和False
+
+3、功能函数
+abs(num) 返回给定参数的(num)绝对值
+coerce(num1,num2) 仅返回一个包含类型转换完毕的两个数值元素的元组 如返回(1,2)
+divmod(num1,num2) 把除法个取余运算集合起来，返回一个包含商和余数的元组。如divmod(10,3)返回(3,1),如divmod(10,2.5)返回(4.0,0.0)
+pow(x,y)或** 指数运算 一个内建函数，一个是操作符 可以使用第三个参数，即将运算结果和第三个参数取余运算。常用语密码运算.
+pow(x,y,z)比pow(x,y)%z性能好
+round() 常用于浮点型，进行四舍五入运算，不提供小数位参数，返回和第一参数最接近的整数，第2个参数告诉round函数精确到小数点后几位。
+rount(3,4) 结果3 round(3.49999,1)结果 3.5
+4、仅用于整数的函数
+hex(num) 将数字换行为16进制并以字符串形式返回
+oct(num) 将数字换行为8进制并以字符串形式返回
+chr(num) 将ASCII的数字换行为ASCII的字符，范围只能是0<=num<=255
+ord(num) 接受一个ASCII或Unicode字符（长度为1的字符串），返回相应的ASCII值或Unicode值
+unichar(num) 将数字换行为8进制并以字符串形式返回
+
+
+三、字符串函数
+
+(一)标准类型操作符和标准内建函数
+1)、标准类型操作符
+>,<,>=,<=,==,!=,<>对象值得比较
+注：做比较时字符串是按ASCII值的大小来比较的
+is 对象身份比较
+and,or,not 布尔类型 
+2）标准内建函数
+type(obj) 
+cmp(obj1,obj2)
+str(obj)和repr(obj) 或反引号运算符(``) 可以方便的以字符串的方式获取对象的
+内容、类型、数值属性等信息。str()函数得到的字符串可读性好， 而repr()函数得到的字符
+串通常可以用来重新获得该对象, 通常情况下 obj == eval(repr(obj)) 这个等式是成立的
+isinstance(obj,type) 判断对象的类型
+
+(二)序列操作
+1、序列操作
+字符串属于序列对象，可以使用所有序列的操作和函数 
+切片 [] [:] [::]
+简单总结：
+*索引（S[i])获取特定偏移的元素。
+——第一个元素偏移为0
+——（S[0])获取第一个元素。
+——负偏移索引意味着从最后或右边反向进行计数
+——（S[-2])获取倒数第二个元素（就像S[len(s)-2]一样
+*分片[S[i:j]提取对应的部分作为一个序列
+——右边界不包含在内
+——分片的边界默认为0和序列的长度，如果没有给出的话S[:]
+——（S[1:3])获取了从偏移为1，直到但不包括偏移为3的元素
+——（S[1:])获取从偏移为1到末尾之间的元素
+——（S[:3])获取从偏移为0直到但不包括偏移为3的元素
+——（S[:-1])获取从偏移为0直到但不包括最后一个元素之间的元素
+——（S[:])获取从偏移为0到末尾之间的元素,这有效地实现了顶层S拷贝
+拷贝了一个相同值，但是是不同内存区域的对象。对象字符串这样不可变的对象不是很有用，但是对于可以实地修改的对象来说很有用。
+比如列表。
+扩展分片：第三个限制值 【步进】
+完整形式：X[I:J:K]:这标识索引X对象的元素，从偏移为I直到J-1，每隔K元素索引一次。第三个限制值，K，默认为1
+实例
+>>> S='abcdefghijk'
+>>> S[1:10]
+'bcdefghij'
+>>> S[1:10:2]
+'bdfhj
+也可以使用负数作为步进。
+分片表达式
+>>> "hello"[::-1]
+'olleh'
+通过负数步进，两个边界的意义实际上进行了反转。
+
+3、成员操作符 in ，not in
+返回布尔值True 或False
+可以使用string模块来判断输入字符的合法性，可见成品中的idcheck.py
+
+4、字符串连接
++ 连接字符串 ‘name’+' '+'jin'
+字符串格式化 '%s %s' % ('name','jin')
+join()方法 ' '.join(('name','jin')) ' '.join(['name','jin'])
+
+5、删除清空字符串
+del aString
+aString=''
+(三)、序列函数
+序列类型函数
+len(str) 返回字串的长度
+enumerate(iter):接受一个可迭代对象作为参数，返回一个enumerate 
+max(str)/min(str):max()和min()函数对其他的序列类型可能更有用,但对于string类型它们能很好地运行,返回最大或者最小的字符(按照ASCII 码值排列),
+zip([it0, it1,... itN]) 返回一个列表，其第一个元素是it0,it1,...这些元素的第一个元素组成的一个元组，第二个...,类推.
+reversed(seq)c 接受一个序列作为参数,返回一个以逆序访问的迭代器(PEP 322)
+sorted(iter,func=None,key=None,reverse=False) 接受一个可迭代对象作为参数，返回一个有序的列表;可选参数func,key 和reverse 的含义跟list.sort()内建函数的参数含义一样.
+注意：
+sorted等需要在原处修改的函数无法用在字符串对象，但可以产生新的对象
+sum处理的对象是数字，不能用在字符串
+
+>>> sorted(s)
+['a', 'e', 'e', 'g', 'g', 'g', 'o']
+
+(四)只适合于字符串类型的函数
+1)raw_input()函数
+内建的raw_input()函数使用给定字符串提示用户输入并将这个输入返回，下面是一个使
+用raw_input()的例子:
+>>> user_input = raw_input("Enter your name: ")
+>>> prin user_input
+2)str() and unicode()
+str()和unicode()函数都是工厂函数，就是说产生所对应的类型的对象.它们接受一个任
+意类型的对象，然后创建该对象的可打印的或者Unicode 的字符串表示. 它们和basestring 都
+可以作为参数传给isinstance()函数来判断一个对象的类型
+3)chr(), unichr(), and ord()
+chr()函数用一个范围在range(256)内的(就是0 到255)整数做参数,返回一个对应的字符.unichr()跟它一样，只不过返回的是Unicode 字符
+ord()函数是chr()函数(对于8 位的ASCII 字符串)或unichr()函数(对于Unicode 对象)
+的配对函数,它以一个字符(长度为1 的字符串)作为参数,返回对应的ASCII 数值，或者Unicode
+数值，如果所给的Unicode 字符超出了你的Python 定义范围,则会引发一个TypeError 的异常
+
+(五)、只适用于字符串的操作符
+1、格式化操作符 %
+字符串格式化符号
+格式化字符 转换方式
+%c 转换成字符(ASCII 码值，或者长度为一的字符串)
+%ra 优先用repr()函数进行字符串转换
+%s 优先用str()函数进行字符串转换
+%d / %i 转成有符号十进制数
+%ub 转成无符号十进制数
+%ob 转成无符号八进制数
+%xb/%Xb (Unsigned)转成无符号十六进制数(x/X 代表转换后的十六进制字符的大
+小写)
+%e/%E 转成科学计数法(e/E 控制输出e/E)
+%f/%F 转成浮点数(小数部分自然截断)
+%g/%G %e 和%f/%E 和%F 的简写
+%% 输出%
+格式化操作符辅助指令
+符号 作用
+* 定义宽度或者小数点精度
+- 用做左对齐
++ 在正数前面显示加号( + )
+<sp> 在正数前面显示空格
+# 在八进制数前面显示零('0')，在十六进制前面显示'0x'或者'0X'(取决于
+用的是'x'还是'X')
+0 显示的数字前面填充‘0’而不是默认的空格
+% '%%'输出一个单一的'%'
+(var) 映射变量(字典参数)
+m.n m 是显示的最小总宽度,n 是小数点后的位数(如果可用的话)
+
+2、字符串模板: 更简单的替代品
+由于新式的字符串Template 对象的引进使得string 模块又重新活了过来，Template 对象
+有两个方法,substitute()和safe_substitute().前者更为严谨,在key 缺少的情况下它会报一
+个KeyError 的异常出来，而后者在缺少key 时，直接原封不动的把字符串显示出
+
+3、原始字符串操作符( r/R )
+字符串抑制转义r'带特殊符号的字串'
+myfile=open(r'C:\new\text.data','w')
+
+4、Unicode 字符串操作符( u/U )
+u'abc' U+0061 U+0062 U+0063
+u'\u1234' U+1234
+u'abc\u1234\n' U+0061 U+0062 U+0063 U+1234 U+0012
+
+
+(六)字符串对象的方法：
+1、删减
+T2.lstrip() 移除字符串前面字符（默认空格），返回字符串
+T2.rstrip() 移除字符串后面字符（默认空格），返回字符串
+T2.strip() 移除字符串前后面空格，返回字符串 默认空格，可以其他字符 S.strip('"')
+
+2、切割
+partition(sep),
+rpartition(sep),
+splitlines([keepends]),#把S按照行分割符分为一个list，keepends是一个bool值，如果为真每行后而会保留行分割符
+split([sep [,maxsplit]]),#以sep为分隔符，把S分成一个list。maxsplit表示分割的次数。默认的分割符为空白字符
+rsplit([sep[,maxsplit]]) #从右到左切割
+备注：
+partition()函数族是2.5版本新增的方法。它接受一个字符串参数，并返回一个3个元素的 tuple 对象。
+如果sep没出现在母串中，返回值是 (sep, ‘’, ‘’)；
+否则，返回值的第一个元素是 sep 左端的部分，第二个元素是 sep 自身，第三个元素是 sep 右端的部分。
+>>> S.partition(';') 
+('', ';', ' generated by /sbin/dhclient-script\nnameserver 172.16.10.171\nnameserver 8.8.8.8\nnameserver 172.16.0.2\nnameserver 178.79.131.110\nnameserver 202.96.199.133\n')
+参数 maxsplit 是分切的次数，即最大的分切次数，所以返回值最多有 maxsplit+1 个元素。
+s.split() 和 s.split(‘ ‘)的返回值不尽相同
+>>> ' hello world!'.split()
+['hello', 'world!']
+>>> ' hello world!'.split(' ')
+['', '', 'hello', '', '', 'world!']
+>>> S.split('\n',3)
+['; generated by /sbin/dhclient-script', 'nameserver 172.16.10.171', 'nameserver 8.8.8.8', 'nameserver 172.16.0.2\nnameserver 178.79.131.110\nnameserver 202.96.199.133\n']
+超过最大切割个数后面的全部为一个元素
+按行切割
+>>> S
+'; generated by /sbin/dhclient-script\nnameserver 172.16.10.171\nnameserver 8.8.8.8\nnameserver 172.16.0.2\nnameserver 178.79.131.110\nnameserver 202.96.199.133\n'
+>>> S.splitlines()
+['; generated by /sbin/dhclient-script', 'nameserver 172.16.10.171', 'nameserver 8.8.8.8', 'nameserver 172.16.0.2', 'nameserver 178.79.131.110', 'nameserver 202.96.199.133']
+
+产生差异的原因在于当忽略 sep 参数或sep参数为 None 时与明确给 sep 赋予字符串值时 split() 采用两种不同的算法。
+对于前者，split() 先去除字符串两端的空白符，然后以任意长度的空白符串作为界定符分切字符串
+即连续的空白符串被当作单一的空白符看待；
+对于后者则认为两个连续的 sep 之间存在一个空字符串。因此对于空字符串（或空白符串），它们的返回值也是不同的：
+>>> ''.split()
+[]
+>>> ''.split(' ')
+['']
+
+3、变形
+lower(),#全部小写
+upper(),#全部小写
+capitalize(),#首字母大写
+swapcase(),#大小写交换
+title()#每个单词第一个大写,其他小写
+备注
+因为title() 函数并不去除字符串两端的空白符也不会把连续的空白符替换为一个空格，
+所以建议使用string 模块中的capwords(s)函数，它能够去除两端的空白符，再将连续的空白符用一个空格代替。
+>>> ' hello world!'.title()
+' Hello World!'
+>>> string.capwords(' hello world!')
+'Hello World!'
+
+4、连接
+join(seq)
+join() 函数的高效率（相对于循环相加而言），使它成为最值得关注的字符串方法之一。
+它的功用是将可迭代的字符串序列连接成一条长字符串，如：
+>>> conf = {'host':'127.0.0.1',
+... 'db':'spam',
+... 'user':'sa',
+... 'passwd':'eggs'}
+>>> ';'.join("%s=%s"%(k, v) for k, v in conf.iteritems())
+'passswd=eggs;db=spam;user=sa;host=127.0.0.1'
+>>> S=''.join(T) #使用空字符串分割把字符列表转换为字符串
+
+5、查找
+count( sub[, start[, end]]),#计算substr在S中出现的次数 
+find( sub[, start[, end]]),#返回S中出现sub的第一个字母的标号，如果S中没有sub则返回-1。start和end作用就相当于在S[start:end]中搜索 
+index( substr[, start[, end]]),#与find()相同，只是在S中没有substr时，会返回一个运行时错误
+rfind( sub[, start[,end]]),#返回S中最后出现的substr的第一个字母的标号，如果S中没有substr则返回-1，也就是说从右边算起的第一次出现的substr的首字母标号
+rindex( sub[, start[, end]])
+T2.find('ie') 字符串方法调用：搜索
+find()----找到的第一个符合字符的index
+rfind()-----找到最后一个符合的字符的index
+备注：
+find()函数族找不到时返回-1，index()函数族则抛出ValueError异常。
+另，也可以用 in 和 not in 操作符来判断字符串中是否存在某个模板
+
+6、替换
+replace(old, new[,count]),#把S中的oldstar替换为newstr，count为替换次数。这是替换的通用形式，还有一些函数进行特殊字符的替换 
+translate(table[,deletechars]) #使用上面的函数产后的翻译表，把S进行翻译，并把deletechars中有的字符删掉
+备注：
+replace()函数的 count 参数用以指定最大替换次数
+translate() 的参数 table 可以由 string.maketrans(frm, to) 生成
+translate() 对 unicode 对象的支持并不完备，建议不要使用
+
+7、判定
+isalnum(),#是否全是字母和数字，并至少有一个字符
+isalpha(),是否全是字母，并至少有一个字符
+isdigit(),是否全是数字，并至少有一个字符 ，如果是全数字返回True,否则返回False
+islower(),#S中的字母是否全是小写 
+isupper(),#S中的字母是否是大写 
+isspace(),#是否全是空白字符，并至少有一个字符
+istitle(),S是否是首字母大写的
+startswith(prefix[, start[, end]]), #是否以prefix开头 
+endswith(suffix[,start[, end]]),#以suffix结尾 
+备注：
+这些函数都比较简单，顾名知义。需要注意的是*with()函数族可以接受可选的 start, end 参数，善加利用，可以优化性能。
+另，自 Py2.5 版本起，*with() 函数族的 prefix 参数可以接受 tuple 类型的实参，当实参中的某人元素能够匹配，即返回 True。
+
+8、填充
+字符串在输出时的对齐：
+center(width[, fillchar]), 字符串中间对齐
+ljust(width[, fillchar]), 字符串左对齐，不足部分用fillchar填充，默认的为空格
+rjust(width[, fillchar]), 字符串右对齐，不足部分用fillchar填充，默认的为空格
+zfill(width), 把字符串变成width长，并在右对齐，不足部分用0补足
+expandtabs([tabsize])把字符串中的制表符（tab）转换为适当数量的空格。
+
+fillchar 参数指定了用以填充的字符，默认为空格
+zfill的z为zero的缩写,顾名思义,是以字符0进行填充，用于数值输出
+expandtabs()的tabsize 参数默认为8。它的功能是把字符串中的制表符（tab）转换为适当数量的空格。
+
+9、编码
+encode([encoding[,errors]]),
+decode([encoding[,errors]])
+这是一对互逆操作的方法，用以编码和解码字符串。因为str是平台相关的，它使用的内码依赖于操作系统环境，
+而unicode是平台无关的，是Python内部的字符串存储方式。
+unicode可以通过编码（encode）成为特定编码的str，而str也可以通过解码（decode）成为unicode。
+# 其中encoding可以有多种值，比如gb2312 gbk gb18030 bz2 zlib big5 bzse64等都支持。errors默认值为"strict"，意思是UnicodeError。
+可能的值还有'ignore', 'replace', 'xmlcharrefreplace', 'backslashreplace' 和所有的通过
+
+expandtabs
+参考
+http://www.cnblogs.com/rubylouvre/archive/2011/06/19/2083855.html
+http://www.cnblogs.com/lovemo1314/archive/2010/10/07/1845025.html
+
+
+检查对象是否有相同值得和检查是否是同一对象。
+==检查对象是否有相同的值。 is操作符，检查对象的同一性。如果两个变量名精准地指向同一个对象，它会返回True。所以这是一种更严格的相等测试。
+实际上,is只是比较现实引用的指针。所以如果必要的话是代码中检测共享引用的一种方法。如果变量名引用值相等。但是为不同的对象，它的返回值将是False.
+>>> L=[1,2,3]
+>>> M=[1,2,3]
+>>> L==M
+True
+>>> L is M
+False
+查询一个对象被引用 的次数：在sys模块中的getrefcount函数返回对象应用的次数。
+T2.lstrip() 移除字符串前面空格，返回字符串
+T2.rstrip() 移除字符串后面空格，返回字符串
+T2.strip() 移除字符串前后面空格，返回字符串 默认空格，可以其他字符 S.strip('"')
+
+如果centos6.2 主机名前后有"
+for line in open('/etc/sysconfig/network', 'r'):
+if 'HOSTNAME' in line.rstrip(): #in 'HOSTNAME':
+hostname = line.rstrip().replace('HOSTNAME=', '').strip('"')
+四、列表的函数
+(一)、标准内建函数
+type()
+cmp()
+str()
+isinstance()
+(二）序列类型操作符
+序列操作符 作用
+seq[ind] 获得下标为ind 的元素
+seq[ind1:ind2] 获得下标从ind1 到ind2 间的元素集合
+seq * expr 序列重复expr 次
+seq1 + seq2 连接序列seq1 和seq2
+obj in seq 判断obj 元素是否包含在seq 中
+obj not in seq 判断obj 元素是否不包含在seq 中
+
+1、成员关系 in,not in
+对象 [not] in 序列
+
+2、连接操作符(+)
+sequence1+sequence2
+
+3、重复操作符(*)
+sequence*int
+int必须是一个整数，而且不能使长整数
+
+4、切片操作符[][N][n:m][:][::][n:m:l]
+
+5、使用步长来进行扩展切片[n:m:l]
+s='abcded'
+s[::-1] 类似翻转
+s[::2] 隔一个取一个
+6、切片索引的更多内容
+切片索引的语法要比简单的单一元素索引灵活的多。开始和结束素引值可以超过字符串的
+长度。换句话说，起始索引可以小于0,而对于结束索引，即使索引值为100 的元素并不存在也
+不会报错
+有一个字符串，我们想通过一个循环按照这样的形式显示它：每次都把
+位于最后的一个字符砍掉，下面是实现这个要求的一种方法：
+>>> s = 'abcde'
+>>> for i in range(-1, -len(s), -1):#-1,-len(s)倒数，步进在-1 有正数
+... print s[:i]
+
+(三)、序列类型函数[不是对象的方法是函数]
+1)列表求长：len(L)
+2)列表中的最大值最小值： max(L)和min(L)
+max()和min()函数在字符串操作里面用处不大,因为它们能对字符串做的只能是找出
+串中"最大"和"最小"的字符(按词典序),而对列表和元组来说,它们被定义了更多的用处.比如
+对只包含数字和字符串对象的列表,max()和min()函数就非常有用,重申一遍,混合对象的结构
+越复杂返回的结构准确性就越差
+3)正向排序和反向排序：sorted(L) reversed(L) 
+4)zip() 对多个列表内容进行组合
+返回一个列表，其第一个元素是it0,it1,...这些元素的第一个元素组成的一个元组，第二个...,类推.
+6)sum() 列表求和
+7）enumerate(iter) ：接受一个可迭代对象作为参数，返回一个enumerate 对象(同时也是一个迭代器),该对象生成由iter 每个元素的index 值和item值组成的元组(PEP 279)
+
+(四)【列表类型的内建函数】列表的方法
+http://blog.csdn.net/sheila_1988/article/details/7242256
+1、list函数
+将字符串转化成列表，例
+>>> name=list('hello')
+>>> name
+['h', 'e', 'l', 'l', 'o']
+
+2、改变列表：元素赋值
+>>> L
+['1', 'a']
+>>> L[0]=2
+>>> L
+[2, 'a']
+
+3、分片赋值（第一个参数是开始分片的起始位置，第二个参数是结束分片的下一个位置）
+1)修改序列
+>>> name = list('Perl') 
+>>> name = list('Perl')
+>>> name[1:] = list('ython')
+>>> name
+['P', 'y', 't', 'h', 'o', 'n']
+2)插入序列
+>>> num=[1,5]
+>>> num[1:1]=[2,3,4]
+>>> num
+[1, 2, 3, 4, 5]
+3)删除序列
+>>> num=[1, 2, 3, 4, 5]
+>>> num[1:4]=[2]
+>>> num
+[1, 2, 5]
+
+4、添加元素 append 和 extend 
+1)添加一个元素 append
+>>> L.append('NI')
+>>> L
+[2, 'a', 'NI']
+
+2)扩展extend 在结尾添加多个元素 和字符串的' '.jion('LIST') 有点类似
+在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）
+函数中填写一个列表
+>>> a = [1, 2, 3]
+>>> a.extend([4,5,6])
+>>> a
+[1, 2, 3, 4, 5, 6]
+或者填一个列表对象
+>>> a = [1, 2, 3] 
+>>> b = [4, 5, 6] 
+>>> a.extend(b) 
+>>> a
+[1, 2, 3, 4, 5, 6]
+
+5、删除 pop,del,remove
+1)pop 根据位置删除[填写序列]
+移除列表中的一个元素（默认最后一个元素），并且返回该元素的值
+pop(元素位置)，返回删除的元素
+>>> L.pop(1)
+'a'
+
+2)、删除 del语句实现
+del 列表[元素位置]
+>>> L=[2, 'NI']
+>>> del L[1]
+>>> L
+[2]
+
+3）、移除 [填写对象]
+remove(元素)
+>>> L.remove('NI')
+>>> L
+
+6、插入
+L.insert(位置,'元素')
+注意，这个会改变原来元素的位置
+>>> L
+[2]
+>>> L.insert(0,'test')
+>>> L
+['test', 2]
+
+7、排序 sort
+1）升序
+>>> L.sort() 默认安装升序进行排序
+2）排序翻转
+反向列表中元素
+>>> L.reverse()
+
+排序实例：
+对原列表进行排序
+[html] view plaincopy
+>>> x = [4, 6, 2, 3, 5, 1] 
+>>> x.sort() 
+>>> x 
+[1, 2, 3, 4, 5, 6]
+
+若不需要修改原序列(注意：如果这里采用x = y的话，那么x和y都指向同一个列表，即使操作时只对y排序，实际上x也会被排序)
+方法一：创建副本y，并对y进行排序
+[html] view plaincopy
+>>> x = [4, 6, 2, 3, 5, 1] 
+>>> y = x[:] 
+>>> y.sort() 
+>>> x 
+[4, 6, 2, 3, 5, 1] 
+>>> y 
+[1, 2, 3, 4, 5, 6] 
+方法二：使用sorted函数(返回一个已排序的副本，不改变原序列)
+[html] view plaincopy
+>>> x = [4, 6, 2, 3, 5, 1] 
+>>> y = sorted(x) 
+>>> y 
+[1, 2, 3, 4, 5, 6] 
+>>> x 
+[4, 6, 2, 3, 5, 1] 
+关键字排序：key 
+长度(len)排序：###按长度排序
+[html] view plaincopy
+>>> x = ['bb', 'eeeee', 'a', 'dddd', 'ccc'] 
+>>> x.sort(key = len) 
+>>> x
+
+8.索引 index
+从列表中找出某个值第一个匹配项的索引位置
+['a', 'c', 'd', 'c']
+>>> L.index('c')
+1
+
+9、计数
+统计某个元素在列表中出现的次数
+>>> L
+['a', 'c', 'd', 'c']
+>>> L.count('c') 
+2
+
+
+10、比较两个数字的大小
+>>> cmp(43,54)
+-1
+>>> cmp(43,42)
+1
+>>> cmp(43,43)
+0
+(五)、列表特殊强大的功能
+列表解析
+>>> [ i * 2 for i in [8, -2, 5] ]
+[16, -4, 10]
+>>> [ i for i in range(8) if i % 2 == 0 ]
+[0, 2, 4, 6]
+
+
+五、元组
+1、标准类型操作符,序列类型操作符和内建函数.
+元组的对象和序列类型操作符还有内建函数跟列表的完全一样.你仍然可以对元组进行切
+片操作,合并操作,以及多次拷贝一个元组,还可以检查一个对象是否属于一个元组,进行元组之
+间的比较等.
+1)、标准类型运算符
+>,<,>=,<=,==,!=,<> 对象值得比较
+is 对象身份比较
+and,or,not 布尔类型
+
+2)、标准内建函数
+type(obj) 
+cmp(obj1,obj2) 
+str(obj)和repr(obj) 或反引号运算符(``) 
+isinstance(obj,type) 判断对象的类型
+
+3)、序列类型操作符
+序列操作符 作用
+seq[ind] 获得下标为ind 的元素
+seq[ind1:ind2] 获得下标从ind1 到ind2 间的元素集合
+seq[ind1:ind2:ind3] 以为ind3为步进获得下标从ind1 到ind2 间的元素集合
+seq * expr 序列重复expr 次
+seq1 + seq2 连接序列seq1 和seq2
+obj in seq 判断obj 元素是否包含在seq 中
+obj not in seq 判断obj 元素是否不包含在seq 中
+
+2、元组对象的方法
+和字符串,列表不同，元组没有自己的方法
+
+3、元组不可修改，和列表转哈
+不可原处修改，修改都是浅拷贝新对象。转换也是产生新对象
+list(tuple) 
+tuple(list)
+
+六、字典
+0、字典中有列表可以使用列表的函数
+为嵌套添加数据
+>>> off['job'].append('jantior')
+>>> off['job']
+['dev', 'mgr', 'jantior']
+>>> off['job'][2]
+'jantior'
+避免获取到一个不存在的键我们使用字典的has_key方法判断键的存在性
+>>> help(D.has_key)
+Help on built-in function has_key:
+
+has_key(...)
+D.has_key(k) -> True if D has a key k, else False
+>>> D.has_key('k') 
+False
+Ptest.get('name','Bad choice') 字典的get方法，如果有name键则返回其值，如果没有则返回默认值,注意不会修改原来的对象。
+
+
+1、赋值、修改、索引
+D1={}	空字典
+D={'one':1}	设置字典
+D2={'name':'diege','age':18}	两项目字典
+D3={'name':{'first':'diege','last':'wang'},'age':18} 嵌套
+D1[key]='class'	增加数据：已经存在就是修改，没有存在就是增加数据
+D2['name']	以键进行索引计算
+D3['name']['last']	字典嵌套字典的键索引
+D['three'][0]	字典嵌套列表的键索引
+D['six'][1]	字典嵌套元组的键索引
+
+2、健,值,求长,索引
+dict.keys()	方法：键列表 返回一个包含字典中键的列表
+dict.values() 方法：值列表 返回一个包含字典中所有值的列表
+list(D)	获取D这个字典的的KEY的 MS按字典顺序排序成一个列表 好像也不是
+len(D)	方法：求长（存储元素的数目)
+
+
+3、删除,拷贝,合并,清空
+1)删除
+del dict[’key']	函数del 函数字典中指定键
+dict.pop('age')	方法：删除 根据key删除,并返回删除的value
+dict.pop(key[, default])	和方法get()相似，如果字典中key 键存在，删除并返回dict[key]，如果key 键不存在，且没有给出default 的值，引发KeyError 异常。
+dict.popitem()	从字典前面一对K:V的方式删除，并返回K,V合成的元组
+>>> D
+{'name': 'jin', 'sex': 'man'}
+>>> D.popitem() 
+('name', 'jin')
+>>> D #剩下
+{'sex': 'man'}
+del dict[’sex]	
+
+2)拷贝
+dict.copy() 方法：拷贝 返回字典(浅复制)的一个副本
+
+3)合并
+D2.update(D1)	方法：合并。D1合并到D2,D1没有变化，D2变化。注意和字符串，列表好的合并操作”+“不同
+
+4)清除
+dict.clear()	方法：清除字典 删除字典中所有元素,字典对象还有，但字典是空字典
+del dict	del函数 起整个dict字典 这个是这个字典对象都没有了
+
+4、key存在判断
+dict.has_key(key)	方法：判断字典是否有key键 如果键(key)在字典中存在，返回True，否则返回False.
+'name' in D	方法：成员测试：注意使用key来测试
+'name' not in D	方法： 成员测试，不存在key的情况
+
+5、默认值
+1)、创建时设置默认值
+dict.setdefault(key,default=None)	和方法set()相似，如果字典中不存在key 键，由dict[key]=default 为它赋值，如果存在则不改变原字典值
+>>> D={}
+>>> D.setdefault('name','test')
+'test'
+>>> D={}
+>>> D.setdefault('name','jin')
+'jin'
+>>> D
+{'name': 'jin'}
+>>> D.setdefault('name','test')
+'jin'
+>>> D
+{'name': 'jin'}
+2)、求值是设置字典默认值
+dict.get(key,default=None)	对字典dict中的存在的键key,返回它对应的值value，如果字典中不存在此键，则返回default的值(注意，参数default 的默认值为None)
+在Python2.2版本引入in 和not in 后，此方法几乎已废弃不用了，但仍提供一个可工作的接口。
+>>> D
+{'name': 'jin'}
+>>> D.get('sex','man') #不存在时返回设置的默认值
+'man'
+>>> D
+{'name': 'jin'}
+>>> D.get('name','diege') #存在时返回存在健的值，而不是get设置的默认值
+'jin'
+>>> D
+{'name': 'jin'}
+
+6、特别健值组合
+dict.items()	返回一个包含字典中(键, 值)对元组的列表
+dict.iter()	方法iteritems(), iterkeys(), itervalues()与它们对应的非迭代方法一样，不同的是它们返回一个迭代子，而不是一个列表。
+
+dict.items() 实例
+>>> D.items()
+[('name', 'jin'), ('sex', 'man')]
+iteritems() 实例
+>>> for i in D.iteritems():
+... print i
+... 
+('name', 'jin')
+('sex', 'man'
+
+'fromkeys', 
+'get',
+iterkeys() 实例
+>>> for i in D.iterkeys():
+... print i 
+... 
+name
+sex
+itervalues() 实例
+>>> for i in D.itervalues():
+... print i
+... 
+jin
+man
+
+8、创建字典的多种方法
+1）
+>>> {'name':'diege','age':45}
+{'age': 45, 'name': 'diege'}
+2）
+>>> D={}
+>>> D['name']='lily'
+>>> D['age']=18 
+>>> D
+{'age': 18, 'name': 'lily'}
+3）dict(key1='value1',key2='value2')
+>>> dict(name='kelly',age=19) 
+{'age': 19, 'name': 'kelly'}
+注意这里name,age没有 ’‘括起来，因为这里是变量。
+4)dict([(’key1','value1'),(key2','value2')])
+>>> dict([('name','tom'),('age',23)])
+{'age': 23, 'name': 'tom'}
+这里将每一个数据(属性），做为元组放到一个列表里传递给dict函数
+dict(列表，列表中的每个元素是一对key value 组成的元组)
+
+5）dict(zip(keyslist,valslist))	
+>>> keyslist=['shell','sql']
+>>> valslist=[['s1','k1','all'],['s1','k1','all']]
+>>> keyslist
+['shell', 'sql']
+>>> valslist
+[['s1', 'k1', 'all'], ['s1', 'k1', 'all']]
+>>> D=dict(zip(keyslist,valslist)) 
+>>> D
+{'shell': ['s1', 'k1', 'all'], 'sql': ['s1', 'k1', 'all']}
+
+6）dict.fromkeysc(seq,val=None) 方式
+dict.fromkeysc(seq,val=None)	创建并返回一个新字典，以seq中的元素做该字典的键的列表，val 做该字典中所有键对应的初始值(如果不提供此值，则默认为None)
+dict.fromkeys 可以从一个列表读取字典的key 值默认为空，可指定初始值.两个参数一个是KEY列表，一个初始值
+>>> dict.fromkeys(['a','b','c'],0)
+{'a': 0, 'c': 0, 'b': 0}
+6种方法的选择技巧
+*如果可以事先拼除整个字典，那么第一种是很方便的。
+*如果需要一次动态地建立字典的一个字段，第二种比较合适
+*第三种关键字形式所需的代码比常量少，【但是键必须是都是字符串才可行】
+*如果需要在程序运行时把键和值逐步建成序列。第四中比较有用。
+zip函数把程序运行动态获得的键和值列表合并在一起（例如分析数据文件字段）
+如果所有键的值都相同，可以使用特殊形式对字典进行初始化。简单传入一个键列表，以及所有键的初始值（默认为空）dict.fromkeysc(
+
+>>> D={} 
+>>> D={'one':1}
+>>> D
+{'one': 1}
+列表不能通过这样的方法来增加数据，列表只能通过append方法，列表之能通过L[1]='A'这样的方法来修改已存在序列的数据。
+
+
+五、文件
+方法 描述
+f.read([n]) 读取至多 n 字节
+f.readline([n]) 读取一行中的前 n 字符。如果 n 被省略，就读取整行
+f.readlines() 读取所有的行并返回一个包含所有行的列表
+f.xreadlines() 返回一个迭代器，每次迭代返回文件的一个新行
+f.write(s) 将字符串 s 写入文件
+f.writelines(l) 将列表 l 中的所有字符串写入文件
+f.close() 结束文件
+f.tell() 返回当前的文件指针
+f.seek(offset [, where]) 定位到一个新的文件位置
+f.isatty() 如果 f 是一个交互式终端则返回 1
+f.flush() 刷新输出缓冲区
+f.truncate([size]) 如果文件长于 size 就截短它至 size 大小
+f.fileno() 返回一个整型的文件描述符
+f.readinto(buffer ,nbytes)读取 n 字节数据至一个 buffer 对象 【】
+f.name 文件名
+f.mode 文件类型 读或写
+
+(一)内建函数open（）和file（）
+语法：file_object = open(fiel_name, access_mode=’r’, buffering=-1)
+File_name是要打开的文件名字的字符串，可以使相对路径或者绝对路径,默认文件保存在运行python的起始路径,access_mode可选参数,表示文件打开的模式,’r’,’w’,’a’ 分别代表读取，写入和追加。还有个’U’模式，代表通用换行符支持。
+
+‘r’或者’U’模式打开的文件必须是已经存在的，使用’w’模式打开的文件若存在则首先清空，然后重新创建。以’a’模式打开的文件是为追加数据准备的，所有写入数据都将追加到文件的末尾。
+另一个可选参数buffering用于指示访问文件所采用的缓冲方式，0表示不缓冲，1表示缓冲一行数据，大于1代表用给定值作为缓冲区大小，不提供参数或者负值代表使用系统默认缓冲机制。
+
+File（）和open（）的用法相同。
+
+(二)文件内建方法：
+1、读取
+read([size])方法用来直接读取字节到字符串中，可以指定读取数目，默认是文件将被读取直至末尾。
+readline()读取打开文件的一行，包括行结束符，也可选size参数，默认为-1，代表直至读到行结束符。
+readlines()不和前两个一个返回一个字符串，它会读取所有行然后把它们作为一个字符串列表返回，有一个可选参数sizhint代表返回的最大字节大小。
+xreadlines() file.xreadlines()和xreadlines.xreadlines(file) 是一种更高校的文件读取, 一次读取一块, 而不是一次读取所有行, 但是, 由于iter取代了该功能, 所以会被废弃.
+
+读取指定字节
+>>> fl=open('/etc/rc.local')
+>>> fl.read(10) #读取10个字节
+'#!/bin/sh\n'
+读取文件所有内容到一个字符串
+>>> f=open('data.ext','r')
+>>> f.read() 读取所有内容到一个字符串
+
+按行读取
+>>> f=open('data.ext','r')
+>>> f.readline() 
+'Hello\n
+>>> fl.readline() 
+'ill be executed *after* all the other init scripts.\n'
+>>> fl.readline(12) #也可以读取行为指定字节
+'# You can pu
+
+读取所有行到一个列表
+>>> f.readlines() 
+['Hello\n', 'world\n']
+
+读取的迭代
+next()文件迭代方法，无需将文件读取。
+>>> f=open('/etc/rc.local')
+>>> f.next() 下一行
+'#!/bin/sh\n
+
+逐行读取文本的最佳方式就是根本不要去读取，其替代的方法就是，让for循环在每轮自动调用next从而前进到下一行
+>>> for line in open('/etc/rc.conf'):
+... print line.upper(),
+
+读取所有进一个列表，一行一个元素
+>>> fl.readlines() 
+["t your own initialization stuff in here if you don't\n", '# want to do the full Sys V style init stuff.\n', '\n', 'touch /var/lock/subsys/local\n', 'sh /root/bin/iptables_init.sh\n']
+>>> fl.xreadlines()
+<open file '/etc/rc.local', mode 'r' at 0xb77b1078>
+
+2、读取指定行
+有些时候我们，只读取指定行，这个时候，需要用到其他模块了
+
+3、写入
+write()内建方法功能与read()和readline()相反，它把含有文本数据或二进制数据块的字符写到文件中去。
+和readline()一样，writelines()方法是针对列表的操作，它接受一个字符串列表作为参数，将它写入文件，行结束符不会自动加入，所以如果需要的话，你必须在调用writelines()前给每行结尾加上行结束符。
+f.write(s) 将字符串 s 写入文件
+f.writelines(l) 将列表 l 中的所有字符串写入文件
+f.write(s)实例
+>>> f=open('data.ext','w')
+>>> f.write('Hello\n')
+>>> f.write('world\n') 
+>>> f.close()
+
+>>> S='the 1st line\nthe 2nd line\n' 
+>>> f=open('/root/test100.data','w',0)
+>>> f.write(S)
+>>> f.close()
+# cat test100.data
+the 1st line
+the 2nd line
+f.writelines(l) 实例
+>>> L=['the 1st line\n','the 2nd line\n']
+>>> f=open('/root/test99.data','w',0)
+>>> f.write(L)
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+TypeError: argument 1 must be string or read-only character buffer, not list
+f.write 写入的对象只能使字符串
+>>> f.writelines(L)
+# cat test99.data 
+the 1st line
+the 2nd line
+
+file.flush()没有刷到硬盘可能会出一下问题
+http://topic.csdn.net/u/20120620/10/69378f85-4386-476c-b0ab-34a1bcd181b1.html
+
+4、关闭文件
+读入文件或写入文件后一定要关闭文件
+f.close() 结束文件
+
+比较好的方法
+with open("hello.txt") as f:
+for line in f:
+print line
+这种方式打开后会自动关闭
+
+f = open("hello.txt")
+try:
+for line in f:
+print line
+finally:
+f.close()
+
+老的版本使用try不管什么情况下关闭文件的方式
+
+5、文件基本信息
+>>> f
+<open file '/root/test.file', mode 'r' at 0xb77b18b8>
+>>> f.name #f.name open()函数打开的文件名 否则，它就是一个表示文件来源的字符串
+'/root/test.file'
+>>> f.mode #文件打开模式 
+'r'
+>>> f.fileno() #fileno()回一个打开文件的整型文件描述编号，有些模块在进行低层次 I/O操作时会用到
+3
+>>> f.isatty() #如果 f 是一个交互式终端则返回 1
+False
+
+>>> f.closed #f.closed 表示文件状态的布尔值: 0 表示文件打开， 1 表示已关闭。 
+False
+
+>>> f.softspace
+0
+#f.softspace这是一个布尔值在使用print语句时表示在打印另一个值之前，是否要先打印一个空白符。若用类来模仿文件操作则必须提供这样一个可写的属性，并将其初始化为0。
+
+6、文件内移动 seek()
+f.seek(offset [, where]) 定位到一个新的文件位置
+seek()方法可以在文件中移动文件指针到不同的位置，offset字节代表对于某个位置偏移量，位置的默认值为0，代表从文件开头算起，1代表从当前位置算起，2代表从文件末尾算起。和C语言总的fseek（）类似。
+seek(offset[,where]) 用来随机存取文件的任一部分。offset是偏移量，where是可选的位置参数(默认值为0，表示文件开始位置)。 如果where的值是1，表示当前位置。如果where是2表示文件结束位置。fileno()返回一个打开文件的整型文件描述编号，有些模块在进行低层次 I/O操作时会用到。在支持单个文件超过2GB容量的机器上，seek() 和 tell() 使用长整数. 不过要允许这个特性可能需要重新配置并重新编译Python解释器
+>>> f.close()
+>>> f=open('/root/test.file')
+>>> f.tell()
+0L
+>>> f.seek(99) 
+不知道有为什么用
+>>> f.tell()
+99L
+>>> f.fileno()
+3
+
+7.f.truncate()和f.readinto(）
+f.truncate([size]) 如果文件长于 size 就截短它至 size 大小
+这个文件对象是write的情况下，因为需要修改文件对象
+# wc -l test.file 
+119 test.file
+>>> f=open('/root/test.file','w',0)
+>>> f.truncate(50)
+>>> f.close()
+# cat test.file 
+没内容了
+f.readinto(buffer ,nbytes)读取 n 字节数据至一个 buffer 对象
+不会用
+
+六、模块相关函数
+1、__import__()
+import 语句调用 __import__() 函数完成它的工作。提供这个函数是为了让有特殊需要的用户覆盖它, 实现
+自定义的导入算法。
+__import__() 的语法是:
+__import__(module_name[, globals[, locals[, fromlist]]])
+module_name 变量是要导入模块的名称, globals 是包含当前全局符号表的名字的字典,
+locals 是包含局部符号表的名字的字典, fromlist 是一个使用 from-import 语句所导入符号的
+列表。globals , locals , 以及 fromlist 参数都是可选的, 默认分别为 globals() , locals() 和[] 。
+调用 import sys 语句可以使用下边的语句完成:
+sys = __import__('sys')
+2.globals() 和 locals()
+globals() 和 locals() 内建函数分别返回调用者全局和局部名称空间的字典。 在一个函数内
+部, 局部名称空间代表在函数执行时候定义的所有名字, locals() 函数返回的就是包含这些名字的字典。 globals() 会返回函数可访问的全局名字。
+
+print "__main__'s globals:", globals().keys()
+print "__main__'s locals:", locals().keys() foo()
+
+要让模块中函数的局部命名空间，可以提升为全局命名空间，可使用global语句【注意是语句】
+def testjin():
+global name
+name='jin'
+
+testjin()
+print name
+这里要注意，函数testjin()要执行后，函数内testjin()中局部变量name才会提升为全局变量，函数外才能访问
+但是一般都不用这种临时的方式，全局的就在全局定义，局部的就在局部定义
+
+3、reload() 
+内建函数可以重新导入一个已经导入的模块。 它的语法如下:
+reload(module)
+module 是你想要重新导入的模块。使用 reload() 的时候有一些标准。 首先模块必须是全部
+导入(不是使用 from-import), 而且它必须被成功导入。另外 reload() 函数的参数必须是模块自
+身而不是包含模块名的字符串。 也就是说必须类似 reload(sys) 而不是 reload('sys')。
+
+
+并行遍历函数：zip 和map
+>>> L1=[1,2,3,4]
+>>> L2=[5,6,7,8]
+>>> zip(L1,L2)
+[(1, 5), (2, 6), (3, 7), (4, 8)]
+>>> for (x,y) in zip(L1,L2):
+... print x,y,'--',x+y
+当参数长度不同时，zip会以最短序列的长度为准来截断所得到的元组：
+内置map函数，用类似的方式把序列的元素配对起来，但是如果参数长度，不同则会为较短的序列用None补齐。
+>>> map(None,S1,S2) 
+[('A', 'x'), ('B', 'y'), ('C', 'z'), (None, '1'), (None, '2'), (None, '3')]
+map对迭代对象中每一个元素都应用一个函数调用，类似于列表解析，有局限性，因需要函数，而不是任意表达式。
+map(str.upper,open('/etc/rc.conf'))
+内置range函数返回连续整数列表，可作为for中的索引。
+>>> range(5),range(2,5),range(3,10,2)
+([0, 1, 2, 3, 4], [2, 3, 4], [3, 5, 7, 9])
+>>> range(5,-5,-1)
+[5, 4, 3, 2, 1, 0, -1, -2, -3, -4]
+用于for循环，步进2的更好for循环可为：
+for x in S[::2]:print x
+使用zip构造字典
+>>> keys=['name','age','class']
+>>> vals=['diege',18,2012] 
+dict(zip(keys,vals)) 构造字典
+>>> dict(zip(keys,vals))
+{'age': 18, 'name': 'diege', 'class': 2012}
+>>> D5=dict(zip(keys,vals))
+enumerate内置函数，同时产生偏移和元素
+>>> S='diege'
+>>> for (offset,item) in enumerate(S):
+... print item,offset
+...
+d 0
+i 1
+e 2
+g 3
+e 4
+这个方法有个next方法，每次遍历列表时，会返回一个(index,value)的元组，而我们能在for中通过元组赋值运算将其分解。
+>>> E=enumerate(S)
+>>> E.next()
+(0, 'd')
+>>> E.next()
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+StopIteration
+>>> sorted(open('/etc/rc.conf')) #这个工具排序了，较新的内置函数，采用了迭代协议。应用于任何可迭代的对象上。
+>>> sum([3,5,6,9]) #sum调用会计算任何可迭代对象内所有数字的和
+any如果可迭代对象中的任何元素或者全部元素为True,内置函数就会返回True:all全部元素为True才返回True,有一个元素不为
+True，都会返回flase
+>>> any(['diege','','']) 
+True
+>>> all(['diege','','ni']) 
+False
+>>> all(['diege','a','ni'])
+True
+
+
+函数
+匿名函数：lamdba
+lambad 创建了一个之后能够被调用的函数，它返回了一个函数而不是将这个函数赋值给一个变量名。
+1、lambda表达式
+lanbda arg1,arg2,...,argN:expression using arguments
+
+apply函数（）
+当需要变得更加动态的话，可以通过将一个函数作为一个参数传递给apply来调用一个生成的函数，并且也将
+传给那个函数的参数作为一个元组传递给apply函数（）
+map() 在序列中映射函数
+map（函数，传入函数的序列对象）
+使用内置工具map，map函数会对一个序列对象中的每一个元素应用被传入的函数，并且返回一个包含了所有函数调用结果的一个列表。
+>>> def inc(x):return x+10
+... 
+>>> L=[1,2,3,4,5]
+>>> map(inc,L)
+[11, 12, 13, 14, 15]
+备注:map函数另外一个用法，把序列的元素配对起来，但是如果参数长度，不同则会为较短的序列用None补齐。
+>>> map(None,S1,S2)
+>>> L=[1,2,3,4,5] 
+map嵌套lambda 
+>>> map((lambda x:x+3),L)
+[4, 5, 6, 7, 8]
+函数式编程工具：filter和reduce
+函数式编程的意思就是对序列应用一些函数的工具。
+基于某一测试函数过滤出一些元素-filter
+对每对元素都应用函数并运行到最后结果-reduce
+>>> range(-5,5)
+[-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
+>>> filter((lambda x:x>0),range(-5,5))
+[1, 2, 3, 4]
+这个等效于for range:if语句
+reduce稍微复杂一点。这里两个reduce调用，计算在一个列表中所有元素加起来和以及乘起来的乘积
+>>> reduce((lambda x,y:x+y),[1,2,3,4])
+10
+>>> reduce((lambda x,y:x*y),[1,2,3,4]) 
+24
+
+模块
+import: 使客户端（导入者）以一个整体获取一个模块。
+reload:在不中止Python程序的情况下，提供了一个重新载入模块文件代码的方法。
+from:容许客户端从一个模块文件中湖区特定的变量名。
+from语句
+from将获取（复制）模块特定变量名
+from 模块名 import 需要复制的属性
+from 模块名 import 需要复制的属性 as 新的属性名
+*from将一个或多个变量名赋值给另一个模块中同名的对象
+*from as将一个或者多个变量名赋值给另一个模块中不同名的对象
+getattr(...)
+getattr(object, name[, default]) -> value
+>>> getattr(test17,'lessthan')
+<function lessthan at 0x28495bc4>
+>>> getattr(test17,'name') 
+'diege'
+sys.modules字典中导出所有已经加载的模块
+>>> sys.modules
+>>> sys.modules['test17']
+<module 'test17' from '/root/test17.py'>
+>>> sys.modules['test17'].name

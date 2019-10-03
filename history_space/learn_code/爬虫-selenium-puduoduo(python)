@@ -1,0 +1,88 @@
+from bs4 import BeautifulSoup
+import pandas as pd
+from selenium import webdriver
+import time
+
+headers = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'}
+url_list = ['http://www.puduoduo58.com/zhuan/index.html'] + [
+    'http://www.puduoduo58.com/zhuan/index_%s.html'%(num) for num in range(2,35+1)
+]
+
+browser = webdriver.PhantomJS(executable_path="D:/Python/selenium/webdriver/phantomjs/bin/phantomjs.exe")
+
+# 词典信息info
+item = { 'link':'标题',}
+item = pd.DataFrame.from_dict(item,orient='index').T
+
+# 房屋链接get_url_list
+item_list = pd.DataFrame()
+for url in url_list:
+    print('----------------------------------')
+    print('正在爬取第%s页信息'%(url))
+    browser.get(url)
+    data = browser.page_source
+    soup =  BeautifulSoup(data,'lxml')
+    try:
+        lis = soup.find('div',attrs={'class':'left3'}).find('div',attrs={'class':'new3'}).find_all('li')
+        for li in lis:
+            item['link'] = 'http://www.puduoduo58.com' + li.find('div',attrs= {'class':'lia'}).find('a')['href']
+            item_list = item_list.append(item)
+    except:
+        print('第%s页加载失败'%(url))         
+
+# 详情信息get_info_list
+info_list = pd.DataFrame()
+for url2 in item_list['link']:
+    i=0;i += 1
+    print('----------------%s------------------'%(i/len(item_list['link'])))
+    print('正在爬取第%s页信息'%(url2))
+    browser.get(url2)
+    data2 = browser.page_source
+    soup2 =  BeautifulSoup(data2,'lxml')
+    try:
+        lis2 = soup2.find('div',attrs={'class':'main1'}).find('div',attrs={'class':'left1b'}).find_all('p')
+        item['link'] = url2
+        item['xinxilaiyuan'] = lis2[0].getText().strip('信息来源').replace(' ','').replace('：','')
+        item['xinxibiaoti'] = lis2[1].getText().strip('信息标题').replace(' ','').replace('：','')
+        item['suozaidiqu'] = lis2[2].getText().strip('所在地区').replace(' ','').replace('：','')
+        item['shangpuleixing'] = lis2[3].getText().strip('商铺类型').replace(' ','').replace('：','')
+        item['shangpumianji'] = lis2[4].getText().strip('商铺面积').replace(' ','').replace('：','')
+        item['shangpuzujin'] = lis2[5].getText().strip('商铺租金').replace(' ','').replace('：','')
+        item['lianxiren'] = lis2[6].getText().replace(' ','').replace('：','')
+
+        lis3 = soup2.find('div',attrs={'class':'main1'}).find('div',attrs={'class':'left1c'}).find_all('tr')
+        lis4 = soup2.find('div',attrs={'class':'main1'}).find('div',attrs={'class':'left1d'})
+        lis5 = soup2.find('div',attrs={'class':'main1'}).find('div',attrs={'class':'left1e'})
+
+        item['shangpuzujin'] = lis3[0].find_all('td')[1].getText()
+        item['zhuanrangfeiyong'] = lis3[0].find_all('td')[3].getText()
+        item['shangpumianji'] = lis3[1].find_all('td')[1].getText()
+        item['shangpuleixing'] = lis3[1].find_all('td')[3].getText()
+        item['shiyingjingying'] = lis3[2].find_all('td')[1].getText()
+        item['xiangxidizhi'] = lis3[3].find_all('td')[1].getText()
+        item['fabushijian'] = lis3[4].find_all('td')[1].getText()
+        item['liulancishu'] = lis3[4].find_all('td')[3].getText()
+        item['xiangxixinxi'] = lis4.find_all('p')[2].getText()
+  #      item['fangyuantupian'] = lis5.find('div',attrs={'class':'left1e_b'}).find_all('p')
+
+        info_list = info_list.append(item)
+    except:
+        print('%s加载失败'%(url2))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,468 @@
+python学习笔记3-核心类型-列表
+
+列表和字典，这两种类型几乎是Python所有脚本的主要工作组件。他们都可以在原处进行修改，可以按需求增加或缩短，
+而且包含任何种类的对象或者被嵌套。
+
+一、列表
+列表的主要属性：
+*任意对象的有序集合
+从功能上看，列表就是收集其他对象的地方，可以把它看作组。列表所包含每一项都保持了从左到右的位置顺序（它们是序列）
+*通过偏移读取
+和字符串一样，可以通过列表对象的偏移对其进行索引，从而读取对象的某一部分内容。可以自行分片和合并之类的任务。
+*可变长度，异构以及任意嵌套
+列表可以实地增长或者缩短，并且可以包含任何类型的对象。支持任意的嵌套，可以创建列表的子列表的子列表。
+*属于可变序列的分类
+列表可以在原处修改。序列操作在列表与字符串中的工作方式相同。唯一的区别是：当合并和分片这样的操作当应用于列表时，
+返回新的列表而不是新的字符串。然而列表是可变的，因为它们支持字符串不支持的其他操作，例如删除和索引赋值操作。
+它们都是在原处修改列表。
+*对象引用数组
+列表包含了0或多个其他对象的引用。在Python解释器内部，列表就是C数组而不是链接结构。包含任何对象，对象可以是字典，
+也就是说可以嵌套字典。
+长剑的具有代表性的列表操作。更多可以查阅Python的标准库或运行help(list)或dir(list)查看list方法的完整列表清单。
+
+操作	解释
+L1=[]	一个空的列表
+L2=[0,1,2,3]	四项：索引0到3
+L3=['abc',['def','ghi']]	嵌套的子列表
+L2[i]	索引
+L2[i][j]	索引的索引
+L2[i:j]	分片
+L2[i:j:l]	分片,步进为l
+len(L2)	求长度
+L1+l2	合并
+L2*	重复
+for x in L2	迭代
+3 in L2	成员
+L2.append(4)	方法：增加 增加单个对象
+L2.extend([5,6,7]) 方法：增加对个对象
+L2.sort()	方法:排序
+L3.index('abc')	方法:通过对象查找对象索引（和索引相反的操作）
+L2.insert(I,X)	方法：插入(在I位置插入X)
+L2.reverse() 方法：翻转
+L2.remove('b')	方法：移除 方法的参数 填写的对象
+L2.pop(1) 方法：移除 方法的参数填写的是索引
+del L2[K]	裁剪：k为裁剪掉的索引
+del L2[i:j]	裁剪：
+L2[i]=1	索引赋值
+L2[i:j]=[4,5,6]	分片赋值
+rang(4)	生成整数列表/元组
+xrange(1,4) 
+L4=[x**2 for x in range(5)]	列表解析
+
+二、实际应用中的列表
+1、列表的创建和修改
+1）创建
+直接创建
+>>> aList=[123,'abc',4.56,['inner','list']]
+>>> blist=[None,'some things']
+使用工厂函数创建
+>>> cList=list('jin')
+2）修改
+>>> aList[2]=['bcd']
+>>> aList
+[123, 'abc', 'bcd', ['inner', 'list']]
+>>> aList[3][0]='out'
+>>> aList
+[123, 'abc', 'bcd', ['out', 'list']]
+2、基本列表操作
+合并和重复，和字符串基本一致，不过结果是一个新的列表，而不是一个字符串。
+>>> len([1,2,3])
+3
+>>> [1,2,3]+[4,5,6]
+[1, 2, 3, 4, 5, 6]
+>>> ['diege',18]*3
+['diege', 18, 'diege', 18, 'diege', 18]
+>>> 3 in [1,2,3]
+True
+>>> for x in [1,2,3]:print x,
+... 
+1 2 3
+注意“+”操作和字符串中的一样，然而值得重视的时"+"两边必须是相同类型的序列。不能将一个列表和一个字符串合并
+到一起，除非先把列表转换为字符串。
+
+>>> str([1,2]) + '34'
+'[1, 2]34'
+>>> [1,2]+list('34')
+[1, 2, '3', '4']
+3、索引，分片，矩阵
+对列表进行索引的结果就是你指定的偏移处的对象（不管是什么类型），而对列表进行分片时往往返回一个新的列表
+>>> L=['diege','lily','keylly']
+>>> L[1]
+'lily'
+>>> L[-1] 
+'keylly'
+>>> L[1:]
+['lily', 'keylly']
+>>> LL=[[1,2,3],[4,5,6],[7,8,9]]
+>>> LL[2]
+[7, 8, 9]
+>>> LL[1][2]
+6
+三、原处修改列表
+列表可变，支持实地改变列表对象的操作，以下操作都可以直接修改列表对象，而不会像字符串那样强迫你建立一个新的拷贝。
+因为python只处理对象引用，所以需要将原处修改一个对象与生成一个新的对象区分开来。
+
+1、索引和分片赋值
+赋值给一个特定的项(偏移）或整个片段（分片）来改变列表的内容。
+>>> L=['diege','lily','keylly']
+>>> L[1]='tom'
+>>> L
+['diege', 'tom', 'keylly']
+>>> L[0:2]=['boo','july'] 
+>>> L
+['boo', 'july', 'keylly']
+分片赋值可以分成两步来理解。先删除，再插入。
+嵌套字典
+>>> L
+['diege', {'tow': 789, 'one': 456}, 999]
+>>> L[1] 
+{'tow': 789, 'one': 456}
+>>> L[1]['one']
+456
+
+2、列表方法调用 
+1)、append() 追加
+>>> L
+['boo', 'july', 'keylly']
+>>> L.append('jun')
+>>> L
+['boo', 'july', 'keylly', 'jun']
+2）、extend() 在末端插入多个元素
+>>> L=[1,2]
+>>> L.extend([3,4,5]) 
+>>> L
+[1, 2, 3, 4, 5]
+3)、insert() 插入 要指定插入的位置和数据
+>>> L.insert(1,5)
+>>> L
+[1, 5, 4]
+>>> L.insert(2,[6,7,9])
+>>> L
+[1, 5, [6, 7, 9], 4]
+4)、pop() 删除一个元素,参数为索引并返回删除的对象
+pop() 方法：移除 方法的参数填写的是索引，默认最后一个
+>>> L
+[1, 2, 3, 4, 5]
+>>> L.pop()
+5
+#返回删除的对象
+>>> L
+[1, 2, 3, 4]
+可以指定要删除的索引
+>>> L.pop(2)
+3
+>>> L 
+[1, 2, 4]
+5)、remove() 移除 必须指定对象 无返回
+>>> L.remove(2)
+>>> L
+[1, 4]
+6）、sort() 排序
+>>> L.sort()
+>>> L
+['boo', 'july', 'jun', 'keylly']
+7）、reverse() 序列反转
+>>> L.reverse() 
+>>> L
+['keylly', 'jun', 'july', 'boo']
+8)计算列表中元素的个数
+>>> L
+[0, 8, 1, 2, 3, 4, 5, 6, 7, 8]
+>>> L.count(8)
+2
+
+3、其他常见的列表操作
+del L[1]
+>>> L
+[1, 5, [6, 7, 9], 4]
+>>> del L[1]
+>>> L
+[1, [6, 7, 9], 4]
+>>> del L[1:] 
+>>> L
+[1]
+>>> L=['diege',1,5]
+>>> L[1:]=[]
+>>> L
+['diege']
+>>> del L 删除整个列表对象
+
+【【核心编程新整理】】
+一、列表标准类型操作符
+>>> list1 = ['abc', 123]
+>>> list2 = ['xyz', 789]
+>>> list3 = ['abc', 123]
+>>> 1ist1 < list2
+True
+>>> list2 < list3
+False
+>>> list2
+在使用比较操作符时,比较数字和字符串是很明了的,但是用在列表上时就不是那么简单了,
+列表比较操作有些狡猾,但是合乎逻辑.比较列表时也是用的内建的cmp()函数,【基本的比较逻辑
+是这样的:两个列表的元素分别比较,直到有一方的元素胜出。】
+
+二、序列操作符
+1、切片 [] [:] [::]
+2、成员关系操作( in ,not in)
+3、连接接操作符( + )
+4、重复操作符( * )
+5、列表类型操作符和列表解析
+其实Python 中没有专门用于列表类型的操作符.列表可以使用大部分的对象和序列类型的
+操作符.
+
+三、内建函数
+(一)、标准内建函数
+type()
+cmp()
+str()
+isinstance()
+
+(二)序列类型操作符
+序列操作符 作用
+seq[ind] 获得下标为ind 的元素
+seq[ind1:ind2] 获得下标从ind1 到ind2 间的元素集合
+seq * expr 序列重复expr 次
+seq1 + seq2 连接序列seq1 和seq2
+obj in seq 判断obj 元素是否包含在seq 中
+obj not in seq 判断obj 元素是否不包含在seq 中
+
+1、成员关系 in,not in
+对象 [not] in 序列
+
+2、连接操作符(+)
+sequence1+sequence2
+
+3、重复操作符(*)
+sequence*int
+int必须是一个整数，而且不能使长整数
+
+4、切片操作符[][N][n:m][:][::][n:m:l]
+
+5、使用步长来进行扩展切片[n:m:l]
+s='abcded'
+s[::-1] 类似翻转
+s[::2] 隔一个取一个
+6、切片索引的更多内容
+切片索引的语法要比简单的单一元素索引灵活的多。开始和结束素引值可以超过字符串的
+长度。换句话说，起始索引可以小于0,而对于结束索引，即使索引值为100 的元素并不存在也
+不会报错
+有一个字符串，我们想通过一个循环按照这样的形式显示它：每次都把
+位于最后的一个字符砍掉，下面是实现这个要求的一种方法：
+>>> s = 'abcde'
+>>> for i in range(-1, -len(s), -1):#-1,-len(s)倒数，步进在-1 有正数
+... print s[:i]
+...
+
+(三)、序列类型函数[不是对象的方法是函数]
+1）列表求长：len(L)
+2）列表中的最大值最小值： max(L)和min(L)
+max()和min()函数在字符串操作里面用处不大,因为它们能对字符串做的只能是找出
+串中"最大"和"最小"的字符(按词典序),而对列表和元组来说,它们被定义了更多的用处.比如
+对只包含数字和字符串对象的列表,max()和min()函数就非常有用,重申一遍,混合对象的结构
+越复杂返回的结构准确性就越差
+3）正向排序和反向排序：sorted(L) reversed(L) 
+没有这连个属性？？？？？不是对象的方法是函数
+>>> s = ['They', 'stamp', 'them', 'when', "they're", 'small']
+>>> for t in reversed(s):
+... print t,
+...
+small they're when them stamp They
+>>> sorted(s)
+['They', 'small', 'stamp', 'them', "they're", 'when']
+4）enumerate() 索引和item组成个元组
+enumerate() 接受一个可迭代对象作为参数，返回一个enumerate 对象(同时也是一个迭代器),该对象生成由iter 每个元素的index 值和item值组成的元组
+>>> for i,v in enumerate(L): 
+... print i,v
+... 
+0 d
+1 a
+2 c
+5）zip() 对多个列表内容进行组合
+返回一个列表，其第一个元素是it0,it1,...这些元素的第一个元素组成的一个元组，第二个...,类推.
+>>> fn = ['ian', 'stuart', 'david']
+>>> ln = ['bairnson', 'elliott', 'paton']
+>>> for i, j in zip(fn, ln): 
+... print i,j 
+... 
+ian bairnson
+stuart elliott
+david paton
+>>> for i, j in zip(fn, ln):
+... print ('%s %s' % (i,j)).title()
+... 
+Ian Bairnson
+Stuart Elli
+('%s %s' % (i,j)).title()？？？
+('%s %s' % (i,j)) 组成一字符串
+title() 这个字符串中单词第一个字母大写
+6）sum() 列表求和
+>>> a = [6, 4, 5]
+>>> reduce(operator.add, a)
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+NameError: name 'operator' is not defined
+>>> import operator
+>>> reduce(operator.add, a)
+15
+>>> sum(a)
+15
+>>> sum(a, 5)
+20
+>>> a = [6., 4., 5.]
+>>> sum(a)
+15.0
+
+五.【列表类型的内建函数】列表的方法
+Python 中的列表类型有自己的方法
+用点号的方式访问对象的属性:object.attribute.列表的
+方法也是这样:list.method().我们用点号来访问一个对象的属性(在这里是一个函数),然后用
+函数操作符( () )来调用这个方法.
+我们可以在一个列表对象上应用dir()方法来得到它所有的方法和属性:
+dir(list) # or dir([])
+
+List Method Operation
+list.append(obj) 向列表中添加一个对象obj
+list.count(obj) 返回一个对象obj 在列表中出现的次数
+list.extend(seq)a 把序列seq 的内容添加到列表中
+list.index(obj, i=0,
+j=len(list)) 返回list[k] == obj 的k 值,并且k 的范围在 i<=k<j;否则
+引发ValueError 异常.
+list.insert(index, obj) 在索引量为index 的位置插入对象obj.
+list.pop(index=-1)a 删除并返回指定位置的对象,默认是最后一个对象
+list.remove(obj) 从列表中删除对象obj
+list.reverse() 原地翻转列表
+list.sort(func=None,key=None,reverse=False)b 以指定的方式排序列表中的成员,如果func 和key参数指定,则按照指定的方式比较各个元素,如果reverse 标志被置为
+True,则列表以反序排列.
+
+在使用可变对象的方法如sort(),extend()和reverse()的时候要注意,这些操作会在列表
+中原地执行操作,也就是说现有的列表内容会被改变,但是没有返回值!是的,与之相反,字符串
+方法确实有返回值:
+>>> 'leanna, silly girl!'.upper()
+'LEANNA, SILLY GIRL!'
+温习一下,字符串是不可变的 -- 不可变对象的方法是不能改变它们的值的,所以它们必须
+返回一个新的对象.如果你确实需要返回一个对象,那么我们建议你看一下Python2.4 以后加入
+的reversed()和sorted()内建函数.
+它们像列表的方法一样工作,不同的是它们可以用做表达式,因为它们返回一个对象.同时
+原来的那个列表还是那个列表,没有改变,而你得到的是一个新的对象.
+表达式有返回值
+
+六、列表的特殊性
+1、用列表构建其他数据结构
+堆栈 【后进先出(LIFO)的数据结构】
+堆栈是一个后进先出(LIFO)的数据结构,其工作方式就像自助餐厅里面用于放盘子的弹簧
+支架.把盘子想像成对象,第一个离开堆栈的是你最后放上的那个.在栈上"push"元素是个常用
+术语,意思是把一个对象添加到堆栈中.反之,要删除一个元素，你可以把它"pop"出堆栈,例6.3
+展示了一个菜单驱动的程序,它实现了一个简单的、用于存储字符串的堆栈.
+用列表模拟堆栈(stack.py)
+这个简单的脚本把列表做为堆栈用于存储和取回输入的字符串,这个菜单驱动驱动的程序
+仅使用了列表的append()和pop()方法.
+vi stack.py
+#!/bin/env python
+
+stack = []
+
+def pushit():
+stack.append(raw_input('Enter new string: ').strip())
+
+def popit():
+if len(stack) == 0:
+print 'Cannot pop from an empty stack!'
+else:
+print 'Removed [', stack.pop(), ']'
+
+def viewstack():
+print stack # calls str() internally
+
+CMDs = {'u': pushit, 'o': popit, 'v': viewstack}
+
+def showmenu():
+pr = """
+p(U)sh
+p(O)p
+(V)iew
+(Q)uit
+
+Enter choice:"""
+print pr
+
+while True:
+while True:
+try:
+choice = raw_input(pr).strip()[0].lower()
+except (EOFError,KeyboardInterrupt,IndexError):
+choice = 'q'
+
+print '\nYou picked: [%s]' % choice
+if choice not in 'uovq':
+print 'Invalid option, try again'
+else:
+break
+
+if choice == 'q':
+break
+CMDs[choice]()
+
+if __name__ == '__main__':
+showmenu()
+
+队列【队列是一种先进先出(FIFO)的数据类型】
+队列是一种先进先出(FIFO)的数据类型,它的工作原理类似于超市中排队交钱或者银行里
+面的排队,队列里的第一个人首先接受服务(
+满心想第一个出去).新的元素通过"入队"的方式添加进队列的末尾,"出队"就是从队列的
+头部删除.下面的例子里面展示了这种操作,我们把上面的堆栈的例子进行了改造,用列表实现
+了一个简单的队列.
+我们把列表用做队列来存储和取回菜单驱动应用里面输入的字符串,只用到了
+列表的append()和pop()方法.
+vi queue.py
+#!/bin/env python
+
+queue = []
+
+def enQ():
+queue.append(raw_input('Enter new string: ').strip())
+
+def deQ():
+if len(queue) == 0:
+print 'Cannot pop from an empty queue!'
+else:
+print 'Removed [', queue.pop(0), ']'
+
+def viewQ():
+print queue # calls str() internally
+
+CMDs = {'e': enQ, 'd': deQ, 'v': viewQ}
+
+def showmenu():
+pr = """
+(E)nqueue
+(D)equeue
+(V)iew
+(Q)uit
+
+Enter choice:"""
+
+while True:
+while True:
+try:
+choice = raw_input(pr).strip()[0].lower()
+except (EOFError,KeyboardInterrupt,IndexError):
+choice = 'q'
+
+print '\nYou picked: [%s]' % choice
+if choice not in 'devq':
+print 'Invalid option, try again'
+else:
+break
+
+if choice == 'q':
+break
+CMDs[choice]()
+
+if __name__ == '__main__':
+showmenu()
+
+七、列表解析
+>>> [ i * 2 for i in [8, -2, 5] ]
+[16, -4, 10]
+>>> [ i for i in range(8) if i % 2 == 0 ]
+[0, 2, 4, 6]

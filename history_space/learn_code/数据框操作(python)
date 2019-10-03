@@ -1,0 +1,154 @@
+# python数据框操作
+
+## 数据类型转为数据框
+1.字典转为数据框
+import pandas as pd                                加载pd包
+pd.Series(my_dict)                                 单个字典转换数据列表
+pd.DataFrame.from_dict(my_dict,orient='index').T   多个字典转为数据框
+2.列表转为数据框
+from pandas.core.frame import DataFrame
+pd.DataFrame(list,columa={'a','b'})
+3.元组转为数据框
+from pandas.core.frame import DataFrame
+pd.DataFrame(list(tuple),columa={'a','b'})
+4.字符串转为数据框
+from pandas.core.frame import DataFrame
+pd.DataFrame(list(str),columa={'a','b'})
+5.序列合并为数据框
+a = [1,2,3]
+b = [4,5,6] 
+dataframe = pd.DataFrame({'a_name':a,'b_name':b})
+
+## 数据框行列提取
+import pandas as pd
+import numpy as np 
+1.loc函数
+df.loc[0, 'a']  
+df.loc[0:3, ['a', 'b']]  
+df.loc[[1, 5], ['b', 'c']]  
+2.iloc函数
+df.iloc[1,1]  
+df.iloc[0:3, [0,1]]  
+df.iloc[[0, 3, 5], 0:2] 
+3.ix函数
+df.ix [ [ ..1.. ], [..2..] ]
+1框是用来指定row，2框是指定column
+4.qurey函数
+df.query('n>m')         # n和m分别是列名。
+
+## 随机数函数
+随机数可以用于数学，游戏，安全等领域中，还经常被嵌入到算法中，用以提高算法效率，并提高程序的安全性。
+Python包含以下常用随机数函数：
+choice(seq)     	从序列的元素中随机挑选一个元素，比如random.choice(range(10))，从0到9中随机挑选一个整数。
+randrange ([start,] stop [,step])	      从指定范围内，按指定基数递增的集合中获取一个随机数，基数缺省值为1
+random()	        随机生成下一个实数，它在[0,1)范围内。
+seed([x])	        改变随机数生成器的种子seed。如果你不了解其原理，你不必特别去设定seed，Python会帮你选择seed。
+shuffle(lst)	    将序列的所有元素随机排序
+uniform(x, y)    	随机生成下一个实数，它在[x,y]范围内。
+pi	              数学常量 pi（圆周率，一般以π来表示）
+e	                数学常量 e，e即自然常数（自然常数）。
+
+## 三角函数
+acos(x)	          返回x的反余弦弧度值。
+asin(x)	          返回x的反正弦弧度值。
+atan(x)	          返回x的反正切弧度值。
+atan2(y, x)	      返回给定的 X 及 Y 坐标值的反正切值。
+cos(x)	          返回x的弧度的余弦值。
+hypot(x, y)	      返回欧几里德范数 sqrt(x*x + y*y)。
+sin(x)	          返回的x弧度的正弦值。
+tan(x)	          返回x弧度的正切值。
+degrees(x)	      将弧度转换为角度,如degrees(math.pi/2) ， 返回90.0
+radians(x)	      将角度转换为弧度
+
+
+# python数值操作介绍
+## 序列操作
+s + r                   序列连接
+s * n , n * s           s的 n 次拷贝,n为整数
+s % d                   字符串格式化(仅字符串)
+s[i]                    索引
+s[i :j ]                切片
+x in s , x not in s     从属关系
+for x in s :            迭代
+len(s)                  长度
+min(s)                  最小元素
+max(s)                  最大元素
+s[i ] = x               为s[i]重新赋值
+s[i :j ] = r            将列表片段重新赋值
+del s[i ]               删除列表中一个元素
+del s[i :j ]            删除列表中一个片段
+
+## 数值操作
+x >> y                  右移
+x & y                   按位与
+x | y                   按位或
+x ^ y                   按位异或 (exclusive or)
+~x                      按位翻转
+x + y                   加
+x - y                   减
+x * y                   乘
+x / y                   常规除
+x // y                  地板除
+x ** y                  乘方 (xy )
+x % y                   取模 (x mod y )
+-x                      改变操作数的符号位
++x                      什么也不做
+~x                      ~x=-(x+1)
+abs(x )                 绝对值
+divmod(x ,y )           返回 (int(x / y ), x % y )
+pow(x ,y [,modulo ])    返回 (x ** y ) x % modulo
+round(x ,[n])           四舍五入，n为小数点位数
+x < y                   小于
+x > y                   大于
+x == y                  等于
+x != y                  不等于(与<>相同)
+x >= y                  大于等于
+x <= y                  小于等于
+
+## Python赋值运算符
+=	           简单的赋值运算符  	c = a + b      将 a + b 的运算结果赋值为 c
++=           加法赋值运算符	   c += a         等效于 c = c + a
+-=	         减法赋值运算符	   c -= a         等效于 c = c - a
+*=	         乘法赋值运算符   	c *= a          等效于 c = c * a
+/=	         除法赋值运算符	  c /= a          等效于 c = c / a
+%=	         取模赋值运算符  	c %= a          等效于 c = c % a
+**=	         幂赋值运算符     	c **= a        等效于 c = c ** a
+//=	         取整除赋值运算符 	c //= a        等效于 c = c // a
+
+## Python位运算符
+&	          按位与运算符：  参与运算的两个值,如果两个相应位都为1,则该位的结果为1,否则为0	(a & b)
+|	          按位或运算符：  只要对应的二个二进位有一个为1时，结果位就为1。	(a | b)
+^	          按位异或运算符：当两对应的二进位相异时，结果为1	(a ^ b) 
+~	          按位取反运算符：对数据的每个二进制位取反,即把1变为0,把0变为1 。~x 类似于 -x-1	(~a )
+<<	        左移动运算符：  运算数的各二进位全部左移若干位，由 << 右边的数字指定了移动的位数，高位丢弃，低位补0。	a << 2 
+>>	        右移动运算符：  把">>"左边的运算数的各二进位全部右移若干位，>> 右边的数字指定了移动的位数	a >> 2 
+
+## Python逻辑运算符
+and	x and y	   布尔"与"    如果 x 为 False，x and y 返回 False，否则它返回 y 的计算值。	
+or	x or y	   布尔"或"    如果 x 是非 0，它返回 x 的值，否则它返回 y 的计算值。
+not	not x	     布尔"非"    如果 x 为 True，返回 False 。如果 x 为 False，它返回 True。
+
+## Python成员运算符
+in	          如果在指定的序列中找到值返回 True，否则返回 False。	x 在 y 序列中 , 如果 x 在 y 序列中返回 True。
+not in	      如果在指定的序列中没有找到值返回 True，否则返回 False。	x 不在 y 序列中 , 如果 x 不在 y 序列中返回 True
+
+## Python身份运算符
+is	          is是判断两个标识符是不是引用自一个对象	x is y, 类似 id(x) == id(y) , 如果引用的是同一个对象则返回 True，否则返回 False
+is not	      is not 是判断两个标识符是不是引用自不同对象	x is not y ， 类似 id(a) != id(b)。如果引用的不是同一个对象则返回结果 True，否则返回 False。
+
+## Python运算符优先级
+**	                               指数 (最高优先级)
+~ + -	                             按位翻转, 一元加号和减号 (最后两个的方法名为 +@ 和 -@)
+* / % //	                         乘，除，取模和取整除
++ -	                               加法减法
+>> <<	                             右移，左移运算符
+&	位 'AND'
+^ |	                               位运算符
+<= < > >=	                         比较运算符
+<> == !=	                         等于运算符
+= %= /= //= -= += *= **=	         赋值运算符
+is is not                        	身份运算符
+in not in	                         成员运算符
+not or and                      	逻辑运算符
+
+

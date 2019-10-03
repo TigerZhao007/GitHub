@@ -1,0 +1,54 @@
+
+import pymongo
+import pandas as pd
+from bson.objectid import ObjectId
+
+
+student1 = {
+    'id': '201801',
+    'name': 'Jack',
+    'age': 20,
+    'gender': 'male'
+}
+student2 = {
+    'id': '201802',
+    'name': 'Tom',
+    'age': 22,
+    'gender': 'male'
+}
+student3 = {
+    'id': '201803',
+    'name': 'Rose',
+    'age': 21,
+    'gender': 'female'
+}
+student4 = {
+    'id': '201804',
+    'name': 'Mike',
+    'age': 20,
+    'gender': 'female'
+}
+student5 = {
+    'id': '201805',
+    'name': 'Ray',
+    'age': 20,
+    'gender': 'female'
+}
+student6 = {
+    'id': '201806',
+    'name': 'Alan',
+    'age': 21,
+    'gender': 'male'
+}
+
+# 建立连接
+client = pymongo.MongoClient("106.12.30.122", 32937) # 服务器
+# 指定数据库
+db = client.testdb
+# 指定集合
+collection = db.test_student
+# 插入一条数据
+# result1 = collection.insert_one(student1)
+# 插入多条数据
+result2 = collection.insert_many([student1,student2,student3,student4,student5,student6])
+print(result2.inserted_ids)

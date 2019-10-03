@@ -1,0 +1,93 @@
+# ggplot2 分面一页多图
+if(!require(ggplot2)){install.packages("ggplot2")}
+
+# 分面
+##分面分成两种网格分面（facet_grid()）,封装分面（facet_wrap()）.其中都含有两种分面属性：指定分面，分面标度。
+
+# 指定分面
+网格指定分面(矩阵)	写法	理解
+一行多列	“. ~ a”	          按a分面,行为1,列为length(a),即横向分面
+一列多行	“a ~ .”	          按照a分面，行为length(a)，列为1，即纵向分面
+多行多列	“a ~ b”	          按照a,b分面，行为length(a),列为length(b)
+额外参数	space = “free”	  按照图形y轴，或x轴比例，自由分配空间
+
+封装分面指定分面	写法	理解
+分面	~ a+b+c,ncol,nrow	    相比于网格，更加手动化。能将图形设置成更加符合自身要求的图
+
+# 分面标度 
+对分面画图坐标进行控制
+参数	理解
+scales = “fixed”	    x和y的标度在所用平面中都相同
+scales = “free”	      x和y的标度在每个版面都可以变化
+scales = “free_x	    固定y轴，x轴自由变化
+scales = “free_y”	    类似，同上
+
+# 一页多图
+在一个页面上自由组合各种图(可以毫无关联)，省空间，又能表达自己需求。这里调用gird包.
+
+require(ggplot2)
+require(grid)
+
+
+#####现将图画好，并且赋值变量，储存#####
+a <- ggplot(mtcars, aes(mpg, wt, colour = factor(cyl))) + geom_point()
+b <- ggplot(diamonds, aes(carat, depth, colour = color)) + geom_point()
+c <- ggplot(diamonds, aes(carat, depth, colour = color)) + geom_point() + 
+  facet_grid(.~color,scale = "free") 
+
+########新建画图页面###########
+grid.newpage()  ##新建页面
+pushViewport(viewport(layout = grid.layout(2,2))) ####将页面分成2*2矩阵
+vplayout <- function(x,y){
+  viewport(layout.pos.row = x, layout.pos.col = y)
+}
+print(c, vp = vplayout(1,1:2))   ###将（1,1)和(1,2)的位置画图c
+print(b, vp = vplayout(2,1))   ###将(2,1)的位置画图b
+print(a, vp = vplayout(2,2))  ###将（2,2)的位置画图a
+#dev.off() ##画下一幅图，记得关闭窗口
+
+# example
+head(diamonds)
+g <- ggplot(diamonds)+
+  geom_bar(aes(x = color, fill = cut), position = 'dodge') 
+p <- ggplot(diamonds)+
+  geom_bar(aes(x = cut, fill = cut), position = 'dodge')+
+  facet_grid(.~color)
+p;g
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

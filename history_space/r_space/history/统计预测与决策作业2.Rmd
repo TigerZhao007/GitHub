@@ -1,0 +1,292 @@
+---
+title: "统计预测与决策"
+author: "邵登科"
+date: "2017/04/24"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# ----------------------------------------------------------------------------------------
+
+## 作业5.2
+
+线性回归模型
+
+```{r}
+library(fpp)
+colnames(texasgas)<-c("pri","con")
+pri <- texasgas$pri
+con <- texasgas$con
+```
+
+## 题1
+
+```{r}
+plot(pri,con)
+```
+
+## 题2
+
+```{r}
+## 解释模型中斜率的变化的原因：不同平均价格水平对客户消费的影响程度不同。平均价格水平较低时，影响程度较大，平均价格水平较高时，影响较小。
+```
+## 题3
+
+```{r}
+# 公式1
+fit1 <- lm(log(con)~pri,data = texasgas)
+summary(fit1)
+# 公式2
+p1 <- pmax(texasgas$pri-60,0)
+fit2 <- lm(con ~ pri + p1, data=texasgas)
+summary(fit2)
+# 公式3
+fit3 <- lm(con~1+pri+I(pri^2), data = texasgas)
+summary(fit3)
+# 三个函数的图形
+plot(pri,con)
+lines(pri,exp(fitted(fit1)),col="red")
+lines(pri,fitted(fit2),col="green")
+lines(pri,fitted(fit3),col="blue")
+legend("topright", legend=c("fit1", "fit2", "fit3"),
+       lty=1, col=c("red", "green", "blue"))
+```
+
+## 题4
+```{r}
+# 三个函数的拟合优度
+coef <-data.frame(fit1.r=summary(fit1)$r.squared,fit2.r<-summary(fit2)$r.squared,fit3.r<-summary(fit3)$r.squared)
+colnames(coef)<- c("fit1","fit2","fit3")
+rownames(coef) <- "coef"
+# 三个函数的信息量
+aic.f <- function(n, sse, k){
+  n*log(sse/n)+2*(k+2)
+}
+sse <- c(sse1 = sum((fitted(fit1)-con)^2), sse2 = deviance(fit2),sse3 = deviance(fit3))
+aic <- data.frame(fit1=aic.f(20, sse[1], 2),fit2=aic.f(20, sse[2], 2),fit3=aic.f(20,sse[3], 2))
+rownames(aic) <- "aic"
+rbind(coef,aic)
+# 三个函数的残差图
+plot(fit1$residuals,main = "residual of fit1")
+plot(fit2$residuals,main = "residual of fit2")
+plot(fit3$residuals,main = "residual of fit3")
+
+# 从拟合优度来看，模型2拟合效果最好
+# 从信息量准则来看，模型2的AIC最小
+# 从残差图来看，模型2残差在0周围波动较小。
+# 最终选择模型2进行下一步分析。
+```
+
+
+## 题5
+
+```{r}
+pri1 <- c(40,60,80,100,120)
+x1 <- data.frame(pri=pri1)
+x2 <- data.frame(pri=pri1, p1=pmax(pri1-60,0))
+# 第二个函数预测值
+fit2.p <- predict(fit2,newdata =x2,level=0.95,interval="prediction")
+rownames(fit2.p) <-pri1
+fit2.p
+
+# 第一个函数预测值
+# fit1.p <- exp(predict(fit1,newdata=x1,level=0.95,interval="prediction"))
+# rownames(fit1.p) <- pri1
+# 第三个函数预测值
+# fit3.p <- predict(fit3, newdata = x1,level = 0.95,interval = "prediction")
+# rownames(fit3.p) <- pri1
+```
+
+## 题6
+
+```{r}
+# 第二个函数预测区间
+plot(pri,con,ylim = c(0,200),main = "fit1")
+lines(pri,predict(fit2,level=0.95,interval="prediction",data = texasgas)[,1],col=3)
+lines(pri,predict(fit2,level=0.95,interval="prediction")[,2],col=2)
+lines(pri,predict(fit2,level=0.95,interval="prediction")[,3],col=4)
+legend("topright", legend=c("lwr", "fit", "upr"),
+       lty=1, col=c("red", "green", "blue"))
+
+# 从预测区间和拟合效果来看，模型预测效果都不错。
+
+# 第一个函数预测区间
+# plot(pri,con,ylim = c(0,200),main = "fit1")
+# lines(pri,exp(predict(fit1,level=0.95,interval="prediction"))[,1],col=3)
+# lines(pri,exp(predict(fit1,level=0.95,interval="prediction"))[,2],col=2)
+# lines(pri,exp(predict(fit1,level=0.95,interval="prediction"))[,3],col=2)
+# 第三个函数预测区间
+# plot(pri,con,ylim = c(0,200),main = "fit3")
+# lines(pri,predict(fit3,level=0.95,interval="prediction")[,1],col=3)
+# lines(pri,predict(fit3,level=0.95,interval="prediction")[,2],col=2)
+# lines(pri,predict(fit3,level=0.95,interval="prediction")[,3],col=2)
+
+```
+
+## 题7
+
+```{r}
+with(texasgas,cor(pri,pri^2))
+
+# 变量间具有较高的相关性，容易造成较强的多重共线性，违背线性模型基本假定，会降低参数估计的可靠性和一致性，故处理多项式回归时尤其要考虑高通量的一般问题。
+```
+
+# ----------------------------------------------------------------------------------------
+
+## 作业6.2
+
+时间序列模型
+
+```{r}
+plastics
+pl <- ts(plastics,frequency = 12)
+pl
+```
+
+## 题1
+
+```{r}
+plot(pl)
+# 图形以一年为一个周期进行波动性的上升，即体现原始序列即具有长期趋势和季节波动。
+```
+
+## 题2
+
+```{r}
+fit2 <- decompose(pl, type ="multiplicative")          # 乘法模型
+plot(fit2)
+pl.st1 <- list(pl.s=fit2$seasonal,pl.t=fit2$trend)
+pl.st1                                                 # 趋势周期和季节指数
+pl.st1$pl.s[1:12]                                      # 季节指数
+```
+
+## 题3
+
+```{r}
+# 结果可以证明图形的结论是正确的。
+```
+
+## 题4
+
+```{r}
+pl1 <- pl/pl.st1$pl.s                                        # 乘法模型调整后数据
+pl1
+plot(pl1)
+```
+
+## 题5
+
+```{r}
+pl2 <-pl
+pl2[30] <- 500
+plot(pl2)
+fit3 <- decompose(pl2, type ="multiplicative")       # 乘法模型
+plot(fit3)
+pl.st2 <- list(pl.s=fit3$seasonal,pl.t=fit3$trend)
+pl.st2
+pl.st2$pl.s[1:12]                                    # 季节指数
+
+# 离群点的作用，离群点会导致残差项出现大的波动，对趋势和周期波动项虽然影响不大，但是会有持续的影响。
+```
+
+## 题6
+
+```{r}
+pl3 <-pl
+pl3[60] <- 500
+plot(pl3)
+fit4 <- decompose(pl3, type ="multiplicative")       # 乘法模型
+plot(fit4)
+pl.st3 <- list(pl.s=fit4$seasonal,pl.t=fit4$trend)
+pl.st3
+pl.st3$pl.s[1:12]                                    # 季节指数
+
+# 离群点的作用，离群点不影响趋势和周期波动项，不会持续影响，但是会影响预测效果，会导致残差项出现大的波动。
+```
+
+## 题7
+
+```{r}
+library(forecast)
+fit <- stl(pl, t.window=15, s.window="periodic", robust=TRUE)
+eeadj <- seasadj(fit)
+plot(naive(eeadj), xlab="New ",
+     main="Naive forecasts of seasonally adjusted data")
+
+```
+
+## 题8
+
+```{r}
+fcast <- forecast ( fit,method = "naive" )
+plot ( fcast,ylab = "New con" )
+# 经过STL分解数据后，基于季节性调整数据的初步预测和季节性成分的季节性初始预测，
+```
+
+# ----------------------------------------------------------------------------------------
+
+## 作业7.2
+
+指数平滑模型
+
+```{r}
+books
+plot(books)
+```
+
+## 题1
+
+```{r}
+# 简单移动平均
+fit7.1 <- ses (books[,1],alpha = 0.2,initial = "simple",h = 3)
+fit7.2 <- ses (books[,2],alpha = 0.2,initial = "simple",h = 3)
+# Holt方法的SSE度量
+fit7.3 <- holt(books[,1], alpha=0.2, beta=0.2, damped=TRUE, initial="simple", h=5) 
+fit7.4 <- holt(books[,2], alpha=0.2, beta=0.2, damped=TRUE, initial="simple", h=5) 
+list(y.p=fit7.1$model,y.h=fit7.2$model,h.p=fit7.3$model,h.h=fit7.4$model)
+par(mfrow=c(2,2))
+plot(fit7.1$residuals,type="p")
+plot(fit7.2$residuals,type="p")
+plot(fit7.3$residuals,type="p")
+plot(fit7.4$residuals,type="p")
+dev.off()
+#  移动平均法：移动平均法的主要优点是简单易行，容易掌握；其缺点是：只是在处理水平型历史数据时才有效。
+#  Holt方法：Holt方法扩展了简单的指数平滑，以允许以趋势预测数据。
+```
+
+## 题2
+
+```{r}
+list(y.p=fit7.1,y.h=fit7.2,h.p=fit7.3,h.h=fit7.4)
+par(mfrow=c(2,1))
+plot(fit7.1)
+plot(fit7.3)
+dev.off()
+par(mfrow=c(2,1))
+plot(fit7.2)
+plot(fit7.4)
+dev.off()
+#  Holt方法较好，Holt方法扩展了简单的指数平滑，以允许以趋势预测数据。
+```
+
+## 题3
+
+```{r}
+list(y.h=fit7.2,h.h=fit7.4)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+

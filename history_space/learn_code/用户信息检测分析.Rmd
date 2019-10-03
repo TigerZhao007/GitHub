@@ -1,0 +1,68 @@
+---
+title: "用户信息检测"
+author: "sdk"
+date: "2017年12月5日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 读取数据
+```{r warning=FALSE}
+dat <- read.csv('C:\\Users\\Administrator\\Desktop\\user.csv')
+# 查看数据类型
+str(dat)
+# 查看数据基本信息
+summary(dat)
+# 调用分类函数
+source('F:\\rspace\\ks_sj.R')
+```
+
+
+
+
+# 用户信息检测分布情况
+```{r warning=FALSE}
+# 1、查询过该用户的相关企业数量	searched_org_cnt
+searched_org_cnt <- class_distribute(pre = dat$searched_org_cnt,class = dat$class,low = 0,high = 90,by=5)
+searched_org_cnt$count_prop
+
+# 2、直接联系人中黑名单人数 	contacts_class1_blacklist_cnt
+contacts_class1_blacklist_cnt <- class_distribute(pre = dat$contacts_class1_blacklist_cnt,class = dat$class,low = 0,high = 40,by=2)
+contacts_class1_blacklist_cnt$count_prop
+
+# 3、直接联系人中黑名单人数 	contacts_class1_blacklist_cnt
+contacts_class2_blacklist_cnt <- class_distribute(pre = dat$contacts_class2_blacklist_cnt,class = dat$class,low = 0,high = 1000,by=50)
+contacts_class2_blacklist_cnt$count_prop
+
+# 4、直接联系人人数	contacts_class1_cnt
+contacts_class1_cnt <- class_distribute(pre = dat$contacts_class1_cnt,class = dat$class,low = 0,high = 300,by=20)
+contacts_class1_cnt$count_prop
+
+# 5、引起间接黑名单人数	contacts_router_cnt
+contacts_router_cnt <- class_distribute(pre = dat$contacts_router_cnt,class = dat$class,low = 0,high = 200,by=10)
+contacts_router_cnt$count_prop
+
+# 6、直接联系人中引起间接黑名单占比	contacts_router_ratio
+contacts_router_ratio <- class_distribute(pre = dat$ contacts_router_ratio,class = dat$class,low = 0,high = 1,by=0.05)
+ contacts_router_ratio$count_prop
+
+# 7、手机黑名单得分
+phone_gray_score <- class_distribute(pre = dat$phone_gray_score,class = dat$class,low = 0,high = 100,by=5)
+phone_gray_score$count_prop
+
+```
+
+# 没有检索到的字段
+```{r warning=FALSE}
+# 1、电话号码注册过的相关企业数量	register_org_cnt
+#register_org_cnt <- class_distribute(pre = ?????,class = dat$class,low = 0,high = 90,by=5)
+#register_org_cnt$???
+
+# 2、电话号码注册过的相关企业数量	register_org_cnt
+#register_org_cnt <- class_distribute(pre = dat$?????,class = dat$class,low = 0,high = 90,by=5)
+#register_org_cnt$??????
+
+```

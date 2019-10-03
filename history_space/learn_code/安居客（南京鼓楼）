@@ -1,0 +1,70 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Dec  7 10:36:35 2017
+
+@author: Administrator
+"""
+
+import re
+import requests
+import urllib.request
+import pandas as pd
+from bs4 import BeautifulSoup
+
+
+## 爬取列表连接
+def get_link(url,headers):
+    req = requests.get(url=url,headers=headers)
+    resp = req.text
+    soup = BeautifulSoup(resp, 'lxml')
+    dat1 = soup.find_all('div',attrs={'class':'li-info'})
+#    return dat1
+    dat2 = re.findall(r'href="/community/view/(.+?)/jiedu/"',str(dat1))
+    return dat2
+
+## 爬取网页内部内容
+def get_dat(url,headers):
+    req = requests.get(url=url,headers=headers)
+    resp = req.text
+    soup = BeautifulSoup(resp, 'lxml')    
+
+    dat1 = soup.find_all('dl',attrs={'class':'basic-parms-mod'})
+    wyf  = re.findall(r'物业费：</dt><dd class="other-dd">(.+?)</dd>',str(dat1))[0]
+    rate = re.findall(r'</dt><dd>(.+?)</dd>',str(dat1))[3]
+    lh = re.findall(r'绿化率：</dt><dd class="other-dd">(.+?)</dd>',str(dat1))[0]
+
+    dat2 = soup.find_all('div',attrs={'class':'comm-title'})
+    name = re.findall(r'title="(.+?)"><i class="iconfont">',str(dat2))[0]
+
+    dat3 = soup.find_all('script',attrs={'type':'text/javascript'})
+    lat  = re.findall(r'lat : "(.+?)",',str(dat3)) 
+    lng  = re.findall(r'lng : "(.+?)"',str(dat3))     
+    
+    dat = [name,rate,lh,wyf,lat,lng]
+    return dat
+
+## 综合爬取函数
+def main():
+#   print('正在读取%s页的文本' )
+   f1 = open(r'C:\\Users\\Administrator\\Desktop\\gulou1.csv','a')
+   headers = {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+      }
+   for i in range(38):
+       url = 'https://nanjing.anjuke.com/community/guloua/o6-p%s/'%(str(i+1))
+       print('正在读取%s页的文本' % (i+1))
+       df0 = get_link(url,headers)
+       for df in df0:
+           url1 = 'https://nanjing.anjuke.com/community/view/%s?from=Filter_1&hfilter=filterlist'%(df)
+           print('正在读取%s的文本' % (url1))
+           try:
+              df1 = get_dat(url1,headers)
+              f1.writelines(str(df1)+'\n')
+              print('---------------------------------------成功保存文本')
+           except:
+              print('---------------------------------------没有成功保存文本') 
+   f1.close()
+
+## 执行主函数
+if __name__ == '__main__':
+	main()

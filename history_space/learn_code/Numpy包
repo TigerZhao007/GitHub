@@ -1,0 +1,119 @@
+# 功能介绍
+NumPy是高性能科学计算和数据分析的基础包。部分功能如下：
+ndarray, 具有矢量算术运算和复杂广播能力的快速且节省空间的多维数组。
+用于对整组数据进行快速运算的标准数学函数（无需编写循环）。
+用于读写磁盘数据的工具以及用于操作内存映射文件的工具。
+线性代数、随机数生成以及傅里叶变换功能。
+用于集成C、C++、Fortran等语言编写的代码的工具。
+
+# NumPy类型
+类型	           类型代码	              说明
+int8、uint8	    i1、u1	        有符号和无符号8位整型（1字节）
+int16、uint16	  i2、u2	        有符号和无符号16位整型（2字节）
+int32、uint32	  i4、u4	        有符号和无符号32位整型（4字节）
+int64、uint64	  i8、u8	        有符号和无符号64位整型（8字节）
+float16         	f2	          半精度浮点数
+float32	         f4、f         	单精度浮点数
+float64	         f8、d	         双精度浮点数
+float128	       f16、g	       扩展精度浮点数
+complex64       	c8	         分别用两个32位表示的复数
+complex128	      c16         	分别用两个64位表示的复数
+complex256	      c32	          分别用两个128位表示的复数
+bool            	?	            布尔型
+object	          O	             python对象
+string	          Sn	           固定长度字符串，每个字符1字节，如S10
+unicode	          Un	           固定长度Unicode，字节数由系统决定，如U10
+
+# NumPy常用函数
+p.array( x)
+p.array( x, dtype)
+输入数据转化为一个ndarray
+输入数据转化为一个类型为type的ndarray
+p.asarray( array )	将输入数据转化为一个新的（copy）ndarray
+np.ones( N )
+
+np.ones( N, dtype)
+
+np.ones_like( ndarray )
+
+生成一个N长度的一维全一ndarray
+
+生成一个N长度类型是dtype的一维全一ndarray
+
+生成一个形状与参数相同的全一ndarray
+
+np.zeros( N)
+
+np.zeros( N, dtype)
+
+np.zeros_like(ndarray)
+
+生成一个N长度的一维全零ndarray
+
+生成一个N长度类型位dtype的一维全零ndarray
+
+类似np.ones_like( ndarray )
+
+np.empty( N )
+
+np.empty( N, dtype)
+
+np.empty(ndarray)
+
+生成一个N长度的未初始化一维ndarray
+
+生成一个N长度类型是dtype的未初始化一维ndarray
+
+类似np.ones_like( ndarray )
+
+np.eye( N )
+
+np.identity( N )
+
+创建一个N * N的单位矩阵（对角线为1，其余为0）
+
+np.arange( num)
+
+np.arange( begin, end)
+
+np.arange( begin, end, step)
+
+生成一个从0到num-1步数为1的一维ndarray
+
+生成一个从begin到end-1步数为1的一维ndarray
+
+生成一个从begin到end-step的步数为step的一维ndarray
+
+np.mershgrid(ndarray, ndarray,...)
+
+生成一个ndarray * ndarray * ...的多维ndarray
+
+np.where(cond, ndarray1, ndarray2)
+
+根据条件cond，选取ndarray1或者ndarray2，返回一个新的ndarray
+
+np.in1d(ndarray, [x,y,...])
+
+检查ndarray中的元素是否等于[x,y,...]中的一个，返回bool数组
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

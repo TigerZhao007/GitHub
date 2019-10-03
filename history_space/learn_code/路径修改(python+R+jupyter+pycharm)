@@ -1,0 +1,37 @@
+# 添加环境变量
+右击计算机》高级系统设置》环境变量》系统变量》Path》编辑》加个分号添加路径
+
+# R语言修改工作路径
+tool>golbal_option>general>browse    # Rstudio修改工作路径
+getwd()                              # 查看当前工作路径
+setwd('F:\\rspace')                  # 设置目标工作路径
+
+# Python修改工作路径
+import os
+os.getcwd()                           # 获得当前工作目录
+os.path.abspath('.')                  # 获得当前工作目录
+os.path.abspath('..')                 # 获得当前工作目录的父目录
+os.path.abspath(os.curdir)            # 获得当前工作目录
+os.chdir('E:\Program Files')            # 设置目标工作路径
+
+# jupyter notebook设置工作路径
+打开Windows的cmd，
+在cmd中输入jupyter notebook --generate-config
+看到路径为D:\Users……，找到此路径
+修改jupyter_notebook_config.py文件 
+将
+## The directory to use for notebooks and kernels. 
+#c.NotebookApp.notebook_dir = '' 
+改为 
+## The directory to use for notebooks and kernels. 
+c.NotebookApp.notebook_dir = 'E:\Jupyter'
+注意：
+1.#c.NotebookApp.notebook_dir = ''中的#必须删除，且前面不能留空格。 
+2.E:\Jupyter,Jupyter文件夹必须提前新建，如果没有新建，Jupyter Notebook会找不到这个文件，会产生闪退现象。
+
+# pycharm修改路径
+File>new project>location
+
+
+
+

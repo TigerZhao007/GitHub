@@ -1,0 +1,287 @@
+# Windows-运行控制
+
+windows+R -> cmd              # 打开运行界面
+jumpyter notebook             # 打开Python notebook 界面
+msconfig                      # 打开系统配置界面 
+control                       # 打开控制面板
+
+1.calc：启动计算器
+2.appwiz.cpl：程序和功能
+3.certmgr.msc：证书管理实用程序
+4.charmap：启动字符映射表
+5.chkdsk.exe：Chkdsk磁盘检查(管理员身份运行命令提示符)
+6.cleanmgr: 打开磁盘清理工具
+7.cliconfg：SQL SERVER 客户端网络实用工具
+8.cmstp：连接管理器配置文件安装程序
+9.cmd.exe：CMD命令提示符
+10.自动关机命令
+Shutdown -s -t 600：表示600秒后自动关机
+shutdown -a ：可取消定时关机
+Shutdown -r -t 600：表示600秒后自动重启
+rundll32 user32.dll,LockWorkStation：表示锁定计算机
+11.colorcpl：颜色管理，配置显示器和打印机等中的色彩
+12.CompMgmtLauncher：计算机管理
+13.compmgmt.msc：计算机管理
+14.credwiz：备份或还原储存的用户名和密码
+15.comexp.msc：打开系统组件服务
+16.control：控制面版
+17.dcomcnfg：打开系统组件服务
+18.Dccw：显示颜色校准
+19.devmgmt.msc：设备管理器
+20.desk.cpl：屏幕分辨率
+21.dfrgui：优化驱动器    Windows 7→dfrg.msc：磁盘碎片整理程序
+22.dialer：电话拨号程序
+23.diskmgmt.msc：磁盘管理
+24.dvdplay：DVD播放器
+25.dxdiag：检查DirectX信息
+26.eudcedit：造字程序
+27.eventvwr：事件查看器
+28.explorer：打开资源管理器
+29.Firewall.cpl：Windows防火墙
+30.FXSCOVER：传真封面编辑器
+31.fsmgmt.msc：共享文件夹管理器
+32.gpedit.msc：组策略
+33.hdwwiz.cpl：设备管理器
+34.inetcpl.cpl：Internet属性
+35.intl.cpl：区域
+36.iexpress：木马捆绑工具，系统自带
+37.joy.cpl：游戏控制器
+38.logoff：注销命令
+39.lusrmgr.msc：本地用户和组
+40.lpksetup：语言包安装/删除向导，安装向导会提示下载语言包
+41.lusrmgr.msc：本机用户和组
+42.main.cpl：鼠标属性
+43.mmsys.cpl：声音
+44.magnify：放大镜实用程序
+45.mem.exe：显示内存使用情况(如果直接运行无效，可以先管理员身份运行命令提示符，在命令提示符里输入mem.exe>d:a.txt即可打开d盘查看a.txt，里面的就是内存使用情况了。当然什么盘什么文件名可自己决定。)
+46.MdSched:Windows内存诊断程序
+47.mmc：打开控制台
+48.mobsync：同步命令
+49.mplayer2：简易widnows media player
+50.Msconfig.exe：系统配置实用程序
+51.msdt：微软支持诊断工具
+52.msinfo32：系统信息
+53.mspaint：画图
+54.Msra：Windows远程协助
+55.mstsc：远程桌面连接
+56.NAPCLCFG.MSC：客户端配置
+57.ncpa.cpl：网络连接
+58.narrator：屏幕“讲述人”
+59.Netplwiz：高级用户帐户控制面板，设置登陆安全相关的选项
+60.netstat : an(TC)命令检查接口
+61.notepad：打开记事本
+62.Nslookup：IP地址侦测器
+63.odbcad32：ODBC数据源管理器
+64.OptionalFeatures：打开“打开或关闭Windows功能”对话框
+65.osk：打开屏幕键盘
+66.perfmon.msc：计算机性能监测器
+67.perfmon：计算机性能监测器
+68.PowerShell：提供强大远程处理能力
+69.printmanagement.msc：打印管理
+70.powercfg.cpl：电源选项
+71.psr：问题步骤记录器
+72.Rasphone：网络连接
+73.Recdisc：创建系统修复光盘
+74.Resmon：资源监视器
+75.Rstrui：系统还原
+76.regedit.exe：注册表
+77.regedt32：注册表编辑器
+78.rsop.msc：组策略结果集
+79.sdclt：备份状态与配置，就是查看系统是否已备份
+80.secpol.msc：本地安全策略
+81.services.msc：本地服务设置
+82.sfc /scannow：扫描错误并复原/windows文件保护
+83.sfc.exe：系统文件检查器
+84.shrpubw：创建共享文件夹
+85.sigverif：文件签名验证程序
+86.slui：Windows：激活，查看系统激活信息
+87.slmgr.vbs -dlv ：显示详细的许可证信息
+slmgr.vbs -dli ：显示许可证信息
+slmgr.vbs -xpr ：当前许可证截止日期
+slmgr.vbs -dti ：显示安装ID 以进行脱机激活
+slmgr.vbs -ipk ：(Product Key)安装产品密钥
+slmgr.vbs -ato ：激活Windows
+slmgr.vbs -cpky ：从注册表中清除产品密钥(防止泄露引起的攻击)
+slmgr.vbs -ilc ：(License file)安装许可证
+slmgr.vbs -upk ：卸载产品密钥
+slmgr.vbs -skms ：(name[ort] )批量授权
+88.snippingtool：截图工具，支持无规则截图
+89.soundrecorder：录音机，没有录音时间的限制
+90.StikyNot：便笺
+91.sysdm.cpl：系统属性
+92.sysedit：系统配置编辑器
+93.syskey：系统加密，一旦加密就不能解开，保护系统的双重密码
+94.taskmgr：任务管理器(旧版)
+95.TM任务管理器(新版)
+96.taskschd.msc：任务计划程序
+97.timedate.cpl：日期和时间
+98.UserAccountControlSettings用户账户控制设置
+99.utilman：辅助工具管理器
+100.wf.msc：高级安全Windows防火墙
+101.WFS：Windows传真和扫描
+102.wiaacmgr：扫描仪和照相机向导
+103.winver：关于Windows
+104.wmimgmt.msc：打开windows管理体系结构(WMI)
+105.write：写字板
+106.wscui.cpl：操作中心
+107.wuapp：Windows更新
+108.wscript：windows脚本宿主设置
+
+1. “Shift+Delete”快捷键
+用途：直接将所选文件或文档等彻底删除，不需放入回收站，这个快捷键相信所有Windows系统用户都不会陌生了，
+Windows7系统继续支持该功能。
+
+2. “Alt+Enter”快捷键
+用途：显示所选项属性，使用该功能你可以快速查看任何文件的属性。
+
+3. “Alt+Up Arrow（上箭头）”快捷键
+用途：在Windows Explorer（资源管理器）中查看文件夹上一级目录。
+
+4. “Ctrl+Shift+Esc”快捷键
+用途：打开Windows任务管理器，这可是Windows 7中更为直接有效的办法。
+
+5. “Windows键+D”快捷键
+用途：显示桌面，众所周知Windows7的工具栏已经完全改变，新颖的工具栏取消了传统Windows系统工具栏中的应用程序小图标，
+取而代之的是大图标显示。同时显示桌面一项也不复存在了，也许你打开了很多窗口想要立即返回桌面，使用这个快捷键就能立即实现。
+
+6. “Windows键+R”快捷键
+用途：打开“Run...”运行对话框，Windows系统的很多控制都需要通过运行对话框来进行调用，因此便捷打开此窗口也是非常方便的。
+
+7. “Windows键+空格键”快捷键
+用途：预览桌面，这是Windows7系统加入的特点。Windows7系统中添加了很多预览效果，这些效果可以方便用户快速了解其内容，
+使用这一组快捷键你能瞬间切换到桌面，当然松手后又恢复到当前窗口中来。
+
+8. “Shift +Windows键+数字键”快捷键
+用途：快速开启工具栏上正在后台运行的应用程序，该功能也是Windows7所特有的。当你随意打开一些应用程序之后总是会将一些
+现在不用的窗口最小化到工具栏上在后台去运行，此时Windows7会非常聪明地将这些程序逐一编号，
+当你按下Shift+Windows键+数字键“1”时，第一个被你打开的应用程序将立即出现在面前。
+
+9. “Alt +Windows键 +数字键”快捷键
+用途：打开一个任务栏中所有应用程序编号的跳转列表清单，这里你可以马上看到任何一个应用程序对应的编号，
+然后使用以上第八条快捷键就能快速调用该程序。
+
+10. “Windows键 +T”快捷键
+用途：Windows7的新颖工具栏给很多用户都留下了深刻印象，你可以很容易进行预览，以上又介绍给大家快速调用程序的办法，
+这一组快捷键的使用也与工具栏相关。使用这组快捷键你可以让工具栏上的所有程序进行一次循环，即是改变应用程序在工具栏上的排列顺序。
+
+# 其他补充
+Nslookup                      ——-IP地址侦测器
+explorer                      ——-打开资源管理器
+logoff                        ——-注销命令
+tsshutdn                      ——-60秒倒计时关机命令
+lusrmgr.msc                   ——-本机用户和组
+services.msc                  ——-本地服务设置
+oobe/msoobe /a                ——-检查XP是否激活
+notepad                       ——–打开记事本
+cleanmgr                      ——-垃圾整理
+net start messenger           ——-开始信使服务
+compmgmt.msc                  ——-计算机管理
+net stop messenger            ——-停止信使服务
+conf                          ——-启动netmeeting
+dvdplay                       ——–DVD播放器
+charmap                       ——–启动字符映射表
+diskmgmt.msc                  ——–磁盘管理实用程序
+calc                          ——–启动计算器
+dfrg.msc                      ——–磁盘碎片整理程序
+chkdsk.exe                    ——–Chkdsk磁盘检查
+devmgmt.msc                   ——–设备管理器
+regsvr32 /u *.dll             ——–停止dll文件运行
+rwtsn32                       ——–系统医生
+rononce -p                    ——–15秒关机
+dxdiag                        ——–检查DirectX信息
+regedt32                      ——–注册表编辑器
+Msconfig.exe                  ——–系统配置实用程序
+rsop.msc                      ——–组策略结果集
+mem.exe                       ——–显示内存使用情况
+regedit.exe                   ——–注册表
+winchat                       ——–XP自带局域网聊天
+progman                       ——–程序管理器
+winmsd                        ——–系统信息
+perfmon.msc                   ——–计算机性能监测程序
+winver                        ——–检查Windows版本 
+sfc /scannow                  ——–扫描错误并复原
+taskmgr                       ——–任务管理器（2000／xp／2003
+winver                        ——–检查Windows版本 
+wmimgmt.msc                   ——–打开windows管理体系结构(WMI) 
+wupdmgr                       ——–windows更新程序 
+wscript                       ——–windows脚本宿主设置 
+writev                        ——–写字板 
+winmsd                        ——–系统信息 
+wiaacmgr                      ——–扫描仪和照相机向导 
+winchat                       ——–XP自带局域网聊天
+mem.exe                       ——–显示内存使用情况 
+Msconfig.exe                  ——–系统配置实用程序 
+mplayer2                      ——-简易widnows media player 
+mspaint                       ——–画图板 
+mstsc                         ——–远程桌面连接 
+mplayer2                      ——–媒体播放机 
+magnify                       ——–放大镜实用程序 
+mmc                           ——–打开控制台 
+mobsync                       ——–同步命令
+dxdiag                        ——–检查DirectX信息 
+drwtsn32                      ——–系统医生 
+devmgmt.msc                   ——–设备管理器 
+dfrg.msc                      ——–磁盘碎片整理程序 
+diskmgmt.msc                  ——–磁盘管理实用程序 
+dcomcnfg                      ——-打开系统组件服务 
+ddeshare                      ——-打开DDE共享设置 
+dvdplay                       ——–DVD播放器
+net stop messenger            ——–停止信使服务 
+net start messenger           ——–开始信使服务 
+notepad                       ——–打开记事本 
+nslookup                      ——-网络管理的工具向导 
+ntbackup                      ——-系统备份和还原 
+narrator                      ——-屏幕“讲述人” 
+ntmsmgr.msc                   ——–移动存储管理器 
+ntmsoprq.msc                  ——–移动存储管理员操作请求 
+netstat -an                   ——–(TC)命令检查接口
+syncapp                       ——–创建一个公文包 
+sysedit                       ——–系统配置编辑器 
+sigverif                      ——–文件签名验证程序 
+sndrec32                      ——-录音机 
+shrpubw                       ——–创建共享文件夹 
+secpol.msc                    ——–本地安全策略 
+syskey                        ——–系统加密，一旦加密就不能解开，保护windows xp系统的双重密码 
+services.msc                  ——–本地服务设置 
+Sndvol32                      ——-音量控制程序 
+sfc.exe                       ——–系统文件检查器 
+sfc /scannow—windows          ——–文件保护
+tsshutdn                      ——-60秒倒计时关机命令 
+tourstart                     ——–xp简介（安装完成后出现的漫游xp程序） 
+taskmgr                       ——–任务管理器
+eventvwr                      ——-事件查看器 
+eudcedit                      ——-造字程序 
+explorer                      ——-打开资源管理器
+packager                      ——-对象包装程序 
+perfmon.msc                   ——–计算机性能监测程序 
+progman                       ——–程序管理器
+regedit.exe                   —-注册表 
+rsop.msc                      ——-组策略结果集 
+regedt32                      ——-注册表编辑器 
+rononce -p                    —-15秒关机 
+regsvr32 /u *.dll             —-停止dll文件运行 
+regsvr32 /u zipfldr.dll       ——取消ZIP支持
+cmd.exe                       ——–CMD命令提示符 
+chkdsk.exe                    —–Chkdsk磁盘检查 
+certmgr.msc                   —-证书管理实用程序 
+calc                          ———–启动计算器 
+charmap                       ——–启动字符映射表 
+cliconfg                      ——-SQL SERVER 客户端网络实用程序 
+Clipbrd                       ——–剪贴板查看器 
+conf                          ———–启动netmeeting 
+compmgmt.msc                  —计算机管理 
+cleanmgr                      ——-垃圾整理 
+ciadv.msc                     ——索引服务程序
+osk                           ————打开屏幕键盘 
+odbcad32                      ——-ODBC数据源管理器 
+oobe/msoobe /a                —-检查XP是否激活 
+lusrmgr.msc                   —-本机用户和组 
+logoff                        ———注销命令
+iexpress                      ——-木马捆绑工具，系统自带
+Nslookup                      ——-IP地址侦测器
+fsmgmt.msc                    —–共享文件夹管理器
+utilman                       ——–辅助工具管理器
+gpedit.msc                    —–组策略
+
+
+

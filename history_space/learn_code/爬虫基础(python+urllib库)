@@ -1,0 +1,223 @@
+# 爬虫基础 python
+扒网页其实就是根据URL来获取它的网页信息，虽然我们在浏览器中看到的是一幅幅优美的画面，但是其实是由浏览器解释才呈现出来的，
+实质它是一段HTML代码，加 JS、CSS，如果把网页比作一个人，那么HTML便是他的骨架，JS便是他的肌肉，CSS便是它的衣服。
+所以最重要的部分是存在于HTML中的。
+
+# python+urllib库
+import urllib                  python2.x
+import urllib.request         python3.x
+...
+import urllib.request
+url = "http://www.baidu.com"
+response = urllib.request.urlopen(url)
+print ( response.read() )
+...
+
+1.基本方法
+urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False, context=None)
+- url:         需要打开的网址
+- data：       Post提交的数据
+- timeout：    设置网站的访问超时时间
+直接用urllib.request模块的urlopen（）获取页面，page的数据格式为bytes类型，需要decode（）解码，转换成str类型。
+...
+from urllib import request
+response = request.urlopen(r'http://python.org/') 
+# <http.client.HTTPResponse object at 0x00000000048BC908> HTTPResponse类型
+page = response.read()
+page = page.decode('utf-8')
+...
+urlopen返回对象提供方法：
+- read() , readline() ,readlines() , fileno() , close() ：对HTTPResponse类型数据进行操作
+- info()：      返回HTTPMessage对象，表示远程服务器返回的头信息
+- getcode()：   返回Http状态码。如果是http请求，200请求成功完成;404网址未找到
+- geturl()：    返回请求的url
+
+2.使用Request
+urllib.request.Request(url, data=None, headers={}, method=None)
+使用request（）来包装请求，再通过urlopen（）获取页面。
+...
+url = r'http://www.lagou.com/zhaopin/Python/?labelWords=label'
+headers = {
+    'User-Agent': r'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) '
+                  r'Chrome/45.0.2454.85 Safari/537.36 115Browser/6.0.3',
+    'Referer': r'http://www.lagou.com/zhaopin/Python/?labelWords=label',
+    'Connection': 'keep-alive'
+}
+req = request.Request(url, headers=headers)
+page = request.urlopen(req).read()
+page = page.decode('utf-8')
+...
+用来包装头部的数据：
+- User-Agent ： 这个头部可以携带如下几条信息：浏览器名和版本号、操作系统名和版本号、默认语言
+- Referer：     可以用来防止盗链，有一些网站图片显示来源http://***.com，就是检查Referer来鉴定的
+- Connection：  表示连接状态，记录Session的状态。
+
+3.Post数据
+urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False, context=None)
+urlopen（）的data参数默认为None，当data参数不为空的时候，urlopen（）提交方式为Post。
+...
+from urllib import request, parse
+url = r'http://www.lagou.com/jobs/positionAjax.json?'
+headers = {
+    'User-Agent': r'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) '
+                  r'Chrome/45.0.2454.85 Safari/537.36 115Browser/6.0.3',
+    'Referer': r'http://www.lagou.com/zhaopin/Python/?labelWords=label',
+    'Connection': 'keep-alive'
+}
+data = {
+    'first': 'true',
+    'pn': 1,
+    'kd': 'Python'
+}
+data = parse.urlencode(data).encode('utf-8')
+req = request.Request(url, headers=headers, data=data)
+page = request.urlopen(req).read()
+page = page.decode('utf-8')
+...
+urllib.parse.urlencode(query, doseq=False, safe='', encoding=None, errors=None)
+urlencode（）主要作用就是将url附上要提交的数据。 
+'''
+data = {
+    'first': 'true',
+    'pn': 1,
+    'kd': 'Python'
+}
+data = parse.urlencode(data).encode('utf-8')
+...
+经过urlencode（）转换后的data数据为?first=true?pn=1?kd=Python，最后提交的url为
+http://www.lagou.com/jobs/positionAjax.json?first=true?pn=1?kd=Python
+Post的数据必须是bytes或者iterable of bytes，不能是str，因此需要进行encode（）编码
+page = request.urlopen(req, data=data).read()
+当然，也可以把data的数据封装在urlopen（）参数中.
+
+4.异常处理
+...
+def get_page(url):
+    headers = {
+        'User-Agent': r'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) '
+                    r'Chrome/45.0.2454.85 Safari/537.36 115Browser/6.0.3',
+        'Referer': r'http://www.lagou.com/zhaopin/Python/?labelWords=label',
+        'Connection': 'keep-alive'
+    }
+    data = {
+        'first': 'true',
+        'pn': 1,
+        'kd': 'Python'
+    }
+    data = parse.urlencode(data).encode('utf-8')
+    req = request.Request(url, headers=headers)
+    try:
+        page = request.urlopen(req, data=data).read()
+        page = page.decode('utf-8')
+    except error.HTTPError as e:
+        print(e.code())
+        print(e.read().decode('utf-8'))
+    return page
+    ...
+5.使用代理
+urllib.request.ProxyHandler(proxies=None)
+当需要抓取的网站设置了访问限制，这时就需要用到代理来抓取数据。
+...
+data = {
+        'first': 'true',
+        'pn': 1,
+        'kd': 'Python'
+    }
+proxy = request.ProxyHandler({'http': '5.22.195.215:80'})  # 设置proxy
+opener = request.build_opener(proxy)  # 挂载opener
+request.install_opener(opener)  # 安装opener
+data = parse.urlencode(data).encode('utf-8')
+page = opener.open(url, data).read()
+page = page.decode('utf-8')
+return page
+...
+
+# python+urllib库高级用法
+
+## 1. 设置Headers
+有些网站不会同意程序直接用上面的方式进行访问，如果识别有问题，那么站点根本不会响应，
+所以为了完全模拟浏览器的工作，我们需要设置一些Headers 的属性。
+首先，打开我们的浏览器，调试浏览器F12，我用的是Chrome，打开网络监听，
+比如知乎，点登录之后，我们会发现登陆之后界面都变化了，出现一个新的界面，
+实质上这个页面包含了许许多多的内容，这些内容也不是一次性就加载完成的，实质上是执行了好多次请求，
+一般是首先请求HTML文件，然后加载JS，CSS 等等，经过多次请求之后，网页的骨架和肌肉全了，整个网页的效果也就出来了。
+拆分这些请求，我们只看一第一个请求，你可以看到，有个Request URL，还有headers，下面便是response，。
+那么这个头中包含了许许多多是信息，有文件编码啦，压缩方式啦，请求的agent啦等等。
+a.agent就是请求的身份，如果没有写入请求身份，那么服务器不一定会响应，所以可以在headers中设置agent。
+b.有对付”反盗链”的方式，服务器会识别headers中的referer是不是它自己，如果不是，有的服务器不会响应，所以我们还可以在headers中加入referer
+
+headers的一些属性，下面的需要特别注意一下：
+User-Agent :         有些服务器或 Proxy 会通过该值来判断是否是浏览器发出的请求
+referer:             对付”反盗链”的方式，服务器会识别headers中的referer是不是它自己，
+Content-Type :       在使用 REST 接口时，服务器会检查该值，用来确定 HTTP Body 中的内容该怎样解析。
+application/xml ：   在 XML RPC，如 RESTful/SOAP 调用时使用
+application/json ：  在 JSON RPC 调用时使用
+application/x-www-form-urlencoded ：       浏览器提交 Web 表单时使用
+在使用服务器提供的 RESTful 或 SOAP 服务时， Content-Type 设置错误会导致服务器拒绝服务
+
+其他的有必要的可以审查浏览器的headers内容，在构建时写入同样的数据即可。
+1)请求(客户端->服务端[request]) 
+    GET(请求的方式) /newcoder/hello.html(请求的目标资源) HTTP/1.1(请求采用的协议和版本号) 
+    Accept: */*                          (客户端能接收的资源类型) 
+    Accept-Language: en-us               (客户端接收的语言类型) 
+    Connection: Keep-Alive               (维护客户端和服务端的连接关系) 
+    Host: localhost:8080                 (连接的目标主机和端口号) 
+    Referer: http://localhost/links.asp  (告诉服务器我来自于哪里) 
+    User-Agent: Mozilla/4.0              (客户端版本号的名字) 
+    Accept-Encoding: gzip, deflate       (客户端能接收的压缩数据的类型) 
+    If-Modified-Since: Tue, 11 Jul 2000 18:23:51 GMT              (缓存时间)  
+    Cookie(客户端暂存服务端的信息) 
+    Date: Tue, 11 Jul 2000 18:23:51 GMT  (客户端请求服务端的时间)
+2)响应(服务端->客户端[response])
+    HTTP/1.1                             (响应采用的协议和版本号) 200(状态码) OK(描述信息)
+    Location: http://www.baidu.com       (服务端需要客户端访问的页面路径) 
+    Server:apache tomcat                 (服务端的Web服务端名)
+    Content-Encoding: gzip               (服务端能够发送压缩编码类型) 
+    Content-Length: 80                   (服务端发送的压缩数据的长度) 
+    Content-Language: zh-cn              (服务端发送的语言类型) 
+    Content-Type: text/html; charset=GB2312            (服务端发送的类型及采用的编码方式)
+    Last-Modified: Tue, 11 Jul 2000 18:23:51 GMT       (服务端对该资源最后修改的时间)
+    Refresh: 1;url=http://www.it315.org                (服务端要求客户端1秒钟后，刷新，然后访问指定的页面路径)
+    Content-Disposition: attachment; filename=aaa.zip  (服务端要求客户端以下载文件的方式打开该文件)
+    Transfer-Encoding: chunked                         (分块传递数据到客户端）  
+    Set-Cookie:SS=Q0=5Lb_nQ; path=/search              (服务端发送到客户端的暂存数据)
+    Expires: -1//3种                                   (服务端禁止客户端缓存页面数据)
+    Cache-Control: no-cache                            (服务端禁止客户端缓存页面数据)  
+    Pragma: no-cache                                   (服务端禁止客户端缓存页面数据)   
+    Connection: close(1.0)/(1.1)Keep-Alive             (维护客户端和服务端的连接关系)  
+    Date: Tue, 11 Jul 2000 18:23:51 GMT                (服务端响应客户端的时间)
+
+## 2. Proxy（代理）的设置
+urllib2 默认会使用环境变量 http_proxy 来设置 HTTP Proxy。假如一个网站它会检测某一段时间某个IP 的访问次数，\
+如果访问次数过多，它会禁止你的访问。所以你可以设置一些代理服务器来帮助你做工作，每隔一段时间换一个代理！
+...???
+import urllib
+enable_proxy = True
+proxy_handler = urllib.ProxyHandler({"http" : 'http://some-proxy.com:8080'})
+null_proxy_handler = urllib.ProxyHandler({})
+if enable_proxy:
+    opener = urllib.build_opener(proxy_handler)
+else:
+    opener = urllib.build_opener(null_proxy_handler)
+urllib2.install_opener(opener)
+...???
+
+## 3.Timeout 设置
+timeout的设置，可以设置等待多久超时，为了解决一些网站实在响应过慢而造成的影响。
+例如下面的代码,如果第二个参数data为空那么要特别指定是timeout是多少，写明形参，如果data已经传入，则不必声明。
+
+## 4.使用 HTTP 的 PUT 和 DELETE 方法
+http协议有六种请求方法，get,head,put,delete,post,options，我们有时候需要用到PUT方式或者DELETE方式请求。
+PUT：   这个方法比较少见。HTML表单也不支持这个。本质上来讲， PUT和POST极为相似，都是向服务器发送数据，
+        但它们之间有一个重要区别，PUT通常指定了资源的存放位置，而POST则没有，POST的数据存放位置由服务器自己决定。
+DELETE：删除某一个资源。基本上这个也很少见，不过还是有一些地方比如amazon的S3云服务里面就用的这个方法来删除资源。
+
+
+
+
+
+
+
+
+
+

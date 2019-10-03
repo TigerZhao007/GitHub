@@ -1,0 +1,21 @@
+# R程序包路径
+R、Rstudio、CMD、三者程序包加载路径有所不同。
+
+1、查看已加载的包
+(.packages())   #注意外面的括号和前面的点不能省。
+2、移除已加载的包（不删包）
+detach("package:RMySQL")   #如卸除RMySQL包，注意是卸除，不是卸载，也就是说不是把包从R运行环境中彻底删除，只是不希望该包被加载使用。在包使用函数冲突，检验函数依赖时比较有用。
+3、安装包
+install.packages("rjson")   #下载安装报名为“rjson”的包。
+4、卸载已加载的包（彻底删除已安装的包：
+remove. packages(c("pkg1","pkg2") , lib = file .path("path", "to", "library"))
+# 注："pkg1","pkg2"表示包名，即一次可以卸载多个包；"path", "to", "library"表示R的库路径，字符向量，通常情况下只输一个路径即可。使用命令.libPaths()可以查看库路径。示例：
+remove.packages(c('zoom'),lib=file.path('C:\\Program Files\\R\\R-3.2.2\\library'))
+附：
+1、查看已安装的包
+installed.packages()[,c('Package','Version','LibPath')]
+#其中c('Package','Version','LibPath') 表示显示包名、版本、库路径信息，若无[,c('Package','Version','LibPath')]参数，则显示所有信息。
+2、查看某个包提供的函数
+help(package='TSA')    # package参数为要查看的包的包名。
+3、查看某个函数属于哪个包
+help(函数名)        #在打开的网页中查看属于哪个包。

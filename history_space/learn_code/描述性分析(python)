@@ -1,0 +1,44 @@
+# python 描述性分析
+
+## 基本统计量的计算
+from pandas as pd
+from numpy as np
+d1.count()                       #非空元素计算
+d1.min()                         #最小值
+d1.max()                         #最大值
+d1.idxmin()                      #最小值的位置，类似于R中的which.min函数
+d1.idxmax()                      #最大值的位置，类似于R中的which.max函数
+d1.quantile(0.1)                 #10%分位数
+d1.sum()                         #求和
+d1.mean()                        #均值
+d1.median()                      #中位数
+d1.mode()                        #众数
+d1.var()                         #方差
+d1.std()                         #标准差
+d1.mad()                         #平均绝对偏差
+d1.skew()                        #偏度
+d1.kurt()                        #峰度
+d1.cov()                         #连续变量的协方差矩阵
+d1.corrwith()                    #某变量与其他变量相关系数
+d1.corr()                        #连续变量的相关系数
+d1.describe()                    #一次性输出多个描述性统计指标
+
+编写一个函数，输出各种统计量。
+def stats(x):                    #定义函数名称
+  return                         #定义返回值
+  pd.Series(
+    [x.count(),x.min(),x.idxmin(),
+     x.quantile(.25),x.median(),
+     x.quantile(.75),x.mean(),
+     x.max(),x.idxmax(),
+     x.mad(),x.var(),
+     x.std(),x.skew(),x.kurt()],
+  index = ['Count','Min','Whicn_Min',
+    'Q1','Median','Q3','Mean',
+    'Max','Which_Max','Mad',
+    'Var','Std','Skew','Kurt']
+    )                           #定义指标值及指标名称
+stats(d1)                       #利用函数计算d1的描述性统计量。
+
+
+

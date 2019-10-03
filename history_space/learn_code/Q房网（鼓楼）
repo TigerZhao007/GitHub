@@ -1,0 +1,80 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Dec  8 16:21:18 2017
+
+@author: Administrator
+"""
+
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Dec  8 14:02:06 2017
+
+@author: Administrator
+"""
+import csv
+import re
+import requests
+import urllib.request
+import pandas as pd
+from bs4 import BeautifulSoup
+
+
+## 爬取列表连接
+def get_link(url,headers):
+    req = requests.get(url=url,headers=headers)
+    resp = req.text
+    soup = BeautifulSoup(resp, 'lxml')
+    dat1 = soup.find_all('p',attrs={'class':'house-title'})
+#    return dat1
+    dat2 = re.findall(r'<a href="/garden/desc/(.+?)" target="_blank"',str(dat1))
+    return dat2
+
+## 爬取网页内部内容
+def get_dat(url,headers):
+    req = requests.get(url=url,headers=headers)
+    resp = req.text
+    soup = BeautifulSoup(resp, 'lxml')    
+
+    dat1 = soup.find_all('div',attrs={'class':'head-info-list'})
+    year  = re.findall(r'<span class="link">(.+?)年</span>',str(dat1))[0]
+    rj = re.findall(r'<p class="fl">(.+?)</p>',str(dat1))[0]
+    lh = re.findall(r'<p class="fl">(.+?)</p>',str(dat1))[1]
+    hs = re.findall(r'<p class="fl">(.+?)</p>',str(dat1))[2]
+    wyf = re.findall(r'<p class="fl">(.+?)</p>',str(dat1))[3]
+    wyg = re.findall(r'<p class="fl">(.+?)</p>',str(dat1))[4]
+    kfs = re.findall(r'<p class="fl">(.+?)</p>',str(dat1))[5]
+    dys = re.findall(r'<p class="counterpart-schools clearfix">(.+?)</p>',str(dat1))[0]
+    tcw = re.findall(r'<p class="counterpart-schools clearfix">(.+?)</p>',str(dat1))[0]
+    
+    dat2 = soup.find_all('h2',attrs={'class':'house-title fl'})
+    name = re.findall(r'<h2 class="house-title fl">(.+?)</h2>',str(dat2))[0]
+    
+    lis = [name,year,rj,lh,tcw,dys,hs,wyf,wyg,kfs,url]
+    return lis
+
+## 综合爬取函数
+def main():
+#   print('正在读取%s页的文本' )
+   lis = []
+   headers = {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+      }
+   for i in range(14):
+       url = 'http://nanjing.qfang.com/garden/gulou/n%s'%(str(i+1))
+       print('正在读取%s页的文本' % (i+1))
+       df0 = get_link(url,headers)
+       for df in df0:
+           url1 = 'http://nanjing.qfang.com/garden/desc/%s'%(df)
+           print('正在读取%s的文本' % (url1))
+           try:
+              df1 = get_dat(url1,headers)
+              lis.append(df1)
+              print('---------------------------------------成功读取文本')
+           except:
+              print('---------------------------------------没有读取保存文本') 
+   dat = pd.DataFrame(lis)
+   dat.to_csv('C:\\Users\\Administrator\\Desktop\\gulou1.csv') 
+   print('成功保存鼓楼地区数据')    
+## 执行主函数
+if __name__ == '__main__':
+	main()

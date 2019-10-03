@@ -1,0 +1,1049 @@
+python学习笔记18-重点和忘记知识点总结
+
+一、文件
+1、打开
+fp = open('/etc/motd') # 以读方式打开
+fp = open('test', 'w') # 以写方式打开
+fp = open('data', 'r+') # 以读写方式打开
+fp = open(r'c:\io.sys', 'rb') # 以二进制读模式打开
+2、读取
+f.read([n]) 读取至多 n 字节
+f.readline([n]) 读取一行中的前 n 字符。如果 n 被省略，就读取整行
+f.readlines() 读取所有的行并返回一个包含所有行的列表
+f.xreadlines() 返回一个迭代器，每次迭代返回文件的一个新行
+data = [line.strip() for line in f.readlines()]
+3、写入
+f.write(s) 将字符串 s 写入文件
+f.writelines(l) 将列表 l 中的所有字符串写入文件
+和readlines() 一样，writelines() 方法是针对列表的操作, 它接受一个字符串列表作为参数, 将它们写入文件. 行结束符并不会被自动加入, 类似地, 
+输出方法 write() 或 writelines() 也不会自动加入行结束符. 你应该在向文件写 所以如果需要的话, 你必须在调用
+writelines()前给每行结尾加上行结束符.
+4、移动
+f.tell() 返回当前的文件指针
+f.seek(offset [, where]) 定位到一个新的文件位置
+5、杂项
+f.close() 结束文件
+f.isatty() 如果 f 是一个交互式终端则返回 1
+f.flush() 刷新输出缓冲区
+f.truncate([size]) 如果文件长于 size 就截短它至 size 大小
+f.fileno() 返回一个整型的文件描述符
+f.name 文件名
+f.mode 文件类型 读或写
+6、最佳读取方式文件迭代
+f=open('/etc/rc.conf')
+for eachLine in f.readline():
+eachLine=eachLine.upper()
+print eachline
+f.close()
+可以用with 因为文件对象有环境管理器
+>>> with open('/etc/rc.conf') as myfile:
+... for line in myfile:
+... line=line.upper()
+... print line
+
+二、异常
+1、2.5版本后可统一后的异常语句
+try:
+main-action:
+except Exception1:
+hander1
+except Exception2:
+hander2
+...
+else:
+else-block
+finally:
+finally-block
+这语句中main-action代码会先执行。如果该程序代码（main-action）引发异常，那么except代码块都会逐一测试，寻找与抛出的异常相符的语句。
+如果引发异常的是Exception1则会执行hander1代码块，如果引发异常的是Exception2，则会执行hander2代码块。以此类推。如果没有引发异常，
+将会执行else-block代码块。无论前面发生什么，当main-action代码块完成时。finally-block都会执行。
+捕捉异常补充
+except:	捕捉所有（其他）异常类型
+except name:	只捕捉特定的异常
+except name,value:	捕捉所有的异常和其额外的数据（或实例）
+except (name1,name2) 捕捉任何列出的异常
+except (name1,name2),value: 捕捉任何列出的异常，并取得其额外数据
+内置Exception类
+Python把内置异常组织成层次，来支持各种捕捉模式
+Exception：	异常的顶层根超类
+StandardError:	所有内置错误异常的超类
+ArithmeticError:	所有数值错误的超类
+OverflowError:	识别特定的数值错误的子类
+可以在Python库手册或exceptionsn模块的帮助文本中查阅。
+
+2、下文管理 with/as环境管理
+python2.6引入新的异常相关的语句：with及其可选的as分句。这个语句的设计是为了和环境管理器对象（支持新的方法协议)一起工作。
+简而言之， with/as语句的设计作为常见try/finally用法模式的替代方案。就像try/finally语句， with/as语句也用于定义必须执行的
+终止或“清理"行为,无论步骤中是否发生异常。和try/finally不同的是，with语句支持更丰富的基于对象的协议，可以代码块定义支持进入
+和离开动作。
+with语句基本格式：
+with expression [as variable]:
+block
+在这里expression要返回一个对象，从而支持环境管理协议。如果选用as分句存在时，此对象也可返回一个值，赋值给变量名variable.
+注意：variable并非赋值为expression的结果，expression的结果是支持环境协议的对象,而variable则是赋值为其他的东西（？？)
+然后,expression返回的对象可在with-block开始前，先自行启动程序，并且在该代码块完成后，执行终止程序代码，无论代码块是否引发异常
+有些内置的Python对象已得到强化，支持环境管理协议，因此可以用于with语句。例如，文件对象有环境管理器，可在with代码块后自动关闭
+文件，无法是否引发异常。
+>>> with open('/etc/rc.conf') as myfile:
+... for line in myfile:
+... line=line.upper()
+... print line
+在这里，对open的调用，会返回一个简单文件对象，赋值给变量名myfile。我们可以用一般的文件工具使用myfile:就此而言，文件迭代器会在
+for循环内逐行读取。然后，此对象也支持with语句所使用的环境协议。在这个with语句执行后。环境管理机制保证由myfile所引用的文件对象自动关闭。
+即使处理该文件时，for循环引发了异常,也会对文件自动关闭。
+环境管理器是有些高级的机制。还不是Python的正式组成部分。就较为简单的用途来说,try/finally语句可对终止活动提供足够的支持。
+
+with工作于上下文管理协议的对象，比如文件和线程
+with比try更简洁
+因为已经从你手边拿走了一堆细节,所以实际上只是进行了两层处理:
+第一,发生用户层 —— 和 in 类似,你所需要关心的只是被使用的对象
+第二,在对象层.既然这个对象支持上下文管理协议,它干的也就是"上下文管理".
+
+3、assert语句 断言
+assert可以有条件地在程序代码中触发异常，可以认为是有条件的raise.
+牢记：assert几乎都是用来收集用户定义的约束条件，而不是捕捉内在的程序设计错误。
+因为Python会自动收集程序的设计错误，通常没有必要写assert去捕捉超出索引值，类型不匹配以及除数为0之类的事。
+引发的异常为:AssertionError。如果没有被try捕捉到，就会终止程序。
+该语句形式:
+assert <test>,<data>
+实例1
+>>> def f(x):
+... assert x>0,'x must be great zerot' 
+... return x**2
+实例2
+try:
+assert 1 == 0, 'One does not equal zero silly!'
+except AssertionError, args:
+print '%s: %s' % (args.__class__.__name__, args
+实例3
+class ProtectAndHideX(object):
+def __init__(self, x):
+assert isinstance(x, int), '"x" must be an integer!'
+self.__x = ~x
+
+>>> t=ProtectAndHideX()
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+TypeError: __init__() takes exactly 2 arguments (1 given)
+>>> t=ProtectAndHideX('ddd')
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+File "<stdin>", line 3, in __init__
+AssertionError: "x" must be an integer
+>>> t=ProtectAndHideX(50) 
+
+断言语句在Python 中如何用函数实现.可以像下面这样:
+def assert(expr, args=None):
+if __debug__ and not expr:
+raise AssertionError, args
+此处的 if 语句检查 assert 的语法是否合适,也就是expr 必须是一个表达式.我们比较expr
+的类型和真正的表达式来确认.函数的第二部分对表达式求值然后根据结果选择性的引发异常.内建
+的变量__debug__在通常情况下为True,如果开启优化后为False(命令行选项-O)(Python 2.2 后为布尔值True 和False.)
+
+个人感觉是一个简单化的必要条件判断，如输入的数字必须大于0，输入的必须是字符串，很有用。
+
+三、模块
+1、搜索模块
+导入模块时，不带模块的后缀名，比如.py
+Python搜索模块的路径：
+1)、程序的主目录
+2)、PTYHONPATH目录（如果已经进行了设置）
+3)、标准连接库目录（一般在/usr/local/lib/python2.X/）
+4)、任何的.pth文件的内容（如果存在的话）.新功能，允许用户把有效果的目录添加到模块搜索路径中去
+.pth后缀的文本文件中一行一行的地列出目录。
+这四个组建组合起来就变成了sys.path了，
+>>> import sys
+>>> sys.path
+导入时，Python会自动由左到右搜索这个列表中每个目录。
+2、import 和 from语句
+import 导入整个模块
+from 将获取（复制）模块特定变量名
+from 模块名 import 需要复制的属性
+from 模块名 import 需要复制的属性 as 新的属性名
+from会把变量名赋值到另一个作用域，所以它就可以让我们直接在脚本中使用复制后的变量名，而不是通过模块。
+尽量避免使用from 模块名 import *
+
+四、函数
+1、函数编写
+def是可执行的代码,if,while，def可嵌套,可以出现在任何地方，但往往包含在模块文件中。
+def创建了一个对象并将其赋值给某一个变量名。
+return将一个结果对象发送给调用者,如果函数中没有return语句，就会自动返回None对象.
+return可以在函数主体中的任何地方出现。它表示函数调动的结束，并将结果返回至函数调用处。
+函数是通过赋值（对象引用)传递的。参数通过赋值传递给函数。
+global声明了一个模块级的变量并被赋值。参数，返回值以及变量并不是声明
+def语句将创建一个函数对象并将其赋值给一个变量名。一般格式如下：
+def <name>（arg1,age2,...,agrN):
+<statements>
+return <value>
+函数通过嵌套到if语句中去实现不同的函数定义的格式：
+if test:
+def func():
+...
+else:
+def func()
+2、编写函数时的参数设置
+def func(name1,name2)	函数	常规参数(位置参数)：通过位置或变量名进行匹配,从左到右进行匹配
+def func(name=value)	函数	默认参数值：如果没有在调用中传递的话，就是用默认值,注意默认参数要放置在位置参数的后面，可变长度参数前面
+def func(*name)	函数	可变长度参数:匹配并收集(在元组中）所有包含位置的参数 通过一个把元组（非关键字参数）作为参数组传递给函数
+def func(**name)	函数	可变长度参数:匹配并收集（在字典中）所有包含位置的参数。过一个把字典（关键字参数）作为参数组传递给函数
+完整格式
+>>> def named(name1,name2,name3='jin',*name4,**name5):
+... print name1,name2,name3,name4,name5
+... 
+>>> named('diege','wang')
+diege wang jin () {}
+3、函数调用和传递参数
+func(value1,value2)	调用者	常规参数(位置参数):通过位置进行匹配,从左到右进行匹配
+func(name=value)	调用者	关键字参数，通过变量名匹配
+func(*name)	调用者	可变长度的参数，以name传递所有的对象，并作为独立的基于位置的参数，通过一个把元组（非关键字参数）作为参数组传递给函数
+func(**name)	调用者 可变长度的参数，以name成对的传递所有的关键字/值，并作为独立的关键字的参数，过一个把字典（关键字参数）
+作为参数组传递给函数.
+
+补充说明：
+【1】关键字参数：通过参数名进行匹配。【调用时】【调用者】可以定义那个函数接受这个值，通过在调用时使用参数的变量名，使用name=value这种语法。
+【2】*默认参数：为没有传入值得参数定义参数值【定义函数时】如果调用时传入的值过于少的话，函数能够为参数定义接受的默认值，在函数定义中使用name=value
+【3】任意参数
+*和** 让函数支持接收任意数目的参数。
+收集参数
+第一种用法：在函数定义中，在元组中收集不匹配的位置参数
+【1】非关键字可变长参数（元组）
+当函数被调用的时候，所有的形参（必须的和默认的）都将值赋给了在函数声明中相对应的局部变量。剩下的非关键字参数按顺序插入到一个元组中便于访问
+def function_name([formal_args,] *vargs_tuple):
+"function_documentation_string"
+function_body_suite
+
+【2】关键字变量参数（Dictionary）
+在我们有不定数目的或者额外集合的关键字的情况中，参数被放入一个字典中，字典中键为参数名，值为相应的参数值。为什么一定要是字典呢?因为为每个参数-参数的名字和参数值-
+-都是成对给出---用字典来保存这些参数自然就最适合不过了。
+这给出使用了变量参数字典来应对额外关键字参数的函数定义的语法：
+def function_name([formal_args,][*vargst,] **vargsd):
+function_documentation_string function_body_suite
+为了区分关键字参数和非关键字非正式参数，使用了双星号（**）。**是被重载了的以便不与幂运算发生混淆。关键字变量参数应该为函数定义的【最后一个参数】，带**。
+
+4、闭包[函数的功能，仅需了解，功能在很多情况下用类做最合适]
+如果在一个内部函数里，对在外部作用域(但不是在全局作用域）[也就是包含函数的函数作用域]的变量进行引用，那么内部函数就被认为是闭包closure。
+定义在外部函数内的但由内部函数引用或者使用的变量被称为[自由变量]。
+闭包将内部函数自己的代码和作用域以及外部函数的作用域结合起来。闭包的词法变量不属于全
+局名字空间或者局部的--而属于其他的名字空间，带着“流浪"的作用域。
+回调就是函数。闭包也是函数，但是他们能携带一些额外的作用域。它们仅仅是带了额外特征的函数……另外的作用域。
+将函数1放到一个函数2中，函数2 return 函数1这个对象。函数1会引用函数2作用域中的变量【引用外部但不是全局作用域】
+def 函数2(argv2):
+name=0
+def 函数1(argv1)：
+name=+1
+return 函数1
+testdef=函数2(函数2参数) 有点类似于类的实例
+有点不同的是我们能够做些原来需要我们写一个类做的事，并且不仅仅是要写，而且必需覆盖掉这个类的__call__()特别方法来使他的实例可调用。
+这里我们能够使用一对函数来做这事。
+现在，在很多情况下，类是最适合使用的。
+def counter(start_at=0):
+count = [start_at]
+def incr():
+count[0] += 1
+return count[0]
+return incr
+counter()做的唯一一件事就是接受一个初始化的的值来开始计数，并将该值赋给列表count唯一一个成员。
+然后定义一个incr()的内部函数。通过在内部使用变量count，我们创建了一个闭包。
+因为它现在携带了整个counter()作用域。incr()增加了正在运行的count然后返回它。然后最后的
+魔法就是counter()返回一个incr，一个（可调用的）函数对象。如我们交互地运行这个函数，我
+们将得到如下的输出---------注意这看起来和实例化一个counter对象并执行这个实例有多么相似。
+>>> count = counter(5)
+>>> print count()
+6
+>>> print count()
+7
+>>> count2 = counter(100)
+>>> print count2()
+101
+闭包和修饰符也有类似，修饰符在函数前后做准备或者清理操作，闭包是在函数中引用外部作用域变量做操作并返回做操作的函数
+
+5、函数(方法)装饰器[函数修饰符]
+可参考http://www.cnblogs.com/rhcad/archive/2011/12/21/2295507.html
+函数修饰符，一种在Python2.4 中加入的新特征。你可以用
+它把一个函数应用到另个函数对象上, 而且新函数对象依然绑定在原来的变量。我们正是需要它来
+整理语法。通过使用decorators，我们可以避免重新赋值：
+class TestStaticMethod:
+@staticmethod
+def foo():
+print 'calling static method foo()'
+class TestClassMethod:
+@classmethod
+def foo(cls):
+print 'calling class method foo()'
+print 'foo() is part of class:', cls.__name__
+1)什么是装饰器
+装饰器实际就是函数。他接受函数对象,也可以有自己的参数。一般说来，当包装一个函数的时候，会最终会调用它。最棒的是我们能在包装的环境下
+在合适的时机调用它。我们在执行函数之前，可以运行些预备代码，也可以在执行代码之后做些清理工作。也就是做预备或者清理工作。
+可以考虑在装饰器中置入通用功能的代码来降低程序复杂度。例如，可以用装饰器来：
+(1)引入日志
+(2)增加计时逻辑来检测性能
+(3)给函数加入事务的能力
+个人设想：定义一个函数记录日志 然后在有需要的地方用这个记录日志的函数做装饰器去记录其他函数的执行情况。
+
+2)修饰符语法
+面向切面的编程(Aspect-Oriented Programming),与传统编程习惯的从上往下执行方式相比较而言，像是在函数执行的流程中横向地插入了一段逻辑。
+装饰器背后的主要动机源自python面向切面的编程。装饰器是在函数调用之上的修饰。这些修饰仅是当声明一个函数或者方法的时候，才会应用的额外调用。
+装饰器的语法以@开头，接着是装饰器函数的名字和可选的参数。紧跟着装饰器声明的是被修饰的函数，和被装饰函数的可选参数。装饰器看起来会是这样：
+@decorator(dec_opt_args)
+def func2Bdecorated(func_opt_args):
+pass
+
+class MyClass(object):
+@staticmethod
+def staticFoo():
+pass
+3)修饰符堆叠
+装饰器可以如函数调用一样“堆叠“起来，这里有一个更加普遍的例子，使用了多个装饰器：
+装饰器可以试一个也可以是多个，多个装饰器在应用时的顺序与指定的顺序相反
+@deco2
+@deco1
+def func(arg1, arg2, ...): pass
+这和创建一个组合函数是等价的。
+def func(arg1, arg2, ...): pass
+func = deco2(deco1(func))
+
+4)有参数和无参数的装饰器
+【修饰符本身是函数所以可以有参数】
+没有参数的情况，一个装饰器如：
+@deco
+def foo(): pass
+等同
+foo = deco(foo)
+
+带参数的装饰器decomaker()
+@decomaker(deco_args)
+def foo(): pass
+等同
+foo = decomaker(deco_args)(foo)
+需要自己返回以函数作为参数的装饰器。换句话说，decomaker()用deco_args 做了些事并返回函数对象
+1个含有多个装饰器的例子，其中的一个装饰器带有一个参数
+@deco1(deco_arg)
+@deco2
+def func(): pass
+This is equivalent to:这等价于：
+func = deco1(deco_arg)(deco2(func))
+修饰符举例
+#!/bin/env python
+
+from time import ctime, sleep
+def tsfunc(func): #定义一个将做修饰符的函数，里面包含了一个子函数打印调修饰的对象和调用的时间，修饰符函数返回这个子函数对象
+def wrappedFunc():
+print '[%s] %s() called' % (ctime(), func.__name__)
+return func()
+return wrappedFunc
+
+@tsfunc #使用前面定义的函数修饰foo函数,foo函数什么都没做
+def foo():
+pass
+
+foo() #调用被修饰过的函数foo
+sleep(4)
+
+for i in range(2): #连续3次，间隔1秒调用foo函数
+sleep(1)
+foo()
+5)内置的装饰器
+内置的装饰器有三个，分别是staticmethod、classmethod和property，作用分别是把类中定义的实例方法变成静态方法、类方法和类属性。
+由于模块里可以定义函数，所以静态方法和类方法的用处并不是太多，除非你想要完全的面向对象编程。而属性也不是不可或缺的，
+使用property,staticmethod和classmethod的频率也非常低。
+property属于新式类的特性python版本大于2.2
+class HideX(object):
+def __init__(self, x):
+self.x = x
+@property
+def x():
+def fget(self):
+return ~self.__x
+def fset(self, x):
+assert isinstance(x, int), '"x" must be an integer!'
+self.__x = ~x
+return locals()
+6)其他模块包含的装饰器
+functools模块
+wraps(wrapped[, assigned][, updated]): 
+total_ordering(cls):
+
+
+五、类
+1、属性树的构造
+命名空间树构造以及填入变量名的方式，通常来说：
+【*】实例属性是由对方法内self属性进行赋值运算而生成的
+【*】类属性是通过class语句内顶层的语句（赋值语句）而生成的
+【*】超类链接通过class语句首行的括号内列出类而生成的。
+2、继承和重载
+子类继承父类，多可个父类时纵向查询。
+子类可根据情况重载父类方法。
+重载的关键概念
+*运算符重载让类拦截常规的Python运算。
+*类可重载所有Python表达式运算。
+*类可重载打印，函数调用，属性点号运算等运算。
+*重载使类实例的行为像内置类型。
+*重载是通过提供特殊名称的类方法来实现的。
+3、常见的运算符重载方法
+方法	重载	调用
+__init__	构造器方法	对象建立：X=Class()
+__del__	析构方法	对象收回
+__add__	运算符+	X+Y,X+=Y
+__sub__	运算符-	X-Y,X-=Y
+__or__	运算符|(位OR)	X|Y X|=Y
+__repr__ 运行时的字符串输出；内建repr(X) 和‘‘ 操作符，让直接访问对象时 有print的效果 注意方法里return的是字符串对象
+__str__ 可打印的字符输出；内建str(X)及print X语句,print X才有输出，运行时不输出 注意方法里return的是字符串对象
+__call__	函数调用	X() ##？？
+__getattr__	点号运算	X.undefined
+__setattr__	属性赋值语句	X.any=Value
+__getitem__	索引运算	X[key],没有__iter__时的for循环和其他迭代器
+__setitem__	索引赋值语句	X[key]=value
+__len__	长度	len(X),真值测试
+__cmp__	比较	X==Y,X
+__lt__	特定的比较	X<Y(or else __cmp__)
+__eq__	特定的比较	X==Y(or else __cmp__)
+__radd__	左侧加法 +	Noninstance + X
+__iadd__	实地（增强的）的加法	X+=Y（or else __add__)
+__iter__	迭代环境	用于循环，测试，理解，列表，映射及其他
+所有重载方法的名称前后都有两个下划线字符，以便把同类中定义的变量名区别开来。特殊方法名称和表达式或运算的映射关系，是由Python语言预先定义好的。
+所有运算符重载的方法都是选用的：如果没有写某个方法，那么定义的类就不支持该运算。多数重载方法只用在需要对象行为表现得就像内置函数一样的高级程序
+中。然而，__init__构造方法常出现在绝大多数类中。
+__getitem__方法拦截实例的索引运算。当实例X出现X[i]这样的索引运算中时，Python会调用这个实例继承的__getitem__方法。(如果有)，把X作为第一个参数
+传递，并且放括号内的索引值传递给第二个参数。
+__getitem__和__iter__实现迭代。
+for循环的作用是从0到更大的索引值，重复对序列进行索引运算，直到检测到超出边界的异常。
+__getitem__也可以是Python中一种重载迭代的方式，如果定义了这个方法，for循环每次循环时都会调用类的__getitem__
+任何支持for循环的类也会自动支持Python所有迭代环境，包括成员关系测试in,列表解析，内置函数map，列表和元组赋值运算
+以及类型构造方法也会自动调用__getitem__(如果定义的话）。
+【迭代时使用方法的顺序】：
+如今，Python中所有的迭代环境都会先尝试__iter__方法，再尝试__getitem__。如果对象不支持迭代协议，就会尝试索引运算。
+重载__repr__和__str__,可定义一个，然后再用__repr__=__str__,因为这两个方法代码一样。
+3、抽象类
+class Super:
+def method(self):
+print "in Super.method"
+def delegate(self):
+self.action()
+class Provider(Super):
+def action(self):
+print "in Provider.method"
+if __name__=='__main__':	
+print '\nProvider...'
+x=Provider()	#创建实例对象
+x.delegate()	#实例对象条用delegate方法，delegate方法通过实例的action方法实现
+上例中Provider类如何工作的？当通过Provider类的实例调用delegate方法时,两个独立的继承搜索会发生：
+（1）最初x.delegate的调用中，Python会搜索Provider实例和它上层的对象。知道在Super中找到delegate方法。实例x
+会像往常一样传递给这个方法self参数
+（2）Super.delegate方法中,self.action会对self及其它上层的对象启动新的独立继承搜索，因为self指的是Provider
+实例，就会找到Provider中的action方法。
+【抽象类就是会调用方法的类，但没有继承或定义该方法，而是期待该方法由子类填补。当行为无法预测，非得等到更为具体的子类编写时才知道】
+通过用这种方式把类通用话。
+这种“填空”的代码结构一般就是OOP软件的框架。从delegate方法的角度来看，这个例子中的超类有时也称作是抽象类--
+也就是类的部分行为默认是由其子类所提供的。如果预期的方法没有在子类定义，当继承搜索失败时，Python会引发为定义
+变量名的异常。类的编写者偶尔会使用assert语句，使这种子类需求更为明显，或者引发内置的异常NotImplementedError
+class Super:
+def method(self):
+print "in Super.method"
+def delegate(self):
+self.action()
+def action(self):
+assert 0, 'action must be defind'
+如果表达式运算结构为假，就会引发带有错误信息的异常。在这里表达式总是为假(0）。因为如果没有方法重新定义(子类没有重载该方法)，
+继承就会找到这里的版本，触发错误信息。
+
+4、迭代器-iter
+1)、迭代器介绍
+Iterator是迭代器的意思，它的作用是一次产生一个数据项，直到没有为止。这样在 for 循环中就可以对它进行循环处理了。
+那么它与一般的序列类型(list, tuple等)有什么区别呢？它一次只返回一个数据项，占用更少的内存。但它需要记住当前的状态，以便返回下一数据项。
+它是一个有着next()方法的对象。而序列类型则保存了所有的数据项，它们的访问是通过索引进行的。
+迭代器和iter()函数
+根本上说, 迭代器就是有一个 next()方法的对象, 而不是通过索引来计数. 当你或是一个循环机制(例如 for 语句)需要下一个项时, 
+调用迭代器的next()方法就可以获得它。条目全部取出后, 会引发一个 StopIteration 异常, 这并不表示错误发生, 只是告诉外部调用者, 迭代完成.
+2)迭代器基本方法
+迭代器仅是一容器对象，它实现了迭代器协议。它有两个基本方法：
+(1）next方法
+返回容器的下一个元素
+(2）__iter__方法
+返回迭代器自身
+3）、如何创建迭代器
+(1)iter()函数创建
+对一个对象调用iter()就可以得到它的迭代器. 它的语法如下:
+iter(obj)
+iter(func, sentinel )
+如果你传递一个参数给 iter() , 它会检查你传递的是不是一个序列, 如果是, 那么很简单:
+根据索引从 0 一直迭代到序列结束.
+>>> i = iter('abc')
+>>> i.next()
+'a'
+>>> i.next()
+'b'
+>>> i.next()
+'c'
+>>> i.next()
+Traceback (most recent call last):
+File "<string>", line 1, in <string>
+StopIteration:
+(2)另一个创建迭代器的方法是使用类
+一个实现了 __iter__() 和 next() 方法的类可以作为迭代器使用
+class中__init__()方法执行前述的赋值操作。__iter__()仅返回self，这就是如何将一个对象声明为迭代器的方式，
+最后，调用next()来得到迭代器中连续的值。next()控制怎么返回下一个值，顺序，倒序，多个步进，随机等。
+StopIteration异常需要在next抛出。
+#coding=utf-8
+class Fib():
+def __init__(self, max): 
+self.max = max 
+self.a = 0 
+self.b = 1 
+
+def __iter__(self):
+
+return self 
+
+def next(self): 
+fib = self.a 
+if fib > self.max: 
+raise StopIteration 
+self.a, self.b = self.b, self.a + self.b 
+return fib
+next倒序的例子
+class MyIterator(object):
+def __init__(self, step):
+self.step = step
+def next(self):
+"""Returns the next element."""
+if self.step==0:
+raise StopIteration
+self.step-=1
+return self.step
+def __iter__(self):
+"""Returns the iterator itself."""
+return self
+
+for i in MyIterator(4):
+print i
+
+next随机的例子(永不退出)
+#!/usr/bin/env python
+
+from random import choice
+
+class RandSeq(object):
+def __init__(self, seq):
+self.data = seq
+
+def __iter__(self):
+return self
+
+def next(self):
+return choice(self.data)
+这个例子展示了一些我们可以用定制类迭代器来做的与众不同的事情。一个是无穷迭代。因为
+我们无损地读取一个序列，所以它是不会越界的。每次用户调用next()时，它会得到下一个迭代值，
+但我们的对象永远不会引发StopIteration 异常
+
+4、生成器-yield关键字
+1)、什么是生成器，生成器有什么用？
+首先请确信，生成器就是一种迭代器。生成器拥有next方法并且行为与迭代器完全相同，这意味着生成器也可以用于Python的for循环中。另外，对于生成器的特殊语法支持使得编写一个生成器比自定义一个常规的迭代器要简单不少，所以生成器也是最常用到的特性之一。
+
+当协同程序暂停的时候，我们能从其中获得一个中间的返回值，当调用回到程序中时，能够传入额外或者改变了的参数，但仍能够从
+我们上次离开的地方继续，并且所有状态完整。挂起返回出中间值并多次继续的协同程序被称为生成器，那就是pytho的生成器真正在做的事。
+
+生成器是这样一个函数，它记住上一次返回时在函数体中的位置。对生成器函数的第二次（或第 
+n次）调用跳转至该函数中间，而上次调用的所有局部变量都保持不变。
+生成器不仅“记住”了它数据状态；生成器还“记住”了它在流控制构造（在命令式编程中，这种构造不只是数据值）中的位置。
+
+在Python2.5 提升让生成器更加接近一个完全的协同程序，因为允许值（和异常）能传回到一个继续的函数。
+什么是python式的生成器？从句法上讲，生成器是一个带yield 语句的函数。一个函数或者子程序只返回一次，
+但一个生成器能暂停执行并返回一个中间的结果----那就是yield 语句的功能， 返回一个值给调用者并暂停执行。
+当生成器的next()方法被调用的时候，它会准确地从离开地方继续（当它返回[一个值以及]控制给调用者时）
+
+2）、简单的生成器特性
+与迭代器相似，生成器以另外的方式来运作：当到达一个真正的返回或者函数结束没有更多的值返回（当调用next())，一个StopIteration 异常就会抛出。
+这里有个例子，简单的生成器：
+>>> def simpleGen():
+... yield 1
+... yield '2---> punch!'
+>>> myG=simpleGen()
+>>> myG.next()#有点怪怪的,函数对象还有方法，next,send,close
+1
+>>> myG.next()
+'2---> punch!'
+>>> myG.next()
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+StopIteration
+在接下来的例子中，我们将要创建一个带序列并从那个序列中返回一个随机元素的随机迭代器：
+>>> from random import randint
+>>> def randGen(aList):
+... while len(aList)>0:
+... yield aList.pop(randint(0,len(aList)-1))#网上例子这里有错误，随机数的范围有问题，没有len(aList)-1
+不同点在于每个返回的元素将从那个队列中消失，像一个list.pop()和random.choice()的结合的归类。
+>>> for item in randGen(['rock', 'paper', 'scissors']):
+... print item
+... 
+rock
+scissors
+paper
+使用生成器最好的地方就是当你正迭代穿越一个巨大的数据集合，而重复迭代这个数据集合是
+一个很麻烦的事，比如一个巨大的磁盘文件，或者一个复杂的数据库查询。对于每行的数据，你希
+望执行非元素的操作以及处理，但当正指向和迭代过它的时候，你“不想失去你的地盘“
+3）加强的生成器特性
+一些加强特性加入到生成器中，所以除了next()来获得下个生成的值，用户
+可以将值回送给生成器[send()]，在生成器中抛出异常，以及要求生成器退出[close()]
+由于双向的动作涉及到叫做 send()的代码来向生成器发送值（以及生成器返回的值发送回来），
+现在yield 语句必须是一个表达式，因为当回到生成器中继续执行的时候，你或许正在接收一个进
+入的对象。下面是一个展示了这些特性的，简单的例子。我们用简单的闭包例子，counter:
+>>> def counter(start_at=0):
+... count = start_at
+... while True:
+... val=(yield count) #直接返回初始值 同时将值赋给val
+... if val is not None: #如yield count返回的不是None 则count=val
+... count=val
+... else:#是None的情况 count加1，也就是yield coun没有东西返回的时候count加以
+... count+=1
+... 
+生成器带有一个初始化的值，对每次对生成器[next()]调用以1 累加计数。用户已可以选择重
+置这个值，如果他们非常想要用新的值来调用send()不是调用next()。这个生成器是永远运行的，
+所以如果你想要终结它，调用close()方法。如果我们交互的运行这段代码，会得到如下输出：
+>>> count=counter(5)
+>>> count.next() #有初始值 返回
+5
+>>> count.next() #现在为NONE count
+6
+>>> count.send(9)
+9
+>>> count.next()
+10
+>>> count.close()
+>>> count.next()
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+StopIteration
+>>> count=counter() 
+>>> count.next() #
+0 
+网上精辟总结：生成器和迭代器
+生成器是迭代器，同时也并不仅仅是迭代器，不过迭代器之外的用途实在是不多，所以我们可以大声地说：生成器提供了非常方便的自定义迭代器的途径。
+4)、__getitem__和__iter__以及生成器实现迭代 简单对比
+__getitem__和__iter__实现迭代
+for循环的作用是从0到更大的索引值，重复对序列进行索引运算，直到检测到超出边界的异常。
+__getitem__也可以是Python中一种重载迭代的方式，如果定义了这个方法，for循环每次循环时都会调用类的__getitem__
+>>> class stepper:
+... def __getitem__(self,i):
+... return self.data[i]
+... 
+>>> X=stepper
+>>> X=stepper() 
+>>> X.data='diege'
+>>> X[1]
+'i'
+>>> for item in X:
+... print item,
+... 
+d i e g e
+任何支持for循环的类也会自动支持Python所有迭代环境，包括成员关系测试in,列表解析，内置函数map，列表和元组赋值运算
+以及类型构造方法也会自动调用__getitem__(如果定义的话）.
+如今，Python中所有的迭代环境都会先尝试__iter__方法，再尝试__getitem__。如果对象不支持迭代协议，就会尝试索引运算。
+从技术角度来将，迭代环境是通过调用内置函数iter去尝试寻找__iter__方法来实现的，而这种方法应该返回一个迭代器对象。
+如果已经提供了，Python就会重复调用这个迭代器对象的next方法，直到发生StopIteration异常。如果没有找到__iter__方法
+,Python会改用__getitem__机制，就像之前那样通过偏移量重复索引，直到引发IndexError异常。如果都有没最后就会尝试索引运算。
+
+五、列表解析
+列表解析
+>>> L=[1,2,3,4,5]
+>>> L=[x+10 for x in L]
+将列表中行的换行符去掉
+>>> lines=[line.rstrip() for line in lines]
+>>> lines=[line.rstrip() for line in open('/etc/rc.conf')]
+扩展列表解析
+重复上一个例子，但我们只需开头不为#的文字行。
+>>> lines=[line.rstrip() for line in open('/etc/rc.conf') if line[0]!='#']
+完整的语句可接纳任意数目的for分句，而每个分区都可以结合一个可选的if分句
+>>> [x+y for x in 'abc' for y in 'lmn']
+['al', 'am', 'an', 'bl', 'bm', 'bn', 'cl', 'cm', 'cn']
+对一个字符串中的每个x,以及另一个字符串中的每个y,创建x+y合并的列表。收集两个字符串字符的排列组合
+
+重访列表解析：映射
+1)、列表解析基础
+>>> [x**2 for x in range(10)]
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+>>> map((lambda x:x**2),range(10)) 
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+2)、增加测试和嵌套循环
+在for之后编写if分支，用来增加逻辑选择，if分支相当filter
+>>> [x for x in range(5) if x%2==0]
+[0, 2, 4]
+>>> filter((lambda x:x%2==0),range(5)) 
+[0, 2, 4]
+filter出来的列表可以作为map的第2个参数
+>>> map((lambda x:x**2),filter((lambda x:x%2==0),range(5))) 
+[0, 4, 16]
+六、模块和类特殊属性
+1、模块基本属性
+__name__:模块的名字
+——version__:模块的版本
+__copyright__ = """
+abc
+"""	:模块的版权信息
+__all__：列表是指出当包（目录—）名称使用from *的时候，应该导入的子模块名称清单，包括函数和类。这样可以控制导入那些函数和类。
+__all__ = ['getSectionMap',
+'getValueMap',
+'getConfValue',
+'getGmtApiLine',
+'getGmtApi']
+'__doc__': 模块说明帮助文档，模块的doc定义在模块的开头，class的doc在call中定义，函数的doc在函数中定义
+2、类和实例特殊的属性
+特殊的类属性
+C.__name__ 类Ｃ的名字（字符串）
+C.__doc__ 类Ｃ的文档字符串
+C.__bases__ 类Ｃ的所有父类构成的元组
+C.__dict__ 类Ｃ的属性
+C.__module__ 类Ｃ定义所在的模块（1.5 版本新增）
+C.__class__ 实例Ｃ对应的类（仅新式类中
+特殊实例属性
+I.__class__ 实例化I 的类
+I.__dict__ I 的属性
+
+七、几个常用的函数
+1)、dir() 
+模块内方法和类类表，类中方法列表。和M.__dict__和C.__dict__显示key value不同只显示key
+2)、vars()
+这个函数返回的字典包含了所有在本函数调用时存在的变量。
+vars()内建函数与dir()相似，只是给定的对象参数都必须有一个__dict__属性。vars()返回一
+个字典，它包含了对象存储于其__dict__中的属性(键)及值。如果提供的对象没有这样一个属性，
+则会引发一个TypeError 异常。如果没有提供对象作为vars()的一个参数，它将显示一个包含本地
+名字空间的属性（键）及其值的字典，也就是，locals()。
+3)sum()
+列表求和
+4)max(L)和min(L)
+列表中的最大值最小值： max(L)和min(L)
+5)、enumerate(iter)
+接受一个可迭代对象作为参数，返回一个enumerate对象(同时也是一个迭代器),该对象生成由iter每个元素的index 值和item值组成的元组
+>>> L=[1,2,3]
+>>> enumerate(L)
+>>> for i in enumerate(L): 
+... print i
+... 
+(0, 1)
+(1, 2)
+(2, 3)
+6)、zip()
+对多个列表内容进行组合，将每个列表对应位置的元素组成元祖，返回这些元组组成的列表
+>>> L1=[1,2,3]
+>>> L2=['a','b','c']
+>>> L3=['x','y','z']
+>>> zip(L1,L2,L3)
+[(1, 'a', 'x'), (2, 'b', 'y'), (3, 'c', 'z')]
+以最短的为准
+>>> L2=['a','b','c','d']
+>>> zip(L1,L2,L3)
+[(1, 'a', 'x'), (2, 'b', 'y'), (3, 'c', 'z')]
+另外一个用处，将个列表组成k,v元组传递给dict产生字典
+>>> zip(L1,L2) 
+[(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd')]
+>>> dict(zip(L1,L2))
+{1: 'a', 2: 'b', 3: 'c', 4: 'd'}
+可以用map来实现
+>>> map(None,L1,L2)
+[(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd')]
+>>> dict(map(None,L1,L2))
+{1: 'a', 2: 'b', 3: 'c', 4: 'd'}
+
+八、函数式编程 
+【函数也可以做参数，也可以做返回值】
+掌握lambda、map()、filter()、reduce()即可
+Python不是也不大可能会成为一种函数式编程语言，但是它支持许多有价值的函数式编程语言构建。
+1.匿名函数与lambda
+1）介绍和语法
+python 允许用lambda 关键字创造匿名函数。匿名是因为不需要以标准的方式来声明，比如说，
+使用def 语句。（除非赋值给一个局部变量，这样的对象也不会在任何的名字空间内创建名字.)然而，
+作为函数，它们也能有参数。一个完整的lambda“语句”代表了一个表达式，这个表达式的定义体
+必须和声明放在同一行。我们现在来演示下匿名函数的语法:
+lambad 创建了一个之后能够被调用的函数，它返回了一个函数而不是将这个函数赋值给一个变量名。
+lambda表达式
+lanbda arg1,arg2,...,argN:expression using arguments
+参数是可选的，如果使用的参数话，参数通常也是表达式的一部分。
+lambda 是一个表达式，而不是一个语句
+lambda的主体是一个单个的表达式，而不是代码块
+
+2)、核心笔记：lambda 表达式返回可调用的函数对象。
+用合适的表达式调用一个lambda 生成一个可以像其他函数一样使用的函数对象。它们可被传入
+给其他函数，用额外的引用别名化，作为容器对象以及作为可调用的对象被调用（如果需要的话，
+可以带参数）。当被调用的时候，如给定相同的参数的话，这些对象会生成一个和相同表达式等价
+的结果。
+对比
+def true():
+return True
+或
+def true(): return True
+使用lambda 的等价表达式（没有参数，返回一个True）为：
+lambda :True
+这里用它赋值看起来非常有用。相似地，我们可以把lambda 表达式赋值给一个如列表和元组的
+数据结构，其中，基于一些输入标准，我们可以选择哪些函数可以执行，以及参数应该是什么。（在下个部分中，、
+我们将展示如何去使用带函数式编程构建的lambda 表达式。
+def add(x, y): return x + y 
+lambda x, y: x + y
+>>> def func(x,y,z):return x+y+z
+... 
+>>> func(2,3,4)
+9
+等同于
+>>> f=lambda x,y,z:x+y+z
+>>> f(2,3,4) 
+9
+>> L=[1,2,3,4,5] 
+map嵌套lambda 
+>>> map((lambda x:x+3),L)
+[4, 5, 6, 7, 8]
+3)、为什么要使用lambda?
+lambda 通常用来编写跳转表，也就是行为的列表或字典，能够按照需要执行相应的动作。
+L=[(lambda x:x**2),(lambda x:x**3),(lambda x:x**4)]
+>>> for f in L:
+... print f(2)
+... 
+4
+8
+16
+>>> print L[0](3) 
+9
+嵌套lambda和作用域【和闭包类似，返回一个函数】 
+>>> def action(x):
+... return (lambda y:x+y)
+... 
+>>> act=action(99)
+>>> act
+<function <lambda> at 0x285066f4>
+>>> act(2)
+101
+
+2 内建函数apply()、filter()、map()、reduce()
+map/filter/reduce，都是对一个集合进行处理，filter很容易理解用于过滤，map用于映射，reduce用于归并。
+这几个函数都可以内嵌匿名函数
+内建函数 描述
+apply(func[, nkw][, kw])【已淘汰】
+filter(func, seq) 【部分功能被列表解析取代】调用一个布尔函数func 来迭代遍历每个seq 中的元素； 返回一个使func 返回值为ture 的元素的序列。
+
+map(func, seq1[,seq2...])【部分功能被列表解析取代】 将函数func用于给定序列（s)的每个元素，并用一个列表来提供返回值；
+func为None, func表现为一个身份函数，返回一个含有每个序列中元素集合的n个元组的列表。
+
+reduce(func, seq[, init]) 将二元函数作用于seq 序列的元素，每次携带一对（先前的结果以及下一个序列元素），连续的将现有的结果和下雨给值作用在获
+得的随后的结果上，最后减少我们的序列为一个单一的返回值；如果初始值init 给定，第一个比较会是init 和第一个序列元素而不是序列的头两个元素。
+
+1)filter(func, seq) 
+给定一个对象的序列和一个“过滤”函数，每个序列元素都通过这个过滤器进行筛选， 保留函数返回为真的的对象。filter 函数为已知的序列的每个元素调用
+给定布尔函数。每个filter 返回的非零（true)值元素添加到一个列表中。返回的对象是一个从原始队列中“过滤后”的队列。为真的队列。
+个人总结：
+通过一个函数对一个序列操作，返回操作为真的序列。
+返回一个序列, 包含了给定序列中所有调用function(item)后返回值为true的元素。
+目的：基于某一测试函数过滤出一些元素。
+列表模拟
+from random import randint as ri
+print [n for n in [ri(1,99) for i in range(9)] if n%2]
+>>> range(-5,5)
+[-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
+>>> filter((lambda x:x>0),range(-5,5))
+[1, 2, 3, 4]
+这个等效于for range:if语句
+[n for n in range(-5,5) if n>0]
+2)map(func, seq1[,seq2...])
+map（函数，传入函数的序列对象）
+个人总结：#多个序列相同位置组成的元组作参数传递给函数，返回函数处理后的返回值组成的列表。
+为每个元素一次调用function(item)并将返回值组成一个链表返回.
+使用内置工具map，map函数会对一个序列对象中的每一个元素应用被传入的函数，并且返回一个包含了所有函数调用结果的一个列表。
+形式更一般的map（）能以多个序列作为其输入。如果是这种情况， 那么map()会并行地迭代每个序列。将每个序列相同位置的元素组成一个元组传递给函数。
+函数的参数个数必须和序列个数一致, 执行时会一次用各个序列上对应的元素来调用函数(如果某些序列比其他短,则用None代替).
+>>> def inc(x):return x+10
+... 
+>>> L=[1,2,3,4,5]
+>>> map(inc,L)
+[11, 12, 13, 14, 15]
+备注:map函数另外一个用法，把序列的元素配对起来，但是如果参数长度，不同则会为较短的序列用None补齐。
+map(None, seq1,seq2) 最简单的形式，这个和zip几乎相同，唯一不同的的是以最长为标准补全，而zip是以最短为标准截断
+>>> aList=[1,2,3]
+>>> bList=['a','b','c']
+>>> map(None,aList,bList)
+[(1, 'a'), (2, 'b'), (3, 'c')]
+map嵌套lambda 
+>>> map((lambda x:x+3),L)
+[4, 5, 6, 7, 8]
+
+def map_imp(function, sequence) :
+if function is None: return list(sequence)
+retvals = []
+for element in sequence:
+if (function(element)):
+retvals.append(element)
+return retvals
+
+当map的第一个参数为class类型时，返回的是用第二个参数创建的class类的实例。
+def map_imp2(class,sequence):
+retvals = []
+if (class(sequence)):
+retvals.append([class(sequence)])
+return retvals
+
+3)reduce 使用了一个二元函数（一个接收带两个值作为输入，进行了一些计算然后返回【一个值】作为输出），一个序列，和一个可选的初始化器，卓有成
+效地将那个列表的内容“减少”为一个单一的值，如同它的名字一样。在其他的语言中，这种概念也被称作为折叠。
+个人总结：
+通过一个函数对一个序列操作返回一个值。对每对元素都应用函数并运行到最后结果.
+返回一个单值, 首先以序列的前两个元素调用函数, 再以返回的值和第三个参数调用, 一次执行下去.
+
+如果我们想要试着用纯python 实现reduce()， 它可能会是这样：
+def reduce(bin_function,seq,init=None)
+if init is None: # initializer?
+res = lseq.pop(0) # no
+else:
+res = init # yes
+for item in lseq: # reduce sequence
+res = bin_func(res, item) # apply function
+return res # return result
+这里两个reduce调用，计算在一个列表中所有元素加起来和以及乘起来的乘积
+>>> reduce((lambda x,y:x+y),[1,2,3,4])
+10
+>>> reduce((lambda x,y:x*y),[1,2,3,4]) 
+24
+八、字典中的方法
+列表有列表解析，字典这样特殊功能，但是字典中的方法非常强大，所以整理一下。
+D4=dict(name='diege',age=18)	其他构造技术
+dict(zip(keyslist,valslist))	dict([(1, 'a')])dict接受一个由k-v组成的元组作为元素的列表
+dict(map(None,keyslist,keyslist))
+>>> keyslist=['shell','sql']
+>>> valslist=[['s1','k1','all'],['s1','k1','all']]
+>>> D=dict(zip(keyslist,valslist)) 
+>>> D
+{'shell': ['s1', 'k1', 'all'], 'sql': ['s1', 'k1', 'all']}
+也等同于：dict(map(None,keyslist,keyslist))
+
+映射类型内建方法（字典的方法）
+方法名字 操作
+判断
+dict.has_key(key) 如果键(key)在字典中存在，返回True，否则返回False. 在Python2.2
+版本引入in 和not in 后，此方法几乎已废弃不用了，但仍提供一个
+可工作的接口。
+创建
+dict.copy() 返回字典(浅复制)的一个副本
+dict.fromkeysc(seq,val=None) 创建并返回一个新字典，以seq 中的元素做该字典的键，val 做该字
+典中所有键对应的初始值(如果不提供此值，则默认为None)
+修改
+dict.update(dict2)a 将字典dict2 的键-值对添加到字典dict
+默认值
+dict.get(key,default=None) 对字典dict 中的键key,返回它对应的值value，如果字典中不存在此键，则返回default 的值
+(注意，参数default 的默认值为None)
+dict.setdefault(key,default=None)e 和方法set()相似，如果字典中不存在key 键，由dict[key]=default为它赋值。
+查看
+dict.items() 返回一个包含字典中(键, 值)对元组的列表
+dict.keys() 返回一个包含字典中键的列表
+dict.values() 返回一个包含字典中所有值的列表
+dict.iter*() 方法iteritems(), iterkeys(), itervalues()与它们对应的非迭代方法一样，不同的是它们返回一个迭代，而不是一个列表。
+删除
+dict.pop(key[, default]) c 和方法get()相似，如果字典中key 键存在，删除并返回dict[key]，
+如果key 键不存在，且没有给出default 的值，引发KeyError 异常。
+dict.clear() 删除字典中所有元素
+
+九、可执行对象声明和内建函数
+内建函数和语句 描述
+callable(obj) 如果obj可调用，返回True，否则返回FALSE
+compile(string,file, type) 从type 类型中创建代码对象；file 是代码存放的地方（通常设为"")
+eval(obj, globals=globals(),locals=locals()) 对obj 进行求值，obj 
+是已编译为代码对象的表达式，或是一个字符串表达式；可以给出全局或者/和局部的名字空间
+exec obj 执行obj、单一的python语句或者语句的集合，也就是说格式是代码对象或者字符串；obj 也可以是一个文件对象（已经打开的有效python 脚本中）
+input(prompt='') 等同于eval(raw_input(prompt=”))
+
+1）、callable()
+callable()是一个布尔函数，确定一个对象是否可以通过函数操作符(())来调用。如果函数可
+调用便返回True，否则便是False.
+
+2）、compile()
+compile()函数允许程序员在运行时刻迅速生成代码对象，然后就可以用exec 语句或者内建函
+数eval()来执行这些对象或者对它们进行求值。一个很重要的观点是：exec 和eval()都可以执行字
+符串格式的Python代码。当执行字符串形式的代码时，每次都必须对这些代码进行字节编译处理。
+compile()函数提供了一次性字节代码预编译，以后每次调用的时候，都不用编译了。
+
+compile 的三个参数都是必需的，第一参数代表了要编译的python代码。
+第二个字符串，虽然是必需的，但通常被置为空串。该参数代表了存放代码对象的文件的名字(字符串类型）。
+compile的通常用法是动态生成字符串形式的Python代码,然后生成一个代码对象——代码显然没有存放在任何文件。
+最后的参数是个字符串，它用来表明代码对象的类型。有三个可能值：
+'eval' 可求值的表达式[和eval()一起使用]
+'single' 单一可执行语句[和exec 一起使用]
+'exec' 可执行语句组[和exec 一起使用]
+可求值表达式
+>>> eval_code = compile('100 + 200', '', 'eval')
+>>> eval(eval_code)
+300
+单一可执行语句
+>>> single_code = compile('print "Hello world!"', '', 'single')
+>>> single_code
+<code object ? at 120998, file "", line 0>
+>>> exec single_code
+Hello world!
+可执行语句组
+>>> exec_code = compile("""
+... req = input('Count how many numbers? ')
+... for eachNum in range(req):
+... print eachNum
+... """, '', 'exec')
+>>> exec exec_code
+Count how many numbers? 6
+0
+1
+2
+3
+4
+5
+3)、eval()
+eval()对表达式求值，后者可以为字符串或内建函数complie()创建的预编译代码对象。这是
+eval()第一个也是最重要的参数.第二个和第三个参数，都为可选
+的，分别代表了全局和局部名字空间中的对象。如果给出这两个参数，globals 必须是个字典，locals
+可以是任意的映射对象，比如，一个实现了__getitem__()方法的对象。如果都没给出这两个参数，分别默认为globals()和locals()返回的对象，
+如果只传入了一个全局字典，那么该字典也作为locals 传入。
+>>> eval('100 + 200')
+300
+4)、exec
+和eval()相似，exec 语句执行代码对象或字符串形式的python 代码。类似地，用compile()
+预编译重复代码有助于改善性能，因为在调用时不必经过字节编译处理。exec 语句只接受一个参数，
+下面便是它的通用语法：
+exec obj
+被执行的对象(obj)可以只是原始的字符串，比如单一语句或是语句组，它们也可以预编译成
+一个代码对象（分别用'single'和'exec"参数)。下面的例子中，多个语句作为一个字符串发送给exec：
+>>> exec """
+... x = 0
+... print 'x is currently:', x
+... while x < 5:
+... x += 1
+... print 'incrementing x to:', x
+... """
+【exec 还可以接受有效的python文件对象】。如果我们用上面的多行代码创建一个叫
+xcount.py 的文件，那么也可以用下面的方法执行相同的代码
+>>> f = open('xcount.py') # open the file
+>>> exec f # execute the file
+x is currently: 0
+incrementing x to: 1
+incrementing x to: 2
+incrementing x to: 3
+incrementing x to: 4
+incrementing x to: 5
+>>> exec f #尝试再一次执行
+>>> #哦，失败了....为什么？
+5)、可执行对象语句和内建函数
+注意一旦执行完毕，继续对exec 的调用就会失败。呃，并不是真正的失败。。。只是不再做任何
+事，这或许让你感到吃惊。事实上，exec 已从文件中读取了全部的数据且停留在文件末尾(EOF)。当
+用相同文件对象对exec 进行调用的时候，便没有可以执行的代码了，所以exec 什么都不做，如同
+上面看见的行为。我们如何知道它在EOF 呢？
+我们用文件对象的tell()方法来告诉我们处于文件的何处，然后用os.path.getsize()来告诉
+我们xcount.py 脚本有多大。这样你就会发现，两个数字完全一样：
+
+字符串模板: 更简单的替代品
+由于新式的字符串Template 对象的引进使得string 模块又重新活了过来，Template 对象
+有两个方法,substitute()和safe_substitute().前者更为严谨,在key 缺少的情况下它会报一
+个KeyError 的异常出来，而后者在缺少key 时，直接原封不动的把字符串显示出
+十、几个常用的模块
+1.os模块
+os模块关于进程的类函数被subprocess取代
+os.path和os其他关于系统接口的需要掌握
+2、sys模块
+sys.path
+sys.exit
+3、subprocess模块
+4、random 随机数模块
+random 模块中的randint()或randrange()方法生成一个随机数集合
+choice()方法 随机选择
+5、string模块 了解
+a = ['1', '2', '3', '4']
+b = ['5', '6', '7', '8']
+s = '1234'
+print s.translate(string.maketrans(''.join(a), ''.join(b)))
+字符串模板 string.template

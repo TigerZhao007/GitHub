@@ -1,0 +1,194 @@
+# 决策树算法
+
+#一、引言
+决策树是一种基本的分类与回归方法，学习通常包含三个步骤：特征选择、决策树的生成和决策树的剪枝。
+决策树由结点和有向边组成，结点包括内部结点和叶节点，内部结点表示一个特征或属性，叶节点表示一个类。
+决策树学习本质是从训练数据集中归纳出一组分类规则；决策树学习的损失函数通常是正则化的极大似然函数，学习策略是由训练数据集估计条件概率模型。
+决策树学习的算法通常是一个递归地选择最优特征，并根据该特征进行分割。这一过程对应着决策树的构建，也对应着特征空间的划分。使得划分之后的各个子集能够被基本分类，那么构建叶节点；否则继续递归划分。
+决策树可能发生过拟合，因此需要剪枝，从下而上进行，减去过于细分的结点，使其会退到父结点。
+
+数据分类是一个两阶段过程，包括学习阶段（构建分类模型）和分类阶段（使用模型预测给定数据的类标号）。
+决策树分类算法是监督学习的一种，即Supervised learning。
+*分类过程的第一阶段也可以看做学习一个映射或函数y=f(x),它可以预测给定元组X的类标号y。
+*在第二阶段，使用模型进行分类。首先评估分类器的预测准确率。这个过程要尽量的减少过拟合。
+（为什么是尽量减少而不是避免呢，因为过拟合一般是避免不了的，再好的模型也会有过拟合的情况）。
+
+#二、算法介绍
+##1、算法概述
+决策树归纳是从有类标号的训练元组中学习决策树。常用的决策树算法有ID3，C4.5和CART。
+它们都是采用贪心（即非回溯的）方法，其中决策树自顶向下递归的分治方法构造。
+其中划分属性的方法各不相同，ID3使用的是信息增益，C4.5使用的是信息增益率，而CART使用的是Gini基尼指数。
+下面来简单介绍下决策树的理论知识：内容包含熵、信息增益、信息增益率以及Gini指数的计算公式。
+##2、算法的优点
+（1）分类精度高； 
+（2）成的模式简单； 
+（3）对噪声数据有很好的健壮性。 
+##3、算法一般流程
+（1）收集数据：任意方法和途径。 
+（2）准备数据：书构造算法只适用于标称型数据，因此数据必须离散化。 
+（3）分析数据：构造树完成后，检查图形是否符合预测。 
+（4）训练算法：决策树的数据构造。 
+（5）测试算法：一般将决策树用于分类，可以用错误率衡量，而错误率使用经验率计算。 
+（6）使用算法：决策树可以用于任何监督学习算法。
+
+#三、基本原理
+##1.使用信息增益进行决策树归纳（ID3算法）
+*ID3算法的具体步骤
+输入：训练样本集D，特征集A，阈值E
+输出：决策树T
+（1）若D中所有实例属于同一类Ck，则T为单节点树，并将类Ck作为该节点的类标记，返回T；
+（2）若A为空集，则T为单节点树，并将D中实例数最大的类Ck作为该节点的类标记，返回T；
+（3）否则，按算法5.1计算A的各特征对D的信息增益，选择信息增益最大的特征Ag；
+（4）如果Ag的信息增益小鱼阈值E，则置T为单节点，并将D中实例数最大的类Ck作为该节点的类标记，返回T；
+（5）否则，对Ag的每一个可能值ai，依Ag=ai将D分割为若干非空子集Di，将Di中实例数最大的类作为标记，构建子节点，有节点及子节点构建数T，返回T；
+（6）对第i个子节点，依Di为训练集，依A-{Ag}为特征集，递归地调用第（1）-（5）步，得到子树Ti,返回Ti。
+*熵（Entropy）的计算公式
+熵定义为信息增益的期望值。熵越大，一个变量的不确定性就越大（也就是可取的值很多），把它分析清楚需要的信息量也就越大，熵是整个系统的平均信息量。
+对D中的元组分类所需要的期望信息由下列公式给出：
+Entropy=H(D)=E(I(D))=−∑inpilog2(pi)，pi是D中任意元组属于类Ci非零概率。
+熵越大，说明系统越混乱，携带的信息就越少。熵越小，说明系统越有序，携带的信息就越多。信息的作用就是在于消除不确定性。
+一个属性的信息增益越大，表明属性对样本的熵减少的能力就更强，该属性使得数据所属类别的不确定性变为确定性的能力越强。
+注：需要的期望信息越小，分区的纯度越高。
+*信息增益计算
+首先计算特征A对数据集D的经验条件熵H(D|A),在数学上就是条件概率分布（Condition Probability）
+H(D|A)=∑j|Dj||D|×H(Dj)，  项|Di||D|充当第j个分区的权重
+引入条件熵，在信息论中主要是为了消除结果的不确定性。然后计算信息增益
+Gain(A)=H(D)−H(D|A)，     其中，Gain(A)即为所求的信息增益。
+
+##2.使用增益率计算（C4.5算法）
+*C4.5算法继承了ID3算法的优点，并在以下几方面对ID3算法进行了改进： 
+(1) 用信息增益率来选择属性，克服了用信息增益选择属性时偏向选择取值多的属性的不足； 
+(2) 在树构造过程中进行剪枝； 
+(3) 能够完成对连续属性的离散化处理； 
+(4) 能够对不完整数据进行处理。
+*C4.5算法有如下优点
+产生的分类规则易于理解，准确率较高。
+*C4.5算法有如下缺点
+在构造树的过程中，需要对数据集进行多次的顺序扫描和排序，因而导致算法的低效。
+此外，C4.5只适合于能够驻留于内存的数据集，当训练集大得无法在内存容纳时程序无法运行。
+另外，无论是ID3还是C4.5最好在小数据集上使用，决策树分类一般只试用于小数据。当属性取值很多时最好选择C4.5算法，ID3得出的效果会非常差。
+*分裂信息计算公式：
+Split_H(D|A)=−∑|Dj||D|×log2(|Dj||D|)
+*增益率定义为：
+Gain_Rate(A)=Gain(A)Split_H(D|A)
+选择具有最大增益率的特征作为分裂特征。
+
+##3.基尼指数(CART算法)
+基尼指数在CART中使用，Gini index度量的是数据分区或训练元组集D的不纯度。计算方式如下：
+Gini(D)=1−∑p2i，其中，pi是D中元组数以Ci类的概率，对m个类计算和。
+
+四、算法的实现
+##1、决策树算法实现一共分为以下几个部分：
+a.加载数据集部分.b.熵的计算.c.按照给定特征划分数据集.d.根据信息增益的最大值的属性作为划分属性
+e.递归构建决策树.f.样本的分类.     伪代码如下：
+检测数据集的每个子项是否属于同一类：
+    if so return 类标签;
+    else
+        寻找划分数据集的最好特征
+        划分数据集
+        创建分支节点
+            for 每个分支节点
+                调用函数createBranch并增加返回结果到分支节点中
+        return 分支节点 
+
+1.加载数据
+创建一个构造数据集的函数，所有的代码均写在一个py文件里面。
+
+def createDataSet():
+    dataSet = [[1, 1, 'yes'],
+               [1, 1, 'yes'],
+               [1, 0, 'no'],
+               [0, 1, 'no'],
+               [0, 1, 'no']]
+    labels = ['no surfacing','flippers']   #the label of each feature
+    #change to discrete values
+    return dataSet, labels
+
+2.计算给定数据集的香农熵
+def calcShannonEnt(dataSet):
+    n = len(dataSet) #calculate the size of dataset
+    labelCounts = {}
+    # create dictionary "count" 
+    for featVec in dataSet: #the the number of unique elements and their occurance
+        currentLabel = featVec[-1]
+        if currentLabel not in labelCounts.keys(): labelCounts[currentLabel] = 0
+        labelCounts[currentLabel] += 1
+    shannonEnt = 0.0
+    for key in labelCounts:
+        prob = float(labelCounts[key])/n #notice transfering to float first  
+        shannonEnt -= prob * log(prob,2) #log base 2
+    return shannonEnt
+
+3.按照给定特征划分数据集
+def splitDataSet(dataSet, axis, value):
+    retDataSet = []
+    for featVec in dataSet:
+        if featVec[axis] == value:
+            reducedFeatVec = featVec[:axis]     #chop out axis used for splitting
+            reducedFeatVec.extend(featVec[axis+1:])
+            retDataSet.append(reducedFeatVec)
+    return retDataSet
+
+4.选择最好的数据集划分方式
+计算出每种特征的信息增益值，然后选择出信息增益最大的作为划分属性。
+
+def chooseBestFeatureToSplit(dataSet):
+    numFeatures = len(dataSet[0]) - 1      #the last column is used for the labels
+    baseEntropy = calcShannonEnt(dataSet)  #calculate the info of dataSet
+    bestInfoGain = 0.0; bestFeature = -1
+    for i in range(numFeatures):        #iterate over all the features
+        featList = [example[i] for example in dataSet]#create a list of all the examples of this feature
+        uniqueVals = set(featList)       #get a set of unique values
+        newEntropy = 0.0
+        for value in uniqueVals:         # calculate the info of each feature
+            subDataSet = splitDataSet(dataSet, i, value)
+            prob = len(subDataSet)/float(len(dataSet))
+            newEntropy += prob * calcShannonEnt(subDataSet)     
+        infoGain = baseEntropy - newEntropy     #calculate the info gain; ie reduction in entropy
+        if (infoGain > bestInfoGain):       #compare this to the best gain so far
+            bestInfoGain = infoGain         #if better than current best, set to best
+            bestFeature = i
+    return bestFeature                      #returns an integer
+
+
+5.递归构建树
+创建树的函数代码
+def majorityCnt(classList):
+    classCount={}
+    for vote in classList:
+        if vote not in classCount.keys(): classCount[vote] = 0
+        classCount[vote] += 1
+    sortedClassCount = sorted(classCount.iteritems(), key=operator.itemgetter(1), reverse=True)
+    return sortedClassCount[0][0]
+
+def createTree(dataSet,labels):
+    classList = [example[-1] for example in dataSet]
+    if classList.count(classList[0]) == len(classList): 
+        return classList[0]#stop splitting when all of the classes are equal
+    if len(dataSet[0]) == 1: #stop splitting when there are no more features in dataSet
+        return majorityCnt(classList)
+    bestFeat = chooseBestFeatureToSplit(dataSet)
+    bestFeatLabel = labels[bestFeat]
+    myTree = {bestFeatLabel:{}}
+    del(labels[bestFeat])
+    featValues = [example[bestFeat] for example in dataSet]
+    uniqueVals = set(featValues)
+    for value in uniqueVals:
+        subLabels = labels[:]       #copy all of labels, so trees don't mess up existing labels
+        myTree[bestFeatLabel][value] = createTree(splitDataSet(dataSet, bestFeat, value),subLabels)
+    return myTree  
+
+
+6.执行数据分类
+使用决策树的分类函数
+def classify(inputTree,featLabels,testVec):
+    firstStr = inputTree.keys()[0]
+    secondDict = inputTree[firstStr]
+    featIndex = featLabels.index(firstStr)
+    key = testVec[featIndex]
+    valueOfFeat = secondDict[key]
+    if isinstance(valueOfFeat, dict): 
+        classLabel = classify(valueOfFeat, featLabels, testVec)
+    else: classLabel = valueOfFeat
+    return classLabel
+

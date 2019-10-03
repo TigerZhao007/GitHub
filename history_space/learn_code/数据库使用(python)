@@ -1,0 +1,87 @@
+# 数据库的使用（python）
+windows+R>cmd>pip install pymysql3
+import pymysql
+import pandas as pd
+# -*- coding: UTF-8 -*-
+
+## mysql数据库连接
+1.方法一
+conn=pymysql.connect(
+                     host='127.0.0.1',
+                     user='root',
+                     passwd='123456',
+                     db='world',
+                     port=3306,
+                     charset='utf8'
+                     )
+注：host也可为'localhost'，utf8不能是大写。passwd不是password
+2.方法二
+config = {
+          'host':'127.0.0.1',
+          'port':3306,
+          'user':'root',
+          'password':'123456',
+          'db':'world',
+          'charset':'utf8',
+          }
+conn = pymysql.connect(**config)
+
+finally:
+    connection.close();
+    
+## 数据库的读取
+1.方法一
+data_sql=pd.read_sql("select * from city limit 10",conn)
+2.方法二
+cur = conn.cursor()
+sql = 'select * from house_records where 建成年代 > %s'
+cur.execute(sql, (2010))
+df_dict = cur.fetchall()
+df_frame = pd.DataFrame(list(df_dict))
+
+## 创建数据库表
+sql = """CREATE TABLE `house_details` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `first_name` char(20) NOT NULL,
+  `last_name` char(20) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `sex` char(1) DEFAULT NULL,
+  `income` float DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;"""
+cur.execute(sql)
+
+## 记录插入数据库表
+sql = """INSERT INTO lianjia( 
+         first_name, last_name, age, sex, income)
+   VALUES ('Mac', 'Su', 20, 'M', 5000)"""
+sql = "INSERT INTO EMPLOYEE(FIRST_NAME,      \
+   LAST_NAME, AGE, SEX, INCOME)              \
+   VALUES ('%s', '%s', '%d', '%c', '%d' )" % \
+   ('Max', 'Su', 25, 'F', 2800)
+cur.execute(sql)
+conn.commit()
+conn.rollback()         #????
+
+## 更新操作
+sql = "UPDATE house_details SET AGE = AGE + 1 \
+                          WHERE SEX = '%c'" % ('M')
+try:
+   cur.execute(sql)
+   conn.commit()
+except:
+   conn.rollback()
+
+## 删除操作
+sql = "DELETE FROM house_details WHERE AGE > '%d'" % (40)
+cur.execute(sql)
+conn.commit()
+
+## 执行事务
+sql = "DELETE FROM house_details WHERE AGE > '%d'" % (20)
+cur.execute(sql)
+conn.commit()
+
+conn.commit()     提交操作,向数据库发出信号以完成更改，并且在此操作之后，不会更改任何更改。
+conn.rollback()   回滚操作,对一个或多个更改不满意，并且要完全还原这些更改。
+conn.close()      断开数据库连接,任何未完成的事务都将被数据库回滚。
