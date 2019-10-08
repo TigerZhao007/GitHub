@@ -26,7 +26,8 @@ if __name__ == "__main__":
 # #####################################################################################################################
 # 多线程
 '''
-1.Python通过两个标准库thread和threading提供对线程的支持。thread提供了低级别的、原始的线程以及一个简单的锁.Threading模块封装了一些常用的方法，初学者直接学这个模块就行了。
+1.Python通过两个标准库thread和threading提供对线程的支持。thread提供了低级别的、原始的线程以及一个简单的锁.
+Threading模块封装了一些常用的方法，初学者直接学这个模块就行了。
 2.Python中使用线程有两种方式：函数或者用类来包装线程对象
 3.threading.Thread里面几个参数介绍：
 class Thread(_Verbose)
@@ -550,5 +551,221 @@ b = Consumers()
 a.start()
 b.start()
 
+# #####################################################################################################################
+# python笔记12-python多线程之事件(Event)
+'''
+小伙伴a,b,c围着吃火锅，当菜上齐了，请客的主人说：开吃！，于是小伙伴一起动筷子，这种场景如何实现
+'''
+# #####################################################################################################################
+
+# 一、 Event（事件）~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''
+Event（事件）：事件处理的机制：全局定义了一个内置标志Flag，如果Flag值为 False，那么当程序执行 event.wait方法时就会阻塞，
+如果Flag值为True，那么event.wait 方法时便不再阻塞。
+Event其实就是一个简化版的 Condition。Event没有锁，无法使线程进入同步阻塞状态。
+Event()
+- set(): 将标志设为True，并通知所有处于等待阻塞状态的线程恢复运行状态。 
+- clear(): 将标志设为False。 
+- wait(timeout): 如果标志为True将立即返回，否则阻塞线程至等待阻塞状态，等待其他线程调用set()。
+- isSet(): 获取内置标志状态，返回True或False。 
+'''
+# 二、 Event案例1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''
+场景：小伙伴a和b准备就绪，当收到通知event.set()的时候，会执行a和b线程
+'''
+# coding:utf-8
+import threading
+import time
+
+event = threading.Event()
+
+def chihuoguo(name):
+    # 等待事件，进入等待阻塞状态
+    print ('%s 已经启动' % threading.currentThread().getName())
+    print ('小伙伴 %s 已经进入就餐状态！'%name)
+    time.sleep(1)
+    event.wait()
+    # 收到事件后进入运行状态
+    print ('%s 收到通知了.' % threading.currentThread().getName())
+    print ('小伙伴 %s 开始吃咯！'%name)
+
+# 设置线程组
+threads = []
+
+# 创建新线程
+thread1 = threading.Thread(target=chihuoguo, args=("a", ))
+thread2 = threading.Thread(target=chihuoguo, args=("b", ))
+
+# 添加到线程组
+threads.append(thread1)
+threads.append(thread2)
+
+# 开启线程
+for thread in threads:
+    thread.start()
+time.sleep(0.1)
+
+# 发送事件通知
+print ('主线程通知小伙伴开吃咯！')
+event.set()
+
+# 二、 Event案例2~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''
+场景：当小伙伴a,b,c集结完毕后，请客的人发话：开吃咯！
+'''
+# coding:utf-8
+import threading
+import time
+
+event = threading.Event()
+
+def chiHuoGuo(name):
+    # 等待事件，进入等待阻塞状态
+    print ('%s 已经启动' % threading.currentThread().getName())
+    print ('小伙伴 %s 已经进入就餐状态！'%name)
+    time.sleep(1)
+    event.wait()
+
+    # 收到事件后进入运行状态
+    print ('%s 收到通知了.' % threading.currentThread().getName())
+    print ('%s 小伙伴 %s 开始吃咯！'%(time.ctime(), name))
+
+class myThread (threading.Thread):   # 继承父类threading.Thread
+    def __init__(self, people, name):
+        '''重写threading.Thread初始化内容'''
+        threading.Thread.__init__(self)
+        self.threadName = name
+        self.people = people
+
+    def run(self):   # 把要执行的代码写到run函数里面 线程在创建后会直接运行run函数
+        '''重写run方法'''
+        print("开始线程: " + self.threadName)
+        chiHuoGuo(self.people)     # 执行任务
+        print("qq交流群：226296743")
+        print("结束线程: " + self.name)
+
+# 设置线程组
+threads = []
+
+# 创建新线程
+thread1 = threading.Thread(target=chiHuoGuo, args=("a", ))
+thread2 = threading.Thread(target=chiHuoGuo, args=("b", ))
+thread3 = threading.Thread(target=chiHuoGuo, args=("c", ))
+
+# 添加到线程组
+threads.append(thread1)
+threads.append(thread2)
+threads.append(thread3)
+
+# 开启线程
+for thread in threads:
+    thread.start()
+time.sleep(0.1)
+
+# 发送事件通知
+print ('YOYO:集合完毕，人员到齐了，开吃咯！')
+event.set()
+
+# #####################################################################################################################
+# python笔记13-多线程实践篇（tomorrow）
+'''
+前面几篇连续讲解了多线程的一些概念，都是一些理论的东西，有了一些理论基础了，接下来就让我们把所学的知识用到实践中吧！
+https://cloud.tencent.com/developer/article/1087164
+算术入门（兔子实例）
+例题1.7
+'''
+# #####################################################################################################################
+
+# 一、 单线程~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''
+1.以下案例是单线程时候跑的情况，在下载图片的时候很耗时。
+'''
+# coding:utf-8
+from bs4 import BeautifulSoup
+import requests
+import os
+import time
+
+# 当前脚本所在的目录
+cur_path = os.path.dirname(os.path.realpath(__file__))
+
+def get_img_urls():
+    r = requests.get("http://699pic.com/sousuo-218808-13-1.html")
+    fengjing = r.content
+    soup = BeautifulSoup(fengjing, "html.parser")
+    # 找出所有的标签
+    images = soup.find_all(class_="lazy")
+    return images
+
+def save_img(imgUrl):
+    try:
+        jpg_rl = imgUrl["data-original"]
+        title = imgUrl["title"]
+        # print(title)
+        # print(jpg_rl)
+        # print("")
+
+        # 判断是否有jpg文件夹，不存在创建一个
+        save_file = os.path.join(cur_path, "jpg")
+        if not os.path.exists(save_file): os.makedirs(save_file)
+        with open(os.path.join(save_file, title+'.jpg'), "wb") as f:
+            f.write(requests.get(jpg_rl).content)
+    except:
+        pass
+
+if __name__ == "__main__":
+    t1 = time.time()
+    image_ulrs = get_img_urls()
+    for i in image_ulrs:
+        save_img(i)
+    t2 = time.time()
+    print("总耗时：%.2f 秒"%(t2-t1))
+
+
+# 二、 使用多线程tomorrow~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''
+1.一行代码搞定多线程，在函数上加个@threads(5)，括号里面代码线程的数量，数字越大，运行的速度越快
+'''
+# coding:utf-8
+from bs4 import BeautifulSoup
+import requests
+import os
+import time
+from tomorrow import threads
+
+# 当前脚本所在的目录
+cur_path = os.path.dirname(os.path.realpath(__file__))
+
+def get_img_urls():
+    r = requests.get("http://699pic.com/sousuo-218808-13-1.html")
+    fengjing = r.content
+    soup = BeautifulSoup(fengjing, "html.parser")
+    # 找出所有的标签
+    images = soup.find_all(class_="lazy")
+    return images
+
+@threads(5)
+def save_img(imgUrl):
+    try:
+        jpg_rl = imgUrl["data-original"]
+        title = imgUrl["title"]
+        # print(title)
+        # print(jpg_rl)
+        # print("")
+        # 判断是否有jpg文件夹，不存在创建一个
+        save_file = os.path.join(cur_path, "jpg")
+        if not os.path.exists(save_file): os.makedirs(save_file)
+        with open(os.path.join(save_file, title+'.jpg'), "wb") as f:
+            f.write(requests.get(jpg_rl).content)
+    except:
+        pass
+
+if __name__ == "__main__":
+    t1 = time.time()
+    image_ulrs = get_img_urls()
+    for i in image_ulrs:
+        save_img(i)
+    t2 = time.time()
+    print("总耗时：%.2f 秒"%(t2-t1))
 
 
