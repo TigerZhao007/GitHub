@@ -3,7 +3,8 @@
 # #####################################################################################################################
 # 单线程
 '''
-1.平常写的代码都是按顺序挨个执行的，就好比吃火锅和哼小曲这两个行为事件，定义成两个函数，执行的时候，是先吃火锅再哼小曲，这种就是单线程的行为。
+1.平常写的代码都是按顺序挨个执行的，就好比吃火锅和哼小曲这两个行为事件，定义成两个函数，执行的时候，是先吃火锅再哼小曲，
+这种就是单线程的行为。
 2.生活中我们是可以一边吃火锅一边哼小曲的，那么代码里面如何实现这种同时进行的不同事件呢？这就是接下来要讲的python多线程
 '''
 # #####################################################################################################################
@@ -687,7 +688,7 @@ import os
 import time
 
 # 当前脚本所在的目录
-cur_path = os.path.dirname(os.path.realpath(__file__))
+cur_path = os.path.dirname(os.path.realpath('__file__'))
 
 def get_img_urls():
     r = requests.get("http://699pic.com/sousuo-218808-13-1.html")
@@ -701,10 +702,6 @@ def save_img(imgUrl):
     try:
         jpg_rl = imgUrl["data-original"]
         title = imgUrl["title"]
-        # print(title)
-        # print(jpg_rl)
-        # print("")
-
         # 判断是否有jpg文件夹，不存在创建一个
         save_file = os.path.join(cur_path, "jpg")
         if not os.path.exists(save_file): os.makedirs(save_file)
@@ -721,10 +718,12 @@ if __name__ == "__main__":
     t2 = time.time()
     print("总耗时：%.2f 秒"%(t2-t1))
 
-
 # 二、 使用多线程tomorrow~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 '''
-1.一行代码搞定多线程，在函数上加个@threads(5)，括号里面代码线程的数量，数字越大，运行的速度越快
+1. 一行代码搞定多线程，在函数上加个@threads(5)，括号里面代码线程的数量，数字越大，运行的速度越快；
+但是数字也不是越大越好，一般在5-10之间。
+2. tomorrow 模块，该模块属于第三方的一个模块，使用起来非常的方便，只需要用其中的 threads 方法作为装饰器去修饰一个普通的函数，
+既可以达到并发的效果，本篇将用实例来展示 tomorrow 的强大之处。后面将对 tomorrow 的实现原理做进一步的分析。
 '''
 # coding:utf-8
 from bs4 import BeautifulSoup
@@ -734,7 +733,7 @@ import time
 from tomorrow import threads
 
 # 当前脚本所在的目录
-cur_path = os.path.dirname(os.path.realpath(__file__))
+cur_path = os.path.dirname(os.path.realpath('__file__'))
 
 def get_img_urls():
     r = requests.get("http://699pic.com/sousuo-218808-13-1.html")
@@ -744,6 +743,7 @@ def get_img_urls():
     images = soup.find_all(class_="lazy")
     return images
 
+# 一行代码搞定多线程，在函数上加个@threads(5)，括号里面代码线程的数量，数字越大，运行的速度越快
 @threads(5)
 def save_img(imgUrl):
     try:
