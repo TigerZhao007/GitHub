@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_space/发邮件.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_space/发邮件.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_space/多线程（threading）.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_space/多线程（threading）.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_space/发邮件.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_space/发邮件（zmail）.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,20 +13,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python_space/多线程（threading）.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-238">
-              <caret line="722" column="3" selection-start-line="722" selection-start-column="3" selection-end-line="722" selection-end-column="3" />
+            <state relative-caret-position="3187">
+              <caret line="736" lean-forward="true" selection-start-line="736" selection-end-line="736" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python_space/发邮件.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/python_space/发邮件（zmail）.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
-              <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            <state relative-caret-position="148">
+              <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
             </state>
           </provider>
         </entry>
@@ -44,20 +43,21 @@
         <option value="$PROJECT_DIR$/python_space/多线程.py" />
         <option value="$PROJECT_DIR$/python_space/发邮件.py" />
         <option value="$PROJECT_DIR$/python_space/多线程（threading）.py" />
+        <option value="$PROJECT_DIR$/python_space/发邮件（zmail）.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="240" />
-    <option name="y" value="127" />
-    <option name="width" value="1440" />
-    <option name="height" value="774" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="543" />
+    <option name="width" value="1385" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -74,7 +74,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -188,18 +187,19 @@
       <workItem from="1570461255972" duration="435000" />
       <workItem from="1570496947626" duration="5721000" />
       <workItem from="1570690618929" duration="654000" />
-      <workItem from="1570722148410" duration="2529000" />
+      <workItem from="1570722148410" duration="2588000" />
+      <workItem from="1570806124115" duration="4227000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12461000" />
+    <option name="totallyTimeSpent" value="16747000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="435" y="0" width="1108" height="838" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1735925" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.085158154" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -364,17 +364,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python_space/发邮件.py">
+    <entry file="file://$PROJECT_DIR$/python_space/多线程（threading）.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        <state relative-caret-position="3187">
+          <caret line="736" lean-forward="true" selection-start-line="736" selection-end-line="736" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python_space/多线程（threading）.py">
+    <entry file="file://$PROJECT_DIR$/python_space/发邮件（zmail）.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-238">
-          <caret line="722" column="3" selection-start-line="722" selection-start-column="3" selection-end-line="722" selection-end-column="3" />
+        <state relative-caret-position="148">
+          <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
         </state>
       </provider>
     </entry>
