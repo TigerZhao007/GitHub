@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/python_space/发邮件（smtplib）.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_space/发邮件.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_space/发邮件（zmail）.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_space/多线程（threading）.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_space/多线程（threading）.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,27 +12,28 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="GitHub" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/python_space/多线程（threading）.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3187">
-              <caret line="736" lean-forward="true" selection-start-line="736" selection-end-line="736" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/python_space/发邮件（zmail）.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
+            <state relative-caret-position="310">
+              <caret line="796" column="11" selection-start-line="796" selection-start-column="11" selection-end-line="796" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,22 +44,25 @@
         <option value="$PROJECT_DIR$/study_space/python_space/demo_flask/demo02/app_login.py" />
         <option value="$PROJECT_DIR$/python_space/多线程.py" />
         <option value="$PROJECT_DIR$/python_space/发邮件.py" />
-        <option value="$PROJECT_DIR$/python_space/多线程（threading）.py" />
         <option value="$PROJECT_DIR$/python_space/发邮件（zmail）.py" />
+        <option value="$PROJECT_DIR$/python_space/发邮件（smtplib）.py" />
+        <option value="$PROJECT_DIR$/python_space/多线程（threading）.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="543" />
-    <option name="width" value="1385" />
+    <option name="x" value="460" />
+    <option name="width" value="1469" />
     <option name="height" value="1048" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -74,6 +79,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -189,19 +195,22 @@
       <workItem from="1570690618929" duration="654000" />
       <workItem from="1570722148410" duration="2588000" />
       <workItem from="1570806124115" duration="4227000" />
+      <workItem from="1570880583506" duration="600000" />
+      <workItem from="1570898623368" duration="379000" />
+      <workItem from="1570899460806" duration="4250000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16747000" />
+    <option name="totallyTimeSpent" value="21976000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="435" y="0" width="1108" height="838" extended-state="0" />
+    <frame x="368" y="0" width="1175" height="838" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.085158154" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49905482" weight="0.13876455" />
+      <window_info id="Structure" order="1" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
+      <window_info id="Favorites" order="2" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
@@ -214,7 +223,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.329718" />
-      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.27478755" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.36827195" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -364,17 +373,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python_space/多线程（threading）.py">
+    <entry file="file://$PROJECT_DIR$/python_space/发邮件（smtplib）.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3187">
-          <caret line="736" lean-forward="true" selection-start-line="736" selection-end-line="736" />
+        <state relative-caret-position="285">
+          <caret line="205" lean-forward="true" selection-start-line="205" selection-end-line="205" />
+          <folding>
+            <element signature="e#908#922#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python_space/发邮件（zmail）.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
+        <state relative-caret-position="75">
+          <caret line="18" column="60" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python_space/多线程（threading）.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="796" column="11" selection-start-line="796" selection-start-column="11" selection-end-line="796" selection-end-column="11" />
         </state>
       </provider>
     </entry>
