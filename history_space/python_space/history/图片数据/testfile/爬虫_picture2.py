@@ -12,7 +12,7 @@ import urllib
 # @brief  打开网页 # url : 网页地址# @return 返回网页数据
 def getHtmlText(url,headers):
     try:
-        r = requests.get(url, headers,timeout=30)  # 如果状态码不是200 则应发HTTOError异常
+        r = requests.get(url, headers, timeout=30)  # 如果状态码不是200 则应发HTTOError异常
         r.raise_for_status()               # 设置正确的编码方式
         r.encoding = r.apparent_encoding
         return r.text

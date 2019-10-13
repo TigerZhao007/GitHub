@@ -33,10 +33,13 @@ def get_html(times):
     print("get page {}s finished".format(times))
     return times
 
+# max_workers参数来设置线程池中最多能同时运行的线程数目。
 executor = ThreadPoolExecutor(max_workers=2)
+
 # 通过submit函数提交执行的函数到线程池中，submit函数立即返回，不阻塞
 task1 = executor.submit(get_html, (3))
 task2 = executor.submit(get_html, (2))
+
 # done方法用于判定某个任务是否完成
 print(task1.done())
 # cancel方法用于取消某个任务,该任务没有放入线程池中才能取消成功
@@ -81,12 +84,9 @@ def get_html(times):
     return times
 
 executor = ThreadPoolExecutor(max_workers=2)
+
 urls = [3, 2, 4] # 并不是真的url
 all_task = [executor.submit(get_html, (url)) for url in urls]
-
-for future in as_completed(all_task):
-    data = future.result()
-    print("in main: get page {}s success".format(data))
 
 # 执行结果
 # get page 2s finished
