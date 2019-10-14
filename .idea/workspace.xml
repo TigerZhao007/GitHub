@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/python_space/爬虫--多线程（request+beautifulsoup）.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/history_space/python_space/history/图片数据/testfile/爬虫_picture2.py" beforeDir="false" afterPath="$PROJECT_DIR$/history_space/python_space/history/图片数据/testfile/爬虫_picture2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/history_space/python_space/temp/temp1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/history_space/python_space/temp/temp2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_space/多线程-线程池（ThreadPoolExecutor）.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_space/多线程-线程池（ThreadPoolExecutor）.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_space/多线程-基础入门（threading）.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_space/多线程-基础入门（threading）.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_space/爬虫_美图录-多线程（request+beautifulsoup）.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_space/爬虫_美图录-多线程（request+beautifulsoup）.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,24 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/python_space/多线程-基础入门（threading）.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="763" selection-start-line="763" selection-end-line="768" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/python_space/爬虫--多线程（request+beautifulsoup）.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="33" />
-              <folding>
-                <element signature="e#395#1321#0" />
-                <element signature="e#1459#2742#0" />
-              </folding>
+            <state relative-caret-position="288">
+              <caret line="793" column="19" lean-forward="true" selection-start-line="793" selection-start-column="19" selection-end-line="793" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -82,13 +66,15 @@
         <option value="$PROJECT_DIR$/history_space/python_space/history/图片数据/testfile/爬虫_picture2.py" />
         <option value="$PROJECT_DIR$/python_space/爬虫（request+beautifulsoup）.py" />
         <option value="$PROJECT_DIR$/python_space/爬虫--多线程（request+beautifulsoup）.py" />
+        <option value="$PROJECT_DIR$/python_space/爬虫_美图录-多线程（request+beautifulsoup）.py" />
+        <option value="$PROJECT_DIR$/python_space/多线程-基础入门（threading）.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="40" />
-    <option name="width" value="1885" />
-    <option name="height" value="1040" />
+    <option name="x" value="461" />
+    <option name="width" value="1467" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -98,6 +84,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -105,21 +92,10 @@
               <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
               <item name="GitHub" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="history_space" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="python_space" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -146,7 +122,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.爬虫（request+beautifulsoup）">
+  <component name="RunManager" selected="Python.爬虫_美图录-多线程（request+beautifulsoup）">
     <configuration name="AddCount" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GitHub" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -161,6 +137,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/study_space/python_space/demo_flask/demo01/AddCount.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="爬虫_美图录-多线程（request+beautifulsoup）" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GitHub" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_space" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_space/爬虫_美图录-多线程（request+beautifulsoup）.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -237,6 +235,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.爬虫_美图录-多线程（request+beautifulsoup）" />
         <item itemvalue="Python.爬虫（request+beautifulsoup）" />
         <item itemvalue="Python.app_login" />
         <item itemvalue="Python.AddCount" />
@@ -268,23 +267,23 @@
       <workItem from="1570899460806" duration="11229000" />
       <workItem from="1570948651541" duration="15691000" />
       <workItem from="1570975392335" duration="1013000" />
-      <workItem from="1570977505953" duration="6165000" />
+      <workItem from="1570977505953" duration="6347000" />
+      <workItem from="1571018557220" duration="3983000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51824000" />
+    <option name="totallyTimeSpent" value="55989000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="32" y="0" width="1508" height="832" extended-state="0" />
-    <editor active="true" />
+    <frame x="370" y="97" width="1074" height="709" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49905482" visible="true" weight="0.22827587" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49905482" visible="true" weight="0.4035433" />
       <window_info id="Structure" order="1" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
       <window_info id="Favorites" order="2" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32857144" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3979239" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -331,6 +330,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/GitHub$request_beautifulsoup.coverage" NAME="爬虫（request+beautifulsoup） Coverage Results" MODIFIED="1570983482002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$test01.coverage" NAME="test01 Coverage Results" MODIFIED="1570154180834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
+    <SUITE FILE_PATH="coverage/GitHub$__request_beautifulsoup.coverage" NAME="爬虫_美图录-多线程（request+beautifulsoup） Coverage Results" MODIFIED="1571019374837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$AddCount.coverage" NAME="AddCount Coverage Results" MODIFIED="1570460846001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_space/python_space/demo_flask/demo01" />
     <SUITE FILE_PATH="coverage/GitHub$app_login.coverage" NAME="app_login Coverage Results" MODIFIED="1570461483272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_space/python_space/demo_flask/demo02" />
   </component>
@@ -533,21 +533,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python_space/多线程-基础入门（threading）.py">
+    <entry file="file://$PROJECT_DIR$/python_space/爬虫_美图录-多线程（request+beautifulsoup）.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="763" selection-start-line="763" selection-end-line="768" selection-end-column="31" />
+        <state relative-caret-position="231">
+          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python_space/爬虫--多线程（request+beautifulsoup）.py">
+    <entry file="file://$PROJECT_DIR$/python_space/多线程-基础入门（threading）.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="33" />
-          <folding>
-            <element signature="e#395#1321#0" />
-            <element signature="e#1459#2742#0" />
-          </folding>
+        <state relative-caret-position="288">
+          <caret line="793" column="19" lean-forward="true" selection-start-line="793" selection-start-column="19" selection-end-line="793" selection-end-column="19" />
         </state>
       </provider>
     </entry>

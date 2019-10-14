@@ -59,7 +59,7 @@ def getImgList(html):
 # 爬虫代码汇总~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from tomorrow import threads
 
-@threads(10)
+# @threads(10)
 def main(url, tablename):
     import sqlalchemy
     engine = sqlalchemy.create_engine("postgresql://postgres:123456@106.12.30.122:5432/test",
@@ -78,7 +78,7 @@ if __name__ == '__main__':
 
     url_list = ['https://www.meitulu.com/guochan/%s.html' %(x) for x in range(2, 191)]
     for url in url_list:
-        main(url, tablename='meitulu_03')
+        main(url, tablename='meitulu_single')
 
     t2 = time.time()
     print("总耗时：%.2f 秒"%(t2-t1))
