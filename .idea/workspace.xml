@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/python_space/爬虫_美图录（request+beautifulsoup+multiprocessing）.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_space/爬虫_美图录（request+beautifulsoup+threading）.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_space/爬虫_美图录（request+beautifulsoup）.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_space/高德API-基础学习.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_space/爬虫_美图录-多线程（request+beautifulsoup）.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_space/爬虫_美图录（request+beautifulsoup+tomrrow）.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,30 +29,7 @@
     <favorites_list name="GitHub" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python_space/多线程-基础入门（threading）.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="405" selection-start-line="405" selection-end-line="411" selection-end-column="17" />
-              <folding>
-                <element signature="e#17917#18195#0" />
-                <element signature="e#18261#18665#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/python_space/爬虫_美图录（request+beautifulsoup+threading）.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -87,13 +61,14 @@
         <option value="$PROJECT_DIR$/python_space/爬虫_美图录（request+beautifulsoup+tomrrow）.py" />
         <option value="$PROJECT_DIR$/python_space/爬虫_美图录（request+beautifulsoup+multiprocessing）.py" />
         <option value="$PROJECT_DIR$/python_space/爬虫_美图录（request+beautifulsoup+threading）.py" />
+        <option value="$PROJECT_DIR$/python_space/高德API-基础学习.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="461" />
-    <option name="width" value="1467" />
-    <option name="height" value="1038" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="533" />
+    <option name="width" value="1395" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -294,22 +269,22 @@
       <workItem from="1570975392335" duration="1013000" />
       <workItem from="1570977505953" duration="6347000" />
       <workItem from="1571018557220" duration="3983000" />
-      <workItem from="1571064316821" duration="7550000" />
+      <workItem from="1571064316821" duration="9079000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63539000" />
+    <option name="totallyTimeSpent" value="65068000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="427" y="0" width="1116" height="838" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49905482" visible="true" weight="0.2922252" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49905482" visible="true" weight="0.342155" />
       <window_info id="Structure" order="1" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
       <window_info id="Favorites" order="2" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32152975" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32152975" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -319,7 +294,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3286119" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.30736545" />
+      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.30736545" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -588,6 +563,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/python_space/爬虫_美图录（request+beautifulsoup+threading）.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1850">
+          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/python_space/多线程-基础入门（threading）.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -599,10 +581,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python_space/爬虫_美图录（request+beautifulsoup+threading）.py">
+    <entry file="file://$PROJECT_DIR$/python_space/高德API-基础学习.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
+        <state relative-caret-position="225">
+          <caret line="33" column="18" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="18" />
+          <folding>
+            <element signature="e#734#752#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
