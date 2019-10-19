@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/python_space/百度翻译API-通用翻译.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_space/高德API-路径规划.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_space/file/常用Git命令.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/GitHub.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GitHub.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_space/高德API-路径规划.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_space/高德API-路径规划.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,22 +33,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python_space/高德API-天气查询.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="76" selection-start-line="76" selection-end-line="84" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/python_space/高德API-路径规划.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+            <state relative-caret-position="259">
+              <caret line="218" column="67" selection-start-line="218" selection-start-column="67" selection-end-line="218" selection-end-column="67" />
               <folding>
-                <element signature="e#1200#2676#0" />
+                <element signature="e#753#873#0" />
+                <element signature="e#1252#2992#0" />
+                <element signature="e#3493#5233#0" />
+                <element signature="e#5896#7683#0" />
+                <element signature="e#8053#9619#0" />
               </folding>
             </state>
           </provider>
@@ -94,14 +91,15 @@
         <option value="$PROJECT_DIR$/python_space/百度翻译API.py" />
         <option value="$PROJECT_DIR$/python_space/百度翻译API-通用翻译.py" />
         <option value="$PROJECT_DIR$/python_space/高德API-IP定位.py" />
+        <option value="$PROJECT_DIR$/python_space/file/常用Git命令.md" />
         <option value="$PROJECT_DIR$/python_space/高德API-路径规划.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="723" />
-    <option name="width" value="1205" />
-    <option name="height" value="1039" />
+    <option name="x" value="610" />
+    <option name="width" value="1318" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -111,6 +109,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -123,11 +122,16 @@
               <item name="GitHub" type="462c0819:PsiDirectoryNode" />
               <item name="python_space" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="python_space" type="462c0819:PsiDirectoryNode" />
+              <item name="file" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -136,6 +140,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ZBDA/codefile/code_sdk/project_zbda" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -314,15 +319,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103039000" />
+    <option name="totallyTimeSpent" value="107406000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="579" y="0" width="964" height="831" extended-state="0" />
+    <frame x="610" y="0" width="1318" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
       <window_info id="Favorites" order="1" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49905482" weight="0.33112583" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49905482" weight="0.3305013" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32152975" />
@@ -335,7 +340,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.28040057" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.4295011" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -369,28 +374,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/python_space/高德API-路径规划.py</url>
-          <line>27</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_multiprocessing.coverage" NAME="爬虫_美图录（request+beautifulsoup+multiprocessing） Coverage Results" MODIFIED="1571068872145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
+    <SUITE FILE_PATH="coverage/GitHub$__request_beautifulsoup.coverage" NAME="爬虫_美图录-多线程（request+beautifulsoup） Coverage Results" MODIFIED="1571019374837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$request_beautifulsoup.coverage" NAME="爬虫（request+beautifulsoup） Coverage Results" MODIFIED="1570983482002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$test01.coverage" NAME="test01 Coverage Results" MODIFIED="1570154180834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
-    <SUITE FILE_PATH="coverage/GitHub$__request_beautifulsoup.coverage" NAME="爬虫_美图录-多线程（request+beautifulsoup） Coverage Results" MODIFIED="1571019374837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
-    <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_multiprocessing.coverage" NAME="爬虫_美图录（request+beautifulsoup+multiprocessing） Coverage Results" MODIFIED="1571068872145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
+    <SUITE FILE_PATH="coverage/GitHub$app_login.coverage" NAME="app_login Coverage Results" MODIFIED="1570461483272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_space/python_space/demo_flask/demo02" />
     <SUITE FILE_PATH="coverage/GitHub$AddCount.coverage" NAME="AddCount Coverage Results" MODIFIED="1570460846001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_space/python_space/demo_flask/demo01" />
-    <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup.coverage" NAME="爬虫_美图录（request+beautifulsoup） Coverage Results" MODIFIED="1571066913295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
+    <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_threading.coverage" NAME="爬虫_美图录（request+beautifulsoup+threading） Coverage Results" MODIFIED="1571073532342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$API_.coverage" NAME="高德API-基础学习 Coverage Results" MODIFIED="1571155809708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_tomrrow.coverage" NAME="爬虫_美图录（request+beautifulsoup+tomrrow） Coverage Results" MODIFIED="1571067996128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
-    <SUITE FILE_PATH="coverage/GitHub$app_login.coverage" NAME="app_login Coverage Results" MODIFIED="1570461483272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_space/python_space/demo_flask/demo02" />
-    <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_threading.coverage" NAME="爬虫_美图录（request+beautifulsoup+threading） Coverage Results" MODIFIED="1571073532342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
+    <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup.coverage" NAME="爬虫_美图录（request+beautifulsoup） Coverage Results" MODIFIED="1571066913295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/history_space/learn_code/Q房网（鼓楼）">
@@ -417,13 +411,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python_space/test01.py" />
-    <entry file="file://D:/Usr/Python/Lib/tokenize.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="451" selection-start-line="451" selection-end-line="451" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../Usr/Python/Lib/tokenize.py" />
     <entry file="file://$PROJECT_DIR$/study_space/python_space/demo_flask/demo01/AddCount.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
@@ -636,8 +624,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/python_space/高德API-行政区域查询.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3975">
-          <caret line="159" selection-start-line="159" selection-end-line="161" selection-end-column="43" />
+        <state relative-caret-position="108">
+          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
         </state>
       </provider>
     </entry>
@@ -666,13 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python_space/高德API-交通态势.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1886">
-          <caret line="138" selection-start-line="138" selection-end-line="141" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/python_space/高德API-天气查询.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
@@ -680,12 +661,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/python_space/高德API-交通态势.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2352">
+          <caret line="135" column="39" selection-start-line="135" selection-start-column="39" selection-end-line="135" selection-end-column="39" />
+          <folding>
+            <element signature="e#3380#5046#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python_space/file/常用Git命令.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/python_space/高德API-路径规划.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="259">
+          <caret line="218" column="67" selection-start-line="218" selection-start-column="67" selection-end-line="218" selection-end-column="67" />
           <folding>
-            <element signature="e#1200#2676#0" />
+            <element signature="e#753#873#0" />
+            <element signature="e#1252#2992#0" />
+            <element signature="e#3493#5233#0" />
+            <element signature="e#5896#7683#0" />
+            <element signature="e#8053#9619#0" />
           </folding>
         </state>
       </provider>
