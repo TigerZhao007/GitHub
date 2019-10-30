@@ -10,7 +10,6 @@ import sqlalchemy
 import re
 import datetime
 import sys
-import tqdm
 import jieba
 import jieba.analyse
 from sklearn import svm
