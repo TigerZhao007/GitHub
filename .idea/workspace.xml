@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/python_space/功能_绘制流程图（Digraph）.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_space/机器学习模型-广义线性模型(GLM).py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/study_space/python_space/demo_flask/html_demos/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/study_space/python_space/demo_flask/html_demos/text01.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_space/爬虫_浏览器操作（selenium+PhontomJS）.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_space/爬虫_浏览器操作（selenium+other）.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_space/发邮件（smtplib）.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_space/功能_发邮件（smtplib）.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_space/发邮件（zmail）.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_space/功能_发邮件（zmail）.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/study_space/java_space/day01/HelloWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/java_space/day01/HelloWorld.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/study_space/java_space/day01/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/java_space/day01/HelloWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/study_space/jupyter_space/1.1. 广义线性模型(Generalized Linear Models)-1.1.1. 普通最小二乘法.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/study_space/jupyter_space/1.1. 广义线性模型(Generalized Linear Models)-1.1.2. 岭回归(Ridge Regression).ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/study_space/jupyter_space/1.4. 支持向量机(Support Vector Machines).ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/study_space/jupyter_space/python绘制流程图.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/study_space/jupyter_space/产品购课退课数量&amp;金额计算流程图.gv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/study_space/jupyter_space/产品购课退课数量&amp;金额计算流程图.gv.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/study_space/jupyter_space/产品退课原因数量&amp;金额计算流程图.gv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/study_space/jupyter_space/产品退课原因数量&amp;金额计算流程图.gv.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/study_space/jupyter_space/会计网所有产品购课退课数量&amp;金额计算流程图.gv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/study_space/jupyter_space/会计网所有产品购课退课数量&amp;金额计算流程图.gv.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/study_space/jupyter_space/文本分析-鲁健.py" beforeDir="false" afterPath="$PROJECT_DIR$/study_space/jupyter_space/文本分析-鲁健.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/study_space/jupyter_space/梯度下降法_批量梯度下降法BGD_线性回归模型.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/study_space/jupyter_space/梯度下降法_损失函数.ipynb" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,13 +96,15 @@
         <option value="$PROJECT_DIR$/python_space/机器学习模型-广义线性模型(GLM).py" />
         <option value="$PROJECT_DIR$/python_space/功能_绘制流程图.py" />
         <option value="$PROJECT_DIR$/python_space/功能_绘制流程图（Digraph）.py" />
+        <option value="$PROJECT_DIR$/python_space/爬虫_浏览器操作（selenium+PhontomJS）.py" />
+        <option value="$PROJECT_DIR$/python_space/爬虫_浏览器操作（selenium+other）.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="521" />
-    <option name="width" value="1408" />
-    <option name="height" value="1048" />
+    <option name="x" value="91" />
+    <option name="width" value="1837" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -145,11 +128,6 @@
             </path>
             <path>
               <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="study_space" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -163,18 +141,18 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ZBDA/codefile/code_sdk/project_zbda" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/python_space" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Work\GitHub" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Work\GitHub\python_space" />
       <recent name="D:\Work\GitHub\python_space\data" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\GitHub" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -349,18 +327,22 @@
       <workItem from="1572360663514" duration="1840000" />
       <workItem from="1572429702551" duration="623000" />
       <workItem from="1572435968726" duration="7183000" />
+      <workItem from="1572450569899" duration="228000" />
+      <workItem from="1572450820656" duration="60000" />
+      <workItem from="1572515978791" duration="1636000" />
+      <workItem from="1572517635753" duration="777000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128367000" />
+    <option name="totallyTimeSpent" value="131068000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="417" y="0" width="1126" height="838" extended-state="0" />
+    <frame x="73" y="0" width="1469" height="831" extended-state="0" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
       <window_info id="Favorites" order="1" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49905482" visible="true" weight="0.26498127" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49905482" visible="true" weight="0.28065202" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32152975" />
@@ -373,11 +355,11 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3286119" />
-      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.31444758" />
+      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.43061516" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" x="120" y="106" width="1300" height="627" id="SciView" order="3" type="WINDOWED" weight="0.72619045" />
+      <window_info anchor="right" x="120" y="106" width="1300" height="627" id="SciView" order="3" weight="0.72619045" />
       <window_info anchor="right" id="Database" order="4" weight="0.32919255" />
     </layout>
     <layout-to-restore>
@@ -420,44 +402,9 @@
     <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_threading.coverage" NAME="爬虫_美图录（request+beautifulsoup+threading） Coverage Results" MODIFIED="1571073532342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/study_space/python_space/demo_flask/html_demos/html_echart_001.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study_space/python_space/demo_flask/demo05/login.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study_space/python_space/demo_flask/demo04/db.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study_space/python_space/demo_flask/demo04/login.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2244">
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study_space/python_space/demo_flask/demo03/denglu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="78" lean-forward="true" selection-start-line="16" selection-start-column="78" selection-end-line="16" selection-end-column="78" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/study_space/python_space/demo_flask/demo04/db.py" />
+    <entry file="file://$PROJECT_DIR$/study_space/python_space/demo_flask/demo04/login.py" />
+    <entry file="file://$PROJECT_DIR$/study_space/python_space/demo_flask/demo03/denglu.py" />
     <entry file="file://$PROJECT_DIR$/python_space/功能_发邮件（smtplib）.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -478,46 +425,12 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/python_space/多线程（threading）.py" />
-    <entry file="file://$PROJECT_DIR$/history_space/python_space/history/图片数据/testfile/爬虫_picture_leisimao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-975">
-          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/history_space/python_space/study/maoyan.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/history_space/python_space/study/urllib_test.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/history_space/python_space/study/wangzhepicture.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/history_space/python_space/history/房屋数据/lianjia.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="133" selection-start-line="133" selection-end-line="134" selection-end-column="10" />
-          <folding>
-            <element signature="e#85#107#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/history_space/python_space/history/图片数据/testfile/爬虫_picture2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-345">
-          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-          <folding>
-            <element signature="e#85#100#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/history_space/python_space/history/图片数据/testfile/爬虫_picture_leisimao.py" />
+    <entry file="file://$PROJECT_DIR$/history_space/python_space/study/maoyan.py" />
+    <entry file="file://$PROJECT_DIR$/history_space/python_space/study/urllib_test.py" />
+    <entry file="file://$PROJECT_DIR$/history_space/python_space/study/wangzhepicture.py" />
+    <entry file="file://$PROJECT_DIR$/history_space/python_space/history/房屋数据/lianjia.py" />
+    <entry file="file://$PROJECT_DIR$/history_space/python_space/history/图片数据/testfile/爬虫_picture2.py" />
     <entry file="file://$PROJECT_DIR$/python_space/多线程-线程池（ThreadPoolExecutor）.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="606">
@@ -673,13 +586,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/study_space/python_space/demo_flask/html_demos/text01.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-115">
-          <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/study_space/python_space/demo_flask/html_demos/text01.html" />
     <entry file="file://$PROJECT_DIR$/python_space/算法基础-自带数据集.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
@@ -687,43 +594,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/study_space/python_space/demo_flask/demo01/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/study_space/python_space/demo_flask/demo01/templates/index.html" />
     <entry file="file://$PROJECT_DIR$/study_space/data/pic/2.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/study_space/data/pic/1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/study_space/python_space/demo_flask/demo02/app_login.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study_space/python_space/demo_flask/demo02/templates/html_echart_001.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study_space/python_space/demo_flask/html_demos/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/study_space/python_space/demo_flask/demo02/app_login.py" />
+    <entry file="file://$PROJECT_DIR$/study_space/python_space/demo_flask/demo02/templates/html_echart_001.html" />
+    <entry file="file://$PROJECT_DIR$/study_space/python_space/demo_flask/html_demos/test.html" />
     <entry file="file://$PROJECT_DIR$/study_space/jupyter_space/文本分析-鲁健.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-535">
@@ -769,20 +649,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/python_space/换脸技术（Face++ API）（测试无效）.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-855">
+          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/python_space/机器学习模型-广义线性模型(GLM).py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="30" selection-start-line="30" selection-end-line="33" />
+        <state relative-caret-position="100">
+          <caret line="7" selection-start-line="7" selection-end-line="10" selection-end-column="38" />
           <folding>
             <element signature="e#374#412#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python_space/换脸技术（Face++ API）（测试无效）.py">
+    <entry file="file://$PROJECT_DIR$/python_space/爬虫_浏览器操作（selenium+other）.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-855">
-          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+        <state relative-caret-position="125">
+          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+          <folding>
+            <element signature="e#904#934#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python_space/爬虫_浏览器操作（selenium+PhontomJS）.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="13" selection-start-line="13" selection-end-line="13" selection-end-column="35" />
         </state>
       </provider>
     </entry>
