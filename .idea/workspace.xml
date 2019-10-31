@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/python_space/爬虫_浏览器操作（selenium+PhontomJS）.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_space/爬虫_浏览器操作（selenium+other）.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ghostdriver.log" beforeDir="false" afterPath="$PROJECT_DIR$/ghostdriver.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_space/百度翻译API-通用翻译.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_space/聚合数据API-周公解梦.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_space/聚合数据API-彩票结果查询.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_space/聚合数据API-重仓股基金.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_space/高德API-IP定位.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_space/高德API-交通态势.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_space/高德API-天气查询.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_space/高德API-搜索POI.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_space/高德API-行政区域查询.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_space/高德API-路径规划.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +38,7 @@
     <favorites_list name="GitHub" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -102,9 +110,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="91" />
-    <option name="width" value="1837" />
-    <option name="height" value="1039" />
+    <option name="x" value="90" />
+    <option name="width" value="1838" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -331,18 +339,19 @@
       <workItem from="1572450820656" duration="60000" />
       <workItem from="1572515978791" duration="1636000" />
       <workItem from="1572517635753" duration="777000" />
+      <workItem from="1572531289248" duration="496000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131068000" />
+    <option name="totallyTimeSpent" value="131564000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="73" y="0" width="1469" height="831" extended-state="0" />
+    <frame x="72" y="0" width="1470" height="832" extended-state="1" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
       <window_info id="Favorites" order="1" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49905482" visible="true" weight="0.28065202" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49905482" visible="true" weight="0.28470254" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32152975" />
@@ -355,7 +364,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3286119" />
-      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.43061516" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.43" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
