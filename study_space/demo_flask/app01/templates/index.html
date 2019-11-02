@@ -1,40 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Claculator</title>
-{#    <script src="add.js" type="text/javascript"></script>#}
-    <!--  引入echarts文件-->
-    <script src="{{ url_for('static', filename='echarts.js') }}"  type="text/javascript"></script>
-    <!--    <script src="js/echarts.js"></script>-->
+    <style>
+        header {
+            background-color:black;
+            height:80px;
+            color:white;
+            text-align:center;
+            padding:5px;
+        }
+        nav {
+            line-height:30px;
+            background-color:#eeeeee;
+            {#height:500px;#}
+            height:500px;
+            width:10%;
+            float:left;
+            padding:5px;
+        }
+        section {
+            {#height:500px;#}
+            height:500px;
+            width:80%;
+            float:left;
+            padding:10px;
+        }
+        footer {
+            background-color:black;
+            color:white;
+            clear:both;
+            text-align:center;
+            padding:5px;
+        }
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="{{ url_for('static', filename='echarts.js') }}"></script>
 </head>
+
 <body>
 
-    <a href="/">首页</a><br>
-    <a href="/echart01">图1</a>
-    <a href="/echart02">图2</a>
-    <a href="/echart03">图3</a><br>
-    <a href="/web01">小佐</a><br>
+    <header>
+        <h1>少小佐</h1>
+    </header>
 
-{#  第一部分，上面的加号图片  #}
-    <div align="center" style="margin-top:40px;">
-        <img src="{{url_for('static', filename='add.png')}}"
-        width="100" height="100">
-    </div>
+    <nav>
+            <a href="/">首页</a><br>
+            <a href="/echart01">图1</a><br>
+            <a href="/echart02">图2</a><br>
+            <a href="/echart03">图3</a><br>
+            <a href="/web01">小佐</a><br>
+{#        数据处理基础<br>#}
+{#        机器学习 模型<br>#}
+{#        爬虫工程<br>#}
+{#        API接口<br>#}
+    </nav>
 
-{#  第二部分，输入加号内容，输出加号结果  #}
-    <div align="center" style="margin-top: 60px;">
+    <section>
 
-        <form name="form1" method="POST">
-            <input type="text" placeholder="adder-1" name="adder1"> +
-            <input type="text" placeholder="adder-2" name="adder2"> =
-            <input type="text" readonly="readonly" placeholder="result" name="result" value="{{message}}">
-            <input type="submit" value="计算" onclick="add()">
-        </form>
-    </div>
+        {#  第一部分，上面的加号图片  #}
+            <div align="center" style="margin-top:40px;">
+                <img src="{{url_for('static', filename='add.png')}}"
+                width="100" height="100">
+            </div>
+
+        {#  第二部分，输入加号内容，输出加号结果  #}
+            <div align="center" style="margin-top: 60px;">
+
+                <form name="form1" method="POST">
+                    <input type="text" placeholder="adder-1" name="adder1"> +
+                    <input type="text" placeholder="adder-2" name="adder2"> =
+                    <input type="text" readonly="readonly" placeholder="result" name="result" value="{{message}}">
+                    <input type="submit" value="计算" onclick="add()">
+                </form>
+            </div>
+
+
+    </section>
+
+    {#  第三部分，底部商标  #}
+    <footer>
+    Copyright W3Schools.com
+    </footer>
 
 </body>
-<footer>
-
-</footer>
 </html>
