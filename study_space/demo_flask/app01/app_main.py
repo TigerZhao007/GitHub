@@ -24,7 +24,10 @@ def Add():
 @app.route('/echart01', methods=['GET','POST'])
 # @auth.route('/echart01', methods=['GET','POST'])
 def Echart01():
-    return render_template('html_echart_001.html')
+    aa = ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+    xiaoliang = [5,20,36,10,10,20]
+    chengben = [5,20,36,10,10,20]
+    return render_template('html_echart_001.html', aa=aa, xiaoliang=xiaoliang, chengben=chengben)
 
 @app.route('/echart02', methods=['GET','POST'])
 # @auth.route('/echart02', methods=['GET','POST'])
