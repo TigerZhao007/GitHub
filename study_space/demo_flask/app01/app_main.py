@@ -19,6 +19,8 @@ def Add():
         b = int(b)
         c = a + b
         return render_template('index.html', message=str(c))
+    else:
+        return render_template('index.html', message=str('请输入a&b数值'))
     return render_template('index.html')
 
 @app.route('/echart01', methods=['GET','POST'])
@@ -44,6 +46,15 @@ def Echart03():
 def web01():
     return render_template('web01.html', title='测试', message=url_for('Add'))
 
+# 错误时，返回指定界面
+@app.errorhandler(404)
+def miss(e):
+    return render_template('index.html'), 404
+
+@app.errorhandler(500)
+def error(e):
+    return render_template('index.html'), 500
+
 # @app.route('/Add2', methods=['GET','POST'])
 # def Add():
 #     if request.method == 'POST':
@@ -56,4 +67,4 @@ def web01():
 #     return render_template('web01.html')
 
 if __name__=="__main__":
-    app.run(host="0.0.0.0", port=8086)
+    app.run(host="0.0.0.0", port=8088)
