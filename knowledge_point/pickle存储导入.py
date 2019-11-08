@@ -80,5 +80,5 @@ with open(path + '\\%s' %(tablename), 'wb') as fw:
 
 # 数据的导入
 with open(path + '\\%s' %(tablename), 'rb') as fr:
-    df_temp = data1 = pickle.load(fr)
+    df_temp = pickle.load(fr)
 

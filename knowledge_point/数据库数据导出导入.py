@@ -94,11 +94,14 @@ for i, tablename in zip(range(len(pg_tablename_all)), pg_tablename_all):
 '''数据导入'''
 # ######################################################################################################################
 
+path1 = r'D:\Desktop\out_data_1108\xlsx\xlsx'
+path2 = r'D:\Desktop\out_data_1108\pickle\pickle'
+
 # 获取制定文件夹所有的表名称~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # # 方式1：os.listdir(path1)
 import os
 name_list1 = os.listdir(path1)
-name_list2 =  os.listdir(path2)
+name_list2 = os.listdir(path2)
 
 # 方式2：os.walk(file_dir)
 def file_name(file_dir):
@@ -121,7 +124,11 @@ for tablename in name_list2:
     print('正在处理表：%s......'%(tablename))
     # 从本地读取数据
     with open(path2 + '\\' + tablename, 'rb') as fr:
-        df_temp = data1 = pickle.load(fr)
+        df_temp = pickle.load(fr)
+
+    # 处理变量类型（如果变量类型是时间格式，需要转化为date）
+    for keys in df_temp.dtypes[df_temp.dtypes=='datetime64[ns, UTC]'].keys():
+        df_temp[keys] = df_temp[keys].apply(lambda x: x.date())
 
     # 将数据导入SQL
     with setup.engine_postgresql02.connect() as conn:
@@ -134,9 +141,12 @@ for tablename in name_list1:
     # 从本地读取数据
     df_temp = pd.read_excel(path1 + '\\' + tablename, sheet_name='Sheet1')
 
+    # 处理变量类型（如果变量类型是时间格式，需要转化为date）
+    for keys in df_temp.dtypes[df_temp.dtypes=='datetime64[ns, UTC]'].keys():
+        df_temp[keys] = df_temp[keys].apply(lambda x: x.date())
+
     tablename_temp = tablename.replace('.xlsx', '')
     # 将数据导入SQL
     with setup.engine_postgresql01.connect() as conn:
         df_temp.to_sql(tablename_temp, conn, if_exists='replace', index=False)
-
 

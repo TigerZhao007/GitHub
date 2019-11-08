@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/knowledge_point/pickle存储导入.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/knowledge_point/数据库表结构导出.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/knowledge_point/批量运行py文件.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/knowledge_point/pickle存储导入.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_point/pickle存储导入.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/knowledge_point/数据聚合计算.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_point/数据聚合计算.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -202,48 +202,7 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/knowledge_point/数据库表结构导出.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="12" selection-start-line="12" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/knowledge_point/pickle存储导入.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="81" selection-start-line="81" selection-end-line="82" selection-end-column="37" />
-              <folding>
-                <element signature="e#185#198#0" expanded="true" />
-                <element signature="e#338#578#0" />
-                <element signature="e#645#1042#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
-              <folding>
-                <element signature="e#186#205#0" expanded="true" />
-                <element signature="e#520#760#0" />
-                <element signature="e#759#1156#0" />
-                <element signature="e#362#598#0" />
-                <element signature="e#1999#2384#0" />
-                <element signature="e#3318#3527#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -264,7 +223,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/python_space/高德API-城市边界坐标.py" />
         <option value="$PROJECT_DIR$/python_space/高德API-行政区域查询.py" />
         <option value="$PROJECT_DIR$/python_space/高德API-搜索POI.py" />
         <option value="$PROJECT_DIR$/python_space/高德API-天气查询.py" />
@@ -308,20 +266,22 @@
         <option value="$PROJECT_DIR$/knowledge_point/0简历制作.py" />
         <option value="$PROJECT_DIR$/knowledge_point/矩阵运算.py" />
         <option value="$PROJECT_DIR$/knowledge_point/日期处理方式.py" />
-        <option value="$PROJECT_DIR$/knowledge_point/数据聚合计算.py" />
         <option value="$PROJECT_DIR$/knowledge_point/正则表达式.py" />
         <option value="$PROJECT_DIR$/knowledge_point/数据库表结构.py" />
         <option value="$PROJECT_DIR$/knowledge_point/数据库表结构导出.py" />
-        <option value="$PROJECT_DIR$/knowledge_point/pickle存储导入.py" />
         <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/knowledge_point/pickle存储导入.py" />
+        <option value="$PROJECT_DIR$/knowledge_point/运行python文件.py" />
+        <option value="$PROJECT_DIR$/knowledge_point/数据聚合计算.py" />
         <option value="$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="66" />
-    <option name="width" value="1284" />
-    <option name="height" value="1048" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="651" />
+    <option name="y" value="1" />
+    <option name="width" value="1285" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -331,6 +291,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -351,7 +312,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -532,35 +492,46 @@
       <workItem from="1573026471866" duration="2515000" />
       <workItem from="1573042640875" duration="11034000" />
       <workItem from="1573125848490" duration="7762000" />
+      <workItem from="1573185004092" duration="3696000" />
+      <workItem from="1573190327063" duration="1786000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189688000" />
+    <option name="totallyTimeSpent" value="195170000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="53" y="0" width="1027" height="838" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
       <window_info id="Favorites" order="1" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49905482" visible="true" weight="0.12796697" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49905482" visible="true" weight="0.2613941" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.30028328" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.329718" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3275488" />
-      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.3045326" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32719547" />
+      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.34419262" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" x="-268" y="280" width="1300" height="627" id="SciView" order="3" type="WINDOWED" weight="0.7258713" />
+      <window_info anchor="right" x="-268" y="280" width="1300" height="627" id="SciView" order="3" weight="0.7258713" />
       <window_info anchor="right" id="Database" order="4" weight="0.32919255" />
     </layout>
     <layout-to-restore>
@@ -608,7 +579,6 @@
     <SUITE FILE_PATH="coverage/GitHub$.coverage" NAME="数据库数据导出导入 Coverage Results" MODIFIED="1573145147733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/knowledge_point" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/python_space/多线程-基础入门（threading）.py" />
     <entry file="file://$PROJECT_DIR$/python_space/功能_绘制流程图（Digraph）.py" />
     <entry file="file://$PROJECT_DIR$/python_space/换脸技术（Face++ API）（测试无效）.py" />
     <entry file="file://$PROJECT_DIR$/python_space/机器学习模型-广义线性模型(GLM).py" />
@@ -800,36 +770,9 @@
     <entry file="file://$PROJECT_DIR$/knowledge_point/0简历制作.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_point/网页解析方式.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_point/mongodb_001.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2475" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_point/绘制流程图（Digraph）.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3192">
-          <caret selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_point/矩阵运算.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" selection-start-line="7" selection-end-line="9" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_point/数据聚合计算.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
-          <folding>
-            <element signature="e#442#461#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_point/发邮件（zmail）.py">
@@ -856,6 +799,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_point/pickle存储导入.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1816">
+          <caret line="82" column="14" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
+          <folding>
+            <element signature="e#185#198#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_point/数据库表结构导出.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -863,29 +816,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_point/pickle存储导入.py">
+    <entry file="file://$PROJECT_DIR$/knowledge_point/网页解析方式.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_point/绘制流程图（Digraph）.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="81" selection-start-line="81" selection-end-line="82" selection-end-column="37" />
+        <state>
+          <caret selection-end-line="5" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_point/数据聚合计算.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_point/矩阵运算.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" selection-start-line="7" selection-end-line="9" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_point/批量运行py文件.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
           <folding>
-            <element signature="e#185#198#0" expanded="true" />
-            <element signature="e#338#578#0" />
-            <element signature="e#645#1042#0" />
+            <element signature="e#114#123#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
+        <state relative-caret-position="1038">
+          <caret line="145" column="63" selection-start-line="145" selection-start-column="63" selection-end-line="145" selection-end-column="63" />
           <folding>
             <element signature="e#186#205#0" expanded="true" />
-            <element signature="e#520#760#0" />
-            <element signature="e#759#1156#0" />
-            <element signature="e#362#598#0" />
-            <element signature="e#1999#2384#0" />
-            <element signature="e#3318#3527#0" />
+            <element signature="e#626#866#0" />
+            <element signature="e#1027#1424#0" />
+            <element signature="e#2011#2247#0" />
+            <element signature="e#2517#2924#0" />
           </folding>
         </state>
       </provider>
