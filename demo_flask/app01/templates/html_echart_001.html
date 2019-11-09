@@ -35,6 +35,7 @@
     </style>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script src="{{ url_for('static', filename='echarts.js') }}"></script>
+        <script src="{{ url_for('static', filename='jquery-3.4.1.min.js') }}"></script>
 </head>
 
 <body>
@@ -85,11 +86,11 @@
         <script type="text/javascript">
              <!--  初始化echart对象      -->
             var myChart = echarts.init(document.getElementById("pic_001"));
-             {#var date = {{ aa }}#}
-             {#data#}
+
             //制定图标的配置和数据
             var option = {
                 //设置图标的标题
+
                 title:{
                     // 主标题
                     text:"Echarts 入门实例"
@@ -121,16 +122,67 @@
             }
             // 渲染图标
             myChart.setOption(option);
+
+             <!--  初始化echart对象      -->
+            var myChart = echarts.init(document.getElementById("pic_002"));
+
+             $.ajax({
+                 type: 'GET',
+                 url: '/echart01_data',
+                 data: {}, //最终会被转化为查询字符串跟在url后面： /your/url/?name=test&age=1
+                 dataType: 'json', //注意：这里是指希望服务端返回json格式的数据
+                 success: function (data) { //这里的data就是json格式的数据
+                     var getdata = '';    // 先定义个值，方便下面赋值
+                     getdata = data
+                     console.log(getdata)
+
+                     console.log(getdata.aa)
+                     console.log(getdata.xiaoliang)
+                     console.log(getdata.chengben)
+                    //制定图标的配置和数据
+                    var option = {
+                        //设置图标的标题
+                        title:{
+                            // 主标题
+                            text:"Echarts 入门实例"
+                        },
+                        // 图例
+                        legend:{data:['销量','成本']},
+                        // x轴数据
+                        xAxis:{
+                            data:["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+                        },
+                        // y轴数据
+                        yAxis:{
+
+                        },
+                        // 根据相应系列进行设置
+                        series:[
+                            {
+                                name:"销量",
+                                type:"bar",
+                                data: getdata.xiaoliang
+                            },
+                            {
+                                name:"成本",
+                                type:"bar",
+                                data: getdata.chengben
+                            },
+
+                        ]
+                    }
+                    // 渲染图标
+                    myChart.setOption(option);
+                 },
+                 error: function (xhr, type) {}
+             });
+
         </script>
 
         {#  第三部分，底部商标  #}
         <footer>
-            {{ aa }} <br>
-            {{ xiaoliang }} <br>
-            {{ chengben }} <br>
-            "{{ aa }}" <br>
-
         Copyright W3Schools.com
+
         </footer>
     </section>
 
