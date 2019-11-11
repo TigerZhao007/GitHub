@@ -84,7 +84,7 @@ for i, tablename in zip(range(len(pg_tablename_all)), pg_tablename_all):
         df_temp = pd.read_sql_query(sql, conn)
 
     # 数据导出为xlsx文件
-    df_temp.to_excel(path1 + '\\%s.xlsx' % (tablename), index=False)
+    # df_temp.to_excel(path1 + '\\%s.xlsx' % (tablename), index=False)
 
     # 数据的导出为pickle文件
     with open(path2+ '\\%s' % (tablename), 'wb') as fw:
@@ -119,6 +119,9 @@ def file_name(file_dir):
 
 # 获取制定文件夹所有的表名称~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 以pickle处理
+
+name_list2 = ['A_C021', 'A_C021_01', 'A_C022', 'A_C023', 'A_C023_01', 'A_C024', 'A_C025', 'A_C026', 'A_C027', 'A_C028']
+
 for tablename in name_list2:
 
     print('正在处理表：%s......'%(tablename))
@@ -130,8 +133,13 @@ for tablename in name_list2:
     for keys in df_temp.dtypes[df_temp.dtypes=='datetime64[ns, UTC]'].keys():
         df_temp[keys] = df_temp[keys].apply(lambda x: x.date())
 
+
+    # # 处理变量类型（如果变量类型是时间格式，需要转化为date）
+    # for keys in df_temp.dtypes[df_temp.dtypes=='float64'].keys():
+    #     df_temp[keys] = df_temp[keys].apply(lambda x: abs(x))
+
     # 将数据导入SQL
-    with setup.engine_postgresql02.connect() as conn:
+    with setup.engine_postgresql.connect() as conn:
         df_temp.to_sql(tablename, conn, if_exists='replace', index=False)
 
 # 以Excel处理

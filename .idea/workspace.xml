@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/demo_flask/app01/static/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo_flask/app01/static/login.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo_flask/app01/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/app01/app_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo_flask/app01/app_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/app01/templates/html_echart_001.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_flask/app01/templates/html_echart_001.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/app01/templates/html_echart_002.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_flask/app01/templates/html_echart_002.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/app01/templates/html_echart_003.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_flask/app01/templates/html_echart_003.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/app01/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_flask/app01/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/app01/templates/web01.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_flask/app01/templates/web01.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo04/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo_flask/demo_history/demo04/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_flask/app01/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_flask/app01/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -208,28 +200,16 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo_flask/app01/app_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="54" column="37" lean-forward="true" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+            <state relative-caret-position="175">
+              <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
               <folding>
                 <element signature="e#114#125#0" expanded="true" />
                 <element signature="e#797#1167#0" />
-                <element signature="e#1233#1787#0" />
-                <element signature="e#1844#1945#0" />
-                <element signature="e#1987#2030#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo_flask/app01/templates/html_echart_001.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="36" column="3" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -237,8 +217,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demo_flask/app01/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="294">
+              <caret line="74" column="52" lean-forward="true" selection-start-line="74" selection-start-column="52" selection-end-line="74" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -303,8 +283,6 @@
         <option value="$PROJECT_DIR$/knowledge_point/pickle存储导入.py" />
         <option value="$PROJECT_DIR$/knowledge_point/运行python文件.py" />
         <option value="$PROJECT_DIR$/knowledge_point/数据聚合计算.py" />
-        <option value="$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py" />
-        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/space_python/表sheets2db.py" />
         <option value="$PROJECT_DIR$/demo_flask/app01/app_main.py" />
         <option value="$PROJECT_DIR$/demo_flask/app01/templates/web01.html" />
@@ -314,14 +292,17 @@
         <option value="$PROJECT_DIR$/demo_flask/demo_history/demo04/login.py" />
         <option value="$PROJECT_DIR$/demo_flask/app01/static/Login.css" />
         <option value="$PROJECT_DIR$/demo_flask/app01/templates/html_echart_001.html" />
+        <option value="$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/demo_flask/app01/templates/login.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="2334" />
+    <option name="y" value="70" />
+    <option name="width" value="1068" />
+    <option name="height" value="831" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -355,34 +336,6 @@
               <item name="GitHub" type="462c0819:PsiDirectoryNode" />
               <item name="demo_flask" type="462c0819:PsiDirectoryNode" />
               <item name="app01" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="demo_flask" type="462c0819:PsiDirectoryNode" />
-              <item name="app01" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="demo_flask" type="462c0819:PsiDirectoryNode" />
-              <item name="demo_history" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="demo_flask" type="462c0819:PsiDirectoryNode" />
-              <item name="demo_history" type="462c0819:PsiDirectoryNode" />
-              <item name="demo04" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="demo_flask" type="462c0819:PsiDirectoryNode" />
-              <item name="demo_history" type="462c0819:PsiDirectoryNode" />
-              <item name="demo04" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -615,11 +568,12 @@
       <workItem from="1573190327063" duration="1786000" />
       <workItem from="1573227766089" duration="20339000" />
       <workItem from="1573393760611" duration="8323000" />
+      <workItem from="1573436182943" duration="5790000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223832000" />
+    <option name="totallyTimeSpent" value="229622000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -631,15 +585,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
       <window_info id="Favorites" order="1" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49905482" visible="true" weight="0.16487935" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49905482" visible="true" weight="0.13272922" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.27478755" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27440348" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -649,11 +603,11 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32719547" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3243626" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.34164858" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" x="259" y="173" width="1018" height="477" id="SciView" order="3" weight="0.68230563" />
+      <window_info anchor="right" x="2292" y="258" width="1229" height="475" id="SciView" order="3" type="WINDOWED" weight="0.6823028" />
       <window_info anchor="right" id="Database" order="4" weight="0.32919255" />
     </layout>
     <layout-to-restore>
@@ -699,7 +653,7 @@
     <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup.coverage" NAME="爬虫_美图录（request+beautifulsoup） Coverage Results" MODIFIED="1571066913295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$API_.coverage" NAME="高德API-基础学习 Coverage Results" MODIFIED="1571155809708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_tomrrow.coverage" NAME="爬虫_美图录（request+beautifulsoup+tomrrow） Coverage Results" MODIFIED="1571067996128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
-    <SUITE FILE_PATH="coverage/GitHub$app_main__1_.coverage" NAME="app_main (1) Coverage Results" MODIFIED="1573404905997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo_flask/app01" />
+    <SUITE FILE_PATH="coverage/GitHub$app_main__1_.coverage" NAME="app_main (1) Coverage Results" MODIFIED="1573457965401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo_flask/app01" />
     <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_threading.coverage" NAME="爬虫_美图录（request+beautifulsoup+threading） Coverage Results" MODIFIED="1571073532342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$.coverage" NAME="数据库数据导出导入 Coverage Results" MODIFIED="1573145147733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/knowledge_point" />
   </component>
@@ -920,27 +874,6 @@
     <entry file="file://$PROJECT_DIR$/space_python/多线程-线程池（ThreadPoolExecutor）.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
-          <folding>
-            <element signature="e#186#205#0" expanded="true" />
-            <element signature="e#626#866#0" />
-            <element signature="e#1027#1424#0" />
-            <element signature="e#2011#2247#0" />
-            <element signature="e#2517#2924#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="17" column="74" lean-forward="true" selection-start-line="17" selection-start-column="74" selection-end-line="17" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo_flask/demo_history/demo03/denglu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -965,16 +898,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo_flask/app01/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo_flask/app01/templates/html_echart_003.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
@@ -996,9 +919,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo_flask/app01/templates/Login.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_flask/app01/templates/Login.css" />
     <entry file="file://$PROJECT_DIR$/demo_flask/app01/static/login.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1009,20 +930,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo_flask/app01/app_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="54" column="37" lean-forward="true" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
-          <folding>
-            <element signature="e#114#125#0" expanded="true" />
-            <element signature="e#797#1167#0" />
-            <element signature="e#1233#1787#0" />
-            <element signature="e#1844#1945#0" />
-            <element signature="e#1987#2030#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo_flask/app01/templates/html_echart_001.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1030,10 +937,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/demo_flask/app01/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1300">
+          <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
+          <folding>
+            <element signature="e#186#205#0" expanded="true" />
+            <element signature="e#626#866#0" />
+            <element signature="e#1027#1424#0" />
+            <element signature="e#2011#2247#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_flask/app01/app_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+          <folding>
+            <element signature="e#114#125#0" expanded="true" />
+            <element signature="e#797#1167#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/demo_flask/app01/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="294">
+          <caret line="74" column="52" lean-forward="true" selection-start-line="74" selection-start-column="52" selection-end-line="74" selection-end-column="52" />
         </state>
       </provider>
     </entry>

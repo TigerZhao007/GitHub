@@ -1,22 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="D:/Work/GitHub/demo_flask/app01/static/login.css/login.css">
+<meta charset="utf-8" />
+<title>用户登录界面</title><base target="_blank" />
+<style>
+*{
+padding:0px;
+margin:0px;
+}
+a{color:black}
+body{
+font-family:Arial, Helvetica, sans-serif;
+// background:	#008B45 no-repeat center;
+background:	url(http://www.namewe.com/uploads/allimg/180214/1-1P2142111361O.jpg) no-repeat center;
+font-size:13px;
+}
+img{
+border:0;
+}
+.lg{width:468px; height:468px; margin:100px auto; background:#00CDCD no-repeat;}
+.lg_top{ height:200px; width:468px;}
+.lg_main{width:400px; height:180px; margin:0 25px;}
+.lg_m_1{
+width:290px;
+height:100px;
+padding:60px 55px 20px 55px;
+}
+.ur{
+height:37px;
+border:0;
+color:#666;
+width:236px;
+margin:4px 28px;
+background:#EE7621 no-repeat;
+padding-left:10px;
+font-size:16pt;
+font-family:Arial, Helvetica, sans-serif;
+}
+.pw{
+height:37px;
+border:0;
+color:#666;
+width:236px;
+margin:4px 28px;
+background:#EE7621 no-repeat;
+padding-left:10px;
+font-size:16pt;
+font-family:Arial, Helvetica, sans-serif;
+}
+.bn{width:330px; height:72px; background:#EE7621 no-repeat; border:0; display:block; font-size:18px; color:#FFF; font-family:Arial, Helvetica, sans-serif; font-weight:bolder;}
+.lg_foot{
+height:80px;
+width:330px;
+padding: 6px 68px 0 68px;
+}
+</style>
 </head>
-<body>
+<body class="b" background="http://www.w3school.com.cn/clouds.gif">
 
-    <div class="box">
-            <h2>数据分析平台</h2>
-    </div>
+<div class="lg">
+<form action="#" method="POST">
+<div class="lg_top"></div>
+<div class="lg_main">
+<div class="lg_m_1">
 
     <form action="/login" method="post">
         <label>用户名：</label>
-        <input type="text" name="username"><br>
+        <input type="text" name="username" value="shaoxiaozuo" class="ur"><br>
         <label>密&ensp;&ensp;码：</label>
-        <input type="password" name="password"><br>
-        <input type="submit" name="" value="登录">
+        <input type="password" name="password" value="123456" class="pw"><br>
+        <input type="submit" name="" value="登录", class="bn">
+{#        <div class="lg_foot">#}
+{#              <input type="submit" name="" value="登录", class="bn">#}
+{#        </div>#}
+{#        <input type="submit" name="" value="登录">#}
     </form>
+
+    </div>
+</div>
+
 </body>
 </html>
