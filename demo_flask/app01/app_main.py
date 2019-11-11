@@ -1,10 +1,71 @@
-from flask import Flask
-from flask import render_template
-from flask import url_for
-from flask import request
-from flask import redirect
-import json
 
+# 导入所需要的模块~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import json
+from flask import url_for, Flask, render_template, redirect, request
+from flask_login import (LoginManager, current_user, UserMixin, login_required, login_user, logout_user)
+
+
+# 初始化平台~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+app = Flask(__name__)
+
+# 用户登录设置~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+app.config['SECRET_KEY'] = 'ijaswe'
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = '/login'
+login_manager.session_protection = 'strong'   # 防止恶意用户篡改 cookies
+
+user_dict = {}
+
+class User(UserMixin):
+    def load_by_user_id(self, user_id):
+        """
+        在实际项目中，这个方法应该从数据库中根据user_id来查询用户信息
+        为了演示方便，我这里省略了从数据库查询数据的过程
+        如果数据库中没有user_id这个用户，你应该返回False
+        :param user_id: 用户唯一标识
+        :return:
+        """
+        self.user_id = 1
+        self.username = user_dict.get(self.user_id)
+        return True
+
+    def get_id(self):
+        return self.user_id
+
+# 用户登录退出路由~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+    if request.method == 'GET':
+        return render_template('login.html')
+    else:
+        username = request.form['username']
+        password = request.form['password']
+        # 实际项目中，你应该根据username和 password查询数据库，以确定用户能否登录
+        # 这里为了演示方便，只要密码是123456就可以登录了
+        if password == '123456':
+            user = User()
+            user.user_id = 1
+            user.username = username
+            user_dict[user.user_id] = username
+            login_user(user, True)
+            return redirect('/')
+        else:
+            return redirect('/login')
+
+@login_manager.user_loader
+def load_user(user_id):
+    user = User()
+    if user.load_by_user_id(user_id):
+        return user
+    else:
+        return None
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect('/login')
 
 # 数据库中导入数据~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import setup
@@ -39,16 +100,17 @@ with setup.engine_postgresql00.connect() as conn:
 
 echart03 = {'data_name':list(echart03.data_name), 'data_value':list(echart03.data_value)}
 
-# 初始化平台~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-app = Flask(__name__)
-
-
 # 定义视图，一个界面设定为一个视图~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 @app.route('/', methods=['GET','POST'])
+@login_required
 def index():
-    return redirect(url_for('Add'))
+    if current_user.is_active:
+        return redirect(url_for('Add'))
+    else:
+        return redirect('/login')
 
 @app.route('/echart01', methods=['GET','POST'])
+@login_required
 def Echart01():
 
     aa = ['衬衫','羊毛衫','雪纺衫','裤子','高跟鞋','袜子']  # 中文报错，需要用axjx获取
@@ -60,14 +122,17 @@ def Echart01():
     return render_template('html_echart_001.html',j=j, aa=aa, xiaoliang=xiaoliang, chengben=chengben, ensure_ascii=False)
 
 @app.route('/echart02', methods=['GET','POST'])
+@login_required
 def Echart02():
     return render_template('html_echart_002.html')
 
 @app.route('/echart03', methods=['GET','POST'])
+@login_required
 def Echart03():
     return render_template('html_echart_003.html')
 
 @app.route('/web01', methods=['GET','POST'])
+@login_required
 def web01():
     return render_template('web01.html', title='测试', message=url_for('Add'))
 
