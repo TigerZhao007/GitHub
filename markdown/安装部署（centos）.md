@@ -49,12 +49,12 @@ sudo systemctl restart crond.service # 重新启动服务
 1.1 解压 
 tar -zxvf postgresql-9.6.10.tar.gz -C /bigdata/work
 1.2 解压验证
-cd /bigdata/work                        # 进入解压目录
+cd /bigdata/work/postgresql-9.6.10                      # 进入解压目录
 ./configure --help
 ## 2、系统配置&安装
 2.1 配置
 cd /bigdata/work/postgresql-9.6.10     # 进入源码包解压目录
-./configure --prefix=/bigdata/work/postgresql-9.6.10
+./configure --prefix=/bigdata/work/postgresql-9.6.10  # 缺少zlib使用：yum install zlib-devel  
 2.2 验证
 ls                                         # 新增config.status文件夹
 2.3、编译安装

@@ -2,7 +2,7 @@
 import pandas as pd
 import setup
 
-path = r'D:\Desktop\aa.xlsx'
+path = r'C:\Users\14324\Desktop\aa.xlsx'
 sheet_names = ['echart01', 'echart02', 'echart03']
 
 for sheet_name in sheet_names:

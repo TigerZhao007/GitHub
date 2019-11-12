@@ -17,7 +17,7 @@ dbname = 'zbda_demo'
 engine_postgresql = sqlalchemy.create_engine("postgresql://%s:%s@%s:%s/%s" % (username, password, 'localhost', port, 'zbda_demo'),
                                              pool_size=20, max_overflow=5)
 
-engine_postgresql00 = sqlalchemy.create_engine("postgresql://%s:%s@%s:%s/%s" % (username, password, 'localhost', port, 'test'),
+engine_postgresql00 = sqlalchemy.create_engine("postgresql://%s:%s@%s:%s/%s" % (username, password, '47.100.173.196', '5432', 'test'),
                                              pool_size=20, max_overflow=5)
 
 engine_postgresql01 = sqlalchemy.create_engine("postgresql://%s:%s@%s:%s/%s" % (username, password, 'localhost', port, 'test01'),
