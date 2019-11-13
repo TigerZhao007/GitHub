@@ -7,8 +7,19 @@ from flask import url_for, Flask, render_template, redirect, request
 from flask_login import (LoginManager, current_user, UserMixin, login_required, login_user, logout_user)
 
 import json
-import setup
+import sqlalchemy
 import pandas as pd
+
+# 数据库连接配置~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sql_type = ['mssql+pymssql', 'mysql+pymysql', 'postgresql']
+username = 'postgres'
+password = '123456'
+host = '47.100.173.196'
+port = '5432'
+dbname = 'test'
+
+engine_postgresql = sqlalchemy.create_engine("postgresql://%s:%s@%s:%s/%s" % (username, password, host, port, dbname),
+                                             pool_size=20, max_overflow=5)
 
 # 初始化平台~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 app = Flask(__name__)
@@ -146,7 +157,7 @@ def get_data_01():
     # 从数据库中获取数据，数据表echart01
     table_name = 'echart01'
     sql = '''select * from public."%s"  ''' % (table_name)
-    with setup.engine_postgresql00.connect() as conn:
+    with engine_postgresql.connect() as conn:
         echart01 = pd.read_sql_query(sql, conn)
 
     # 将数据处理为JSON格式，返回给前端
@@ -162,7 +173,7 @@ def get_data_02():
     # 从数据库中获取数据，数据表echart02
     table_name = 'echart02'
     sql = '''select * from public."%s"  ''' % (table_name)
-    with setup.engine_postgresql00.connect() as conn:
+    with engine_postgresql.connect() as conn:
         echart02 = pd.read_sql_query(sql, conn)
 
     data_legend = ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
@@ -182,8 +193,8 @@ def get_data_03():
 
     # 从数据库中获取数据，数据表echart03
     table_name = 'echart03'
-    sql = '''select * from public."%s"  ''' % (table_name)
-    with setup.engine_postgresql00.connect() as conn:
+    sql = ''' select * from public."%s"  ''' % (table_name)
+    with engine_postgresql.connect() as conn:
         echart03 = pd.read_sql_query(sql, conn)
 
     # 将数据处理为JSON格式，返回给前端
