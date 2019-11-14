@@ -120,7 +120,7 @@ def file_name(file_dir):
 # 获取制定文件夹所有的表名称~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 以pickle处理
 
-name_list2 = ['A_C021', 'A_C021_01', 'A_C022', 'A_C023', 'A_C023_01', 'A_C024', 'A_C025', 'A_C026', 'A_C027', 'A_C028']
+name_list2 = [ 'A_C026']
 
 for tablename in name_list2:
 
@@ -135,8 +135,11 @@ for tablename in name_list2:
 
 
     # # 处理变量类型（如果变量类型是时间格式，需要转化为date）
-    # for keys in df_temp.dtypes[df_temp.dtypes=='float64'].keys():
-    #     df_temp[keys] = df_temp[keys].apply(lambda x: abs(x))
+
+    for keys in df_temp.dtypes[df_temp.dtypes=='float64'].keys():
+        df_temp[keys] = df_temp[keys].apply(lambda x: abs(x))
+
+    df_temp = df_temp.drop_duplicates()
 
     # 将数据导入SQL
     with setup.engine_postgresql.connect() as conn:
