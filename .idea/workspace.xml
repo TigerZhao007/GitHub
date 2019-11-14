@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/space_python/关闭python进程（centos）.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/knowledge_point/sql/postgresql_001.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/GitHub.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GitHub.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ghostdriver.log" beforeDir="false" afterPath="$PROJECT_DIR$/ghostdriver.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/knowledge_point/mongodb_001.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_point/sql/mongodb_001.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/knowledge_point/mongodb_002.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_point/sql/mongodb_002.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/space_history/python_space/study/bcynet.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo_spider/爬虫_半次元下载.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/space_history/python_space/study/ghostdriver.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/space_history/python_space/study/maoyan.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/space_history/python_space/study/urllib_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/space_history/python_space/study/wangzhepicture.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo_spider/爬虫_王者图片下载.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -207,7 +201,17 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/knowledge_point/sql/postgresql_001.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -228,7 +232,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/python_space/机器学习模型-常用模型.py" />
         <option value="$PROJECT_DIR$/study_space/python_space/demo_flask/html_demos/text01.html" />
         <option value="$PROJECT_DIR$/study_space/python_space/demo_flask/html_demos/test.html" />
         <option value="$PROJECT_DIR$/study_space/jupyter_space/文本分析-鲁健.py" />
@@ -279,14 +282,15 @@
         <option value="$PROJECT_DIR$/demo_spider/爬虫_王者图片下载.py" />
         <option value="$PROJECT_DIR$/space_history/python_space/study/bcynet.py" />
         <option value="$PROJECT_DIR$/demo_spider/爬虫_半次元下载.py" />
+        <option value="$PROJECT_DIR$/knowledge_point/sql/postgresql_001.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="615" />
-    <option name="y" value="20" />
-    <option name="width" value="834" />
-    <option name="height" value="1045" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="2615" />
+    <option name="y" value="165" />
+    <option name="width" value="668" />
+    <option name="height" value="836" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -307,12 +311,13 @@
             <path>
               <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
               <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="demo_spider" type="462c0819:PsiDirectoryNode" />
+              <item name="knowledge_point" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
               <item name="GitHub" type="462c0819:PsiDirectoryNode" />
               <item name="knowledge_point" type="462c0819:PsiDirectoryNode" />
+              <item name="sql" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
@@ -324,10 +329,6 @@
               <item name="GitHub" type="462c0819:PsiDirectoryNode" />
               <item name="space_history" type="462c0819:PsiDirectoryNode" />
               <item name="python_space" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -560,11 +561,12 @@
       <workItem from="1573488341517" duration="2324000" />
       <workItem from="1573562509732" duration="11806000" />
       <workItem from="1573648503567" duration="11631000" />
+      <workItem from="1573693705353" duration="125000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="255383000" />
+    <option name="totallyTimeSpent" value="255508000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -576,11 +578,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
       <window_info id="Favorites" order="1" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49905482" visible="true" weight="0.16471216" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49905482" visible="true" weight="0.17590618" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32858709" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.28308025" />
@@ -593,7 +596,9 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3264642" />
-      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.24295011" />
+      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.19739696" />
+      <window_info anchor="right" id="R Graphics" />
+      <window_info anchor="right" id="R Packages" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -631,30 +636,23 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.md" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/GitHub$login.coverage" NAME="login Coverage Results" MODIFIED="1573395381751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo_flask/demo_history/demo04" />
-    <SUITE FILE_PATH="coverage/GitHub$app_login.coverage" NAME="app_login Coverage Results" MODIFIED="1572536296407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_space/demo_flask/demo_history/demo02" />
-    <SUITE FILE_PATH="coverage/GitHub$AddCount.coverage" NAME="AddCount Coverage Results" MODIFIED="1570460846001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_space/python_space/demo_flask/demo01" />
     <SUITE FILE_PATH="coverage/GitHub$app_main.coverage" NAME="app_main Coverage Results" MODIFIED="1572970841699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_space/demo_flask/app01" />
-    <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_multiprocessing.coverage" NAME="爬虫_美图录（request+beautifulsoup+multiprocessing） Coverage Results" MODIFIED="1571068872145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
-    <SUITE FILE_PATH="coverage/GitHub$__request_beautifulsoup.coverage" NAME="爬虫_美图录-多线程（request+beautifulsoup） Coverage Results" MODIFIED="1571019374837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
-    <SUITE FILE_PATH="coverage/GitHub$denglu.coverage" NAME="denglu Coverage Results" MODIFIED="1573394144221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo_flask/demo_history/demo03" />
-    <SUITE FILE_PATH="coverage/GitHub$.coverage" NAME="数据库数据导出导入 Coverage Results" MODIFIED="1573145147733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/knowledge_point" />
-    <SUITE FILE_PATH="coverage/GitHub$app_main__1_.coverage" NAME="app_main (1) Coverage Results" MODIFIED="1573659548048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo_flask/app01" />
     <SUITE FILE_PATH="coverage/GitHub$request_beautifulsoup.coverage" NAME="爬虫（request+beautifulsoup） Coverage Results" MODIFIED="1570983482002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$test01.coverage" NAME="test01 Coverage Results" MODIFIED="1570154180834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
-    <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_threading.coverage" NAME="爬虫_美图录（request+beautifulsoup+threading） Coverage Results" MODIFIED="1571073532342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
-    <SUITE FILE_PATH="coverage/GitHub$API_.coverage" NAME="高德API-基础学习 Coverage Results" MODIFIED="1571155809708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
-    <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_tomrrow.coverage" NAME="爬虫_美图录（request+beautifulsoup+tomrrow） Coverage Results" MODIFIED="1571067996128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
+    <SUITE FILE_PATH="coverage/GitHub$denglu.coverage" NAME="denglu Coverage Results" MODIFIED="1573394144221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo_flask/demo_history/demo03" />
+    <SUITE FILE_PATH="coverage/GitHub$app_login.coverage" NAME="app_login Coverage Results" MODIFIED="1572536296407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_space/demo_flask/demo_history/demo02" />
+    <SUITE FILE_PATH="coverage/GitHub$login.coverage" NAME="login Coverage Results" MODIFIED="1573395381751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo_flask/demo_history/demo04" />
+    <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_multiprocessing.coverage" NAME="爬虫_美图录（request+beautifulsoup+multiprocessing） Coverage Results" MODIFIED="1571068872145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
+    <SUITE FILE_PATH="coverage/GitHub$__request_beautifulsoup.coverage" NAME="爬虫_美图录-多线程（request+beautifulsoup） Coverage Results" MODIFIED="1571019374837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
+    <SUITE FILE_PATH="coverage/GitHub$AddCount.coverage" NAME="AddCount Coverage Results" MODIFIED="1570460846001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_space/python_space/demo_flask/demo01" />
     <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup.coverage" NAME="爬虫_美图录（request+beautifulsoup） Coverage Results" MODIFIED="1571066913295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
+    <SUITE FILE_PATH="coverage/GitHub$API_.coverage" NAME="高德API-基础学习 Coverage Results" MODIFIED="1571155809708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
+    <SUITE FILE_PATH="coverage/GitHub$app_main__1_.coverage" NAME="app_main (1) Coverage Results" MODIFIED="1573659548048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo_flask/app01" />
+    <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_tomrrow.coverage" NAME="爬虫_美图录（request+beautifulsoup+tomrrow） Coverage Results" MODIFIED="1571067996128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
+    <SUITE FILE_PATH="coverage/GitHub$.coverage" NAME="数据库数据导出导入 Coverage Results" MODIFIED="1573145147733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/knowledge_point" />
+    <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_threading.coverage" NAME="爬虫_美图录（request+beautifulsoup+threading） Coverage Results" MODIFIED="1571073532342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/demo_flask/demo_history/demo04/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo_flask/app01/templates/web01.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -694,37 +692,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/PostgreSQL_linkMethod.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/space_history/learn_git/PostgreSQL_linkMethod.md" />
     <entry file="file://$PROJECT_DIR$/markdown/安装部署（centos）.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="-84">
-            <caret line="137" column="15" lean-forward="true" selection-start-line="137" selection-start-column="15" selection-end-line="137" selection-end-column="15" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="-5175" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/postgresql_centos.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="140">
-            <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/space_history/learn_git/postgresql_centos.md" />
     <entry file="file://$PROJECT_DIR$/space_python/EXCEL表sheets2db.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="28">
@@ -814,131 +788,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/space_jupyter/人脸识别入门02.ipynb">
-      <provider selected="true" editor-type-id="jupyter-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_jupyter/人脸识别入门01.ipynb">
-      <provider selected="true" editor-type-id="jupyter-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_jupyter/权重确定方法-层次分析法.ipynb">
-      <provider selected="true" editor-type-id="jupyter-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_jupyter/plot_iris.ipynb">
-      <provider selected="true" editor-type-id="jupyter-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/algorithm_rfm.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-8908">
-            <caret line="179" column="6" selection-start-line="179" selection-start-column="6" selection-end-line="179" selection-end-column="6" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/anaconda_centos.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="616">
-            <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/analysis_question.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-2804" />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/centos_git.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-5544">
-            <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/centos_MySQL.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-5268" />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/centos_set.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-3108" />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/code_computer.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/contract_question.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/Cross_Validation.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-676" />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/database_intro.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-5324" />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/space_jupyter/人脸识别入门02.ipynb" />
+    <entry file="file://$PROJECT_DIR$/space_jupyter/人脸识别入门01.ipynb" />
+    <entry file="file://$PROJECT_DIR$/space_jupyter/权重确定方法-层次分析法.ipynb" />
+    <entry file="file://$PROJECT_DIR$/space_jupyter/plot_iris.ipynb" />
+    <entry file="file://$PROJECT_DIR$/space_history/learn_git/algorithm_rfm.md" />
+    <entry file="file://$PROJECT_DIR$/space_history/learn_git/anaconda_centos.md" />
+    <entry file="file://$PROJECT_DIR$/space_history/learn_git/analysis_question.md" />
+    <entry file="file://$PROJECT_DIR$/space_history/learn_git/centos_git.md" />
+    <entry file="file://$PROJECT_DIR$/space_history/learn_git/centos_MySQL.md" />
+    <entry file="file://$PROJECT_DIR$/space_history/learn_git/centos_set.md" />
+    <entry file="file://$PROJECT_DIR$/space_history/learn_git/code_computer.md" />
+    <entry file="file://$PROJECT_DIR$/space_history/learn_git/contract_question.md" />
+    <entry file="file://$PROJECT_DIR$/space_history/learn_git/Cross_Validation.md" />
+    <entry file="file://$PROJECT_DIR$/space_history/learn_git/database_intro.md" />
     <entry file="file://$PROJECT_DIR$/space_history/learn_git/debug学习.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/ensemble_learning.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-3780" />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/kaiyuan_learn.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-1306" />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/machine_learn.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-1764" />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/space_history/learn_git/ensemble_learning.md" />
+    <entry file="file://$PROJECT_DIR$/space_history/learn_git/kaiyuan_learn.md" />
+    <entry file="file://$PROJECT_DIR$/space_history/learn_git/machine_learn.md" />
     <entry file="file://$PROJECT_DIR$/demo_spider/爬虫_浏览器操作（selenium+PhontomJS）.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
@@ -946,38 +815,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/GITHUB_link.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="2828">
-            <caret line="101" column="3" selection-start-line="101" selection-start-column="3" selection-end-line="101" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/selenium_learn.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/GIT_code.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/python_space/study/urllib_test.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/python_space/study/maoyan.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/space_history/learn_git/GITHUB_link.md" />
+    <entry file="file://$PROJECT_DIR$/space_history/learn_git/selenium_learn.md" />
+    <entry file="file://$PROJECT_DIR$/space_history/learn_git/GIT_code.md" />
+    <entry file="file://$PROJECT_DIR$/space_history/python_space/study/urllib_test.py" />
+    <entry file="file://$PROJECT_DIR$/space_history/python_space/study/maoyan.py" />
     <entry file="file://$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
@@ -1022,6 +864,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/1.png">
       <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_point/sql/postgresql_001.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
