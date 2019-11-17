@@ -9,6 +9,9 @@ from flask_login import (LoginManager, current_user, UserMixin, login_required, 
 import json
 import sqlalchemy
 import pandas as pd
+import numpy as np
+
+from flask_cors import *  # 跨域名
 
 # 数据库连接配置~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sql_type = ['mssql+pymssql', 'mysql+pymysql', 'postgresql']
@@ -23,6 +26,23 @@ engine_postgresql = sqlalchemy.create_engine("postgresql://%s:%s@%s:%s/%s" % (us
 
 # 初始化平台~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 app = Flask(__name__)
+
+# 运行跨域名~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# r'/*' 是通配符，让本服务器所有的URL 都允许跨域请求
+app.debug = True
+CORS(app, supports_credentials=True)  # 设置参数
+# CORS(app, resources=r'/*')
+
+class NpEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, np.integer):
+            return int(obj)
+        elif isinstance(obj, np.floating):
+            return float(obj)
+        elif isinstance(obj, np.ndarray):
+            return obj.tolist()
+        else:
+            return super(NpEncoder, self).default(obj)
 
 # ######################################################################################################################
 # 用户登录设置
@@ -152,6 +172,7 @@ def Add():
 
 # 数据'/echart01_data'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 @app.route('/echart01_data')
+@login_required
 def get_data_01():
 
     # 从数据库中获取数据，数据表echart01
@@ -162,12 +183,14 @@ def get_data_01():
 
     # 将数据处理为JSON格式，返回给前端
     echart01 = {'aa': list(echart01.aa), 'xiaoliang': list(echart01.xiaoliang), 'chengben': list(echart01.chengben)}
-    data = json.dumps(echart01, ensure_ascii=False)
+    data = json.dumps(echart01, ensure_ascii=False, cls=NpEncoder)
+    data.headers['Access-Control-Allow-Origin'] = '*'
 
     return (data)
 
 # 数据'/echart02_data'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 @app.route('/echart02_data')
+@login_required
 def get_data_02():
 
     # 从数据库中获取数据，数据表echart02
@@ -183,12 +206,14 @@ def get_data_02():
                 'data_yAxis_01': list(echart02.data_yAxis_01), 'data_yAxis_02': list(echart02.data_yAxis_02),
                 'data_yAxis_03': list(echart02.data_yAxis_03), 'data_yAxis_04': list(echart02.data_yAxis_04),
                 'data_yAxis_05': list(echart02.data_yAxis_05)}
-    data = json.dumps(echart02, ensure_ascii=False)  # 如果有中文的话，就需要ensure_ascii=False
+    data = json.dumps(echart02, ensure_ascii=False, cls=NpEncoder)  # 如果有中文的话，就需要ensure_ascii=False
+    data.headers['Access-Control-Allow-Origin'] = '*'
 
     return (data)
 
 # 数据'/echart03_data'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 @app.route('/echart03_data')
+@login_required
 def get_data_03():
 
     # 从数据库中获取数据，数据表echart03
@@ -199,7 +224,8 @@ def get_data_03():
 
     # 将数据处理为JSON格式，返回给前端
     echart03 = {'data_name': list(echart03.data_name), 'data_value': list(echart03.data_value)}
-    data = json.dumps(echart03, ensure_ascii=False)
+    data = json.dumps(echart03, ensure_ascii=False, cls=NpEncoder)
+    data.headers['Access-Control-Allow-Origin'] = '*'
 
     return (data)
 

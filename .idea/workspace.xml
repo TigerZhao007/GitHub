@@ -2,142 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/demo_resume/简历模板001.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/knowledge_flask/app01/app_main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/knowledge_flask/app01/static/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/knowledge_flask/app01/static/login.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/knowledge_flask/app01/templates/html_echart_001.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/knowledge_flask/app01/templates/html_echart_002.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/knowledge_flask/app01/templates/html_echart_003.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/knowledge_flask/app01/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/knowledge_flask/app01/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/knowledge_flask/app01/templates/web01.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo01/static/add.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/form/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/html_demos/data/USA.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/html_demos/js/echarts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/html_demos/js/jquery-3.4.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GitHub.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GitHub.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_resume/简历模板002.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_resume/简历模板003.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_resume/简历模板004.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_resume/简历模板005.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/centos_deploy/app01/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/app01/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/app01/app_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/centos_deploy/app01/app_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/app01/static/USA.json" beforeDir="false" afterPath="$PROJECT_DIR$/centos_deploy/app01/static/USA.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/app01/static/add.png" beforeDir="false" afterPath="$PROJECT_DIR$/centos_deploy/app01/static/add.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/app01/static/echarts.js" beforeDir="false" afterPath="$PROJECT_DIR$/centos_deploy/app01/static/echarts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/app01/static/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/centos_deploy/app01/static/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/app01/static/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/centos_deploy/app01/static/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/app01/static/login.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/centos_deploy/app01/static/login.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/app01/templates/html_echart_001.html" beforeDir="false" afterPath="$PROJECT_DIR$/centos_deploy/app01/templates/html_echart_001.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/app01/templates/html_echart_002.html" beforeDir="false" afterPath="$PROJECT_DIR$/centos_deploy/app01/templates/html_echart_002.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/app01/templates/html_echart_003.html" beforeDir="false" afterPath="$PROJECT_DIR$/centos_deploy/app01/templates/html_echart_003.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/app01/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/centos_deploy/app01/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/app01/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/centos_deploy/app01/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/app01/templates/web01.html" beforeDir="false" afterPath="$PROJECT_DIR$/centos_deploy/app01/templates/web01.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/app01/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo01/AddCount.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo01/AddCount.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo01/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo01/static/add.png" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/app01/static/add.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo01/static/echarts.js" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/app01/static/echarts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo01/templates/html_echart_001.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo01/templates/html_echart_001.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo01/templates/html_echart_002.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo01/templates/html_echart_002.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo01/templates/html_echart_003.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo01/templates/html_echart_003.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo01/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo01/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo02/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo01/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo02/app_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo02/app_login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo02/static/USA.json" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/app01/static/USA.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo02/static/echarts.js" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo01/static/echarts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo02/static/jquery-3.4.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/app01/static/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo02/templates/html_echart_001.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo02/templates/html_echart_001.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo02/templates/html_echart_002.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo02/templates/html_echart_002.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo02/templates/html_echart_003.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo02/templates/html_echart_003.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo03/Model/User_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo03/Model/User_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo03/Model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo02/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo03/User_dal/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo03/Model/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo03/User_dal/dal.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo03/User_dal/dal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo03/User_dal/user_dal.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo03/User_dal/user_dal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo03/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo03/User_dal/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo03/config/management_server.conf" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo03/config/management_server.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo03/denglu.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo03/denglu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo03/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo03/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo04/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo03/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo04/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo04/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo04/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo04/login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo04/static/USA.json" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo02/static/USA.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo04/static/echarts.js" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo02/static/echarts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo04/static/jquery-3.4.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo02/static/jquery-3.4.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo04/templates/html_echart_001.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo04/templates/html_echart_001.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo04/templates/html_echart_002.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo04/templates/html_echart_002.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo04/templates/html_echart_003.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo04/templates/html_echart_003.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo04/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo04/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo04/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo04/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo05/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo04/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo05/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo05/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo05/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo05/login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo05/static/USA.json" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo04/static/USA.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo05/static/echarts.js" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo04/static/echarts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo05/static/jquery-3.4.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo04/static/jquery-3.4.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo05/templates/html_echart_001.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo05/templates/html_echart_001.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo05/templates/html_echart_002.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo05/templates/html_echart_002.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo05/templates/html_echart_003.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo05/templates/html_echart_003.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo05/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo05/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo05/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo05/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo05/templates/regist.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo05/templates/regist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo06/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo05/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo06/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo06/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo06/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo06/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo06/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo06/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo06/templates/shouye.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo06/templates/shouye.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/.idea/login_demo01.iml" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/.idea/login_demo01.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo06/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/common/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/common/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/common/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/common/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/form/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/form/login_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/form/login_form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/model/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/model/user_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/model/user_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/runserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/runserver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/static/jquery.SuperSlide.2.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/static/jquery.SuperSlide.2.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/static/jquery1.42.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/static/jquery1.42.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/static/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/static/nav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/templates/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/templates/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/templates/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/templates/500.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/demo07/templates/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo07/templates/success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/html_demos/data/USA.json" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo05/static/USA.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/html_demos/echarts.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/html_demos/echarts.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/html_demos/html_echart_001.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/html_demos/html_echart_001.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/html_demos/html_echart_002.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/html_demos/html_echart_002.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/html_demos/html_echart_003.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/html_demos/html_echart_003.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/html_demos/html_echart_004.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/html_demos/html_echart_004.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/html_demos/html_echart_005.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/html_demos/html_echart_005.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/html_demos/html_echart_006.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/html_demos/html_echart_006.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/html_demos/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/html_demos/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/html_demos/js/echarts.js" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo05/static/echarts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/html_demos/js/jquery-3.4.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/demo05/static/jquery-3.4.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/html_demos/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/html_demos/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/html_demos/text01.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/html_demos/text01.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/html_echarts/line-simple.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/html_echarts/line-simple.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/html_echarts/支付完成情况.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/html_echarts/支付完成情况.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/html_echarts/营销转化漏斗图.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/html_echarts/营销转化漏斗图.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_flask/demo_history/html_echarts/销售转化情况.html" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_flask/demo_history/html_echarts/销售转化情况.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_spider/爬虫_半次元下载.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_spider/爬虫_半次元下载.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_spider/爬虫_浏览器操作（selenium+PhontomJS）.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_spider/爬虫_浏览器操作（selenium+PhontomJS）.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_spider/爬虫_浏览器操作（selenium+other）.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_spider/爬虫_浏览器操作（selenium+other）.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_spider/爬虫_王者图片下载.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_spider/爬虫_王者图片下载.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_spider/爬虫_美图录（request+beautifulsoup+multiprocessing）.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup+multiprocessing）.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_spider/爬虫_美图录（request+beautifulsoup+threading）.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup+threading）.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_spider/爬虫_美图录（request+beautifulsoup+tomrrow）.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup+tomrrow）.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_spider/爬虫_美图录（request+beautifulsoup）.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup）.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/space_python/关闭python进程（centos）.py" beforeDir="false" afterPath="$PROJECT_DIR$/space_python/关闭python进程（centos）.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/centos_deploy/app01/app_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/centos_deploy/app01/app_main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -334,15 +204,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/centos_deploy/app01/templates/html_echart_001.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/knowledge_flask/app01/app_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="140">
+              <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
               <folding>
-                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+                <element signature="e#367#435#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/knowledge_point/正则表达式.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -366,7 +242,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/study_space/python_space/demo_flask/html_demos/test.html" />
         <option value="$PROJECT_DIR$/study_space/jupyter_space/文本分析-鲁健.py" />
         <option value="$PROJECT_DIR$/python_space/机器学习模型-广义线性模型(Generalized Linear Models)（普通最小二乘法）.py" />
         <option value="$PROJECT_DIR$/python_space/机器学习模型-广义线性模型(GLM).py" />
@@ -417,14 +292,15 @@
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py" />
         <option value="$PROJECT_DIR$/space_python/关闭python进程（centos）.py" />
+        <option value="$PROJECT_DIR$/centos_deploy/app01/app_main.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="976" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -441,6 +317,16 @@
             <path>
               <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
               <item name="GitHub" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="knowledge_point" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="space_python" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
@@ -490,28 +376,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.app_main (2)">
-    <configuration name="数据库数据导出导入" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="GitHub" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/knowledge_point" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="app_main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GitHub" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -548,6 +412,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/knowledge_flask/app01/app_main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="app_main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GitHub" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/centos_deploy/app01" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/centos_deploy/app01/app_main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -603,10 +489,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app_main (2)" />
+        <item itemvalue="Python.app_main" />
         <item itemvalue="Python.app_main (1)" />
         <item itemvalue="Python.login" />
         <item itemvalue="Python.denglu" />
-        <item itemvalue="Python.数据库数据导出导入" />
       </list>
     </recent_temporary>
   </component>
@@ -682,12 +568,12 @@
       <workItem from="1573826621943" duration="556000" />
       <workItem from="1573829103964" duration="201000" />
       <workItem from="1573829316574" duration="1653000" />
-      <workItem from="1573986346137" duration="1960000" />
+      <workItem from="1573986346137" duration="7246000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="262602000" />
+    <option name="totallyTimeSpent" value="267888000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -699,14 +585,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
       <window_info id="Favorites" order="1" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49905482" visible="true" weight="0.2342918" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49905482" visible="true" weight="0.18123667" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32822758" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2822757" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27982646" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -759,7 +645,7 @@
     <SUITE FILE_PATH="coverage/GitHub$login.coverage" NAME="login Coverage Results" MODIFIED="1573395381751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo_flask/demo_history/demo04" />
     <SUITE FILE_PATH="coverage/GitHub$app_login.coverage" NAME="app_login Coverage Results" MODIFIED="1572536296407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_space/demo_flask/demo_history/demo02" />
     <SUITE FILE_PATH="coverage/GitHub$AddCount.coverage" NAME="AddCount Coverage Results" MODIFIED="1570460846001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_space/python_space/demo_flask/demo01" />
-    <SUITE FILE_PATH="coverage/GitHub$app_main.coverage" NAME="app_main Coverage Results" MODIFIED="1572970841699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_space/demo_flask/app01" />
+    <SUITE FILE_PATH="coverage/GitHub$app_main.coverage" NAME="app_main Coverage Results" MODIFIED="1573994191957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/centos_deploy/app01" />
     <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_multiprocessing.coverage" NAME="爬虫_美图录（request+beautifulsoup+multiprocessing） Coverage Results" MODIFIED="1571068872145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$__request_beautifulsoup.coverage" NAME="爬虫_美图录-多线程（request+beautifulsoup） Coverage Results" MODIFIED="1571019374837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$denglu.coverage" NAME="denglu Coverage Results" MODIFIED="1573394144221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo_flask/demo_history/demo03" />
@@ -771,19 +657,9 @@
     <SUITE FILE_PATH="coverage/GitHub$API_.coverage" NAME="高德API-基础学习 Coverage Results" MODIFIED="1571155809708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_tomrrow.coverage" NAME="爬虫_美图录（request+beautifulsoup+tomrrow） Coverage Results" MODIFIED="1571067996128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup.coverage" NAME="爬虫_美图录（request+beautifulsoup） Coverage Results" MODIFIED="1571066913295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
-    <SUITE FILE_PATH="coverage/GitHub$app_main__2_.coverage" NAME="app_main (2) Coverage Results" MODIFIED="1573987539918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/knowledge_flask/app01" />
+    <SUITE FILE_PATH="coverage/GitHub$app_main__2_.coverage" NAME="app_main (2) Coverage Results" MODIFIED="1573997077088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/knowledge_flask/app01" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/knowledge_flask/app01/static/login.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_flask/app01/static/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_flask/app01/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1300">
@@ -856,16 +732,6 @@
           <caret line="54" selection-start-line="54" selection-end-line="54" />
           <folding>
             <element signature="e#114#123#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_point/pickle存储导入.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="82" column="14" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
-          <folding>
-            <element signature="e#185#198#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -975,10 +841,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/centos_deploy/app01/templates/html_echart_001.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/centos_deploy/app01/app_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="187" selection-start-line="187" selection-end-line="187" />
+          <folding>
+            <element signature="e#367#435#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/space_python/关闭python进程（centos）.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="12" />
+        <state>
+          <caret line="33" column="10" lean-forward="true" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_point/pickle存储导入.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="82" column="14" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
+          <folding>
+            <element signature="e#185#198#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -992,14 +888,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/centos_deploy/app01/templates/html_echart_001.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/knowledge_point/正则表达式.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
