@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        header {
+            background-color:black;
+            height:80px;
+            color:white;
+            text-align:center;
+            padding:5px;
+        }
+        nav {
+            line-height:30px;
+            background-color:#eeeeee;
+            {#height:500px;#}
+            height:100%;
+            width:10%;
+            float:left;
+            padding:5px;
+        }
+        section {
+            {#height:500px;#}
+            height:100%;
+            width:80%;
+            float:left;
+            padding:10px;
+        }
+        footer {
+            background-color:black;
+            color:white;
+            clear:both;
+            text-align:center;
+            padding:5px;
+        }
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="{{ url_for('static', filename='echarts.js') }}"></script>
+    <script src="{{ url_for('static', filename='jquery.js') }}"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>数据分析平台</h1>
+    </header>
+
+    <nav>
+            <a href="/">首页</a><br>
+            <a href="/echart01">图1</a><br>
+            <a href="/echart02">图2</a><br>
+            <a href="/echart03">图3</a><br>
+            <a href="/web01">小佐</a><br>
+            <a href="/logout">退出</a>
+{#        数据处理基础<br>#}
+{#        机器学习 模型<br>#}
+{#        爬虫工程<br>#}
+{#        API接口<br>#}
+    </nav>
+
+    <!--  定义图标的区域  -->
+    <section>
+
+        <style>
+        .col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12{
+        padding:0px
+        }
+    </style>
+
+        <div style="background:rgb(235,239,242)">
+           <div class="row" style="width:95%;margin:10px auto">
+
+                  <div class="col-md-6" style="margin-top:10px">
+                    <div id="pic_001" style="width:80%;height:300px;"></div>
+                  </div>
+
+                  <div class="col-md-6" style="padding-left:10px;margin-top:10px">
+                    <div id="pic_002" style="width:80%;height:300px;"></div>
+                  </div>
+
+                  <div class="col-md-12" style="margin-top:10px">
+                    <div id="" style="width:100%;height:50px;"></div>
+                  </div>
+
+           </div>
+        </div>
+
+        <script type="text/javascript">
+             <!--  初始化echart对象      -->
+            var myChart = echarts.init(document.getElementById("pic_001"));
+
+            //制定图标的配置和数据
+            var option = {
+                //设置图标的标题
+
+                title:{
+                    // 主标题
+                    text:"Echarts 入门实例"
+                },
+                // 图例
+                legend:{data:['销量','成本']},
+                // x轴数据
+                xAxis:{
+                    data:["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+                },
+                // y轴数据
+                yAxis:{
+
+                },
+                // 根据相应系列进行设置
+                series:[
+                    {
+                        name:"销量",
+                        type:"bar",
+                        data:{{ xiaoliang }}
+                    },
+                    {
+                        name:"成本",
+                        type:"bar",
+                        data:{{ chengben }}
+                    },
+
+                ]
+            }
+            // 渲染图标
+            myChart.setOption(option);
+
+             <!--  初始化echart对象      -->
+            var myChart = echarts.init(document.getElementById("pic_002"));
+
+             $.ajax({
+                 type: 'GET',
+                 url: '/echart01_data',
+                 data: {}, //最终会被转化为查询字符串跟在url后面： /your/url/?name=test&age=1
+                 dataType: 'json', //注意：这里是指希望服务端返回json格式的数据
+                 success: function (data) { //这里的data就是json格式的数据
+                     var getdata = '';    // 先定义个值，方便下面赋值
+                     getdata = data
+                     console.log(getdata)
+
+                     console.log(getdata.aa)
+                     console.log(getdata.xiaoliang)
+                     console.log(getdata.chengben)
+                    //制定图标的配置和数据
+                    var option = {
+                        //设置图标的标题
+                        title:{
+                            // 主标题
+                            text:"Echarts 入门实例"
+                        },
+                        // 图例
+                        legend:{data:['销量','成本']},
+                        // x轴数据
+                        xAxis:{
+                            data:["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+                        },
+                        // y轴数据
+                        yAxis:{
+
+                        },
+                        // 根据相应系列进行设置
+                        series:[
+                            {
+                                name:"销量",
+                                type:"bar",
+                                data: getdata.xiaoliang
+                            },
+                            {
+                                name:"成本",
+                                type:"bar",
+                                data: getdata.chengben
+                            },
+
+                        ]
+                    }
+                    // 渲染图标
+                    myChart.setOption(option);
+                 },
+                 error: function (xhr, type) {}
+             });
+
+        </script>
+
+        {#  第三部分，底部商标  #}
+        <footer>
+        Copyright W3Schools.com
+
+        </footer>
+    </section>
+
+</body>
+</html>
