@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/markdown/mysql操作大全.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/machine_learning/模型检验-AUC详解.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/knowledge_point/0简历制作.py" beforeDir="false" afterPath="$PROJECT_DIR$/markdown/变量命名规则.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/knowledge_point/sql/postgresql_001.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_point/sql/postgresql_001.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/markdown/后台运行PY文件（nohup）.md" beforeDir="false" afterPath="$PROJECT_DIR$/markdown/后台运行PY文件（nohup）.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/markdown/安装部署（centos）.md" beforeDir="false" afterPath="$PROJECT_DIR$/markdown/安装部署（centos）.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/markdown/常用API.md" beforeDir="false" afterPath="$PROJECT_DIR$/markdown/常用API.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/markdown/常用Git命令.md" beforeDir="false" afterPath="$PROJECT_DIR$/markdown/常用Git命令.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -207,10 +201,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/markdown/变量命名规则.txt">
+        <entry file="file://$PROJECT_DIR$/machine_learning/模型检验-AUC详解.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="52" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="450">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -236,7 +230,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/python_space/机器学习模型-广义线性模型(GLM).py" />
         <option value="$PROJECT_DIR$/python_space/功能_绘制流程图.py" />
         <option value="$PROJECT_DIR$/python_space/功能_绘制流程图（Digraph）.py" />
         <option value="$PROJECT_DIR$/python_space/爬虫_浏览器操作（selenium+PhontomJS）.py" />
@@ -287,14 +280,15 @@
         <option value="$PROJECT_DIR$/knowledge_point/sql/mysql_001.py" />
         <option value="$PROJECT_DIR$/knowledge_point/sql/postgresql_001.py" />
         <option value="$PROJECT_DIR$/markdown/变量命名规则.txt" />
+        <option value="$PROJECT_DIR$/machine_learning/模型检验-AUC详解.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="978" />
-    <option name="height" value="1048" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="979" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -304,7 +298,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -315,12 +308,13 @@
             <path>
               <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
               <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="markdown" type="462c0819:PsiDirectoryNode" />
+              <item name="machine_learning" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -556,12 +550,13 @@
       <workItem from="1573986346137" duration="7246000" />
       <workItem from="1574095884669" duration="471000" />
       <workItem from="1574096602497" duration="508000" />
-      <workItem from="1574147711003" duration="5625000" />
+      <workItem from="1574147711003" duration="5814000" />
+      <workItem from="1574178011397" duration="1315000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="274492000" />
+    <option name="totallyTimeSpent" value="275996000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -578,10 +573,10 @@
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
       <window_info id="Favorites" order="1" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49905482" visible="true" weight="0.19235925" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49905482" visible="true" weight="0.19504021" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32822758" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27903682" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27903682" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -591,7 +586,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3264642" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.42341357" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.4220963" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -650,13 +645,6 @@
     <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_threading.coverage" NAME="爬虫_美图录（request+beautifulsoup+threading） Coverage Results" MODIFIED="1571073532342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/knowledge_flask/app01/templates/html_echart_003.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_flask/app01/templates/html_echart_001.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -845,9 +833,7 @@
         <state relative-caret-position="-4169" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_point/0简历制作.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_point/0简历制作.py" />
     <entry file="file://$PROJECT_DIR$/knowledge_point/日期处理方式.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1416" />
@@ -877,8 +863,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/markdown/变量命名规则.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        <state relative-caret-position="531">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machine_learning/模型检验-AUC详解.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
