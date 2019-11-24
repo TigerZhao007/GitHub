@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/knowledge_point/python函数编写.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/knowledge_point/python模块导入.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/knowledge_point/python类和方法.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_point/python类和方法.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/knowledge_point/python模块导入.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_point/python模块导入.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup）.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup）.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -202,20 +201,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/knowledge_point/python函数编写.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_半次元下载.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="752">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
+            <state relative-caret-position="100">
+              <caret line="48" column="53" lean-forward="true" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#242#482#0" />
+                <element signature="e#621#1018#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/knowledge_point/python模块导入.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup）.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="255">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -241,8 +245,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/study_space/demo_flask/demo_history/demo02/app_login.py" />
-        <option value="$PROJECT_DIR$/python_space/file/后台运行PY文件（nohup）.md" />
         <option value="$PROJECT_DIR$/study_space/demo_flask/app01/templates/web01.html" />
         <option value="$PROJECT_DIR$/study_space/demo_flask/app01/templates/index.html" />
         <option value="$PROJECT_DIR$/study_space/demo_flask/app01/templates/html_echart_003.html" />
@@ -290,15 +292,17 @@
         <option value="$PROJECT_DIR$/knowledge_point/python数据类型.py" />
         <option value="$PROJECT_DIR$/knowledge_point/python条件和循环.py" />
         <option value="$PROJECT_DIR$/knowledge_point/python类和方法.py" />
-        <option value="$PROJECT_DIR$/knowledge_point/python模块导入.py" />
         <option value="$PROJECT_DIR$/knowledge_point/python函数编写.py" />
+        <option value="$PROJECT_DIR$/knowledge_point/python模块导入.py" />
+        <option value="$PROJECT_DIR$/knowledge_spider/爬虫_美图录.py" />
+        <option value="$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup）.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="765" />
-    <option name="width" value="1165" />
-    <option name="height" value="1049" />
+    <option name="x" value="698" />
+    <option name="width" value="1230" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -319,12 +323,7 @@
             <path>
               <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
               <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="knowledge_point" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="markdown" type="462c0819:PsiDirectoryNode" />
+              <item name="knowledge_spider" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -572,11 +571,12 @@
       <workItem from="1574401592966" duration="2503000" />
       <workItem from="1574419319374" duration="4170000" />
       <workItem from="1574525355154" duration="3672000" />
+      <workItem from="1574603138660" duration="5730000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="289245000" />
+    <option name="totallyTimeSpent" value="294975000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -593,7 +593,7 @@
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
       <window_info id="Favorites" order="1" sideWeight="0.25442478" side_tool="true" weight="0.3605898" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.7444668" visible="true" weight="0.2660858" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.7444668" weight="0.5676796" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32822758" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.27903682" />
@@ -606,7 +606,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.2555332" weight="0.35977337" />
-      <window_info active="true" anchor="bottom" x="9" y="461" width="1492" height="206" id="Python Console" order="12" sideWeight="0.5013405" visible="true" weight="0.19830029" />
+      <window_info active="true" anchor="bottom" x="9" y="461" width="1492" height="206" id="Python Console" order="12" sideWeight="0.5013405" visible="true" weight="0.28611898" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -665,11 +665,6 @@
     <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_threading.coverage" NAME="爬虫_美图录（request+beautifulsoup+threading） Coverage Results" MODIFIED="1571073532342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/analysis_question.md" />
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/centos_git.md" />
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/centos_MySQL.md" />
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/centos_set.md" />
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/code_computer.md" />
     <entry file="file://$PROJECT_DIR$/space_history/learn_git/contract_question.md" />
     <entry file="file://$PROJECT_DIR$/space_history/learn_git/Cross_Validation.md" />
     <entry file="file://$PROJECT_DIR$/space_history/learn_git/database_intro.md" />
@@ -691,18 +686,6 @@
     <entry file="file://$PROJECT_DIR$/space_history/learn_git/GIT_code.md" />
     <entry file="file://$PROJECT_DIR$/space_history/python_space/study/urllib_test.py" />
     <entry file="file://$PROJECT_DIR$/space_history/python_space/study/maoyan.py" />
-    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_半次元下载.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1383">
-          <caret line="111" column="12" lean-forward="true" selection-start-line="72" selection-end-line="111" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#242#482#0" />
-            <element signature="e#621#1018#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_王者图片下载.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -824,11 +807,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_point/0简历制作.py" />
-    <entry file="file://$PROJECT_DIR$/knowledge_point/日期处理方式.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1416" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/markdown/常用API.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -914,17 +892,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_point/数据聚合计算.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_point/发邮件（smtplib）.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2948" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_point/发邮件（zmail）.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3623" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_point/日期处理方式.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1050" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_point/python模块导入.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="566">
+          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_point/python函数编写.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="865">
+          <caret line="42" column="6" lean-forward="true" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_美图录.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_半次元下载.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="48" column="53" lean-forward="true" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#242#482#0" />
+            <element signature="e#621#1018#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup）.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>

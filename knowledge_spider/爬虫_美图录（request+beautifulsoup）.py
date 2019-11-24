@@ -17,11 +17,13 @@ def getHtmlText(url):
     headers = {}
     headers['User-Agent'] = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) " \
                             "Chrome/63.0.3239.132 Safari/537." + str(random.randint(1, 99))
-    # headers['Referer'] = url
+    # headers['Referer'] = '''https://www.meitulu.com/t/nvshen/'''
+    # headers['Host'] = '''www.meitulu.com'''
+    # headers['Cookie'] = '''UM_distinctid=16dc50e174c278-024a8d7adaa2b7-7373e61-144000-16dc50e174d1a8; CNZZDATA1255487232=939500139-1570975242-%7C1570975242; CNZZDATA1255357127=771937645-1570965867-https%253A%252F%252Fwww.baidu.com%252F%7C1574603813'''
 
     # 读取HTML文本~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     try:
-        r = requests.get(url, headers, timeout=30)  # 如果状态码不是200 则应发HTTOError异常
+        r = requests.get(url, headers, timeout=10)  # 如果状态码不是200 则应发HTTOError异常
         r.raise_for_status()               # 设置正确的编码方式
         r.encoding = r.apparent_encoding
         return r.text
@@ -57,7 +59,6 @@ def getImgList(html):
     return imglist
 
 # 爬虫代码汇总~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 def main(url, tablename):
     import sqlalchemy
     engine = sqlalchemy.create_engine("postgresql://postgres:123456@106.12.30.122:5432/test",
@@ -74,7 +75,10 @@ if __name__ == '__main__':
     import time
     t1 = time.time()
 
-    url_list = ['https://www.meitulu.com/guochan/%s.html' %(x) for x in range(2, 191)]
+    # url_list = ['https://www.meitulu.com/t/nvshen/'] + \
+    #            ['https://www.meitulu.com/t/nvshen/%s.html' %(x) for x in range(2, 38)]
+
+    url_list = ['https://www.meitulu.com/t/nvshen/%s.html' %(x) for x in range(2, 38)]
     for url in url_list:
         main(url, tablename='meitulu_single')
 
