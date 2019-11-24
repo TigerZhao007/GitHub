@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/knowledge_point/python模块导入.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_point/python模块导入.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ghostdriver.log" beforeDir="false" afterPath="$PROJECT_DIR$/ghostdriver.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup）.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup）.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -201,25 +201,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_半次元下载.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="48" column="53" lean-forward="true" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <element signature="e#242#482#0" />
-                <element signature="e#621#1018#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup）.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="105">
+              <caret line="103" column="41" selection-start-line="103" selection-start-column="41" selection-end-line="103" selection-end-column="41" />
+              <folding>
+                <element signature="e#242#1504#0" />
+                <element signature="e#1642#2925#0" />
+                <element signature="e#3719#4657#0" />
+                <element signature="e#4326#4816#0" />
+                <element signature="e#5093#5608#0" />
+                <element signature="e#3072#3419#0" />
+                <element signature="e#3571#3965#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -245,7 +240,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/study_space/demo_flask/app01/templates/web01.html" />
         <option value="$PROJECT_DIR$/study_space/demo_flask/app01/templates/index.html" />
         <option value="$PROJECT_DIR$/study_space/demo_flask/app01/templates/html_echart_003.html" />
         <option value="$PROJECT_DIR$/study_space/demo_flask/app01/templates/html_echart_002.html" />
@@ -295,14 +289,15 @@
         <option value="$PROJECT_DIR$/knowledge_point/python函数编写.py" />
         <option value="$PROJECT_DIR$/knowledge_point/python模块导入.py" />
         <option value="$PROJECT_DIR$/knowledge_spider/爬虫_美图录.py" />
+        <option value="$PROJECT_DIR$/knowledge_spider/爬虫_美图录（selenium）.py" />
         <option value="$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup）.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="698" />
-    <option name="width" value="1230" />
-    <option name="height" value="1048" />
+    <option name="x" value="158" />
+    <option name="width" value="1165" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -571,12 +566,12 @@
       <workItem from="1574401592966" duration="2503000" />
       <workItem from="1574419319374" duration="4170000" />
       <workItem from="1574525355154" duration="3672000" />
-      <workItem from="1574603138660" duration="5730000" />
+      <workItem from="1574603138660" duration="11341000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="294975000" />
+    <option name="totallyTimeSpent" value="300586000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -589,11 +584,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
       <window_info id="Favorites" order="1" sideWeight="0.25442478" side_tool="true" weight="0.3605898" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.7444668" weight="0.5676796" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.7444668" visible="true" weight="0.27345845" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32822758" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.27903682" />
@@ -606,11 +600,11 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.2555332" weight="0.35977337" />
-      <window_info active="true" anchor="bottom" x="9" y="461" width="1492" height="206" id="Python Console" order="12" sideWeight="0.5013405" visible="true" weight="0.28611898" />
+      <window_info active="true" anchor="bottom" x="9" y="461" width="1492" height="206" id="Python Console" order="12" sideWeight="0.5013405" visible="true" weight="0.28470254" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" x="2292" y="258" width="1229" height="475" id="SciView" order="3" weight="0.64075065" />
+      <window_info anchor="right" x="290" y="160" width="955" height="504" id="SciView" order="3" type="WINDOWED" weight="0.64008045" />
       <window_info anchor="right" id="Database" order="4" weight="0.32908848" />
       <window_info anchor="right" id="R Graphics" order="5" weight="0.3297587" />
       <window_info anchor="right" id="R Packages" order="6" weight="0.3297587" />
@@ -665,7 +659,6 @@
     <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_threading.coverage" NAME="爬虫_美图录（request+beautifulsoup+threading） Coverage Results" MODIFIED="1571073532342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/contract_question.md" />
     <entry file="file://$PROJECT_DIR$/space_history/learn_git/Cross_Validation.md" />
     <entry file="file://$PROJECT_DIR$/space_history/learn_git/database_intro.md" />
     <entry file="file://$PROJECT_DIR$/space_history/learn_git/debug学习.py">
@@ -674,29 +667,11 @@
     <entry file="file://$PROJECT_DIR$/space_history/learn_git/ensemble_learning.md" />
     <entry file="file://$PROJECT_DIR$/space_history/learn_git/kaiyuan_learn.md" />
     <entry file="file://$PROJECT_DIR$/space_history/learn_git/machine_learn.md" />
-    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_浏览器操作（selenium+PhontomJS）.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/space_history/learn_git/GITHUB_link.md" />
     <entry file="file://$PROJECT_DIR$/space_history/learn_git/selenium_learn.md" />
     <entry file="file://$PROJECT_DIR$/space_history/learn_git/GIT_code.md" />
     <entry file="file://$PROJECT_DIR$/space_history/python_space/study/urllib_test.py" />
     <entry file="file://$PROJECT_DIR$/space_history/python_space/study/maoyan.py" />
-    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_王者图片下载.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="15" selection-start-line="15" selection-end-line="50" selection-end-column="16" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-            <element signature="e#876#1273#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_浏览器操作（selenium+other）.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -929,8 +904,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_半次元下载.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="48" column="53" lean-forward="true" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
+        <state relative-caret-position="-700">
+          <caret line="52" column="20" lean-forward="true" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
             <element signature="e#242#482#0" />
@@ -939,10 +914,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_浏览器操作（selenium+PhontomJS）.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-47">
+          <caret line="21" selection-start-line="21" selection-end-line="23" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_美图录（selenium）.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="25" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_王者图片下载.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="87" selection-start-line="87" selection-end-line="88" selection-end-column="37" />
+          <folding>
+            <element signature="e#876#1273#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup）.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="105">
+          <caret line="103" column="41" selection-start-line="103" selection-start-column="41" selection-end-line="103" selection-end-column="41" />
+          <folding>
+            <element signature="e#242#1504#0" />
+            <element signature="e#1642#2925#0" />
+            <element signature="e#3719#4657#0" />
+            <element signature="e#4326#4816#0" />
+            <element signature="e#5093#5608#0" />
+            <element signature="e#3072#3419#0" />
+            <element signature="e#3571#3965#0" />
+          </folding>
         </state>
       </provider>
     </entry>
