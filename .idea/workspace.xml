@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/knowledge_spider/爬虫_浏览器操作（selenium+PhontomJS）.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_spider/爬虫_浏览器操作（selenium+PhontomJS）.py" afterDir="false" />
-    </list>
+    <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,8 +212,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_浏览器操作（selenium+PhontomJS）.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="23" selection-start-line="23" selection-end-line="23" selection-end-column="82" />
+            <state relative-caret-position="50">
+              <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -601,12 +598,12 @@
       <workItem from="1574667546281" duration="458000" />
       <workItem from="1574668032793" duration="512000" />
       <workItem from="1574668618982" duration="2742000" />
-      <workItem from="1574671944636" duration="3169000" />
+      <workItem from="1574671944636" duration="4163000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="311718000" />
+    <option name="totallyTimeSpent" value="312712000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -619,10 +616,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
       <window_info id="Favorites" order="1" sideWeight="0.25442478" side_tool="true" weight="0.3605898" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.7444668" visible="true" weight="0.23827292" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.7444668" visible="true" weight="0.23827292" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32822758" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.27903682" />
@@ -635,7 +633,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.2555332" weight="0.35900217" />
-      <window_info active="true" anchor="bottom" x="9" y="461" width="1492" height="206" id="Python Console" order="12" sideWeight="0.5013405" visible="true" weight="0.35032538" />
+      <window_info anchor="bottom" x="9" y="461" width="1492" height="206" id="Python Console" order="12" sideWeight="0.5013405" visible="true" weight="0.35032538" />
       <window_info anchor="bottom" id="File Transfer" order="13" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1001,8 +999,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_浏览器操作（selenium+PhontomJS）.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="23" selection-start-line="23" selection-end-line="23" selection-end-column="82" />
+        <state relative-caret-position="50">
+          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
         </state>
       </provider>
     </entry>
