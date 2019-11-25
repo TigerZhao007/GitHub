@@ -94,8 +94,8 @@ for i, tablename in zip(range(len(pg_tablename_all)), pg_tablename_all):
 '''数据导入'''
 # ######################################################################################################################
 
-path1 = r'D:\Desktop\out_data_1108\xlsx\xlsx'
-path2 = r'D:\Desktop\out_data_1108\pickle\pickle'
+path1 = r'D:\Desktop\out_data_1108\xlsx'
+path2 = r'D:\Desktop\out_data_1108\pickle'
 
 # 获取制定文件夹所有的表名称~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # # 方式1：os.listdir(path1)
@@ -120,7 +120,7 @@ def file_name(file_dir):
 # 获取制定文件夹所有的表名称~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 以pickle处理
 
-name_list2 = [ 'A_C026']
+# name_list2 = [ 'A_C026']
 
 for tablename in name_list2:
 

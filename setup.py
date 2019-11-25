@@ -8,13 +8,10 @@ username = 'postgres'
 password = '123456'
 host = 'localhost'
 port = '5432'
-dbname = 'zbda_demo'
+dbname = 'test'
 
 # PostgreSQL连接~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# engine_postgresql = sqlalchemy.create_engine("postgresql://%s:%s@%s:%s/%s" % (username, password, host, port, dbname),
-#                                              pool_size=20, max_overflow=5)
-
-engine_postgresql = sqlalchemy.create_engine("postgresql://%s:%s@%s:%s/%s" % (username, password, '192.168.1.122', port, 'zbda_demo'),
+engine_postgresql = sqlalchemy.create_engine("postgresql://%s:%s@%s:%s/%s" % (username, password, host, port, dbname),
                                              pool_size=20, max_overflow=5)
 
 engine_postgresql00 = sqlalchemy.create_engine("postgresql://%s:%s@%s:%s/%s" % (username, password, '47.100.173.196', '5432', 'test'),

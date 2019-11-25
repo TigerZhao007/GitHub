@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ghostdriver.log" beforeDir="false" afterPath="$PROJECT_DIR$/ghostdriver.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup）.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup）.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/markdown/后台运行PY文件（nohup）.txt" beforeDir="false" afterPath="$PROJECT_DIR$/markdown/后台运行PY文件（nohup）.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/markdown/常用Git命令.txt" beforeDir="false" afterPath="$PROJECT_DIR$/markdown/常用Git命令.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -201,19 +203,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup）.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="103" column="41" selection-start-line="103" selection-start-column="41" selection-end-line="103" selection-end-column="41" />
+            <state relative-caret-position="880">
+              <caret line="95" column="16" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/markdown/常用Git命令.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/setup.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="119" selection-start-line="119" selection-end-line="162" />
               <folding>
-                <element signature="e#242#1504#0" />
-                <element signature="e#1642#2925#0" />
-                <element signature="e#3719#4657#0" />
-                <element signature="e#4326#4816#0" />
-                <element signature="e#5093#5608#0" />
-                <element signature="e#3072#3419#0" />
-                <element signature="e#3571#3965#0" />
+                <element signature="e#186#205#0" expanded="true" />
+                <element signature="e#1027#1424#0" />
+                <element signature="e#2011#2247#0" />
+                <element signature="e#3539#3736#0" />
+                <element signature="e#4002#4669#0" />
+                <element signature="e#4716#5220#0" />
               </folding>
             </state>
           </provider>
@@ -240,8 +268,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/study_space/demo_flask/app01/templates/index.html" />
-        <option value="$PROJECT_DIR$/study_space/demo_flask/app01/templates/html_echart_003.html" />
         <option value="$PROJECT_DIR$/study_space/demo_flask/app01/templates/html_echart_002.html" />
         <option value="$PROJECT_DIR$/machine_learning/机器学习-EM算法模型.py" />
         <option value="$PROJECT_DIR$/study_space/demo_flask/app01/app_main.py" />
@@ -273,8 +299,6 @@
         <option value="$PROJECT_DIR$/demo_spider/爬虫_王者图片下载.py" />
         <option value="$PROJECT_DIR$/space_history/python_space/study/bcynet.py" />
         <option value="$PROJECT_DIR$/demo_spider/爬虫_半次元下载.py" />
-        <option value="$PROJECT_DIR$/setup.py" />
-        <option value="$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py" />
         <option value="$PROJECT_DIR$/space_python/关闭python进程（centos）.py" />
         <option value="$PROJECT_DIR$/centos_deploy/app01/app_main.py" />
         <option value="$PROJECT_DIR$/knowledge_point/sql/mysql_001.py" />
@@ -291,13 +315,18 @@
         <option value="$PROJECT_DIR$/knowledge_spider/爬虫_美图录.py" />
         <option value="$PROJECT_DIR$/knowledge_spider/爬虫_美图录（selenium）.py" />
         <option value="$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup）.py" />
+        <option value="$PROJECT_DIR$/markdown/后台运行PY文件（nohup）.txt" />
+        <option value="$PROJECT_DIR$/markdown/常用Git命令.txt" />
+        <option value="$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="158" />
-    <option name="width" value="1165" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="2247" />
+    <option name="y" value="185" />
+    <option name="width" value="1551" />
+    <option name="height" value="839" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -307,7 +336,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -318,19 +346,25 @@
             <path>
               <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
               <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="knowledge_spider" type="462c0819:PsiDirectoryNode" />
+              <item name="knowledge_point" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="space_python" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/demo_resume" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -567,11 +601,12 @@
       <workItem from="1574419319374" duration="4170000" />
       <workItem from="1574525355154" duration="3672000" />
       <workItem from="1574603138660" duration="11341000" />
+      <workItem from="1574644859854" duration="3224000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="300586000" />
+    <option name="totallyTimeSpent" value="303810000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -584,10 +619,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
       <window_info id="Favorites" order="1" sideWeight="0.25442478" side_tool="true" weight="0.3605898" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.7444668" visible="true" weight="0.27345845" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.7444668" visible="true" weight="0.2774799" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32822758" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.27903682" />
@@ -600,11 +636,11 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.2555332" weight="0.35977337" />
-      <window_info active="true" anchor="bottom" x="9" y="461" width="1492" height="206" id="Python Console" order="12" sideWeight="0.5013405" visible="true" weight="0.28470254" />
+      <window_info anchor="bottom" x="9" y="461" width="1492" height="206" id="Python Console" order="12" sideWeight="0.5013405" visible="true" weight="0.28470254" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" x="290" y="160" width="955" height="504" id="SciView" order="3" type="WINDOWED" weight="0.64008045" />
+      <window_info anchor="right" x="290" y="160" width="955" height="504" id="SciView" order="3" weight="0.64008045" />
       <window_info anchor="right" id="Database" order="4" weight="0.32908848" />
       <window_info anchor="right" id="R Graphics" order="5" weight="0.3297587" />
       <window_info anchor="right" id="R Packages" order="6" weight="0.3297587" />
@@ -689,25 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2131">
-          <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
-          <folding>
-            <element signature="e#186#205#0" expanded="true" />
-            <element signature="e#1027#1424#0" />
-            <element signature="e#2011#2247#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="17" column="74" lean-forward="true" selection-start-line="17" selection-start-column="74" selection-end-line="17" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/centos_deploy/app01/templates/html_echart_001.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -762,13 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/markdown/后台运行PY文件（nohup）.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_point/sql/sql分组排序问题.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2350">
@@ -784,20 +794,6 @@
     <entry file="file://$PROJECT_DIR$/knowledge_point/0简历制作.py" />
     <entry file="file://$PROJECT_DIR$/markdown/常用API.txt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/markdown/mysql操作大全.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
-          <caret line="339" column="16" selection-start-line="339" selection-start-column="16" selection-end-line="339" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/markdown/变量命名规则.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_point/批量运行py文件.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -823,9 +819,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/markdown/安装部署（centos）.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/machine_learning/模型检验-AUC详解.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
@@ -834,13 +827,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_point/python序列的排序.py" />
-    <entry file="file://$PROJECT_DIR$/markdown/常用Git命令.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="46" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_point/python条件和循环.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
@@ -899,9 +885,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_美图录.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_美图录.py" />
     <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_半次元下载.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-700">
@@ -921,13 +905,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_美图录（selenium）.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="25" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_美图录（selenium）.py" />
     <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_王者图片下载.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
@@ -938,19 +916,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/markdown/后台运行PY文件（nohup）.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="30" column="41" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/markdown/变量命名规则.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/markdown/mysql操作大全.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1875">
+          <caret line="339" column="16" selection-start-line="339" selection-start-column="16" selection-end-line="339" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/markdown/安装部署（centos）.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="240" column="12" lean-forward="true" selection-start-line="240" selection-start-column="12" selection-end-line="240" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup）.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="103" column="41" selection-start-line="103" selection-start-column="41" selection-end-line="103" selection-end-column="41" />
+        <state relative-caret-position="880">
+          <caret line="95" column="16" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_point/数据库数据导出导入.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="119" selection-start-line="119" selection-end-line="162" />
           <folding>
-            <element signature="e#242#1504#0" />
-            <element signature="e#1642#2925#0" />
-            <element signature="e#3719#4657#0" />
-            <element signature="e#4326#4816#0" />
-            <element signature="e#5093#5608#0" />
-            <element signature="e#3072#3419#0" />
-            <element signature="e#3571#3965#0" />
+            <element signature="e#186#205#0" expanded="true" />
+            <element signature="e#1027#1424#0" />
+            <element signature="e#2011#2247#0" />
+            <element signature="e#3539#3736#0" />
+            <element signature="e#4002#4669#0" />
+            <element signature="e#4716#5220#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/markdown/常用Git命令.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
