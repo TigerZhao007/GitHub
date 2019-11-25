@@ -124,29 +124,95 @@ def downloadPic(path, pic_url, pic_name):
     except:
         print('保存失败')
 
+# 设置桌面路径~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+def get_desktop():
+    import winreg
+    key = winreg.OpenKey(winreg.HKEY_CURRENT_USER,
+                         r'Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders')
+    desktop_path = winreg.QueryValueEx(key, "Desktop")[0]
+    return desktop_path
+
+# 新加存储路径~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+def mkdir(path):
+    import os    # 引入模块
+    path = path.strip()  # 去除首位空格
+    path = path.rstrip("\\")  # 去除尾部 \ 符号
+    isExists = os.path.exists(path)  # 判断路径是否存在, 存在-True, 不存在-False
+    # 判断结果
+    if not isExists:
+        # 如果不存在则创建目录, 创建目录操作函数
+        os.makedirs(path)
+        print(path + ' 创建成功')
+        return True
+    else:
+        # 如果目录存在则不创建，并提示目录已存在
+        print(path + ' 目录已存在')
+        return False
+
 # 爬虫代码汇总~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def main(url, tablename):
     import sqlalchemy
     engine = sqlalchemy.create_engine("postgresql://postgres:123456@106.12.30.122:5432/test",
                                       pool_size=20, max_overflow=5)
+    path = get_desktop() + '\\pic_file'
+    mkdir(path=path)
+
     html = getHtmlText(url)
     imglist = getImgList(html)
+    imglist = list(imglist['pic_url'])
 
-    with engine.connect() as conn:
-        imglist.to_sql(tablename, conn, if_exists='append', index=False)
+    list_false = []
+
+    for img_lis in imglist:
+        try:
+            img_url = img_lis
+            img_lis = getHtmlText(img_url)
+            img_num = getPicNum(img_lis)
+            img_lis = [img_url] + [img_url.replace('.html', '') + '_' + str(x) + '.html' for x in range(2, int(img_num))]
+
+            for img_li in img_lis:
+                try:
+                    img_info = getHtmlText(img_li)
+                    img_info = getPicList(img_info)
+
+                    for pic_list, pic_name in zip(img_info['pic_list'], img_info['pic_name']):
+                        print(pic_name)
+                        try:
+                            downloadPic(path=path, pic_url=pic_list, pic_name=pic_name)
+                        except:
+                            pass
+                except:
+                    pass
+        except:
+            list_false = list_false + [img_lis]
+
+    return list_false
+
+    # with engine.connect() as conn:
+    #     imglist.to_sql(tablename, conn, if_exists='append', index=False)
 
 # 主函数~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if __name__ == '__main__':
 
     import time
     t1 = time.time()
+    list_false = []
 
-    url_list = ['https://www.meitulu.com/t/nvshen/'] + \
-               ['https://www.meitulu.com/t/nvshen/%s.html' %(x) for x in range(2, 38)]
+    # url_list = ['https://www.meitulu.com/t/nvshen/'] + \
+    #            ['https://www.meitulu.com/t/nvshen/%s.html' %(x) for x in range(2, 38)]
 
-    # url_list = ['https://www.meitulu.com/t/nvshen/%s.html' %(x) for x in range(2, 38)]
+    url_list = ['https://www.meitulu.com/rihan/'] + \
+               ['https://www.meitulu.com/rihan/%s.html' %(x) for x in range(2, 95)] + \
+               ['https://www.meitulu.com/gangtai/'] + \
+               ['https://www.meitulu.com/gangtai/%s.html' % (x) for x in range(2, 39)] + \
+               ['https://www.meitulu.com/guochan/'] + \
+               ['https://www.meitulu.com/guochan/%s.html' % (x) for x in range(2, 39)]
+
     for url in url_list:
-        main(url, tablename='meitulu_single')
+        try:
+            main(url, tablename='meitulu_single')
+        except:
+            list_false = list_false + [url]
 
     t2 = time.time()
     print("总耗时：%.2f 秒"%(t2-t1))

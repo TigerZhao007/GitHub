@@ -20,8 +20,8 @@ pip install selenium
 
 # 使用selenium+phantomjs实现简单爬虫~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from selenium import webdriver
-# driver = webdriver.PhantomJS()
-driver = webdriver.PhantomJS(executable_path=r'/root/anaconda3/bin/phantomjs.exe')
+driver = webdriver.PhantomJS()
+# driver = webdriver.PhantomJS(executable_path=r'/root/anaconda3/bin/phantomjs.exe')
 # driver = webdriver.PhantomJS(executable_path=r'D:\Usr\Python\Scripts\phantomjs.exe')
 driver.get('http://www.baidu.com')  # 加载网页
 data = driver.page_source           # 获取网页文本
