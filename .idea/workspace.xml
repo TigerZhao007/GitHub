@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GitHub.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GitHub.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/knowledge_spider/爬虫_浏览器操作（selenium+PhontomJS）.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_spider/爬虫_浏览器操作（selenium+PhontomJS）.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -202,11 +200,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/space_python/EXCEL表sheets2db.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+            <state relative-caret-position="325">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="e#1#20#0" expanded="true" />
               </folding>
@@ -214,11 +212,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/setup.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_浏览器操作（selenium+PhontomJS）.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+            <state relative-caret-position="275">
+              <caret line="23" selection-start-line="23" selection-end-line="23" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -244,7 +242,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/machine_learning/机器学习-EM算法模型.py" />
         <option value="$PROJECT_DIR$/study_space/demo_flask/app01/app_main.py" />
         <option value="$PROJECT_DIR$/study_space/demo_flask/app01/templates/html_echart_001.html" />
         <option value="$PROJECT_DIR$/knowledge_point/网页解析方式.py" />
@@ -295,6 +292,7 @@
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup）.py" />
         <option value="$PROJECT_DIR$/markdown/安装部署（centos）.txt" />
+        <option value="$PROJECT_DIR$/knowledge_spider/爬虫_浏览器操作（selenium+PhontomJS）.py" />
       </list>
     </option>
   </component>
@@ -312,7 +310,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -323,17 +320,38 @@
             <path>
               <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
               <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="markdown" type="462c0819:PsiDirectoryNode" />
+              <item name="space_history" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
               <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="space_python" type="462c0819:PsiDirectoryNode" />
+              <item name="space_history" type="462c0819:PsiDirectoryNode" />
+              <item name="python_space" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="space_history" type="462c0819:PsiDirectoryNode" />
+              <item name="python_space" type="462c0819:PsiDirectoryNode" />
+              <item name="history" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="space_history" type="462c0819:PsiDirectoryNode" />
+              <item name="python_space" type="462c0819:PsiDirectoryNode" />
+              <item name="history" type="462c0819:PsiDirectoryNode" />
+              <item name="图片数据" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -583,11 +601,12 @@
       <workItem from="1574667546281" duration="458000" />
       <workItem from="1574668032793" duration="512000" />
       <workItem from="1574668618982" duration="2742000" />
+      <workItem from="1574671944636" duration="3169000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="308549000" />
+    <option name="totallyTimeSpent" value="311718000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -603,8 +622,7 @@
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
       <window_info id="Favorites" order="1" sideWeight="0.25442478" side_tool="true" weight="0.3605898" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.7444668" visible="true" weight="0.23560767" />
-      <window_info anchor="bottom" id="File Transfer" weight="0.329718" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.7444668" visible="true" weight="0.23827292" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32822758" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.27903682" />
@@ -617,11 +635,12 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.2555332" weight="0.35900217" />
-      <window_info active="true" anchor="bottom" x="9" y="461" width="1492" height="206" id="Python Console" order="12" sideWeight="0.5013405" visible="true" weight="0.37960956" />
+      <window_info active="true" anchor="bottom" x="9" y="461" width="1492" height="206" id="Python Console" order="12" sideWeight="0.5013405" visible="true" weight="0.35032538" />
+      <window_info anchor="bottom" id="File Transfer" order="13" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" x="290" y="160" width="955" height="504" id="SciView" order="3" type="WINDOWED" weight="0.63965887" />
+      <window_info anchor="right" x="290" y="160" width="955" height="504" id="SciView" order="3" weight="0.63965887" />
       <window_info anchor="right" id="Database" order="4" weight="0.32908848" />
       <window_info anchor="right" id="R Graphics" order="5" weight="0.3297587" />
       <window_info anchor="right" id="R Packages" order="6" weight="0.3297587" />
@@ -676,21 +695,12 @@
     <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_threading.coverage" NAME="爬虫_美图录（request+beautifulsoup+threading） Coverage Results" MODIFIED="1571073532342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/ensemble_learning.md" />
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/kaiyuan_learn.md" />
     <entry file="file://$PROJECT_DIR$/space_history/learn_git/machine_learn.md" />
     <entry file="file://$PROJECT_DIR$/space_history/learn_git/GITHUB_link.md" />
     <entry file="file://$PROJECT_DIR$/space_history/learn_git/selenium_learn.md" />
     <entry file="file://$PROJECT_DIR$/space_history/learn_git/GIT_code.md" />
     <entry file="file://$PROJECT_DIR$/space_history/python_space/study/urllib_test.py" />
     <entry file="file://$PROJECT_DIR$/space_history/python_space/study/maoyan.py" />
-    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_浏览器操作（selenium+other）.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="12" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -860,13 +870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_浏览器操作（selenium+PhontomJS）.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-47">
-          <caret line="21" selection-start-line="21" selection-end-line="23" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_美图录（selenium）.py" />
     <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_王者图片下载.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -962,18 +965,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
+        <state relative-caret-position="499">
           <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_浏览器操作（selenium+other）.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="12" selection-end-column="116" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/space_python/EXCEL表sheets2db.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        <state relative-caret-position="325">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="e#1#20#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/space_history/python_space/pyjuter/leisimaotaotu爬虫.ipynb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3900" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/space_history/python_space/history/图片数据/meizitu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="47" column="12" lean-forward="true" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_浏览器操作（selenium+PhontomJS）.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="23" selection-start-line="23" selection-end-line="23" selection-end-column="82" />
         </state>
       </provider>
     </entry>
