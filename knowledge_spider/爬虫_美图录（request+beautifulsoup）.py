@@ -152,23 +152,44 @@ def mkdir(path):
 # 爬虫代码汇总~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def main(url, tablename):
     import sqlalchemy
-    engine = sqlalchemy.create_engine("postgresql://postgres:123456@106.12.30.122:5432/test",
+    import pandas as pd
+
+    engine = sqlalchemy.create_engine("postgresql://postgres:123456@47.100.173.196:5432/project_spider",
                                       pool_size=20, max_overflow=5)
     path = get_desktop() + '\\pic_file'
     mkdir(path=path)
 
+    # 获取指定页图片列表~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     html = getHtmlText(url)
-    imglist = getImgList(html)
-    imglist = list(imglist['pic_url'])
+    picture_info = getImgList(html)
+    picture_info['is_download'] = 'flase'
 
+    # 获取指定页图片列表~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    try:
+        sql = ''' SELECT pic_url FROM public.picture_info '''
+        with engine.connect() as conn:
+            imglist_in = tuple(list(pd.read_sql_query(sql, conn)['pic_url']))
+
+        picture_info = picture_info[~picture_info['pic_url'].isin(imglist_in)]
+    except:
+        pass
+
+    with engine.connect() as conn:
+        picture_info.to_sql('picture_info', conn, if_exists='append', index=False)
+
+    imglist = list(picture_info['pic_url'])
     list_false = []
 
-    for img_lis in imglist:
+    for img_url in imglist:
         try:
-            img_url = img_lis
+            print('正在处理页码：%s' % (img_url))
             img_lis = getHtmlText(img_url)
             img_num = getPicNum(img_lis)
             img_lis = [img_url] + [img_url.replace('.html', '') + '_' + str(x) + '.html' for x in range(2, int(img_num))]
+
+            sql = '''update public.picture_info set is_download='true' where pic_url='%s' ''' %(img_url)
+            with engine.connect() as conn:
+                conn.execute(sql)
 
             for img_li in img_lis:
                 try:
@@ -198,15 +219,17 @@ if __name__ == '__main__':
     t1 = time.time()
     list_false = []
 
-    # url_list = ['https://www.meitulu.com/t/nvshen/'] + \
-    #            ['https://www.meitulu.com/t/nvshen/%s.html' %(x) for x in range(2, 38)]
-
-    url_list = ['https://www.meitulu.com/rihan/'] + \
-               ['https://www.meitulu.com/rihan/%s.html' %(x) for x in range(2, 95)] + \
-               ['https://www.meitulu.com/gangtai/'] + \
+    url_list = ['https://www.meitulu.com/gangtai/'] + \
                ['https://www.meitulu.com/gangtai/%s.html' % (x) for x in range(2, 39)] + \
                ['https://www.meitulu.com/guochan/'] + \
                ['https://www.meitulu.com/guochan/%s.html' % (x) for x in range(2, 39)]
+
+    # url_list = ['https://www.meitulu.com/rihan/'] + \
+    #            ['https://www.meitulu.com/rihan/%s.html' %(x) for x in range(2, 95)] + \
+    #            ['https://www.meitulu.com/gangtai/'] + \
+    #            ['https://www.meitulu.com/gangtai/%s.html' % (x) for x in range(2, 39)] + \
+    #            ['https://www.meitulu.com/guochan/'] + \
+    #            ['https://www.meitulu.com/guochan/%s.html' % (x) for x in range(2, 39)]
 
     for url in url_list:
         try:
