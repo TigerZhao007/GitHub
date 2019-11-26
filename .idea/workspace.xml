@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/knowledge_point/git/GIT_分支管理.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/machine_learning/机器学习-隐马尔科夫模型(HMM).py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/markppt/协整检验及误差修正模型.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/markppt/综合评价-多指标权重计算方法.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/markppt/综合评价-模型介绍.pptx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine_learning/机器学习-EM算法模型.py" beforeDir="false" afterPath="$PROJECT_DIR$/machine_learning/机器学习-EM算法模型(EM).py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine_learning/机器学习-常用模型.py" beforeDir="false" afterPath="$PROJECT_DIR$/machine_learning/机器学习-常用模型汇总.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/markdown/决策树和随机森林算法.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/markppt/决策树和随机森林算法.pptx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -199,7 +205,23 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/machine_learning/机器学习-隐马尔科夫模型(HMM).py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="366">
+              <caret line="274" column="27" selection-start-line="274" selection-start-column="27" selection-end-line="274" selection-end-column="27" />
+              <folding>
+                <element signature="e#214#309#0" />
+                <element signature="e#343#462#0" />
+                <element signature="e#828#1717#0" />
+                <element signature="e#1756#1911#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -220,7 +242,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/knowledge_point/0简历制作.py" />
         <option value="$PROJECT_DIR$/knowledge_point/矩阵运算.py" />
         <option value="$PROJECT_DIR$/knowledge_point/日期处理方式.py" />
         <option value="$PROJECT_DIR$/knowledge_point/正则表达式.py" />
@@ -271,11 +292,13 @@
         <option value="$PROJECT_DIR$/knowledge_point/git/常用Git命令.txt" />
         <option value="$PROJECT_DIR$/knowledge_point/git/常用Git命令.py" />
         <option value="$PROJECT_DIR$/knowledge_point/git/GIT_分支管理.py" />
+        <option value="$PROJECT_DIR$/machine_learning/机器学习-隐马尔科夫模型(HMM).py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="2873" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2177" />
+    <option name="y" value="28" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -298,7 +321,7 @@
             <path>
               <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
               <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="knowledge_point" type="462c0819:PsiDirectoryNode" />
+              <item name="machine_learning" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
@@ -314,25 +337,25 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/markdown" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/markppt" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Work\GitHub\markppt" />
+      <recent name="D:\Work\GitHub\markdown" />
       <recent name="D:\GitHub\demo_resume" />
       <recent name="D:\GitHub\centos_deploy" />
       <recent name="D:\Work\GitHub\demo_flask\app01\templates" />
-      <recent name="D:\Work\GitHub\demo_flask\app01\static" />
-      <recent name="D:\Work\GitHub\study_space\demo_flask\app01\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\GitHub\markppt" />
+      <recent name="D:\Work\GitHub" />
       <recent name="D:\Work\GitHub\knowledge_point\git" />
       <recent name="D:\Work\GitHub\knowledge_point" />
       <recent name="D:\Work\GitHub\markdown" />
-      <recent name="D:\GitHub\demo_spider" />
-      <recent name="D:\GitHub\space_python" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -560,12 +583,12 @@
       <workItem from="1574671944636" duration="4163000" />
       <workItem from="1574682278759" duration="772000" />
       <workItem from="1574683070444" duration="8936000" />
-      <workItem from="1574730149636" duration="6854000" />
+      <workItem from="1574730149636" duration="10336000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="329274000" />
+    <option name="totallyTimeSpent" value="332756000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -577,14 +600,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2873" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="2688" y="0" width="1159" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
       <window_info id="Favorites" order="1" sideWeight="0.25442478" side_tool="true" weight="0.3605898" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.7444668" visible="true" weight="0.3085339" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.7444668" weight="0.3085339" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32822758" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27820373" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27820373" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -594,7 +618,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.49927536" side_tool="true" weight="0.5" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.2555332" weight="0.3581599" />
-      <window_info anchor="bottom" x="9" y="461" width="1492" height="206" id="Python Console" order="12" sideWeight="0.5007246" visible="true" weight="0.35268345" />
+      <window_info active="true" anchor="bottom" x="9" y="461" width="1492" height="206" id="Python Console" order="12" sideWeight="0.5007246" visible="true" weight="0.35268345" />
       <window_info anchor="bottom" id="File Transfer" order="13" sideWeight="0.49057972" weight="0.26725084" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -654,9 +678,6 @@
     <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_threading.coverage" NAME="爬虫_美图录（request+beautifulsoup+threading） Coverage Results" MODIFIED="1571073532342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/space_history/learn_git/selenium_learn.md" />
-    <entry file="file://$PROJECT_DIR$/space_history/python_space/study/urllib_test.py" />
-    <entry file="file://$PROJECT_DIR$/space_history/python_space/study/maoyan.py" />
     <entry file="file://$PROJECT_DIR$/1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -734,13 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/machine_learning/模型检验-AUC详解.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="22" column="15" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -978,6 +992,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" selection-start-line="2" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machine_learning/机器学习-常用模型汇总.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machine_learning/机器学习-EM算法模型(EM).py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-448">
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machine_learning/模型检验-AUC详解.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="22" column="15" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machine_learning/机器学习-隐马尔科夫模型(HMM).py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="274" column="27" selection-start-line="274" selection-start-column="27" selection-end-line="274" selection-end-column="27" />
+          <folding>
+            <element signature="e#214#309#0" />
+            <element signature="e#343#462#0" />
+            <element signature="e#828#1717#0" />
+            <element signature="e#1756#1911#0" />
+          </folding>
         </state>
       </provider>
     </entry>
