@@ -7,7 +7,7 @@
 """
 
 # 请求网页数据~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-def getHtmlText(url):
+def getHtmlText(url,timeout=10):
     ''' # url:网页地址; # return:返回网页数据 '''
 
     # url = 'http://www.meitulu.cn/item/9131_220.html'
@@ -22,8 +22,8 @@ def getHtmlText(url):
 
     # 读取HTML文本~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     try:
-        # r = requests.get(url, headers, timeout=10)  # 如果状态码不是200 则应发HTTOError异常
-        r = requests.get(url, timeout=10)
+        # r = requests.get(url, headers, timeout=timeout)  # 如果状态码不是200 则应发HTTOError异常
+        r = requests.get(url, timeout=timeout)
         r.raise_for_status()               # 设置正确的编码方式
         r.encoding = r.apparent_encoding
         return r.text
@@ -63,7 +63,7 @@ def getPicList(html_pic):
     return pic_dict
 
 # 图片详情页列表~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-def downloadPic(path, pic_url, pic_name, referer):
+def downloadPic(path, pic_url, pic_name, referer, timeout=10):
 
     '''
     :param path: # path = r'D:\Desktop'
@@ -77,7 +77,7 @@ def downloadPic(path, pic_url, pic_name, referer):
     headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
                  'Referer': referer}
     # headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'}
-    r = requests.get(pic_url, headers=headers, stream=True).content
+    r = requests.get(pic_url, headers=headers, stream=True, timeout=timeout).content
 
     # 导入图片列表~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # r = requests.get(pic_url).content
@@ -183,8 +183,8 @@ if __name__ == '__main__':
         img_url = 'http://www.meitulu.cn' + img_url
         try:
             main(img_url=img_url, img_url_temp=img_url_temp)
-            if i % 100 == 0:
-                time.sleep(120)
+            if i % 10 == 0:
+                time.sleep(300)
             else:
                 time.sleep(10)
         except:
