@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/GitHub.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GitHub.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/knowledge_spider/美图录_project_v02/101_picture_info.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/knowledge_spider/美图录_project_v02/102_picture_download.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/knowledge_spider/爬虫_yssn.xyz小说.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_spider/爬虫_yssn.xyz小说.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/knowledge_spider/美图录_project/101_picture_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_spider/美图录_project_v01/101_picture_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/knowledge_spider/美图录_project/102_picture_download.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_spider/美图录_project_v01/102_picture_download.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/knowledge_spider/美图录_project/main.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -199,26 +204,7 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../GitPC/picture_download.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-720">
-              <caret line="182" lean-forward="true" selection-start-line="182" selection-end-line="182" />
-              <folding>
-                <element signature="e#242#2155#0" />
-                <element signature="e#2293#3576#0" />
-                <element signature="e#3719#4181#0" />
-                <element signature="e#4327#4921#0" />
-                <element signature="e#5084#5755#0" />
-                <element signature="e#5895#6135#0" />
-                <element signature="e#6273#6667#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -239,14 +225,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/knowledge_point/正则表达式.py" />
-        <option value="$PROJECT_DIR$/knowledge_point/数据库表结构.py" />
-        <option value="$PROJECT_DIR$/knowledge_point/数据库表结构导出.py" />
-        <option value="$PROJECT_DIR$/knowledge_point/pickle存储导入.py" />
-        <option value="$PROJECT_DIR$/knowledge_point/运行python文件.py" />
-        <option value="$PROJECT_DIR$/knowledge_point/数据聚合计算.py" />
-        <option value="$PROJECT_DIR$/space_python/表sheets2db.py" />
-        <option value="$PROJECT_DIR$/demo_flask/app01/templates/web01.html" />
         <option value="$PROJECT_DIR$/demo_flask/app01/templates/index.html" />
         <option value="$PROJECT_DIR$/demo_flask/app01/templates/html_echart_003.html" />
         <option value="$PROJECT_DIR$/demo_flask/demo_history/demo04/login.py" />
@@ -290,14 +268,21 @@
         <option value="$PROJECT_DIR$/knowledge_point/git/常用Git命令.py" />
         <option value="$PROJECT_DIR$/../GitPC/爬虫_美图录（request+beautifulsoup）.py" />
         <option value="$PROJECT_DIR$/../GitPC/picture_download.py" />
+        <option value="$PROJECT_DIR$/../GitPC/picture_info.py" />
+        <option value="$PROJECT_DIR$/../GitPC/story_info.py" />
+        <option value="$PROJECT_DIR$/knowledge_spider/美图录_project/101_picture_info.py" />
+        <option value="$PROJECT_DIR$/knowledge_spider/美图录_project/102_picture_download.py" />
+        <option value="$PROJECT_DIR$/knowledge_spider/爬虫_yssn.xyz小说.py" />
+        <option value="$PROJECT_DIR$/knowledge_spider/美图录_project_v1.1/101_picture_info.py" />
+        <option value="$PROJECT_DIR$/knowledge_spider/美图录_project_v02/101_picture_info.py" />
+        <option value="$PROJECT_DIR$/knowledge_spider/美图录_project_v02/102_picture_download.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="48" />
-    <option name="y" value="50" />
-    <option name="width" value="1440" />
-    <option name="height" value="780" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="143" />
+    <option name="width" value="878" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -322,7 +307,38 @@
             <path>
               <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
               <item name="GitHub" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="GitPC" type="462c0819:PsiDirectoryNode" />
+              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="knowledge_spider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitHub" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="space_history" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitHub" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="space_history" type="462c0819:PsiDirectoryNode" />
+              <item name="python_space" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitHub" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="space_history" type="462c0819:PsiDirectoryNode" />
+              <item name="python_space" type="462c0819:PsiDirectoryNode" />
+              <item name="history" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitHub" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
+              <item name="space_history" type="462c0819:PsiDirectoryNode" />
+              <item name="python_space" type="462c0819:PsiDirectoryNode" />
+              <item name="history" type="462c0819:PsiDirectoryNode" />
+              <item name="图片数据" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
@@ -339,7 +355,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GitPC" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/knowledge_spider" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
@@ -353,11 +369,11 @@
       <recent name="D:\Work\GitHub\markdown" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\knowledge_spider" />
       <recent name="D:\GitPC" />
       <recent name="D:\Work\GitHub\markppt" />
       <recent name="D:\Work\GitHub\markdown" />
       <recent name="D:\GitHub\demo_resume" />
-      <recent name="D:\GitHub\centos_deploy" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -372,8 +388,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.picture_download">
-    <configuration name="0简历制作" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.102_picture_download (1)">
+    <configuration name="101_picture_info" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GitHub" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -381,12 +397,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/knowledge_point" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/knowledge_spider/美图录_project_v02" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/knowledge_point/0简历制作.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/knowledge_spider/美图录_project_v02/101_picture_info.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -395,7 +411,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="爬虫_美图录（request+beautifulsoup）" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="102_picture_download (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GitHub" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -403,12 +419,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/knowledge_spider" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/knowledge_spider/美图录_project_v02" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/knowledge_spider/爬虫_美图录（request+beautifulsoup）.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/knowledge_spider/美图录_project_v02/102_picture_download.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -417,7 +433,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="app_main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="102_picture_download" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GitHub" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -425,34 +441,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/knowledge_flask/app01" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/knowledge_spider/美图录_project" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/knowledge_flask/app01/app_main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="app_main" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="GitHub" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/centos_deploy/app01" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/centos_deploy/app01/app_main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/knowledge_spider/美图录_project/102_picture_download.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -483,13 +477,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="story_info" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GitHub" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../GitPC" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../GitPC/story_info.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.102_picture_download (1)" />
+        <item itemvalue="Python.101_picture_info" />
+        <item itemvalue="Python.102_picture_download" />
         <item itemvalue="Python.picture_download" />
-        <item itemvalue="Python.爬虫_美图录（request+beautifulsoup）" />
-        <item itemvalue="Python.0简历制作" />
-        <item itemvalue="Python.app_main (2)" />
-        <item itemvalue="Python.app_main" />
+        <item itemvalue="Python.story_info" />
       </list>
     </recent_temporary>
   </component>
@@ -586,12 +602,12 @@
       <workItem from="1574682278759" duration="772000" />
       <workItem from="1574683070444" duration="8936000" />
       <workItem from="1574730149636" duration="11107000" />
-      <workItem from="1574771097165" duration="14757000" />
+      <workItem from="1574771097165" duration="35444000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="348284000" />
+    <option name="totallyTimeSpent" value="368971000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -603,29 +619,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="48" y="50" width="1440" height="780" extended-state="1" />
+    <frame x="143" y="0" width="878" height="1047" extended-state="0" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
       <window_info id="Favorites" order="1" sideWeight="0.25442478" side_tool="true" weight="0.3605898" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.7444668" visible="true" weight="0.15434782" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.7444668" visible="true" weight="0.39242053" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32822758" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39473686" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49932975" weight="0.32719547" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49865952" weight="0.3275488" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.49927536" side_tool="true" weight="0.5" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.2555332" weight="0.35791758" />
-      <window_info anchor="bottom" x="9" y="461" width="1492" height="206" id="Python Console" order="12" sideWeight="0.5007246" weight="0.6346749" />
-      <window_info anchor="bottom" id="File Transfer" order="13" sideWeight="0.49057972" weight="0.26681128" />
+      <window_info anchor="bottom" id="TODO" order="2" sideWeight="0.49932975" weight="0.3264642" />
+      <window_info anchor="bottom" id="Version Control" order="3" sideWeight="0.49865952" weight="0.3275488" />
+      <window_info anchor="bottom" id="File Transfer" order="4" sideWeight="0.49057972" weight="0.26681128" />
+      <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.2555332" weight="0.35791758" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.22891566" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.39943343" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.49927536" side_tool="true" weight="0.5" />
+      <window_info anchor="bottom" x="9" y="461" width="1492" height="206" id="Python Console" order="13" sideWeight="0.5007246" weight="0.4099783" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" x="1" y="398" width="1462" height="504" id="SciView" order="3" type="WINDOWED" weight="0.6391258" />
+      <window_info anchor="right" x="1" y="398" width="1692" height="504" id="SciView" order="3" type="WINDOWED" weight="0.6391258" />
       <window_info anchor="right" id="Database" order="4" weight="0.32908848" />
       <window_info anchor="right" id="R Graphics" order="5" weight="0.3297587" />
       <window_info anchor="right" id="R Packages" order="6" weight="0.3297587" />
@@ -661,12 +677,15 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.md" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/GitHub$picture_download.coverage" NAME="picture_download Coverage Results" MODIFIED="1574860576388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../GitPC" />
+    <SUITE FILE_PATH="coverage/GitHub$picture_download.coverage" NAME="picture_download Coverage Results" MODIFIED="1574942575623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../GitPC" />
     <SUITE FILE_PATH="coverage/GitHub$login.coverage" NAME="login Coverage Results" MODIFIED="1573395381751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo_flask/demo_history/demo04" />
     <SUITE FILE_PATH="coverage/GitHub$app_login.coverage" NAME="app_login Coverage Results" MODIFIED="1572536296407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_space/demo_flask/demo_history/demo02" />
+    <SUITE FILE_PATH="coverage/GitHub$story_info.coverage" NAME="story_info Coverage Results" MODIFIED="1574873603969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../GitPC" />
+    <SUITE FILE_PATH="coverage/GitHub$102_picture_download.coverage" NAME="102_picture_download Coverage Results" MODIFIED="1574944985872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/knowledge_spider/美图录_project" />
     <SUITE FILE_PATH="coverage/GitHub$0.coverage" NAME="0简历制作 Coverage Results" MODIFIED="1574160536449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/knowledge_point" />
     <SUITE FILE_PATH="coverage/GitHub$AddCount.coverage" NAME="AddCount Coverage Results" MODIFIED="1570460846001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_space/python_space/demo_flask/demo01" />
     <SUITE FILE_PATH="coverage/GitHub$app_main.coverage" NAME="app_main Coverage Results" MODIFIED="1573994191957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/centos_deploy/app01" />
+    <SUITE FILE_PATH="coverage/GitHub$picture_info.coverage" NAME="picture_info Coverage Results" MODIFIED="1574863895518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../GitPC" />
     <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_multiprocessing.coverage" NAME="爬虫_美图录（request+beautifulsoup+multiprocessing） Coverage Results" MODIFIED="1571068872145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$__request_beautifulsoup.coverage" NAME="爬虫_美图录-多线程（request+beautifulsoup） Coverage Results" MODIFIED="1571019374837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$denglu.coverage" NAME="denglu Coverage Results" MODIFIED="1573394144221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo_flask/demo_history/demo03" />
@@ -674,6 +693,8 @@
     <SUITE FILE_PATH="coverage/GitHub$.coverage" NAME="数据库数据导出导入 Coverage Results" MODIFIED="1573145147733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/knowledge_point" />
     <SUITE FILE_PATH="coverage/GitHub$request_beautifulsoup.coverage" NAME="爬虫（request+beautifulsoup） Coverage Results" MODIFIED="1570983482002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$test01.coverage" NAME="test01 Coverage Results" MODIFIED="1570154180834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
+    <SUITE FILE_PATH="coverage/GitHub$101_picture_info.coverage" NAME="101_picture_info Coverage Results" MODIFIED="1574948100178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/knowledge_spider/美图录_project_v02" />
+    <SUITE FILE_PATH="coverage/GitHub$102_picture_download__1_.coverage" NAME="102_picture_download (1) Coverage Results" MODIFIED="1574955069645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/knowledge_spider/美图录_project_v02" />
     <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_threading.coverage" NAME="爬虫_美图录（request+beautifulsoup+threading） Coverage Results" MODIFIED="1571073532342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$API_.coverage" NAME="高德API-基础学习 Coverage Results" MODIFIED="1571155809708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_tomrrow.coverage" NAME="爬虫_美图录（request+beautifulsoup+tomrrow） Coverage Results" MODIFIED="1571067996128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
@@ -681,63 +702,6 @@
     <SUITE FILE_PATH="coverage/GitHub$app_main__2_.coverage" NAME="app_main (2) Coverage Results" MODIFIED="1573997077088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/knowledge_flask/app01" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/knowledge_point/数据库表结构导出.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-435">
-          <caret selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/centos_deploy/app01/templates/html_echart_001.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_python/关闭python进程（centos）.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="33" column="10" lean-forward="true" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_point/pickle存储导入.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="82" column="14" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
-          <folding>
-            <element signature="e#185#198#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_point/正则表达式.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_flask/app01/app_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="155" selection-start-line="155" selection-end-line="155" />
-          <folding>
-            <element signature="e#367#435#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_point/sql/mongodb_001.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4169" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_point/0简历制作.py" />
     <entry file="file://$PROJECT_DIR$/markdown/常用API.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -808,18 +772,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_美图录.py" />
-    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_半次元下载.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-700">
-          <caret line="52" column="20" lean-forward="true" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#242#482#0" />
-            <element signature="e#621#1018#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_美图录（selenium）.py" />
     <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_王者图片下载.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -887,13 +839,6 @@
     <entry file="file://$PROJECT_DIR$/space_history/python_space/pyjuter/leisimaotaotu爬虫.ipynb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3900" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/python_space/history/图片数据/meizitu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="47" column="12" lean-forward="true" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/space_python/EXCEL表sheets2db.py">
@@ -1022,10 +967,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../GitPC/picture_download.py">
+    <entry file="file://$PROJECT_DIR$/../GitPC/story_info.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-720">
-          <caret line="182" lean-forward="true" selection-start-line="182" selection-end-line="182" />
+        <state relative-caret-position="168">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#242#2155#0" />
+            <element signature="e#1320#2111#0" />
+            <element signature="e#2181#2999#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GitPC/picture_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="229" column="10" lean-forward="true" selection-start-line="229" selection-start-column="10" selection-end-line="229" selection-end-column="10" />
           <folding>
             <element signature="e#242#2155#0" />
             <element signature="e#2293#3576#0" />
@@ -1034,6 +991,86 @@
             <element signature="e#5084#5755#0" />
             <element signature="e#5895#6135#0" />
             <element signature="e#6273#6667#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GitPC/picture_download.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="133" selection-start-line="133" selection-end-line="133" />
+          <folding>
+            <element signature="e#242#2155#0" />
+            <element signature="e#2293#3576#0" />
+            <element signature="e#3719#4181#0" />
+            <element signature="e#4327#4921#0" />
+            <element signature="e#6310#6704#0" />
+            <element signature="e#6844#8119#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/美图录_project/main.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/美图录_project_v01/102_picture_download.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2790">
+          <caret line="209" lean-forward="true" selection-start-line="209" selection-end-line="209" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/美图录_project_v01/101_picture_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4480">
+          <caret line="175" column="57" selection-start-line="175" selection-start-column="57" selection-end-line="175" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_半次元下载.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="52" column="20" lean-forward="true" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#242#482#0" />
+            <element signature="e#621#1018#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_yssn.xyz小说.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="676">
+          <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/美图录_project_v02/101_picture_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1036">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+          <folding>
+            <element signature="e#242#2155#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/space_history/python_space/history/图片数据/meizitu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="29" selection-start-line="29" selection-end-line="31" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/美图录_project_v02/102_picture_download.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="183" column="12" lean-forward="true" selection-start-line="183" selection-start-column="12" selection-end-line="183" selection-end-column="12" />
+          <folding>
+            <element signature="e#2847#3962#0" />
+            <element signature="e#4102#4342#0" />
+            <element signature="e#4480#4874#0" />
           </folding>
         </state>
       </provider>

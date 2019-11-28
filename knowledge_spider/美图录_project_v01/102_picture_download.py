@@ -182,7 +182,7 @@ def main(img_url):
             except:
                 pass
 
-        sql = '''update public.picture_info set is_download='true' where pic_url='%s' ''' % (img_url)
+        sql = '''update public.meitulu_picture_info_v01 set is_download='true' where pic_url='%s' ''' % (img_url)
         with engine.connect() as conn:
             conn.execute(sql)
 
@@ -204,7 +204,7 @@ if __name__ == '__main__':
     engine = sqlalchemy.create_engine("postgresql://postgres:123456@47.100.173.196:5432/project_spider",
                                       pool_size=20, max_overflow=5)
 
-    sql = '''select distinct pic_url FROM public.product_info_undownload'''
+    sql = '''select distinct pic_url FROM public.meitulu_picture_info_undownload_v01'''
     with engine.connect() as conn:
         url_list = list(pd.read_sql_query(sql, conn)['pic_url'])
 

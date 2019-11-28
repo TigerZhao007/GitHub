@@ -9,11 +9,12 @@
 def getHtmlText(url):
     ''' # url:网页地址; # return:返回网页数据 '''
 
+    # url = 'http://www.meitulu.cn/rihan/index_2.html'
     # 导入所需模块~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     import requests
     import random
 
-    # 设置表头~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # 设置表头~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     headers = {}
     headers['User-Agent'] = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) " \
                             "Chrome/63.0.3239.132 Safari/537." + str(random.randint(1, 99))
@@ -37,44 +38,53 @@ def getImgList(html):
 
     # 导入图片列表~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     soup = bs(html, 'lxml')
-    soup = soup.find('div', attrs={'class': 'posts-loop clear'})
-    soup1 = soup.find_all('h2', attrs={'class': 'entry-title'})    # 表示在整个网页中过滤出所有图片的地址，放在imglist中
-    soup2 = soup.find_all('span', attrs={'class': 'entry-category'})    # 表示在整个网页中过滤出所有图片的地址，放在imglist中
+    soup = soup.find('div', attrs={'class': 'main'}).find('ul', attrs={'class': 'img'})
+    soup = soup.find_all('li')     # 表示在整个网页中过滤出所有图片的地址，放在imglist中
+    namelist = ['model_name', 'pic_name', 'pic_num', 'pic_agent', 'pic_label', 'pic_url']
+    imglist = pd.DataFrame(columns=namelist)
 
     # 统计列表信息~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    story_url = [x.find('a')['href'] for x in soup1]
-    story_name = [x.text for x in soup1]
-    story_type = [x.text.replace('\n','') for x in soup2]
+    for img in soup:
+        imgdict = {}
+        imgdict['pic_url'] = img.find('a')['href']
+        imgdict['pic_name'] = img.find('img')['alt']
+        temp = img.find_all('p')[0].find('span').text
+        imgdict['pic_num'] = img.find_all('p')[0].text.replace('数量：', '').replace(temp, '')
+        # imgdict['pic_num'] = img.find_all('p')[0].text.replace('数量：', '')
+        imgdict['pic_agent'] = img.find_all('p')[1].text.replace('机构：','')
+        imgdict['model_name'] = img.find_all('p')[2].text.replace('模特：','')
+        imgdict['pic_label'] = img.find_all('p')[3].text.replace('标签：','')
+        imgdict = pd.DataFrame([imgdict])[namelist]
+        imglist = imglist.append(imgdict)
 
-    story_list = pd.DataFrame({'story_name':story_name, 'story_type':story_type, 'story_url': story_url})
+    return imglist
 
-    return story_list
-
-# 指定某一页，统计该页信息~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 爬虫代码汇总~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def main(url):
-
     import sqlalchemy
     import pandas as pd
 
     engine = sqlalchemy.create_engine("postgresql://postgres:123456@47.100.173.196:5432/project_spider",
                                       pool_size=20, max_overflow=5)
 
+    # 获取指定页图片列表~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     html = getHtmlText(url)
-    story_info = getImgList(html)
-    story_info['is_download'] = 'flase'
+    picture_info = getImgList(html)
+    picture_info['is_download'] = 'flase'
 
     # 获取指定页图片列表~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     try:
-        sql = ''' SELECT story_url FROM public.yssn_story_info_v01 '''
+        sql = ''' SELECT pic_url FROM public.meitulu_picture_info_v02 '''
         with engine.connect() as conn:
-            story_list_in = tuple(list(pd.read_sql_query(sql, conn)['pic_url']))
+            imglist_in = tuple(list(pd.read_sql_query(sql, conn)['pic_url']))
 
-        story_info = story_info[~story_info['pic_url'].isin(story_list_in)]
+        picture_info = picture_info[~picture_info['pic_url'].isin(imglist_in)]
+
     except:
         pass
 
     with engine.connect() as conn:
-        story_info.to_sql('story_info', conn, if_exists='append', index=False)
+        picture_info.to_sql('meitulu_picture_info_v02', conn, if_exists='append', index=False)
 
 # 主函数~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if __name__ == '__main__':
@@ -83,15 +93,22 @@ if __name__ == '__main__':
     t1 = time.time()
     list_false = []
 
-    url_list = ['http://yssn.xyz/'] + ['http://yssn.xyz/index.php/page/%s/'%(x) for x in range(1, 200)]
-    # url = 'http://yssn.xyz/index.php/page/2/'
+    # name_list = ['rihan', 'gangtai', 'guochan']
+    url_list = ['http://www.meitulu.cn/rihan/'] + \
+               ['http://www.meitulu.cn/rihan/index_%s.html' %(x) for x in range(2, 50)] + \
+               ['http://www.meitulu.cn/gangtai/'] + \
+               ['http://www.meitulu.cn/gangtai/index_%s.html' % (x) for x in range(2, 50)] + \
+               ['http://www.meitulu.cn/guochan/'] + \
+               ['http://www.meitulu.cn/guochan/index_%s.html' % (x) for x in range(2, 50)]
+
     for url in url_list:
         try:
-            print('正在处理页码：%s' % (url))
+            print('正在处理连接：%s......' %(url))
             main(url)
-            time.time(1)
+            time.sleep(1)  # 推迟一秒
         except:
             list_false = list_false + [url]
 
     t2 = time.time()
-    print("总耗时：%.2f 秒" % (t2 - t1))
+    print("总耗时：%.2f 秒"%(t2-t1))
+
