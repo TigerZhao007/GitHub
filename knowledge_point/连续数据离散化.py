@@ -28,13 +28,20 @@ import numpy as np
 data = np.random.rand(20)*10
 
 # 指定区间离散化~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# cut : 以自定义分位数（最小值不包括端点）
+# pandas.cut(x, bins, right=True, labels=None, retbins=False, precision=3, include_lowest=False, duplicates='raise')
 label_cut = [0, 2, 4, 6, 8, 10]
+label_cut[0] = label_cut[0]*(1-1e-10)
 data_cut = pd.cut(data, label_cut)
+
+# qcut : 跟cut一样也可以自定义分位数（0到1之间的数值，包括端点）
+# pandas.qcut(x, q, labels=None, retbins=False, precision=3, duplicates='raise')
+label_qcut = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
+data_qcut = pd.qcut(data, label_qcut)
 
 # 生成离散结果与原始结果对比
 df_cut = pd.DataFrame({'data':data, 'data_cut':data_cut})
 df_cut = df_cut.sort_values(by='data')
-
 
 # 等宽离散~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 将属性的值域从最小值到最大值分成具有相同宽度的n个区间，n由数据特点决定，往往是需要有业务经验的人进行评估。
