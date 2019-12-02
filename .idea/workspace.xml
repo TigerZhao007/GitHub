@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b138fdc-563c-490f-bc5d-28e1d3e1dbb7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/space_python/meizitu_info.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/space_python/mzitu_info.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/knowledge_spider/爬虫_yssn.xyz小说.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_spider/YSSN_project_v01/101_story_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/knowledge_spider/美图录_project_v02/102_picture_download.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_spider/美图录_project_v02/102_picture_download.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -200,21 +200,7 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/knowledge_spider/美图录_project_v02/102_picture_download.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="192" column="20" lean-forward="true" selection-start-line="192" selection-start-column="20" selection-end-line="192" selection-end-column="20" />
-              <folding>
-                <element signature="e#4102#4342#0" />
-                <element signature="e#4480#4874#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -235,8 +221,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/demo_flask/demo_history/demo04/login.py" />
-        <option value="$PROJECT_DIR$/demo_flask/app01/static/Login.css" />
         <option value="$PROJECT_DIR$/demo_flask/app01/templates/html_echart_001.html" />
         <option value="$PROJECT_DIR$/demo_flask/app01/templates/login.html" />
         <option value="$PROJECT_DIR$/markdown/安装部署（centos）.md" />
@@ -286,14 +270,15 @@
         <option value="$PROJECT_DIR$/knowledge_spider/YSSN_project_v01/102_story_info_detail.py" />
         <option value="$PROJECT_DIR$/knowledge_spider/YSSN_project_v01/101_story_info.py" />
         <option value="$PROJECT_DIR$/knowledge_spider/美图录_project_v02/102_picture_download.py" />
+        <option value="$PROJECT_DIR$/space_python/mzitu_info.py" />
+        <option value="$PROJECT_DIR$/space_python/meizitu_info.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="202" />
-    <option name="y" value="17" />
-    <option name="width" value="878" />
-    <option name="height" value="797" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="624" />
+    <option name="width" value="1302" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -319,44 +304,7 @@
               <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
               <item name="GitHub" type="47feb1d3:ProjectViewModuleNode" />
               <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="knowledge_spider" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GitHub" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="knowledge_spider" type="462c0819:PsiDirectoryNode" />
-              <item name="美图录_project_v02" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GitHub" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="space_history" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GitHub" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="space_history" type="462c0819:PsiDirectoryNode" />
-              <item name="python_space" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GitHub" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="space_history" type="462c0819:PsiDirectoryNode" />
-              <item name="python_space" type="462c0819:PsiDirectoryNode" />
-              <item name="history" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GitHub" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
-              <item name="space_history" type="462c0819:PsiDirectoryNode" />
-              <item name="python_space" type="462c0819:PsiDirectoryNode" />
-              <item name="history" type="462c0819:PsiDirectoryNode" />
-              <item name="图片数据" type="462c0819:PsiDirectoryNode" />
+              <item name="space_python" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
@@ -373,25 +321,25 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/knowledge_spider/YSSN_project_v01" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/knowledge_spider" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\knowledge_spider" />
+      <recent name="D:\GitHub\knowledge_spider\YSSN_project_v01" />
+      <recent name="D:\GitPC" />
+      <recent name="D:\Work\GitHub\markppt" />
+      <recent name="D:\Work\GitHub\markdown" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\GitHub\knowledge_spider\YSSN_project_v01" />
       <recent name="D:\Work\GitHub\markppt" />
       <recent name="D:\Work\GitHub" />
       <recent name="D:\Work\GitHub\knowledge_point\git" />
       <recent name="D:\Work\GitHub\knowledge_point" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\GitHub\knowledge_spider\YSSN_project_v01" />
-      <recent name="D:\GitHub\knowledge_spider" />
-      <recent name="D:\GitPC" />
-      <recent name="D:\Work\GitHub\markppt" />
-      <recent name="D:\Work\GitHub\markdown" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -620,12 +568,14 @@
       <workItem from="1574682278759" duration="772000" />
       <workItem from="1574683070444" duration="8936000" />
       <workItem from="1574730149636" duration="11107000" />
-      <workItem from="1574771097165" duration="39398000" />
+      <workItem from="1574771097165" duration="39997000" />
+      <workItem from="1575028814650" duration="348000" />
+      <workItem from="1575188310110" duration="9347000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="372925000" />
+    <option name="totallyTimeSpent" value="383219000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -637,33 +587,32 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="624" y="0" width="1302" height="1047" extended-state="0" />
     <layout>
-      <window_info id="Structure" order="0" sideWeight="0.2591912" side_tool="true" weight="0.17110874" />
-      <window_info id="Favorites" order="1" sideWeight="0.2591912" side_tool="true" weight="0.17110874" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.74080884" visible="true" weight="0.24040511" />
-      <window_info id="TODO" order="3" sideWeight="0.2591912" side_tool="true" weight="0.17110874" />
+      <window_info id="Structure" order="0" sideWeight="0.26067907" side_tool="true" weight="0.24959743" />
+      <window_info id="Favorites" order="1" sideWeight="0.26067907" side_tool="true" weight="0.24959743" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.73932093" visible="true" weight="0.24959743" />
+      <window_info id="TODO" order="3" sideWeight="0.26067907" side_tool="true" weight="0.24959743" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32822758" />
-      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.2555332" weight="0.35791758" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.4987775" visible="true" weight="0.1691974" />
+      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.2555332" weight="0.35706463" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.4987775" weight="0.30777657" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5012225" side_tool="true" weight="0.3152338" />
-      <window_info anchor="bottom" x="9" y="461" width="1492" height="206" id="Python Console" order="10" sideWeight="0.5007246" weight="0.4099783" />
+      <window_info active="true" anchor="bottom" x="9" y="461" width="1492" height="206" id="Python Console" order="10" sideWeight="0.5007246" visible="true" weight="0.42387733" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" x="1" y="398" width="1692" height="504" id="SciView" order="3" type="WINDOWED" weight="0.6391258" />
+      <window_info anchor="right" x="1" y="398" width="1692" height="504" id="SciView" order="3" weight="0.6391258" />
       <window_info anchor="right" id="Database" order="4" weight="0.32908848" />
       <window_info anchor="right" id="R Graphics" order="5" weight="0.3297587" />
       <window_info anchor="right" id="R Packages" order="6" weight="0.3297587" />
       <window_info anchor="right" id="Version Control" order="7" sideWeight="0.37418655" side_tool="true" weight="0.17110874" />
-      <window_info anchor="right" id="File Transfer" order="8" sideWeight="0.2591912" side_tool="true" weight="0.17110874" />
+      <window_info anchor="right" id="File Transfer" order="8" sideWeight="0.2591912" side_tool="true" weight="0.39242053" />
     </layout>
     <layout-to-restore>
       <window_info id="Structure" order="0" sideWeight="0.50094515" side_tool="true" weight="0.13941018" />
@@ -713,7 +662,7 @@
     <SUITE FILE_PATH="coverage/GitHub$request_beautifulsoup.coverage" NAME="爬虫（request+beautifulsoup） Coverage Results" MODIFIED="1570983482002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$test01.coverage" NAME="test01 Coverage Results" MODIFIED="1570154180834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$101_picture_info.coverage" NAME="101_picture_info Coverage Results" MODIFIED="1574948100178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/knowledge_spider/美图录_project_v02" />
-    <SUITE FILE_PATH="coverage/GitHub$102_picture_download__1_.coverage" NAME="102_picture_download (1) Coverage Results" MODIFIED="1574959049452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/knowledge_spider/美图录_project_v02" />
+    <SUITE FILE_PATH="coverage/GitHub$102_picture_download__1_.coverage" NAME="102_picture_download (1) Coverage Results" MODIFIED="1575188322019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/knowledge_spider/美图录_project_v02" />
     <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_threading.coverage" NAME="爬虫_美图录（request+beautifulsoup+threading） Coverage Results" MODIFIED="1571073532342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$API_.coverage" NAME="高德API-基础学习 Coverage Results" MODIFIED="1571155809708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
     <SUITE FILE_PATH="coverage/GitHub$_request_beautifulsoup_tomrrow.coverage" NAME="爬虫_美图录（request+beautifulsoup+tomrrow） Coverage Results" MODIFIED="1571067996128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_space" />
@@ -721,58 +670,6 @@
     <SUITE FILE_PATH="coverage/GitHub$app_main__2_.coverage" NAME="app_main (2) Coverage Results" MODIFIED="1573997077088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/knowledge_flask/app01" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/knowledge_point/查看运行时间的方法.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_point/python序列的排序.py" />
-    <entry file="file://$PROJECT_DIR$/knowledge_point/python条件和循环.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_point/python数据类型.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" selection-start-line="2" selection-end-line="4" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_point/python类和方法.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3750">
-          <caret line="182" selection-start-line="182" selection-end-line="182" />
-          <folding>
-            <element signature="e#1527#1736#0" />
-            <element signature="e#2847#3056#0" />
-            <element signature="e#3210#3382#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_point/数据聚合计算.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_point/发邮件（smtplib）.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2948" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_point/发邮件（zmail）.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3623" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_point/日期处理方式.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1050" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_point/python模块导入.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="566">
@@ -789,16 +686,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_美图录.py" />
     <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_美图录（selenium）.py" />
-    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_王者图片下载.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="87" selection-start-line="87" selection-end-line="88" selection-end-column="37" />
-          <folding>
-            <element signature="e#876#1273#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/爬虫_王者图片下载.py" />
     <entry file="file://$PROJECT_DIR$/markdown/后台运行PY文件（nohup）.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="750">
@@ -1026,9 +914,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_spider/美图录_project/main.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/美图录_project/main.py" />
     <entry file="file://$PROJECT_DIR$/knowledge_spider/美图录_project_v01/102_picture_download.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2790">
@@ -1065,20 +951,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/space_history/python_space/history/图片数据/meizitu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="29" selection-start-line="29" selection-end-line="31" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_spider/YSSN_project_v01/102_story_info_detail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-140">
-          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/YSSN_project_v01/102_story_info_detail.py" />
     <entry file="file://$PROJECT_DIR$/knowledge_spider/YSSN_project_v01/101_story_info.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="700">
@@ -1086,13 +959,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/space_history/python_space/history/meizitu/meizitu/spiders/meizitu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-84">
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/space_history/python_space/history/图片数据/meizitu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/space_history/python_space/history/.ipynb_checkpoints/mmjpg爬虫-checkpoint.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/space_history/python_space/history/.ipynb_checkpoints/leisimaotaotu爬虫-checkpoint.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/space_history/python_space/history/.ipynb_checkpoints/小说-爬虫-checkpoint.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/space_history/python_space/history/.ipynb_checkpoints/爬虫request-checkpoint.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/space_history/python_space/history/练习文件/get_douban/get_douban/spiders/douban.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_spider/美图录_project_v02/102_picture_download.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="192" column="20" lean-forward="true" selection-start-line="192" selection-start-column="20" selection-end-line="192" selection-end-column="20" />
+        <state relative-caret-position="224">
+          <caret line="177" selection-start-line="177" selection-end-line="177" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_spider/妹子图_project_v01/101_picture_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/space_python/mzitu_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
           <folding>
-            <element signature="e#4102#4342#0" />
-            <element signature="e#4480#4874#0" />
+            <element signature="e#170#2850#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/space_python/meizitu_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="102" column="16" lean-forward="true" selection-start-line="102" selection-start-column="16" selection-end-line="102" selection-end-column="16" />
+          <folding>
+            <element signature="e#22#31#0" expanded="true" />
+            <element signature="e#315#685#0" />
+            <element signature="e#736#3409#0" />
           </folding>
         </state>
       </provider>
