@@ -765,9 +765,107 @@ print('原始数据和id', b, id(b))          # 原始数据和id [1, 2, [3, 4]]
 # >>>>>python test.py 22 33
 ['test.py', '22', '33']
 
+# 69、请将[i for i in range(3)]改成生成器~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 生成器是特殊的迭代器，
+# 1、列表表达式的【】改为（）即可变成生成器
+# 2、函数在返回值得时候出现yield就变成生成器，而不是函数了；中括号换成小括号即可，有没有惊呆了
+a = [i for i in range(3)]    # [0, 1, 2]
+a = (i for i in range(3))    # <generator object <genexpr> at 0x7f488ade3a98>
+type(a)                      # generator
 
+# 70、a = "  hehheh  ",去除收尾空格~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+a = "  hehheh  "
+a.strip()
 
+# 71、举例sort和sorted对列表排序，list=[0,-1,3,-10,5,9]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+list = [0, -1, 3, -10, 5, 9]
+list.sort(reverse=False)              # list.sort在list基础上修改，无返回值， # [-10, -1, 0, 3, 5, 9]
 
+list = [0, -1, 3, -10, 5, 9]
+res = sorted(list, reverse=False)     # sorted有返回值是新的list，本身不会发生变化。
+
+# 72、对list排序foo = [-5,8,0,4,9,-4,-20,-2,8,2,-4],使用lambda函数从小到大排序~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+foo = [-5, 8, 0, 4, 9, -4, -20, -2, 8, 2, -4]
+a = sorted(foo, key=lambda x: x)               #  [-20, -5, -4, -4, -2, 0, 2, 4, 8, 8, 9]
+
+# 73、使用lambda函数对list排序foo = [-5,8,0,4,9,-4,-20,-2,8,2,-4]，
+# 输出结果为[0,2,4,8,8,9,-2,-4,-4,-5,-20]，正数从小到大，负数从大到小~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# （传两个条件，x<0和abs(x)）
+foo = [-5, 8, 0, 4, 9, -4, -20, -2, 8, 2, -4]
+a = sorted(foo, key=lambda x: (x < 0, abs(x)))   # [0, 2, 4, 8, 8, 9, -2, -4, -4, -5, -20]
+
+# 74、列表嵌套字典的排序，分别根据年龄和姓名排序~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+foo = [{"name": "zs", "age": 19}, {"name": "ll", "age": 54}, {"name": "wa", "age": 17}, {"name": "df", "age": 23}]
+a = sorted(foo, key=lambda x: x['age'], reverse=True)   # 年龄从大到小
+# [{'age': 54, 'name': 'll'}, {'age': 23, 'name': 'df'}, {'age': 19, 'name': 'zs'}, {'age': 17, 'name': 'wa'}]
+a = sorted(foo, key=lambda x: x['name'])                # 姓名从小到大
+# [{'age': 23, 'name': 'df'}, {'age': 54, 'name': 'll'}, {'age': 17, 'name': 'wa'}, {'age': 19, 'name': 'zs'}]
+
+# 75、列表嵌套元组，分别按字母和数字排序~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+foo = [('zs', 19), ('ll', 54), ('wa', 17), ('df', 23)]
+a = sorted(foo, key=lambda x: x[1], reverse=True)        # [('ll', 54), ('df', 23), ('zs', 19), ('wa', 17)]
+a = sorted(foo, key=lambda x: x[0], reverse=True)        # [('zs', 19), ('wa', 17), ('ll', 54), ('df', 23)]
+
+# 76、列表嵌套列表排序，年龄数字相同怎么办？~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+foo = [['zs', 19], ['ll', 54], ['wa', 17], ['df', 23]]   # 年龄相同怎么办？ 添加参数，按字母排序
+a = sorted(foo, key=lambda x: (x[1], x[0]))              # [['wa', 17], ['zs', 19], ['df', 23], ['ll', 54]]
+a = sorted(foo, key=lambda x: x[0])                      # [['df', 23], ['ll', 54], ['wa', 17], ['zs', 19]]
+
+# 77、根据键对字典排序（方法一，zip函数）~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+dic = {'name': 'zs', 'sex': 'man', 'city': 'bj'}
+# 字典转列表，嵌入元组：
+foo = zip(dic.keys(), dic.values())                      # <zip at 0x7f4888cdff48>
+foo = [i for i in foo]                                   # [('name', 'zs'), ('sex', 'man'), ('city', 'bj')]
+# 字典嵌入元组排序：
+b = sorted(foo, key=lambda x: x[0])                      # [('city', 'bj'), ('name', 'zs'), ('sex', 'man')]
+# 排序结果构造新字典，字典推导式狗仔新字典：
+new_dic = {i[0]: i[1] for i in b}                         # {'city': 'bj', 'name': 'zs', 'sex': 'man'}
+
+# 78、根据键对字典排序（方法二,不用zip)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 有没有发现dic.items和zip(dic.keys(),dic.values())都是为了构造列表嵌套字典的结构，方便后面用sorted()构造排序规则
+dic = {'name': 'zs', 'sex': 'man', 'city': 'bj'}
+# 字典转成列表嵌入元组：
+dic.items()                                    # dict_items([('name', 'zs'), ('sex', 'man'), ('city', 'bj')])
+# 根据键排序，字典推导式构造新字典：
+b = sorted(dic.items(), key=lambda x: x[0])    # [('city', 'bj'), ('name', 'zs'), ('sex', 'man')]
+new_dic = {i[0]: i[1] for i in b}                         # {'city': 'bj', 'name': 'zs', 'sex': 'man'}
+
+# 79、列表推导式、字典推导式、生成器~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import random
+# 列表生成式：
+td_list = [i for i in range(10)]  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# 生成器：
+ge_list = (i for i in range(10))  # <generator object <genexpr> at 0x7f488ade3af0>
+
+# 字典推导式：
+dic = {k: random.randint(1,10) for k in ['a', 'b', 'c', 'd', 'e']}   # {'a': 3, 'b': 4, 'c': 10, 'd': 9, 'e': 5}
+
+# 80、最后出一道检验题目，根据字符串长度排序，看排序是否灵活运用~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+s = ['ab', 'abc', 'a', 'asdf']
+b = sorted(s, key=lambda x: len(x))    # sorted有返回值，不改变s本身：['a', 'ab', 'abc', 'asdf']
+s.sort(key= len)                       # sort无返回值，s的值变为：['a', 'ab', 'abc', 'asdf']
+
+# 81、举例说明SQL注入和解决办法~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 当以字符串格式化书写方式的时候，如果用户输入的有;+SQL语句，后面的SQL语句会执行，比如例子中的SQL注入会删除数据库demo
+# SQL注入：例如一条SQL语句是：
+# 正常的SQL语句如下：
+input_name = 'zs'
+sql = 'select * from demo where name = "%s"' % input_name   #  'select * from demo where name = "zs"'
+
+# SQL注入语句如下：
+input_name = 'zs; drop database demo'
+sql = 'select * from demo where name = "%s"' % input_name   #  'select * from demo where name = "zs"'
+# 'select * from demo where name = "zs; drop database demo"'
+
+# 解决方式：通过传参数方式解决SQL注入
+params = [input_name]
+count = cs1.excute('select * from goods where name = %s ', params)             # ???????????????????
+
+# 82、s="info:xiaoZhang 33 shandong",用正则切分字符串输出['info', 'xiaoZhang', '33', 'shandong']~~~~~~~~~~~~~~~~~~~~~~~~
+import re
+s = "info:xiaoZhang 33 shandong"
+res = re.split(r":| ", s)            # ['info', 'xiaoZhang', '33', 'shandong']
 
 
 
