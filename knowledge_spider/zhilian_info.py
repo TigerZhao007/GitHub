@@ -9,8 +9,31 @@
 def getHtmlText(url):
     ''' # url:网页地址; # return:返回网页数据 '''
 
-    # url = 'https://sou.zhaopin.com/?p=6&jl=635&kw=%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98&kt=3&sf=0&st=0'
-    # 导入所需模块~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # url = 'https://fe-api.zhaopin.com/c/i/sou?pageSize=60&cityId=765&workExperience=-1&education=-1&companyType=-1&employmentType=-1&jobWelfareTag=-1&kw=软件测试&kt=3'
+    # url = 'https://fe-api.zhaopin.com/c/i/sou?pageSize=90&cityId=801&workExperience=-1&education=-1&companyType=-1&employmentType=-1&jobWelfareTag=-1&kw=Java%E5%BC%80%E5%8F%91&kt=3'
+    # url = 'https://fe-api.zhaopin.com/c/i/sou?pageSize=90&cityId=801&workExperience=-1&education=-1&companyType=-1&employmentType=-1&jobWelfareTag=-1&kw=Java%E5%BC%80%E5%8F%91&kt=3&start=0&areaId=&businessarea=%7B%7D&industry=100010000&salary=0,0&jobType=&sortType='
+    # url = 'https://fe-api.zhaopin.com/c/i/sou?pageSize=90&cityId=801&workExperience=-1&education=-1&companyType=-1&employmentType=-1&jobWelfareTag=-1&kw=Java%E5%BC%80%E5%8F%91&kt=3&start=&areaId=&businessarea=&industry=&salary=&jobType=&sortType='
+    # '&start=0&areaId=&businessarea=%7B%7D&industry=100010000&salary=0,0&jobType=&sortType='
+    # url = 'https://fe-api.zhaopin.com/c/i/sou/page-title?start=0&pageSize=90&cityId=801&areaId=&businessarea=%7B%7D&industry=100010000&salary=0,0&workExperience=-1&education=-1&companyType=-1&employmentType=-1&jobWelfareTag=-1&jobType=-1&sortType=&kw=Java%E5%BC%80%E5%8F%91&kt=3&bj=&sj=&lastUrlQuery=%7B%22jl%22:%22801%22,%22in%22:%22100010000%22,%22sf%22:0,%22st%22:0,%22kw%22:%22Java%E5%BC%80%E5%8F%91%22,%22kt%22:%223%22%7D&companyNo=&companyName=&_v=0.11437274&x-zp-page-request-id=0c3d788750314427b8f18fb983320a60-1575907790349-652696&x-zp-client-id=6b10dda1-77fc-43c1-afa8-b2bff9969ccb&MmEwMD=415kLLzl0LAscQHnpkjFQOZ7cCPOH4LiUYFR6qgEynlVIN9mZiUw0DIwVREpxsCr4BJnjds7FRmuXset_10NVHB6R4LhFcJZzjl9sY7ymG6f1vA_xkeUm5px8zB2WGPzd.XT.0yaA2hLF4sVUhRv3DExDjYNzKGs1Tqh9oICsNOtQxmiBXoQXncx3kliILX5ju5iORGq9B3p5AMZ2PDN8sqhxLhzRes6ecUOF7nbv2nbmOZi8lUG3vQGHETa.vXQCBl9EXthr815CjiaN7ub6ZOXE5OVTsVW.PdAAIj81OhNgB7e38Mx.x2EVEd9yt0EAgKOJAiV10xnzYWFRCUz2MMS0F9tgbfEi8vZ_AXnkFUoPGfrdAcjvkbHjcAsGywT254dqLo8A.qviwlRSkaJo5Fw5'
+
+    params = {
+        "pageSize": "90",
+        "cityId": "801",
+        "industry": "100010000",
+        "salary": "0,0",
+        "workExperience": "-1",
+        "education": "-1",
+        "companyType": "-1",
+        "employmentType": "-1",
+        "jobWelfareTag": "-1",
+        "kw": "Java开发",
+        "kt": "3",
+        "_v": "0.75694563"
+    }
+
+    url = 'https://fe-api.zhaopin.com/c/i/sou'
+
+  # 导入所需模块~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     import requests
     import random
 
@@ -22,10 +45,12 @@ def getHtmlText(url):
     # 读取HTML文本~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     try:
         # r = requests.get(url, headers, timeout=10)  # 如果状态码不是200 则应发HTTOError异常
-        r = requests.get(url, timeout=10)
-        r.raise_for_status()               # 设置正确的编码方式
-        r.encoding = r.apparent_encoding
-        return r.text
+        r = requests.get(url, params=params, headers=headers, timeout=10)  # 如果状态码不是200 则应发HTTOError异常
+        # r = requests.get(url, timeout=10)
+        # r.raise_for_status()               # 设置正确的编码方式
+        # r.encoding = r.apparent_encoding
+        # return r.text
+        r.json()
     except:
         return "Something Wrong!"
 

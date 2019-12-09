@@ -28,7 +28,7 @@ clip<~/.ssh/id_rsa.pub
 # 关联一个远程库
 '''
 git remote add origin git@server-name:path/repo-name.git；
-git remote add origin git@github.com:shaoxiaozuo/learngit.git
+git remote add origin git@github.com:shaoxiaozuo/GitHub.git
 '''
 # 注意：git@server-name:path/repo-name.git替换为自己的，在这里复制<br> 
 
