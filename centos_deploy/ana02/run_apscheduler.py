@@ -7,8 +7,8 @@ import os
 import sys
 
 # 导入需要运行的自定义模块~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-path = r'D:/Work/GitHub/centos_deploy/ana02/'
-# path = r'/root/GitHub/centos_deploy/ana02/'
+# path = r'D:/Work/GitHub/centos_deploy/ana02/'
+path = r'/root/GitHub/centos_deploy/ana02/'
 
 # sys.path.append(os.path.dirname(os.path.abspath('__file__')))
 sys.path.append(os.path.dirname(path))

@@ -12,8 +12,8 @@ def run_main():
                                                    pool_size=20, max_overflow=5)
 
     # 运行代码路径~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    FilePath = r'D:/Work/GitHub/centos_deploy/ana02/'
-    # FilePath = r'/root/GitHub/centos_deploy/ana02/'
+    # FilePath = r'D:/Work/GitHub/centos_deploy/ana02/'
+    FilePath = r'/root/GitHub/centos_deploy/ana02/'
 
     # 运行代码设定~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # filename_list = ['date2db01.py', 'date2db02.py', 'date2db03.py']
