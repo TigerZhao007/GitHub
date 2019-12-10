@@ -20,8 +20,8 @@ git pull
 ssh -keygen -t rsa -C "youremail@example.com"
 clip<~/.ssh/id_rsa.pub
 '''
-# 复制秘钥注：目录为C:\Users\用户名<br> 
-# 添加秘钥到GitHub<br> 
+# 复制秘钥注：目录为C:\Users\用户名<br>
+# 添加秘钥到GitHub<br>
 # 左边选择SSHandGPGkeys，然后点击NewSSHkey按钮,<br> 
 # title设置标题，可以随便填，粘贴在你电脑上生成的key。<br> 
 
