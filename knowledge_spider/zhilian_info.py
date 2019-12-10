@@ -6,30 +6,14 @@
 """
 
 # 请求网页数据~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-def getHtmlText(url):
+def getHtmlText(start, pageSize):
     ''' # url:网页地址; # return:返回网页数据 '''
 
-    # url = 'https://fe-api.zhaopin.com/c/i/sou?pageSize=60&cityId=765&workExperience=-1&education=-1&companyType=-1&employmentType=-1&jobWelfareTag=-1&kw=软件测试&kt=3'
-    # url = 'https://fe-api.zhaopin.com/c/i/sou?pageSize=90&cityId=801&workExperience=-1&education=-1&companyType=-1&employmentType=-1&jobWelfareTag=-1&kw=Java%E5%BC%80%E5%8F%91&kt=3'
-    # url = 'https://fe-api.zhaopin.com/c/i/sou?pageSize=90&cityId=801&workExperience=-1&education=-1&companyType=-1&employmentType=-1&jobWelfareTag=-1&kw=Java%E5%BC%80%E5%8F%91&kt=3&start=0&areaId=&businessarea=%7B%7D&industry=100010000&salary=0,0&jobType=&sortType='
-    # url = 'https://fe-api.zhaopin.com/c/i/sou?pageSize=90&cityId=801&workExperience=-1&education=-1&companyType=-1&employmentType=-1&jobWelfareTag=-1&kw=Java%E5%BC%80%E5%8F%91&kt=3&start=&areaId=&businessarea=&industry=&salary=&jobType=&sortType='
-    # '&start=0&areaId=&businessarea=%7B%7D&industry=100010000&salary=0,0&jobType=&sortType='
-    # url = 'https://fe-api.zhaopin.com/c/i/sou/page-title?start=0&pageSize=90&cityId=801&areaId=&businessarea=%7B%7D&industry=100010000&salary=0,0&workExperience=-1&education=-1&companyType=-1&employmentType=-1&jobWelfareTag=-1&jobType=-1&sortType=&kw=Java%E5%BC%80%E5%8F%91&kt=3&bj=&sj=&lastUrlQuery=%7B%22jl%22:%22801%22,%22in%22:%22100010000%22,%22sf%22:0,%22st%22:0,%22kw%22:%22Java%E5%BC%80%E5%8F%91%22,%22kt%22:%223%22%7D&companyNo=&companyName=&_v=0.11437274&x-zp-page-request-id=0c3d788750314427b8f18fb983320a60-1575907790349-652696&x-zp-client-id=6b10dda1-77fc-43c1-afa8-b2bff9969ccb&MmEwMD=415kLLzl0LAscQHnpkjFQOZ7cCPOH4LiUYFR6qgEynlVIN9mZiUw0DIwVREpxsCr4BJnjds7FRmuXset_10NVHB6R4LhFcJZzjl9sY7ymG6f1vA_xkeUm5px8zB2WGPzd.XT.0yaA2hLF4sVUhRv3DExDjYNzKGs1Tqh9oICsNOtQxmiBXoQXncx3kliILX5ju5iORGq9B3p5AMZ2PDN8sqhxLhzRes6ecUOF7nbv2nbmOZi8lUG3vQGHETa.vXQCBl9EXthr815CjiaN7ub6ZOXE5OVTsVW.PdAAIj81OhNgB7e38Mx.x2EVEd9yt0EAgKOJAiV10xnzYWFRCUz2MMS0F9tgbfEi8vZ_AXnkFUoPGfrdAcjvkbHjcAsGywT254dqLo8A.qviwlRSkaJo5Fw5'
-
-    params = {
-        "pageSize": "90",
-        "cityId": "801",
-        "industry": "100010000",
-        "salary": "0,0",
-        "workExperience": "-1",
-        "education": "-1",
-        "companyType": "-1",
-        "employmentType": "-1",
-        "jobWelfareTag": "-1",
-        "kw": "Java开发",
-        "kt": "3",
-        "_v": "0.75694563"
-    }
+    params = {"cityId": "801", "industry": "100010000",  "salary": "0,0",  "workExperience": "-1", "education": "-1",
+              "companyType": "-1",  "employmentType": "-1",  "jobWelfareTag": "-1", "kw": "Java开发",
+              "kt": "3",  "_v": "0.75694563"}
+    params['start'] = start
+    params['pageSize'] = pageSize
 
     url = 'https://fe-api.zhaopin.com/c/i/sou'
 
@@ -41,48 +25,31 @@ def getHtmlText(url):
     headers = {}
     headers['User-Agent'] = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) " \
                             "Chrome/63.0.3239.132 Safari/537." + str(random.randint(1, 99))
+    headers['Origin'] = "https://sou.zhaopin.com"
 
     # 读取HTML文本~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     try:
-        # r = requests.get(url, headers, timeout=10)  # 如果状态码不是200 则应发HTTOError异常
         r = requests.get(url, params=params, headers=headers, timeout=10)  # 如果状态码不是200 则应发HTTOError异常
-        # r = requests.get(url, timeout=10)
-        # r.raise_for_status()               # 设置正确的编码方式
-        # r.encoding = r.apparent_encoding
-        # return r.text
-        r.json()
+        result = r.json()
+        return result
     except:
         return "Something Wrong!"
+
+html = getHtmlText(start=0, pageSize=90)
 
 # 指定某一页，统计该页信息~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def getImgList(html):
 
     # 导入所需模块~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     import pandas as pd
-    from bs4 import BeautifulSoup as bs
+    import json
 
     # 导入图片列表~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    soup = bs(html, 'lxml')
-    soup = soup.find('div', attrs={'class': 'main'}).find('ul', attrs={'class': 'img'})
-    soup = soup.find_all('li')     # 表示在整个网页中过滤出所有图片的地址，放在imglist中
-    namelist = ['model_name', 'pic_name', 'pic_num', 'pic_agent', 'pic_label', 'pic_url']
-    imglist = pd.DataFrame(columns=namelist)
+    result = html.get('data').get('results')
 
     # 统计列表信息~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    for img in soup:
-        imgdict = {}
-        imgdict['pic_url'] = img.find('a')['href']
-        imgdict['pic_name'] = img.find('img')['alt']
-        temp = img.find_all('p')[0].find('span').text
-        imgdict['pic_num'] = img.find_all('p')[0].text.replace('数量：', '').replace(temp, '')
-        # imgdict['pic_num'] = img.find_all('p')[0].text.replace('数量：', '')
-        imgdict['pic_agent'] = img.find_all('p')[1].text.replace('机构：','')
-        imgdict['model_name'] = img.find_all('p')[2].text.replace('模特：','')
-        imgdict['pic_label'] = img.find_all('p')[3].text.replace('标签：','')
-        imgdict = pd.DataFrame([imgdict])[namelist]
-        imglist = imglist.append(imgdict)
 
-    return imglist
+    return result
 
 # 爬虫代码汇总~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def main(url):
