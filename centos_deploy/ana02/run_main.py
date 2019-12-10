@@ -1,6 +1,6 @@
 
 
-def run_main(FilePath='/root/sharefile/ana01'):
+def run_main():
     # 导入所需要的模块~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     import os
     import time
@@ -11,14 +11,13 @@ def run_main(FilePath='/root/sharefile/ana01'):
                                                    ('postgres', '123456', '47.100.173.196', '5432', 'test'),
                                                    pool_size=20, max_overflow=5)
 
-    # 获取当前路径~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    # FilePath = r'/root/sharefile/ana01'
-    # FilePath = os.path.dirname(os.path.abspath('__file__'))
-    # FilePath = os.path.dirname(os.path.abspath('__file__')) + r'\centos_deploy\ana01'
+    # 运行代码路径~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    FilePath = r'D:/Work/GitHub/centos_deploy/ana02/'
+    # FilePath = r'/root/GitHub/centos_deploy/ana02/'
 
     # 运行代码设定~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    filename_list = ['date2db01.py', 'date2db02.py', 'date2db03.py']
+    # filename_list = ['date2db01.py', 'date2db02.py', 'date2db03.py']
+    filename_list = ['date2db01.py', 'date2db02.py']
 
     # 运行代码设定~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # 设定存储运行成功或者失败的文件
