@@ -18,8 +18,9 @@ from run_main import run_main
 # 配置定时任务~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if __name__ == '__main__':
     scheduler = BlockingScheduler()
-    scheduler.add_job(run_main, 'interval', seconds=15)   # 每3秒执行一次
+    # scheduler.add_job(run_main, 'interval', seconds=15)   # 每3秒执行一次
     # scheduler.add_job(run_main, 'cron', hour=15, minute=13)    # 每天的19：23 分执行任务
+    scheduler.add_job(run_main, 'cron', hour='0-23')    # 每天的每小时分执行任务
     # print('Press Ctrl+{0} to exit'.format('Break' if os.name == 'nt' else 'C    '))
 
     try:
