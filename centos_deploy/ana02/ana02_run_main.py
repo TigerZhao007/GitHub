@@ -45,7 +45,7 @@ def run_main(filename_list, FilePath, logName='run_status_log1'):
 
     # 将运行状态转化为数据框
     run_status = pd.DataFrame(dict_temp)
-    run_status['updata_time'] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+    run_status['update_time'] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
 
     with engine_postgresql00.connect() as conn:
         run_status.to_sql(logName, conn, if_exists='append', index=False)
@@ -105,7 +105,7 @@ def run_main01(filename_list, FilePath):
 
     # 将运行状态转化为数据框
     run_status = pd.DataFrame(dict_temp)
-    run_status['updata_time'] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+    run_status['update_time'] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
 
     with engine_postgresql00.connect() as conn:
         run_status.to_sql('run_status_log', conn, if_exists='append', index=False)
@@ -166,7 +166,7 @@ def run_main02(filename_list, FilePath):
 
     # 将运行状态转化为数据框
     run_status = pd.DataFrame(dict_temp)
-    run_status['updata_time'] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+    run_status['update_time'] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
 
     with engine_postgresql00.connect() as conn:
         run_status.to_sql('run_status_log', conn, if_exists='append', index=False)

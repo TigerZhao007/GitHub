@@ -31,15 +31,26 @@ if __name__ == '__main__':
 
     scheduler = BlockingScheduler()
 
-    # 任务1：每15秒执行一次
-    scheduler.add_job(run_main, 'interval', seconds=15, id='my_job1',
+    # test~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # # 任务1：每15秒执行一次
+    # scheduler.add_job(run_main, 'interval', id='my_job1', seconds=15,
+    #                   kwargs={'FilePath': FilePath, 'filename_list': filename_list1, 'logName': 'run_status_log1'})
+    # # 任务2：每5分钟执行一次
+    # scheduler.add_job(run_main, 'interval', id='my_job2', minutes=5,
+    #                   kwargs={'FilePath': FilePath, 'filename_list': filename_list2, 'logName': 'run_status_log2'})
+
+    # deploy~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # 任务1：每天的每小时分执行任务
+    scheduler.add_job(run_main, 'cron', id='my_job1', hour='0-23',
                       kwargs={'FilePath': FilePath, 'filename_list': filename_list1, 'logName': 'run_status_log1'})
     # 任务2：每5分钟执行一次
-    scheduler.add_job(run_main, 'interval', minutes=5, id='my_job2',
-                      kwargs={'FilePath': FilePath, 'filename_list': filename_list1, 'logName': 'run_status_log2'})
+    scheduler.add_job(run_main, 'cron', id='my_job2', day_of_week='sat', hour=1,
+                      kwargs={'FilePath': FilePath, 'filename_list': filename_list2, 'logName': 'run_status_log2'})
 
-    # scheduler.add_job(run_main, 'cron', hour=15, minute=13)    # 每天的19：23 分执行任务
-    # scheduler.add_job(run_main, 'cron', hour='0-23')    # 每天的每小时分执行任务
+    # 'cron', day_of_week='sat', hour=1, minute=0,       # 每周六的1：00 分执行任务1
+    # 'cron', day='1, 15', hour=1, minute=30,            # 每月1号、15号的1：30分执行任务2
+    # 'cron', hour = 15, minute = 13,                    # 每天的19：23 分执行任务
+    # 'cron', hour = '0-23',                             # 每天的每小时分执行任务
     # print('Press Ctrl+{0} to exit'.format('Break' if os.name == 'nt' else 'C    '))
 
     try:
